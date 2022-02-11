@@ -5,7 +5,7 @@
 # Import CMS content for the site
 #
 
-$contentCatalog=__CONTENT_CATALOG_NAME__
+$contentCatalog=demoContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
 # Language
@@ -32,3 +32,13 @@ UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
  ;;storefinderPage;"StoreFinder"
  ;;termsAndConditions;"Terms and Conditions"
  ;;updatePassword;"Update Forgotten Password"
+
+# Category Pages
+UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                   ;;category;"Default Category Page"
+                   ;;productGrid;"Product Grid"
+
+
+# Product Pages
+UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                  ;;productDetails;"Product Details"

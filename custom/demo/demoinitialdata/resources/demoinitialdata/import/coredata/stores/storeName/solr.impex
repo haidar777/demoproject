@@ -4,18 +4,19 @@
 #
 # Import the Solr configuration for the store
 #
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$prefix = demo
+$productCatalog=demoProductCatalog
 $catalogVersions=catalogVersions(catalog(id),version);
-$serverConfigName=
-$indexConfigName=
-$searchConfigName=
-$facetSearchConfigName=
-$facetSearchConfigDescription=
-$searchIndexNamePrefix=
-$solrIndexedType=
-$indexBaseSite=
-$indexLanguages=ja,en,de,zh
-$indexCurrencies=JPY,USD
+$serverConfigName = $prefixSolrServerConfig
+$indexConfigName = $prefixSolrIndexConfig
+$searchConfigName = $prefixPageSize
+$facetSearchConfigName = $prefixIndex
+$facetSearchConfigDescription = Facet Training Product Solr Index
+$searchIndexNamePrefix = training
+$solrIndexedType = $prefixProductType
+$indexBaseSite = training
+$indexLanguages = en, id
+$indexCurrencies = IDR
 
 
 #
