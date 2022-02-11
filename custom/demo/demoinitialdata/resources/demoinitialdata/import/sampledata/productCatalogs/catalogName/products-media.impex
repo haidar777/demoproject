@@ -4,7 +4,9 @@
 # ImPex for Importing Product Media
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=demoProductCatalog
+
+$prefix=catalogName
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
 $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
@@ -17,58 +19,58 @@ $others=others(code, $catalogVersion)
 $data_sheet=data_sheet(code, $catalogVersion)
 $medias=medias(code, $catalogVersion)
 $galleryImages=galleryImages(qualifier, $catalogVersion)
-$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/productCatalogs/$productCatalog
-
+$siteResource= jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/productCatalogs/$productCatalog
+$siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$prefix
 # Create Media
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
-                   ;1200Wx1200H           ; media-101-90-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-90-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-90-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-90-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-90-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-90-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-90-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
+                   ;515Wx515H             ; media-101-90-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
+                   ;300Wx300H             ; media-101-90-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
+                   ;96Wx96H               ; media-101-90-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
+                   ;65Wx65H               ; media-101-90-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
+                   ;30Wx30H               ; media-101-90-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-100-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-100-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-100-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-100-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-100-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-100-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-100-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-100-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-100-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-100-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-100-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-100-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-120-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-120-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-120-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-120-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-120-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-120-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-120-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-120-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-120-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-120-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-120-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-120-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-140-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-140-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-140-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-140-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-140-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-140-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-140-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-140-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-140-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-140-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-140-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-140-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-160-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-160-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-160-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-160-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-160-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-160-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-160-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-160-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-160-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-160-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-160-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-160-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-180-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-180-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-180-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-180-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-180-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-180-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-180-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-180-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-180-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-180-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-180-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-180-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg ; ; ; images
 
-                   ;1200Wx1200H           ; media-101-200-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
-                   ;515Wx515H             ; media-101-200-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
-                   ;300Wx300H             ; media-101-200-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
-                   ;96Wx96H               ; media-101-200-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
-                   ;65Wx65H               ; media-101-200-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
-                   ;30Wx30H               ; media-101-200-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;1200Wx1200H           ; media-101-200-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
+                   ;515Wx515H             ; media-101-200-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
+                   ;300Wx300H             ; media-101-200-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
+                   ;96Wx96H               ; media-101-200-other       ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
+                   ;65Wx65H               ; media-101-200-normal      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
+                   ;30Wx30H               ; media-101-200-thumbnails  ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg ; ; ; images
 
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion

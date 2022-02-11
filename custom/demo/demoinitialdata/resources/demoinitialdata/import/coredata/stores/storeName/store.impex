@@ -5,8 +5,8 @@
 # Create the BaseStore
 #
 
-$productCatalog=__PRODUCT_CATALOG_NAME__
-$classificationCatalog=__CLASSIFICATION_CATALOG_NAME__
+$productCatalog=demoProductCatalog
+$classificationCatalog=demoClassificationCatalog
 $currencies=IDR
 $net=false
 $storeUid=demo

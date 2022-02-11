@@ -4,7 +4,7 @@
 #
 # Import the Content Catalog
 #
-$contentCatalog=__CONTENT_CATALOG_NAME__
+$contentCatalog=demoContentCatalog
 $languages=en,id
 
 # Content catalog for CMS contents
