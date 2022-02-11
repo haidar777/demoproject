@@ -4,7 +4,7 @@
 # ImPex for Importing Product Media
 
 # Macros / Replacement Parameter definitions
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=catalogName
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
 $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
@@ -21,9 +21,71 @@ $siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitial
 
 # Create Media
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+                   ;1200Wx1200H           ; media-101-90-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-90-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-90-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-90-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-90-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-90-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-100-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-100-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-100-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-100-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-100-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-100-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 100.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-120-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-120-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-120-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-120-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-120-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-120-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 120.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-140-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-140-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-140-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-140-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-140-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-140-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 140.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-160-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-160-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-160-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-160-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-160-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-160-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 160.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-180-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-180-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-180-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-180-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-180-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-180-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 180.jpg    ;                             ;                ; images
+
+                   ;1200Wx1200H           ; media-101-200-picture     ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;515Wx515H             ; media-101-200-thumbnail   ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;300Wx300H             ; media-101-200-detail      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;96Wx96H               ; media-101-200-other       ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;65Wx65H               ; media-101-200-normal      ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
+                   ;30Wx30H               ; media-101-200-thumbnails  ; $siteResource/images/product/Inthebox_101/Foto Produk INTHEBOX 101 200.jpg    ;                             ;                ; images
 
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+                            ;101-90-medias         ; media-101-90-picture,media-101-90-picture,media-101-90-thumbnail,media-101-90-detail,media-101-90-other,media-101-90-normal,media-101-90-thumbnails ;
+                            ;101-100-medias        ; media-101-100-picture,media-101-100-picture,media-101-100-thumbnail,media-101-100-detail,media-101-100-other,media-101-100-normal,media-101-100-thumbnails ;
+                            ;101-120-medias        ; media-101-120-picture,media-101-120-picture,media-101-120-thumbnail,media-101-120-detail,media-101-120-other,media-101-120-normal,media-101-120-thumbnails ;
+                            ;101-140-medias        ; media-101-140-picture,media-101-140-picture,media-101-140-thumbnail,media-101-140-detail,media-101-140-other,media-101-140-normal,media-101-140-thumbnails ;
+                            ;101-160-medias        ; media-101-160-picture,media-101-160-picture,media-101-160-thumbnail,media-101-160-detail,media-101-160-other,media-101-160-normal,media-101-160-thumbnails ;
+                            ;101-180-medias        ; media-101-180-picture,media-101-180-picture,media-101-180-thumbnail,media-101-180-detail,media-101-180-other,media-101-180-normal,media-101-180-thumbnails ;
+                            ;101-200-medias        ; media-101-200-picture,media-101-200-picture,media-101-200-thumbnail,media-101-200-detail,media-101-200-other,media-101-200-normal,media-101-200-thumbnails ;
 
 # Update Products with Media and Media Containers
 UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+              ;101SIZE90x200                ; media-101-90-picture    ; media-101-90-thumbnail    ; media-101-90-detail    ; media-101-90-other    ; media-101-90-normal    ; media-101-90-thumbnails    ; 101-90-medias    ;
+              ;101SIZE100x200                ; media-101-100-picture    ; media-101-100-thumbnail    ; media-101-100-detail    ; media-101-100-other    ; media-101-100-normal    ; media-101-100-thumbnails    ; 101-100-medias    ;
+              ;101SIZE120x200                ; media-101-120-picture    ; media-101-120-thumbnail    ; media-101-120-detail    ; media-101-120-other    ; media-101-120-normal    ; media-101-120-thumbnails    ; 101-120-medias    ;
+              ;101SIZE140x200                ; media-101-140-picture    ; media-101-140-thumbnail    ; media-101-140-detail    ; media-101-140-other    ; media-101-140-normal    ; media-101-140-thumbnails    ; 101-140-medias    ;
+              ;101SIZE160x200                ; media-101-160-picture    ; media-101-160-thumbnail    ; media-101-160-detail    ; media-101-160-other    ; media-101-160-normal    ; media-101-160-thumbnails    ; 101-160-medias    ;
+              ;101SIZE180x200                ; media-101-180-picture    ; media-101-180-thumbnail    ; media-101-180-detail    ; media-101-180-other    ; media-101-180-normal    ; media-101-180-thumbnails    ; 101-180-medias    ;
+              ;101SIZE200x200                ; media-101-200-picture    ; media-101-200-thumbnail    ; media-101-200-detail    ; media-101-200-other    ; media-101-200-normal    ; media-101-200-thumbnails    ; 101-200-medias    ;
