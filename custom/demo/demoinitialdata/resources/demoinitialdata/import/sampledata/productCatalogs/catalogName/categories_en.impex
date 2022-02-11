@@ -14,3 +14,4 @@ $lang=en
 
 # Create Categories
 UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+               ; KASUR           ;               ;Bed

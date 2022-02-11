@@ -16,6 +16,10 @@ $lang=en
 
 # Insert Classifications
 UPDATE ClassificationClass;code[unique=true];$classCatalogVersion;name[lang=$lang]
+                          ;                 ; ukuran             ; Bed Size
 
 # Insert Classification Attributes
 UPDATE ClassificationAttribute;code[unique=true];$classSystemVersion;name[lang=$lang]
+                              ; panjang    ;                   ; Length
+                              ; lebar      ;                   ; Width
+
