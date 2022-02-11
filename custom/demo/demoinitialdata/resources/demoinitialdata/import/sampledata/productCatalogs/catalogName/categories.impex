@@ -4,7 +4,7 @@
 # ImpEx for Importing Categories
 
 # Macros / Replacement Parameter definitions
-$productCatalog=demoProductCatalog
+$productCatalog=__PRODUCT_CATALOG_NAME__
 $productCatalogName=Demo Product Catalog
 
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]

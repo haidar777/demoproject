@@ -4,8 +4,8 @@
 #
 # Import the CMS Site configuration for the store
 #
-$productCatalog=demoProductCatalog
-$contentCatalog=demoContentCatalog
+$productCatalog=__PRODUCT_CATALOG_NAME__
+$contentCatalog=__CONTENT_CATALOG_NAME__
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $defaultLanguage=en
 $storeUid=demo

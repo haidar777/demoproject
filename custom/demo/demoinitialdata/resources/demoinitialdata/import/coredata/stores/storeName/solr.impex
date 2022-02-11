@@ -5,7 +5,7 @@
 # Import the Solr configuration for the store
 #
 $prefix = demo
-$productCatalog=demoProductCatalog
+$productCatalog=__PRODUCT_CATALOG_NAME__
 $catalogVersions=catalogVersions(catalog(id),version);
 $serverConfigName = $prefixSolrServerConfig
 $indexConfigName = $prefixSolrIndexConfig
