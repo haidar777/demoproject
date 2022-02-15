@@ -184,7 +184,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 					getSetupImpexService().importImpexFile(String.format("/%s/import/sampledata/productCatalogs/%sProductCatalog/%s",
 							extensionName, DEMO, impexFile), false);
 					getSetupImpexService().importImpexFile(
-							String.format("/%s/import/sampledata/stores/demostoreName/%s", extensionName, impexFile), false);
+							String.format("/%s/import/sampledata/stores/training/%s", extensionName, impexFile), false);
 				}
 			}
 		}
