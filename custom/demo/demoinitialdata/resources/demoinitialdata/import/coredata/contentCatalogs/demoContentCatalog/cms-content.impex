@@ -41,6 +41,11 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
 ;;OrderConfirmationPageTemplate;Order Confirmation Page Template;;ContentPage;false;
 
+# Edited <--
+;;AboutUsPageTemplate;About Us Page Template;additional/aboutus;CategoryPage,ContentPage
+;;TestimoniPageTemplate;testimoni Page Template;additional/testimoni;CategoryPage,ContentPage
+# End of Edtited -->
+
 # Add Velocity templates that are in the CMS Cockpit. These give a better layout for editing pages
 # The FileLoaderValueTranslator loads a File into a String property. The templates could also be inserted in-line in this file.
 UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
@@ -66,6 +71,10 @@ UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[tr
 ;;OrderConfirmationPageTemplate;$jarResourceCms/structure-view/structure_orderConfirmationPageTemplate.vm
 ;;LoginPageTemplate         ;$jarResourceCms/structure-view/structure_loginPageTemplate.vm
 ;;CheckoutLoginPageTemplate ;$jarResourceCms/structure-view/structure_checkoutLoginPageTemplate.vm
+#Edited <--
+;;AboutUsPageTemplate       ;$jarResourceCms/structure-view/structure_aboutusTemplate.vm
+;;TestimoniPageTemplate     ;$jarResourceCms/structure-view/structure_testimoniTemplate.vm
+#End of Edited -->
 
 # Create ContentSlotNames
 # Each PageTemplate has a number of ContentSlotNames, with a list of valid components for the slot.
@@ -110,7 +119,6 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;PlaceholderContentSlot;;;
 
 # Product List / Grid are two layouts for Category Browsing pages
-
 # Product List Page Template
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ProductListPageTemplate'];validComponentTypes(code);compTypeGroup(code)
 ;SiteLogo;;;logo
@@ -310,6 +318,44 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;TopHeaderSlot;;;wide
 ;BottomHeaderSlot;;;wide
 ;PlaceholderContentSlot;;;
+
+#Edited <--
+#About Us ContentSlotName
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='AboutUsPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+#Banner
+;Section1;;;wide
+#Tentang In The Box
+;Section2;;;wide
+#Apa Kasur In The Box
+;Section3;;;wide
+#FAQ
+;Section4;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+
+#Testimoni ContentSlotName
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='TestimoniPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+#Paragraph Testimoni
+;Section1;;;wide
+#List Testimoni
+;Section2;;;wide
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;PlaceholderContentSlot;;;
+#End of Edited -->
 
 # Simple Content Page Templates
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='ContentPage1Template'];validComponentTypes(code);compTypeGroup(code)
@@ -611,6 +657,34 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;BottomHeaderSlot-LandingPage6;BottomHeaderSlot;;BottomHeaderSlot;true
 ;;PlaceholderContentSlot-LandingPage6;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
+#Edited <--
+#About Us ContentSlotForTemplate
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='AboutUsPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-AboutUsPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-AboutUsPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-AboutUsPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-AboutUsPage;MiniCart;;MiniCartSlot;true
+;;Footer-AboutUsPage;Footer;;FooterSlot;true
+;;HeaderLinks-AboutUsPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-AboutUsPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-AboutUsPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-AboutUsPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-AboutUsPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+#Testimoni ContentSlotForTemplate
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='TestimoniPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-TestimoniPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-TestimoniPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-TestimoniPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-TestimoniPage;MiniCart;;MiniCartSlot;true
+;;Footer-TestimoniPage;Footer;;FooterSlot;true
+;;HeaderLinks-TestimoniPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-TestimoniPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-TestimoniPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-TestimoniPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-TestimoniPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+#End of Edited -->
+
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='ContentPage1Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-ContentPage1;SiteLogo;;SiteLogoSlot;true
 ;;HomepageLink-ContentPage1;HomepageNavLink;;HomepageNavLinkSlot;true
@@ -800,6 +874,16 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
 ;;termsAndConditions;Terms and Conditions Page;ContentPage1Template;/termsAndConditions
+
+#Edited <--
+#About Us ContentPage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;aboutUsPage;About Us Template Page;AboutUsPageTemplate;aboutUs;;;
+
+#Testimoni ContentPage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+;;testimoniPage;Testimoni Template Page;TestimoniPageTemplate;testimoni;;;
+#End of Edited -->
 
 # Product Details Page
 INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
