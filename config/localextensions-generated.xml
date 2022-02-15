@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Generated via ant extensionsxml - please be aware that this file get overwritten each time!
+
+Parameters:
+ -Dplatform.extensions=democore
+
+
+-->
+<hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='resources/schemas/extensions.xsd'>
+
+	<extensions>
+		<!-- 
+		     Please note that all extensions in platform/ext/* have been omitted 
+		     because they're automatically loaded. Please use <extensions autoload='false'> 
+		     in case you want to configure them explicitly. 
+		  -->
+		<extension dir='${HYBRIS_BIN_DIR}/modules/api-registry/apiregistryservices'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/base-commerce/basecommerce'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/web-content-management-system/cms2'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/web-content-management-system/cms2lib'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/base-commerce/customerreview'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/base-commerce/payment'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/search-services/searchservices'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/search-and-navigation/solrfacetsearch'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/platform/springintegrationlibs'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/base-commerce/voucher'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/base-commerce/promotions'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/commerce-services/commerceservices'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/customer-service/ticketsystem'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/core-accelerator/acceleratorservices'/>
+		<extension dir='${HYBRIS_BIN_DIR}/modules/core-accelerator/acceleratorcms'/>
+		<extension dir='${HYBRIS_BIN_DIR}/custom/demo/democore'/>
+	</extensions>
+
+</hybrisconfig>

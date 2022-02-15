@@ -365,7 +365,7 @@
     </bean>
 
 	<!-- Simple Suggestion Service -->
-	<alias alias="simpleSuggestionService" name="defaultSimpleSuggestionService"/>
+	<alias name="defaultSimpleSuggestionService" alias="simpleSuggestionService"/>
 	<bean id="defaultSimpleSuggestionService"
 	      class="org.demo.core.suggestion.impl.DefaultSimpleSuggestionService" >
 		<property name="simpleSuggestionDao" ref="simpleSuggestionDao"/>
@@ -538,4 +538,12 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<!--Demo DAO-->
+	<alias name="demoProductDAO" alias="demoProductDAO" />
+	<bean id="demoProductDAO" class="org.demo.core.product.dao.DemoProductDAOImpl"></bean>
+
+	<!--Demo Cronjob-->
+	<bean id="demoProductCronjob" class="org.demo.core.job.DemoProductCronjob" parent="abstractJobPerformable"></bean>
+
 </beans>
