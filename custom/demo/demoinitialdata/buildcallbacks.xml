@@ -133,7 +133,7 @@
                 addonname="demoinitialdata"
                 contentCatalog="demoContentCatalog"
                 productCatalog="demoProductCatalog"
-                storeName="demo"
+                storeName="demoatoreName"
                 classificationCatalog="demoClassificationCatalog"
                 storeUid="demostore"
                 defaultPromoGrp="demoPromoGroup"
