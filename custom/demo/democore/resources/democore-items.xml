@@ -121,7 +121,7 @@
                 <attributes>
                     <attribute qualifier="size" type="java.lang.String">
                         <description>Product Size</description>
-                        <modifiers optional="true" initial="true" />
+                        <modifiers read="true" write="true" search="true" optional="true" initial="true" />
                         <persistence type="property" />
                     </attribute>
                 </attributes>

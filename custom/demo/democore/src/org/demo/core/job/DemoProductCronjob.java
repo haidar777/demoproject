@@ -7,6 +7,8 @@ import de.hybris.platform.cronjob.model.CronJobModel;
 import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
 import de.hybris.platform.servicelayer.model.ModelService;
+import org.demo.core.jalo.DemoProduct;
+import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.model.DemoProductModel;
 import org.demo.core.model.DemoVariantProductModel;
 import org.demo.core.product.dao.DemoProductDAO;
@@ -33,12 +35,16 @@ public class DemoProductCronjob extends AbstractJobPerformable<CronJobModel> {
         if(products != null){
             for(Object  product: products){
                 if(product.getClass() == DemoProductModel.class){
-                    if(((DemoProductModel) product).getApprovalStatus() == ArticleApprovalStatus.CHECK){
+                    DemoProductModel data = (DemoProductModel) product;
+                    LOG.info(data.getName() + ": " + data.getApprovalStatus());
+                    if(data.getApprovalStatus() == ArticleApprovalStatus.CHECK){
                         ((DemoProductModel) product).setApprovalStatus(ArticleApprovalStatus.APPROVED);
                         modelService.save(product);
                     }
                 }else{
-                    if(((DemoVariantProductModel) product).getApprovalStatus() == ArticleApprovalStatus.CHECK){
+                    DemoVariantProductModel data = (DemoVariantProductModel) product;
+                    LOG.info(data.getCode() + ": " + data.getApprovalStatus());
+                    if(data.getApprovalStatus() == ArticleApprovalStatus.CHECK){
                         ((DemoVariantProductModel) product).setApprovalStatus(ArticleApprovalStatus.APPROVED);
                         modelService.save(product);
                     }
