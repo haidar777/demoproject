@@ -114,6 +114,7 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
         <typegroup name="Demo">
             <itemtype code="DemoProduct" autocreate="true" generate="true"
                       extends="Product">

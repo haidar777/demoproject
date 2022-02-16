@@ -24,13 +24,13 @@
 		<extension name="permissionswebservices"/>
 		<extension name="previewwebservices"/>
 
-		<!--		<extension name="cmssmartedit"/>-->
-<!--		<extension name="cmssmarteditwebservices"/>-->
-<!--		<extension name="smartedit"/>-->
-<!--		<extension name="smarteditaddon"/>-->
-<!--		<extension name="smarteditwebservices"/>-->
-<!--		<extension name="smartedittools" />-->
-
+<!--		<extension name="cmssmartedit"/>
+		<extension name="cmssmarteditwebservices"/>
+		<extension name="smartedit"/>
+		<extension name="smarteditaddon"/>
+		<extension name="smarteditwebservices"/>
+		<extension name="smartedittools" />
+-->
 		<extension name="cmsoccaddon"/>
 		<extension name="democore" />
 		<extension name="demobackoffice" />
