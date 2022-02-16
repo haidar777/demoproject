@@ -30,6 +30,11 @@ INSERT_UPDATE DemoProduct; code[unique = true]; name                            
                          ; ORGHYB             ; ORGANIX HYBRID                                  ; "KASUR"           ;                                                  ;          ;                             ;
                          ; ORGLITE            ; ORGANIX LITE                                    ; "KASUR"           ;                                                  ;          ;                             ;
                          ; ORGPLUSH           ; ORGANIX PLUSH                                   ; "KASUR"           ;                                                  ;          ;                             ;
+                         ; SOFA               ; SOFA                                            ; "SOFA"            ;                                                  ;          ;                             ;
+                         ; KLIPAT             ; KASUR LIPAT                                     ; "KASURLIPAT"      ;                                                  ;          ;                             ;
+                         ; SBED               ; SOFA BED                                        ; "SOFABED"         ;                                                  ;          ;                             ;
+                         ; BANTAL             ; BANTAL                                          ; "BANTAL"          ;                                                  ;          ;                             ;
+                         ; GULING             ; GULING                                          ; "GULING"          ;                                                  ;          ;                             ;
 
 
 # Create Demo Variants
@@ -125,3 +130,10 @@ INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       
                                 ; ORGPLUSH          ; ORGPLUSHSIZE160x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 160x200
                                 ; ORGPLUSH          ; ORGPLUSHSIZE180x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 180x200
                                 ; ORGPLUSH          ; ORGPLUSHSIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200
+                                ; SOFA              ; SOFA3SEATERW              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater
+                                ; SOFA              ; SOFA3SEATERB              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater BLACK
+                                ; KLIPAT            ; KLIPAT                    ;                             ;          ;                ; "KASURLIPAT"    ; Kasur Busa Lipat Travel Mattress
+                                ; SBED              ; SBED1                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED Super Single
+                                ; SBED              ; SBED2                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED 100
+                                ; BANTAL            ; BANTAL                    ;                             ;          ;                ; "BANTAL"        ; PROPS INTHEBOX BANTAL INTHEBOX
+                                ; GULING            ; GULING                    ;                             ;          ;                ; "GULING"        ; PROPS INTHEBOX GULING INTHEBOX

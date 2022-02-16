@@ -659,9 +659,54 @@ INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default
                    ;65Wx65H               ; media-sjp-200-normal      ; $siteResourceImages/images/products/Space_Jam_Plush/Foto Product - ITB WB 200.jpg ; ; ; images
                    ;30Wx30H               ; media-sjp-200-thumbnails  ; $siteResourceImages/images/products/Space_Jam_Plush/Foto Product - ITB WB 200.jpg ; ; ; images
 
+                   ;1200Wx1200H           ; media-sw-picture       ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
+                   ;515Wx515H             ; media-sw-thumbnail     ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
+                   ;300Wx300H             ; media-sw-detail        ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
+                   ;96Wx96H               ; media-sw-other         ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
+                   ;65Wx65H               ; media-sw-normal        ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
+                   ;30Wx30H               ; media-sw-thumbnails    ; $siteResourceImages/images/products/Sofa/Sofa-White.jpg ; ; ; images
 
+                   ;1200Wx1200H           ; media-sb-picture       ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
+                   ;515Wx515H             ; media-sb-thumbnail     ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
+                   ;300Wx300H             ; media-sb-detail        ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
+                   ;96Wx96H               ; media-sb-other         ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
+                   ;65Wx65H               ; media-sb-normal        ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
+                   ;30Wx30H               ; media-sb-thumbnails    ; $siteResourceImages/images/products/Sofa/Sofa-Black.jpg ; ; ; images
 
+                   ;1200Wx1200H           ; media-sbed-picture       ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
+                   ;515Wx515H             ; media-sbed-thumbnail     ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
+                   ;300Wx300H             ; media-sbed-detail        ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
+                   ;96Wx96H               ; media-sbed-other         ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
+                   ;65Wx65H               ; media-sbed-normal        ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
+                   ;30Wx30H               ; media-sbed-thumbnails    ; $siteResourceImages/images/products/Sofabed/Supersingle.jpg ; ; ; images
 
+                   ;1200Wx1200H           ; media-sbed1-picture       ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+                   ;515Wx515H             ; media-sbed1-thumbnail     ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+                   ;300Wx300H             ; media-sbed1-detail        ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+                   ;96Wx96H               ; media-sbed1-other         ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+                   ;65Wx65H               ; media-sbed1-normal        ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+                   ;30Wx30H               ; media-sbed1-thumbnails    ; $siteResourceImages/images/products/Sofabed/100.png ; ; ; images
+
+                   ;1200Wx1200H           ; media-bantal-picture       ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+                   ;515Wx515H             ; media-bantal-thumbnail     ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+                   ;300Wx300H             ; media-bantal-detail        ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+                   ;96Wx96H               ; media-bantal-other         ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+                   ;65Wx65H               ; media-bantal-normal        ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+                   ;30Wx30H               ; media-bantal-thumbnails    ; $siteResourceImages/images/products/bantal.jpg ; ; ; images
+
+                   ;1200Wx1200H           ; media-guling-picture       ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+                   ;515Wx515H             ; media-guling-thumbnail     ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+                   ;300Wx300H             ; media-guling-detail        ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+                   ;96Wx96H               ; media-guling-other         ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+                   ;65Wx65H               ; media-guling-normal        ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+                   ;30Wx30H               ; media-guling-thumbnails    ; $siteResourceImages/images/products/guling.jpg ; ; ; images
+
+                   ;1200Wx1200H           ; media-klipat-picture       ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
+                   ;515Wx515H             ; media-klipat-thumbnail     ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
+                   ;300Wx300H             ; media-klipat-detail        ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
+                   ;96Wx96H               ; media-klipat-other         ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
+                   ;65Wx65H               ; media-klipat-normal        ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
+                   ;30Wx30H               ; media-klipat-thumbnails    ; $siteResourceImages/images/products/KasurLipat/kasurlipat.jpg ; ; ; images
 
 # Create Media Containers
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
@@ -769,6 +814,17 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
                             ;sjp-180-medias        ; media-sjp-180-picture,media-sjp-180-picture,media-sjp-180-thumbnail,media-sjp-180-detail,media-sjp-180-other,media-sjp-180-normal,media-sjp-180-thumbnails ;
                             ;sjp-200-medias        ; media-sjp-200-picture,media-sjp-200-picture,media-sjp-200-thumbnail,media-sjp-200-detail,media-sjp-200-other,media-sjp-200-normal,media-sjp-200-thumbnails ;
 
+                            ;sw-medias         ; media-sw-picture,media-sw-picture,media-sw-thumbnail,media-sw-detail,media-sw-other,media-sw-normal,media-sw-thumbnails ;
+                            ;sb-medias         ; media-sb-picture,media-sb-picture,media-sb-thumbnail,media-sb-detail,media-sb-other,media-sb-normal,media-sb-thumbnails ;
+
+                            ;sbed-medias         ; media-sbed-picture,media-sbed-picture,media-sbed-thumbnail,media-sbed-detail,media-sbed-other,media-sbed-normal,media-sbed-thumbnails ;
+                            ;sbed1-medias        ; media-sbed1-picture,media-sbed1-picture,media-sbed1-thumbnail,media-sbed1-detail,media-sbed1-other,media-sbed1-normal,media-sbed1-thumbnails ;
+
+                            ;bantal-medias         ; media-bantal-picture,media-bantal-picture,media-bantal-thumbnail,media-bantal-detail,media-bantal-other,media-bantal-normal,media-bantal-thumbnails ;
+                            ;guling-medias         ; media-guling-picture,media-guling-picture,media-guling-thumbnail,media-guling-detail,media-guling-other,media-guling-normal,media-guling-thumbnails ;
+
+                            ;klipat-medias         ; media-klipat-picture,media-klipat-picture,media-klipat-thumbnail,media-klipat-detail,media-klipat-other,media-klipat-normal,media-klipat-thumbnails ;
+
 
 # Update Products with Media and Media Containers
 UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
@@ -875,4 +931,15 @@ UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$th
               ;SJPSIZE160x200                  ; media-sjp-160-picture    ; media-sjp-160-thumbnail    ; media-sjp-160-detail    ; media-sjp-160-other    ; media-sjp-160-normal    ; media-sjp-160-thumbnails    ; sjp-160-medias    ;
               ;SJPSIZE180x200                  ; media-sjp-180-picture    ; media-sjp-180-thumbnail    ; media-sjp-180-detail    ; media-sjp-180-other    ; media-sjp-180-normal    ; media-sjp-180-thumbnails    ; sjp-180-medias    ;
               ;SJPSIZE200x200                  ; media-sjp-200-picture    ; media-sjp-200-thumbnail    ; media-sjp-200-detail    ; media-sjp-200-other    ; media-sjp-200-normal    ; media-sjp-200-thumbnails    ; sjp-200-medias    ;
+
+              ;SOFA3SEATERW                   ; media-sw-picture     ; media-sw-thumbnail     ; media-sw-detail     ; media-sw-other     ; media-sw-normal     ; media-sw-thumbnails     ; sw-medias     ;
+              ;SOFA3SEATERB                   ; media-sb-picture     ; media-sb-thumbnail     ; media-sb-detail     ; media-sb-other     ; media-sb-normal     ; media-sb-thumbnails     ; sb-medias     ;
+
+              ;SBED1                   ; media-sbed-picture     ; media-sbed-thumbnail     ; media-sbed-detail     ; media-sbed-other     ; media-sbed-normal     ; media-sbed-thumbnails     ; sbed-medias     ;
+              ;SBED2                   ; media-sbed1-picture     ; media-sbed1-thumbnail     ; media-sbed1-detail     ; media-sbed1-other     ; media-sbed1-normal     ; media-sbed1-thumbnails     ; sbed1-medias     ;
+
+              ;BANTAL                   ; media-bantal-picture     ; media-bantal-thumbnail     ; media-bantal-detail     ; media-bantal-other     ; media-bantal-normal     ; media-bantal-thumbnails     ; bantal-medias     ;
+              ;GULING                   ; media-guling-picture     ; media-guling-thumbnail     ; media-guling-detail     ; media-guling-other     ; media-guling-normal     ; media-guling-thumbnails     ; guling-medias     ;
+
+              ;KLIPAT                   ; media-klipat-picture     ; media-klipat-thumbnail     ; media-klipat-detail     ; media-klipat-other     ; media-klipat-normal     ; media-klipat-thumbnails     ; klipat-medias     ;
 

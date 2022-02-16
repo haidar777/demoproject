@@ -26,6 +26,32 @@
             <value code="YELLOW"/>
         </enumtype>
     </enumtypes>
+<!--    <relations>-->
+<!--        <relation code="Region2CityRelation" autocreate="true" generate="true" localized="false">-->
+<!--            <sourceElement qualifier="region" type="Region" cardinality="one" metatype="City">-->
+<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
+<!--            </sourceElement>-->
+<!--            <targetElement qualifier="cities" type="City" cardinality="many" metatype="Region">-->
+<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
+<!--            </targetElement>-->
+<!--        </relation>-->
+<!--        <relation code="City2DistrictRelation" autocreate="true" generate="true" localized="false">-->
+<!--            <sourceElement qualifier="city" type="City" cardinality="one" metatype="District">-->
+<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
+<!--            </sourceElement>-->
+<!--            <targetElement qualifier="districts" type="District" cardinality="many" metatype="City">-->
+<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
+<!--            </targetElement>-->
+<!--        </relation>-->
+<!--        <relation code="District2ZipcodeRelation" autocreate="true" generate="true" localized="false">-->
+<!--            <sourceElement qualifier="district" type="District" cardinality="one" metatype="Zip">-->
+<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
+<!--            </sourceElement>-->
+<!--            <targetElement qualifier="zip" type="Zip" cardinality="many" metatype="District">-->
+<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
+<!--            </targetElement>-->
+<!--        </relation>-->
+<!--    </relations>-->
 
     <itemtypes>
 
@@ -103,6 +129,7 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
         <typegroup name="Demo">
             <itemtype code="DemoProduct" autocreate="true" generate="true"
                       extends="Product">
@@ -126,6 +153,7 @@
                     </attribute>
                 </attributes>
             </itemtype>
+
         </typegroup>
 
     </itemtypes>
