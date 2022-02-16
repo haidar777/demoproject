@@ -36,14 +36,14 @@ public class DemoProductCronjob extends AbstractJobPerformable<CronJobModel> {
             for(Object  product: products){
                 if(product.getClass() == DemoProductModel.class){
                     DemoProductModel data = (DemoProductModel) product;
-                    LOG.info(data.getName() + ": " + data.getApprovalStatus());
+                    //LOG.info(data.getName() + ": " + data.getApprovalStatus());
                     if(data.getApprovalStatus() == ArticleApprovalStatus.CHECK){
                         ((DemoProductModel) product).setApprovalStatus(ArticleApprovalStatus.APPROVED);
                         modelService.save(product);
                     }
                 }else{
                     DemoVariantProductModel data = (DemoVariantProductModel) product;
-                    LOG.info(data.getCode() + ": " + data.getApprovalStatus());
+                    //LOG.info(data.getCode() + ": " + data.getApprovalStatus());
                     if(data.getApprovalStatus() == ArticleApprovalStatus.CHECK){
                         ((DemoVariantProductModel) product).setApprovalStatus(ArticleApprovalStatus.APPROVED);
                         modelService.save(product);

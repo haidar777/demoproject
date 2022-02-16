@@ -22,6 +22,7 @@ bin/
 */web/commonwebsrc/
 */web/webroot//addons/
 */web/testclasses/
+*backoffice_bof.jar
 /.gitignore
 /custom/demo/demostorefront/resources/wro_addons.xml
 /custom/demo/demostorefront/web/webroot/_ui/responsive/theme-training/node_modules
