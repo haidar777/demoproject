@@ -26,32 +26,17 @@
             <value code="YELLOW"/>
         </enumtype>
     </enumtypes>
-<!--    <relations>-->
-<!--        <relation code="Region2CityRelation" autocreate="true" generate="true" localized="false">-->
-<!--            <sourceElement qualifier="region" type="Region" cardinality="one" metatype="City">-->
-<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
-<!--            </sourceElement>-->
-<!--            <targetElement qualifier="cities" type="City" cardinality="many" metatype="Region">-->
-<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
-<!--            </targetElement>-->
-<!--        </relation>-->
-<!--        <relation code="City2DistrictRelation" autocreate="true" generate="true" localized="false">-->
-<!--            <sourceElement qualifier="city" type="City" cardinality="one" metatype="District">-->
-<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
-<!--            </sourceElement>-->
-<!--            <targetElement qualifier="districts" type="District" cardinality="many" metatype="City">-->
-<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
-<!--            </targetElement>-->
-<!--        </relation>-->
-<!--        <relation code="District2ZipcodeRelation" autocreate="true" generate="true" localized="false">-->
-<!--            <sourceElement qualifier="district" type="District" cardinality="one" metatype="Zip">-->
-<!--                <modifiers read="true" write="true" search="true" optional="false" removable="true" initial="false" unique="true" private="false" partof="false"/>-->
-<!--            </sourceElement>-->
-<!--            <targetElement qualifier="zip" type="Zip" cardinality="many" metatype="District">-->
-<!--                <modifiers read="true" write="true" search="false" optional="true" removable="true" initial="false" unique="false" private="false" partof="true"/>-->
-<!--            </targetElement>-->
-<!--        </relation>-->
-<!--    </relations>-->
+
+    <relations>
+        <relation code="User2Testimonies" localized="false" autocreate="true" generate="true">
+            <sourceElement type="User" cardinality="one" qualifier="user">
+                <modifiers read="true" write="true" search="true" optional="false"/>
+            </sourceElement>
+            <targetElement type="Testimony" qualifier="testimony" cardinality="many">
+                <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
+            </targetElement>
+        </relation>
+    </relations>
 
     <itemtypes>
 
@@ -154,6 +139,47 @@
                 </attributes>
             </itemtype>
 
+            <itemtype code="Testimony" jaloclass="org.demo.core.jalo.Testimony"
+                      autocreate="true" generate="true">
+                <deployment table="Testimony" typecode="11000"/>
+                <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <description>Testimony Code</description>
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="name" type="localized:java.lang.String">
+                        <description> User Name </description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="rating" type="localized:java.lang.Integer">
+                        <description> User Rating </description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="title" type="localized:java.lang.String">
+                        <description> Testimony Title </description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="desc" type="localized:java.lang.String">
+                        <description> Testimony Description </description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="date" type="localized:java.util.Date">
+                        <description> Testimony Date </description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
+                        <persistence type="property" />
+                    </attribute>
+                </attributes>
+                <indexes>
+                    <index name="testimony_idx" unique="true">
+                        <key attribute="code"/>
+                    </index>
+                </indexes>
+            </itemtype>
         </typegroup>
 
     </itemtypes>

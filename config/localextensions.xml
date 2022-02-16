@@ -17,7 +17,7 @@
 		<extension name="solrfacetsearch"/>
 		<extension name="solrfacetsearchbackoffice"/>
 		<extension name="solrserver"/>
-		<!--    <extension name="backofficesearchservices"/>-->
+		<extension name="backofficesearchservices"/>
 		<extension name="searchbackoffice"/>
 		<extension name="cmsbackoffice"/>
 		<extension name="cmswebservices"/>
