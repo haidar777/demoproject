@@ -7,7 +7,7 @@
 
 $productCatalog=demoProductCatalog
 $classificationCatalog=demoClassificationCatalog
-$currencies=IDR,USD
+$currencies=IDR
 $net=false
 $storeUid=demostore
 $defaultCurrency=IDR
@@ -31,3 +31,9 @@ INSERT_UPDATE BaseStore;uid[unique=true];catalogs(id);currencies(isocode);net;ta
 ;$storeUid;$productCatalog,$classificationCatalog;$currencies;$net;jp-taxes;km;$defaultCurrency;$languages;$defaultLanguage;$deliveryCountries;$billingCountries;$orderProcessCode;$pickupInStoreMode;$customerAllowedToIgnoreSuggestions;$paymentProvider;$checkoutFlowGroup;
 
 INSERT_UPDATE BaseStore2DeliveryModeRel;source(uid)[unique=true];target(code)[unique=true]
+;demo;premium-net
+;demo;standard-net
+;demo;premium-gross
+;demo;standard-gross
+;demo;pickup
+;demo;free-standard-shipping
