@@ -39,7 +39,6 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       
                           ;                          ; LoginPageTemplate                    ; Login Page Template                       ;                                   ; ContentPage              ; false ;
                           ;                          ; CheckoutLoginPageTemplate            ; Checkout Login Page Template              ;                                   ; ContentPage              ; false ;
                           ;                          ; MultiStepCheckoutSummaryPageTemplate ; Multi Step Checkout Summary Page Template ;                                   ; ContentPage              ; false ;
-                          ;                          ; OrderConfirmationPageTemplate        ; Order Confirmation Page Template          ;                                   ; ContentPage              ; false ;
                           ;                          ; AboutUsPageTemplate                  ; About Us Page Template                    ; additional/aboutus                ; CategoryPage,ContentPage
                           ;                          ; TestimoniPageTemplate                ; testimoni Page Template                   ; additional/testimoni              ; CategoryPage,ContentPage
 

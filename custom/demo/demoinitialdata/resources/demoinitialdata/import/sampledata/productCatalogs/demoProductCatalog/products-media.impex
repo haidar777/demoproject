@@ -22,6 +22,7 @@ $siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoi
 
 # Create Media
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;;images
                    ;1200Wx1200H           ; media-101-90-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
                    ;515Wx515H             ; media-101-90-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
                    ;300Wx300H             ; media-101-90-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
@@ -938,8 +939,8 @@ UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$th
               ;SBED1                   ; media-sbed-picture     ; media-sbed-thumbnail     ; media-sbed-detail     ; media-sbed-other     ; media-sbed-normal     ; media-sbed-thumbnails     ; sbed-medias     ;
               ;SBED2                   ; media-sbed1-picture     ; media-sbed1-thumbnail     ; media-sbed1-detail     ; media-sbed1-other     ; media-sbed1-normal     ; media-sbed1-thumbnails     ; sbed1-medias     ;
 
-              ;BANTAL                   ; media-bantal-picture     ; media-bantal-thumbnail     ; media-bantal-detail     ; media-bantal-other     ; media-bantal-normal     ; media-bantal-thumbnails     ; bantal-medias     ;
-              ;GULING                   ; media-guling-picture     ; media-guling-thumbnail     ; media-guling-detail     ; media-guling-other     ; media-guling-normal     ; media-guling-thumbnails     ; guling-medias     ;
+              ;PROPSBANTAL                   ; media-bantal-picture     ; media-bantal-thumbnail     ; media-bantal-detail     ; media-bantal-other     ; media-bantal-normal     ; media-bantal-thumbnails     ; bantal-medias     ;
+              ;PROPSGULING                   ; media-guling-picture     ; media-guling-thumbnail     ; media-guling-detail     ; media-guling-other     ; media-guling-normal     ; media-guling-thumbnails     ; guling-medias     ;
 
-              ;KLIPAT                   ; media-klipat-picture     ; media-klipat-thumbnail     ; media-klipat-detail     ; media-klipat-other     ; media-klipat-normal     ; media-klipat-thumbnails     ; klipat-medias     ;
+              ;KASURLIPAT                   ; media-klipat-picture     ; media-klipat-thumbnail     ; media-klipat-detail     ; media-klipat-other     ; media-klipat-normal     ; media-klipat-thumbnails     ; klipat-medias     ;
 

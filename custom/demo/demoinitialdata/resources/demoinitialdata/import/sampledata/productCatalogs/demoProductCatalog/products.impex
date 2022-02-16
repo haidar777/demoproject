@@ -132,8 +132,8 @@ INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       
                                 ; ORGPLUSH          ; ORGPLUSHSIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200
                                 ; SOFA              ; SOFA3SEATERW              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater
                                 ; SOFA              ; SOFA3SEATERB              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater BLACK
-                                ; KLIPAT            ; KLIPAT                    ;                             ;          ;                ; "KASURLIPAT"    ; Kasur Busa Lipat Travel Mattress
+                                ; KLIPAT            ; KASURLIPAT                ;                             ;          ;                ; "KASURLIPAT"    ; Kasur Busa Lipat Travel Mattress
                                 ; SBED              ; SBED1                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED Super Single
                                 ; SBED              ; SBED2                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED 100
-                                ; BANTAL            ; BANTAL                    ;                             ;          ;                ; "BANTAL"        ; PROPS INTHEBOX BANTAL INTHEBOX
-                                ; GULING            ; GULING                    ;                             ;          ;                ; "GULING"        ; PROPS INTHEBOX GULING INTHEBOX
+                                ; BANTAL            ; PROPSBANTAL               ;                             ;          ;                ; "BANTAL"        ; PROPS INTHEBOX BANTAL INTHEBOX
+                                ; GULING            ; PROPSGULING               ;                             ;          ;                ; "GULING"        ; PROPS INTHEBOX GULING INTHEBOX

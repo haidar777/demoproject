@@ -24,7 +24,7 @@ $siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoi
 
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);defaultPreviewCatalog(id, $productCatalog)
-              ;demo;KASUR;ALPHASIZE90x200;$productCatalog
+              ;demostore;KASUR;ALPHASIZE90x200;$productCatalog
 
 # Site Logo
 INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];altText;folder(qualifier)[default='images']
@@ -193,7 +193,7 @@ INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;ch
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef
                                ;SiteRootNode;;SiteRootNode;root;;SiteRootNode
 #                               ;ElectronicsNavNode;;Electronics Site;SiteRootNode;HomepageNavLink;ElectronicsNavNode
-                               ;DemoNavNode;;demos Site;SiteRootNode;HomepageNavLink;demoNavNode
+                               ;DemoNavNode;;demo Site;SiteRootNode;HomepageNavLink;demoNavNode
                                ;AllBedsNavNode;;Beds Links;DemoNavNode;AllBedsCategoryLink;AllBedsNavNode
                                ;BrandsNavNode;;Brand Links;DemoNavNode;AllBrandsCategoryLink;BrandsNavNode
                                ;AboutUsNavNode;;About Us Links;DemoNavNode;AboutUsLink;AboutUsNavNode
@@ -490,19 +490,17 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents
 
 ###  Home page splash Slot 1  #######
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageSplashBannerComponent-1;Electronics Homepage Splash Banner Component 1;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-1
-                                             ;;DemoHompageSplashBannerComponent-2;Electronics Homepage Splash Banner Component 2;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-2
-                                             ;;DemoHompageSplashBannerComponent-3;Electronics Homepage Splash Banner Component 3;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-3
-                                             ;;DemoHompageSplashBannerComponent-4;Electronics Homepage Splash Banner Component 4;/Bed/Sofa/c/SOFA;DemoHompageSplashBannerComponent-4
+                                             ;;DemoHompageSplashBannerComponent-1;Electronics Homepage Splash Banner Component 1;/c/PRODUK;DemoHompageSplashBannerComponent-1
 
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
-                                             ;;DemoHompageDiscountBannerComponent;Electronics Homepage Discount Banner Component;/Bed/Springbed/c/SPRINGBED;DemoHompageDiscountBannerComponent
+UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];
+;;DemoHompageSplashBannerComponent-1;demo-homepage-project
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
-                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1,DemoHompageSplashBannerComponent-2,DemoHompageSplashBannerComponent-3,DemoHompageSplashBannerComponent-4
-#                         ;;Section1Slot-Homepage;true;DemoHompageDiscountBannerComponent
+                         ;;Section1Slot-Homepage;true;DemoHompageSplashBannerComponent-1
 
+##########
 
+#################
 ## Home section 2A
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
                                    ;;IntheBoxTagParagraphComponent;IntheBox Tag Paragraph Component;IntheBoxTagParagraphComponent
@@ -971,7 +969,7 @@ INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;n
                                 ;RecommendationNavNodeEntry;;Recommendation Navigation Node Entry;RecommendationNavNode;RecommendationLink;
 
 # CMS Link Components
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow'];$category;$product;
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='sameWindow']
 #                             ;;SLRCameras-LandingPageRestriction;Webcams Category Link;/Open-Catalogue/Cameras/Webcams/c/577;WebcamsCategoryLink;WebcamsCategoryLink;;577;;
 
 
