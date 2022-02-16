@@ -22,8 +22,10 @@ bin/
 */web/commonwebsrc/
 */web/webroot//addons/
 */web/testclasses/
-/custom/training/trainingstorefront/resources/wro_addons.xml
-/custom/training/trainingstorefront/web/webroot/_ui/responsive/theme-training/node_modules
-/custom/training/trainingstorefront/web/webroot/_ui/responsive/theme-training/.sass-cache
+*backoffice_bof.jar
+/.gitignore
+/custom/demo/demostorefront/resources/wro_addons.xml
+/custom/demo/demostorefront/web/webroot/_ui/responsive/theme-training/node_modules
+/custom/demo/demostorefront/web/webroot/_ui/responsive/theme-training/.sass-cache
 /custom/.metadata
 *backoffice_bof.jar

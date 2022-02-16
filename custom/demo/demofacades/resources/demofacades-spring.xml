@@ -12,7 +12,7 @@
 		
 	<context:annotation-config/> 
 
-	<alias name="defaultSimpleSuggestionFacade" alias="simpleSuggestionFacade"/>
+	<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
 	<bean id="defaultSimpleSuggestionFacade" class="org.demo.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
 		<property name="simpleSuggestionService" ref="simpleSuggestionService"/>
 		<property name="userService" ref="userService"/>
