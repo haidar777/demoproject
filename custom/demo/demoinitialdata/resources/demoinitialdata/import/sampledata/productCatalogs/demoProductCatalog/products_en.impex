@@ -13,7 +13,6 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 $lang=en
 
 # Update allProducts with localisations
-
 UPDATE DemoProduct; code[unique = true]; $catalogVersion; name[lang = $lang]; description[lang = $lang]
                  ; ALPHA         ; ; INTHEBOX ALPHA                                 ;Kasur INTHEBOX Alpha
                  ; X             ; ; INTHEBOX X                                     ;Kasur INTHEBOX X

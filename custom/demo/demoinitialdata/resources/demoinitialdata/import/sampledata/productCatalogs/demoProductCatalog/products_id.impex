@@ -13,7 +13,6 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 $lang=id
 
 # Update allProducts with localisations
-
 UPDATE DemoProduct; code[unique = true]; $catalogVersion; name[lang = $lang]; description[lang = $lang]
                   ; ALPHA         ; ; INTHEBOX ALPHA                                 ;Kasur INTHEBOX Alpha
                   ; X             ; ; INTHEBOX X                                     ;Kasur INTHEBOX X
@@ -121,3 +120,4 @@ UPDATE DemoVariantProduct; code[unique = true] ; name[lang = $lang]
                          ; ORGPLUSHSIZE160x200 ; Kasur ORGPLUSHSIZE160x200
                          ; ORGPLUSHSIZE180x200 ; Kasur ORGPLUSHSIZE180x200
                          ; ORGPLUSHSIZE200x200 ; Kasur ORGPLUSHSIZE200x200
+

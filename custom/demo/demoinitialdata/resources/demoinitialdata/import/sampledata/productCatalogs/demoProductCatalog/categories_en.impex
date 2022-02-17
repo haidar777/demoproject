@@ -14,9 +14,4 @@ $lang=en
 
 # Create Categories
 UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
-;KASUR           ;;Bed
-;SOFA            ;;Sofa
-;KASURLIPAT      ;;Folding Mattress
-;SOFABED         ;;Sofabed
-;BANTAL          ;;Pillow
-
+               ; KASUR           ;               ;Bed
