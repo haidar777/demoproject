@@ -22,7 +22,7 @@ $siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoi
 
 # Create Media
 INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
-;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;;images
+                   ;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;;images
                    ;1200Wx1200H           ; media-101-90-picture     ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
                    ;515Wx515H             ; media-101-90-thumbnail   ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images
                    ;300Wx300H             ; media-101-90-detail      ; $siteResourceImages/images/products/Inthebox_101/Foto Produk INTHEBOX 101 90.jpg   ; ; ; images

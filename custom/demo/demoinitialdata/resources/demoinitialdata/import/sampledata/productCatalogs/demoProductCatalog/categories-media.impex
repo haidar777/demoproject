@@ -22,7 +22,7 @@ $siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoi
 
 # Import Category Media
 INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
-                   ;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;;images
+                   ;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;
 
 INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
                             ;demo-homepage-project;banner;

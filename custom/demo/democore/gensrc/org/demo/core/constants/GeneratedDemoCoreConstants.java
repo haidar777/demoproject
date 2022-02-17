@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 16, 2022, 10:31:16 AM                   ---
+ * --- Generated at Feb 17, 2022, 12:09:53 PM                   ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.constants;
@@ -52,7 +52,7 @@ public class GeneratedDemoCoreConstants
 	}
 	public static class Relations
 	{
-		public static final String USER2TESTIMONIES = "User2Testimonies".intern();
+		public static final String USER2TESTIMONIESRELATION = "User2TestimoniesRelation".intern();
 	}
 	
 	protected GeneratedDemoCoreConstants()
