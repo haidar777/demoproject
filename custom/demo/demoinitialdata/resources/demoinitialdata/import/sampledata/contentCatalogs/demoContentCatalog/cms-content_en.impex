@@ -73,9 +73,13 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true] 
                                 ;                          ; FooterNavigationComponent ; "Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
 # End Footer
 # End Navigation
-
+# Home Page
 UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$lang];$picture[lang=$lang];content[lang=$lang]
                       ;;CarouselProduct1;INTHEBOX;/images/HomePage/Carousel/Inthebox.png;"Pocket Spring & Busa Medium Soft"
                       ;;CarouselProduct2;INTHEBOX;/images/HomePage/Carousel/Inthebox Hybrid.png;"Pocket Spring & Busa Medium Soft"
                       ;;CarouselProduct3;INTHEBOX;/images/HomePage/Carousel/Inthebox 101.png;"Pocket Spring & Busa Medium Soft"
                       ;;CarouselProduct4;INTHEBOX;/images/HomePage/Carousel/Inthebox X.png;"Pocket Spring & Busa Medium Soft"
+
+# ABOUT US PAGE
+
+

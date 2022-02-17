@@ -26,7 +26,7 @@
             <value code="YELLOW"/>
         </enumtype>
     </enumtypes>
-
+<!--
     <relations>
         <relation code="User2TestimoniesRelation" localized="false" autocreate="true" generate="true">
             <sourceElement type="User" cardinality="one" qualifier="user">
@@ -37,7 +37,7 @@
             </targetElement>
         </relation>
     </relations>
-
+-->
     <itemtypes>
 
         <!-- Add your item definitions here -->

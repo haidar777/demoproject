@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 17, 2022, 12:09:53 PM                   ---
+ * --- Generated at Feb 17, 2022, 3:52:32 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.constants;
@@ -27,10 +27,7 @@ public class GeneratedDemoCoreConstants
 	}
 	public static class Attributes
 	{
-		public static class User
-		{
-			public static final String TESTIMONY = "testimony".intern();
-		}
+		// no constants defined.
 	}
 	public static class Enumerations
 	{
@@ -49,10 +46,6 @@ public class GeneratedDemoCoreConstants
 			public static final String WHITE = "WHITE".intern();
 			public static final String YELLOW = "YELLOW".intern();
 		}
-	}
-	public static class Relations
-	{
-		public static final String USER2TESTIMONIESRELATION = "User2TestimoniesRelation".intern();
 	}
 	
 	protected GeneratedDemoCoreConstants()

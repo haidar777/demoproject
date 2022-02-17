@@ -1,23 +1,17 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 17, 2022, 12:09:53 PM                   ---
+ * --- Generated at Feb 17, 2022, 3:52:32 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
 
 import de.hybris.platform.jalo.GenericItem;
-import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
-import de.hybris.platform.jalo.JaloBusinessException;
 import de.hybris.platform.jalo.JaloInvalidParameterException;
 import de.hybris.platform.jalo.SessionContext;
 import de.hybris.platform.jalo.c2l.C2LManager;
 import de.hybris.platform.jalo.c2l.Language;
-import de.hybris.platform.jalo.type.CollectionType;
-import de.hybris.platform.jalo.type.ComposedType;
-import de.hybris.platform.jalo.user.User;
-import de.hybris.platform.util.BidirectionalOneToManyHandler;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -42,20 +36,6 @@ public abstract class GeneratedTestimony extends GenericItem
 	public static final String DESC = "desc";
 	/** Qualifier of the <code>Testimony.date</code> attribute **/
 	public static final String DATE = "date";
-	/** Qualifier of the <code>Testimony.user</code> attribute **/
-	public static final String USER = "user";
-	/**
-	* {@link BidirectionalOneToManyHandler} for handling 1:n USER's relation attributes from 'one' side.
-	**/
-	protected static final BidirectionalOneToManyHandler<GeneratedTestimony> USERHANDLER = new BidirectionalOneToManyHandler<GeneratedTestimony>(
-	DemoCoreConstants.TC.TESTIMONY,
-	false,
-	"user",
-	null,
-	false,
-	true,
-	CollectionType.COLLECTION
-	);
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
@@ -66,7 +46,6 @@ public abstract class GeneratedTestimony extends GenericItem
 		tmp.put(TITLE, AttributeMode.INITIAL);
 		tmp.put(DESC, AttributeMode.INITIAL);
 		tmp.put(DATE, AttributeMode.INITIAL);
-		tmp.put(USER, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -109,13 +88,6 @@ public abstract class GeneratedTestimony extends GenericItem
 	public void setCode(final String value)
 	{
 		setCode( getSession().getSessionContext(), value );
-	}
-	
-	@Override
-	protected Item createItem(final SessionContext ctx, final ComposedType type, final ItemAttributeMap allAttributes) throws JaloBusinessException
-	{
-		USERHANDLER.newInstance(ctx, allAttributes);
-		return super.createItem( ctx, type, allAttributes );
 	}
 	
 	/**
@@ -573,42 +545,6 @@ public abstract class GeneratedTestimony extends GenericItem
 	public void setAllTitle(final Map<Language,String> value)
 	{
 		setAllTitle( getSession().getSessionContext(), value );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimony.user</code> attribute.
-	 * @return the user
-	 */
-	public User getUser(final SessionContext ctx)
-	{
-		return (User)getProperty( ctx, USER);
-	}
-	
-	/**
-	 * <i>Generated method</i> - Getter of the <code>Testimony.user</code> attribute.
-	 * @return the user
-	 */
-	public User getUser()
-	{
-		return getUser( getSession().getSessionContext() );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimony.user</code> attribute. 
-	 * @param value the user
-	 */
-	public void setUser(final SessionContext ctx, final User value)
-	{
-		USERHANDLER.addValue( ctx, value, this  );
-	}
-	
-	/**
-	 * <i>Generated method</i> - Setter of the <code>Testimony.user</code> attribute. 
-	 * @param value the user
-	 */
-	public void setUser(final User value)
-	{
-		setUser( getSession().getSessionContext(), value );
 	}
 	
 }
