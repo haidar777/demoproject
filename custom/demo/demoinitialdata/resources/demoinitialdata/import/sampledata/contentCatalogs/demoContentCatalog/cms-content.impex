@@ -33,7 +33,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
 
 
 # CMS Link
-INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]              ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]                            ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
                               ;                          ; LoginLink                       ; Login Link                          ; /login                 ; LoginLink                       ; LoginLink                       ;
                               ;                          ; WarrantyActivationLink          ; Warranty Activation Link            ; /warranty-registration ; WarrantyActivationLink          ; WarrantyActivationLink          ;
                               ;                          ; TopHeaderWarrantyActivationLink ; Top Header Warranty Activation Link ; /warranty-registration ; TopHeaderWarrantyActivationLink ; TopHeaderWarrantyActivationLink ;
@@ -49,7 +49,8 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
                               ;                          ; AboutUsLink                     ; About us Link                       ; /about                 ; AboutUsLink                     ; AboutUsLink                     ;
                               ;                          ; BlogsLink                       ; Blogs Link                          ; /blog                  ; BlogsLink                       ; BlogsLink                       ;
                               ;                          ; TestimonialLink                 ; Testimonial Link                    ; /testimony             ; TestimonialLink                 ; TestimonialLink                 ;
-
+##PDP
+                              ;                          ; HomepageNavLink                 ; Home Page Nav Link                  ; /                      ; HomepageNavLink                 ; HomepageNavLink                 ;
 
 
 # Site Logo Media
@@ -231,4 +232,66 @@ INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];n
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
                          ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
+
+
+##### ProductDetailPage #####
+# Lightbox Banner for Mini Cart
+INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+                                   ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
+
+# CMS Mini Cart Component
+INSERT_UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;totalDisplay(code);shownProductCount;lightboxBannerComponent(&componentRef)
+                               ;;MiniCart;Mini Cart;MiniCart;SUBTOTAL;3;LightboxHomeDeliveryBannerComponent
+
+# CMS tabs components
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;ProductDetailsTabComponent;Product Details Tab;productDetailsTab.jsp;;ProductDetailsTabComponent
+                                 ;;ProductSpecsTabComponent;Product Specification Tab;productSpecsTab.jsp;;ProductSpecsTabComponent
+                                 ;;ProductReviewsTabComponent;Product Reviews Tab;productReviewsTab.jsp;;ProductReviewsTabComponent
+
+INSERT_UPDATE CMSTabParagraphComponent;$contentCV[unique=true];uid[unique=true];name;visible;&componentRef
+                                      ;;deliveryTab;Delivery tab;true;deliveryTab
+
+INSERT_UPDATE CMSTabParagraphContainer;$contentCV[unique=true];uid[unique=true];name;visible;simpleCMSComponents(uid, $contentCV);&componentRef
+                                      ;;TabPanelContainer;Tab container;true;ProductDetailsTabComponent,ProductSpecsTabComponent,ProductReviewsTabComponent,deliveryTab;TabPanelContainer
+
+# CMS SearchBox Components
+INSERT_UPDATE SearchBoxComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+                                ;;SearchBox;Search Box;SearchBox
+
+# CMS VariantSelector Components
+INSERT_UPDATE ProductVariantSelectorComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+                                             ;;VariantSelector;Product Variant Selector;VariantSelector
+
+# CMS ProductAddToCart Components
+INSERT_UPDATE ProductAddToCartComponent;$contentCV[unique=true];uid[unique=true];name;actions(&actionRef);&componentRef
+                                       ;;AddToCart;Product Add To Cart;AddToCartAction;AddToCart
+
+# CMS ProductReferences Components
+INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;&componentRef
+                                        ;;Similar;Similar;SIMILAR;5;Similar
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+                         ;;SiteLogoSlot;SiteLogoComponent
+                         ;;HomepageNavLinkSlot;HomepageNavLink
+                         ;;MiniCartSlot;MiniCart
+                         ;;NavigationBarSlot;
+                         ;;TabsSlot;TabPanelContainer
+                         ;;FooterSlot;
+                         ;;HeaderLinksSlot;
+                         ;;SearchBoxSlot;SearchBox
+                         ;;VariantSelectorSlot;VariantSelector
+                         ;;AddToCartSlot;AddToCart
+                         ;;UpSellingSlot;Similar
+                         ;;CrossSellingSlot;
+
+# Product Details Page
+UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
+                  ;;productDetails;
+
+
+
+
+
+
 
