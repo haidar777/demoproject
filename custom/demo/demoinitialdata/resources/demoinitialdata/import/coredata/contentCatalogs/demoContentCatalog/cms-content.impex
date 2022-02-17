@@ -24,7 +24,9 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;SearchResultsEmptyPageTemplate;Search Results Empty Page Template;search/searchEmptyPage;ContentPage
 ;;CategoryPageTemplate;Category Page Template;category/categoryPage;CategoryPage
 ;;LandingPage1Template;Landing Page 1 Template;layout/landingLayout1Page;CategoryPage,ContentPage
+#Kemungkinan besar ini yang jadi homepage template
 ;;LandingPage2Template;Landing Page 2 Template;layout/landingLayout2Page;CategoryPage,ContentPage
+#Landing Page 2 Template
 ;;LandingPage3Template;Landing Page 3 Template;layout/landingLayout3Page;CategoryPage,ContentPage
 ;;LandingPage4Template;Landing Page 4 Template;layout/landingLayout4Page;CategoryPage,ContentPage
 ;;LandingPage5Template;Landing Page 5 Template;layout/landingLayout5Page;CategoryPage,ContentPage
@@ -33,13 +35,14 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;AccountPageTemplate;Account Page Template;account/accountLayoutPage;ContentPage;false;
 ;;StoreFinderPageTemplate;Store Finder Page Template;storeFinder/storeFinderSearchPage;ContentPage;false;
 ;;ErrorPageTemplate;Error Page Template;error/errorNotFoundPage;ContentPage;false;
+;;OrderConfirmationPageTemplate;Order Confirmation Page Template;checkout/checkoutConfirmationLayoutPage;ContentPage;false;
 
 # Templates without a frontendTemplateName
 ;;CartPageTemplate;Cart Page Template;;ContentPage;false;
 ;;LoginPageTemplate;Login Page Template;;ContentPage;false;
 ;;CheckoutLoginPageTemplate;Checkout Login Page Template;;ContentPage;false;
 ;;MultiStepCheckoutSummaryPageTemplate;Multi Step Checkout Summary Page Template;;ContentPage;false;
-;;OrderConfirmationPageTemplate;Order Confirmation Page Template;;ContentPage;false;
+;;QuickOrderPageTemplate;Quick Order Page Template;;ContentPage;false;
 
 # Edited <--
 ;;AboutUsPageTemplate;About Us Page Template;additional/aboutus;CategoryPage,ContentPage
@@ -54,7 +57,9 @@ UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[tr
 ;;ProductGridPageTemplate   ;$jarResourceCms/structure-view/structure_productGridPageTemplate.vm
 ;;CategoryPageTemplate      ;$jarResourceCms/structure-view/structure_categoryPageTemplate.vm
 ;;LandingPage1Template      ;$jarResourceCms/structure-view/structure_landingPage1Template.vm
+#Kemungkinan besar ini yang jadi homepage template
 ;;LandingPage2Template      ;$jarResourceCms/structure-view/structure_landingPage2Template.vm
+#Landing Page 2 Template
 ;;LandingPage3Template      ;$jarResourceCms/structure-view/structure_landingPage3Template.vm
 ;;LandingPage4Template      ;$jarResourceCms/structure-view/structure_landingPage4Template.vm
 ;;LandingPage5Template      ;$jarResourceCms/structure-view/structure_landingPage5Template.vm
@@ -74,6 +79,7 @@ UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[tr
 #Edited <--
 ;;AboutUsPageTemplate       ;$jarResourceCms/structure-view/structure_aboutusTemplate.vm
 ;;TestimoniPageTemplate     ;$jarResourceCms/structure-view/structure_testimoniTemplate.vm
+;;QuickOrderPageTemplate    ;$jarResourceCms/structure-view/structure_quickOrderPageTemplate.vm
 #End of Edited -->
 
 # Create ContentSlotNames
@@ -233,6 +239,7 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;BottomHeaderSlot;;;wide
 ;PlaceholderContentSlot;;;
 
+# Home Page
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
 ;SiteLogo;;;logo
 ;HeaderLinks;;;headerlinks
@@ -488,9 +495,11 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
 ;;MiniCartSlot;Mini Cart;true
 ;;NavigationBarSlot;Navigation Bar;true
 ;;TabsSlot;Tabs;true
+;;WideContentSlot;Wide Content;true
 ;;TopContentSlot;Top Content;true
-;;SideContentSlot;Side Content;true
+;;MiddleContentSlot;Middle Content Slot;true
 ;;BottomContentSlot;Bottom Content;true
+;;SideContentSlot;Side Content;true
 ;;FeatureContentSlot;Feature Content;true
 ;;FooterSlot;Footer;true
 ;;HeaderLinksSlot;Header links;true
@@ -506,7 +515,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
 ;;ProductListSlot;Product Grid;true
 ;;SearchResultsListSlot;Search Result List;true
 ;;SearchResultsGridSlot;Search Result Grid;true
-;;MiddleContentSlot;Middle Content Slot;true
 ;;LeftContentSlot;Left Content Slot;true
 ;;RightContentSlot;Right Content Slot;true
 ;;CenterContentSlot;Center Content Slot;true
@@ -597,6 +605,7 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;BottomHeaderSlot-LandingPage1;BottomHeaderSlot;;BottomHeaderSlot;true
 ;;PlaceholderContentSlot-LandingPage1;PlaceholderContentSlot;;PlaceholderContentSlot;true
 
+# Home Page
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SiteLogo-LandingPage2;SiteLogo;;SiteLogoSlot;true
 ;;HomepageLink-LandingPage2;HomepageNavLink;;HomepageNavLinkSlot;true
@@ -875,16 +884,6 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
 ;;termsAndConditions;Terms and Conditions Page;ContentPage1Template;/termsAndConditions
 
-#Edited <--
-#About Us ContentPage
-INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-;;aboutUsPage;About Us Template Page;AboutUsPageTemplate;aboutUs;;;
-
-#Testimoni ContentPage
-INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-;;testimoniPage;Testimoni Template Page;TestimoniPageTemplate;testimoni;;;
-#End of Edited -->
-
 # Product Details Page
 INSERT_UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);defaultPage;approvalStatus(code)[default='approved']
 ;;productDetails;Product Details;ProductDetailsPageTemplate;true;
@@ -894,3 +893,49 @@ INSERT_UPDATE CategoryPage;$contentCV[unique=true];uid[unique=true];name;masterT
 ;;productList;Product List;ProductListPageTemplate;true;
 ;;productGrid;Product Grid;ProductGridPageTemplate;false;
 ;;category;Default Category Page;CategoryPageTemplate;false;
+
+# Copy and Paste dari Training
+# Adding ContentPage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false'];previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+;;importCSVSavedCartPage;Import CSV as Saved Cart Page;QuickOrderPageTemplate;importCSVSavedCartPage
+;;savedCartDetailsPage;Saved Cart Details Page;AccountPageTemplate;savedCartDetailsPage
+;;saved-carts;Saved Carts Page;AccountPageTemplate;saved-carts
+;;quickOrderPage;Quick Order Page;QuickOrderPageTemplate;quickOrderPage
+
+# Adding ContentSlotName for QuickOrderTemplate
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='QuickOrderPageTemplate'];validComponentTypes(code);compTypeGroup(code)
+;SiteLogo;;;logo
+;HeaderLinks;;;headerlinks
+;SearchBox;;;searchbox
+;MiniCart;;;minicart
+;NavigationBar;;;navigation
+;Footer;;;footer
+;TopHeaderSlot;;;wide
+;BottomHeaderSlot;;;wide
+;TopContent;;;wide
+;PlaceholderContentSlot;;;
+
+#Adding ContentSlotFortemplate for QuickOrderTemplate
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='QuickOrderPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SiteLogo-QuickOrderPage;SiteLogo;;SiteLogoSlot;true
+;;HomepageLink-QuickOrderPage;HomepageNavLink;;HomepageNavLinkSlot;true
+;;NavigationBar-QuickOrderPage;NavigationBar;;NavigationBarSlot;true
+;;MiniCart-QuickOrderPage;MiniCart;;MiniCartSlot;true
+;;Footer-QuickOrderPage;Footer;;FooterSlot;true
+;;HeaderLinks-QuickOrderPage;HeaderLinks;;HeaderLinksSlot;true
+;;SearchBox-QuickOrderPage;SearchBox;;SearchBoxSlot;true
+;;TopHeaderSlot-QuickOrderPage;TopHeaderSlot;;TopHeaderSlot;true
+;;BottomHeaderSlot-QuickOrderPage;BottomHeaderSlot;;BottomHeaderSlot;true
+;;PlaceholderContentSlot-QuickOrderPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+
+#Edited <--
+#About Us ContentPage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;aboutUsPage;About Us Template Page;AboutUsPageTemplate;aboutUs;;;
+
+#Testimoni ContentPage
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;testimoniPage;Testimoni Template Page;TestimoniPageTemplate;testimoni;;;
+#End of Edited -->
+
+

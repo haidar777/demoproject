@@ -10,3 +10,8 @@ $lang=id
 
 # SiteTheme
 UPDATE SiteTheme;code[unique=true];name[lang=$lang]
+;alpha;"Alpha"
+;black;"Black"
+;blue;"Blue"
+;lambda;"Lambda"
+;demostore;"DemoStore"

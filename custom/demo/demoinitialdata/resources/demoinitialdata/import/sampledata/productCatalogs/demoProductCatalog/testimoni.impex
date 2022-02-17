@@ -1,0 +1,4 @@
+UPDATE GenericItem[processor = de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor]; pk[unique = true]
+
+INSERT_UPDATE Testimony;code[unique=true];name;rating;title;desc;date[dateformat='dd.MM.yyyy']
+                       ;testimoni_01;Raffi;3.0;Lumayan;Product sangat menarik, tapi masih ada tetapinya;"23.02.2021"

@@ -12,8 +12,13 @@ $supercategories=source(code, $catalogVersion)[unique=true]
 $categories=target(code, $catalogVersion)[unique=true]
 
 # Insert Categories
-INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$catalogVersion
-                      ; KASUR           ;                                               ;
-
+INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];order; $catalogVersion;supercategories(code, $catalogVersion)
+                      ; PRODUK          ;                                               ;     ;                ;
+                      ; KASUR           ;                                               ;1    ;                ; PRODUK
+                      ; SOFA            ;                                               ;2    ;                ; PRODUK
+                      ; KASURLIPAT      ;                                               ;3    ;                ; PRODUK
+                      ; SOFABED         ;                                               ;4    ;                ; PRODUK
+                      ; BANTAL          ;                                               ;5    ;                ; PRODUK
+                      ; GULING          ;                                               ;6    ;                ; PRODUK
 # Insert Category Structure
 INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
