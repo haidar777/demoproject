@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 16, 2022, 10:31:16 AM                   ---
+ * --- Generated at Feb 17, 2022, 12:09:53 PM                   ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -22,11 +22,14 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 {
 	/** Qualifier of the <code>DemoVariantProduct.size</code> attribute **/
 	public static final String SIZE = "size";
+	/** Qualifier of the <code>DemoVariantProduct.desc</code> attribute **/
+	public static final String DESC = "desc";
 	protected static final Map<String, AttributeMode> DEFAULT_INITIAL_ATTRIBUTES;
 	static
 	{
 		final Map<String, AttributeMode> tmp = new HashMap<String, AttributeMode>(VariantProduct.DEFAULT_INITIAL_ATTRIBUTES);
 		tmp.put(SIZE, AttributeMode.INITIAL);
+		tmp.put(DESC, AttributeMode.INITIAL);
 		DEFAULT_INITIAL_ATTRIBUTES = Collections.unmodifiableMap(tmp);
 	}
 	@Override
@@ -36,8 +39,44 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 	}
 	
 	/**
+	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.desc</code> attribute.
+	 * @return the desc - Price
+	 */
+	public String getDesc(final SessionContext ctx)
+	{
+		return (String)getProperty( ctx, DESC);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.desc</code> attribute.
+	 * @return the desc - Price
+	 */
+	public String getDesc()
+	{
+		return getDesc( getSession().getSessionContext() );
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.desc</code> attribute. 
+	 * @param value the desc - Price
+	 */
+	public void setDesc(final SessionContext ctx, final String value)
+	{
+		setProperty(ctx, DESC,value);
+	}
+	
+	/**
+	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.desc</code> attribute. 
+	 * @param value the desc - Price
+	 */
+	public void setDesc(final String value)
+	{
+		setDesc( getSession().getSessionContext(), value );
+	}
+	
+	/**
 	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.size</code> attribute.
-	 * @return the size - Product Size
+	 * @return the size - Size
 	 */
 	public String getSize(final SessionContext ctx)
 	{
@@ -46,7 +85,7 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 	
 	/**
 	 * <i>Generated method</i> - Getter of the <code>DemoVariantProduct.size</code> attribute.
-	 * @return the size - Product Size
+	 * @return the size - Size
 	 */
 	public String getSize()
 	{
@@ -55,7 +94,7 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.size</code> attribute. 
-	 * @param value the size - Product Size
+	 * @param value the size - Size
 	 */
 	public void setSize(final SessionContext ctx, final String value)
 	{
@@ -64,7 +103,7 @@ public abstract class GeneratedDemoVariantProduct extends VariantProduct
 	
 	/**
 	 * <i>Generated method</i> - Setter of the <code>DemoVariantProduct.size</code> attribute. 
-	 * @param value the size - Product Size
+	 * @param value the size - Size
 	 */
 	public void setSize(final String value)
 	{
