@@ -4,7 +4,8 @@
 #
 # Import the Solr configuration for the store
 #
-$prefix=demo
+
+$prefix = demo
 $productCatalog=demoProductCatalog
 $catalogVersions=catalogVersions(catalog(id),version);
 $serverConfigName=$prefixSolrServerConfig

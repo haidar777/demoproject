@@ -10,13 +10,13 @@ $productCatalogName=Demo Product Catalog
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 $supercategories=supercategories(code, $catalogVersion)
 $baseProduct=baseProduct(code,$catalogVersion)
-$approved=approvalstatus(code)[default='check']
+$approved=approvalstatus(code)[default='approved']
 
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
 
 # Insert Demo Products
-INSERT_UPDATE DemoProduct; code[unique = true]; name                                            ; $supercategories  ; variantType(code)[default = 'DemoVariantProduct']; $approved; unit(code)[default = pieces]; $catalogVersion
+INSERT_UPDATE DemoProduct; code[unique = true]; name ; $supercategories  ; variantType(code)[default = 'DemoVariantProduct']; $approved; unit(code)[default = pieces]; $catalogVersion
                          ; ALPHA              ; INTHEBOX ALPHA                                  ; "KASUR"           ;                                                  ;          ;                             ;
                          ; X                  ; INTHEBOX X                                      ; "KASUR"           ;                                                  ;          ;                             ;
                          ; SPACEJAM           ; 'SPACE JAM: A NEW LEGACY' COLLECTION            ; "KASUR"           ;                                                  ;          ;                             ;
@@ -35,7 +35,6 @@ INSERT_UPDATE DemoProduct; code[unique = true]; name                            
                          ; SBED               ; SOFA BED                                        ; "SOFABED"         ;                                                  ;          ;                             ;
                          ; BANTAL             ; BANTAL                                          ; "BANTAL"          ;                                                  ;          ;                             ;
                          ; GULING             ; GULING                                          ; "GULING"          ;                                                  ;          ;                             ;
-
 
 # Create Demo Variants
 INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       ; unit(code)[default = pieces]; $approved; $catalogVersion; $supercategories; description
@@ -129,6 +128,7 @@ INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       
                                 ; ORGPLUSH          ; ORGPLUSHSIZE140x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 140x200
                                 ; ORGPLUSH          ; ORGPLUSHSIZE160x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 160x200
                                 ; ORGPLUSH          ; ORGPLUSHSIZE180x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 180x200
+                                ; ORGPLUSH          ; ORGPLUSHSIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200
                                 ; ORGPLUSH          ; ORGPLUSHSIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200
                                 ; SOFA              ; SOFA3SEATERW              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater
                                 ; SOFA              ; SOFA3SEATERB              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater BLACK

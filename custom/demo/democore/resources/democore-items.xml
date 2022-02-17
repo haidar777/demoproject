@@ -27,6 +27,8 @@
         </enumtype>
     </enumtypes>
 
+
+<!--
     <relations>
         <relation code="User2Testimonies" localized="false" autocreate="true" generate="true">
             <sourceElement type="User" cardinality="one" qualifier="user">
@@ -36,7 +38,8 @@
                 <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
             </targetElement>
         </relation>
-    </relations>
+    </relations>   
+-->
 
     <itemtypes>
 

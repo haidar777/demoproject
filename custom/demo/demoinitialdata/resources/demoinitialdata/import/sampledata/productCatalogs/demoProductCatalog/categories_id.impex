@@ -14,4 +14,8 @@ $lang=id
 
 # Create Categories
 UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
-               ; KASUR           ;               ;Kasur
+;KASUR           ;;Kasur
+;SOFA            ;;Sofa
+;KASURLIPAT      ;;Kasur Lipat
+;SOFABED         ;;Sofabed
+;BANTAL          ;;Bantal
