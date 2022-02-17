@@ -13,110 +13,111 @@ $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[defa
 $lang=en
 
 # Update allProducts with localisations
-UPDATE DemoProduct;code[unique=true];$catalogVersion;name[lang=$lang];summary[lang=$lang];description[lang=$lang]
-; ALPHA              ;;ALPHA        ;                                                  ; Bed Tipe Alpha
-; X                  ;;X            ;                                                  ; Bed Tipe X
-; SPACEJAM           ;;SPACEJAM     ;                                                  ; Bed Tipe SPACEJAM
-; SPACEJAMPLUSH      ;;SPACEJAMPLUSH;                                                  ; Bed Tipe SPACEJAMPLUSH
-; DASH               ;;DASH         ;                                                  ; Bed Tipe DASH
-; 101                ;;101          ;                                                  ; Bed Tipe 101
-; HYBRID             ;;HYBRID       ;                                                  ; Bed Tipe HYBRID
-; HYBRID15           ;;HYBRID15     ;                                                  ; Bed Tipe HYBRID15
-; PLAIN              ;;PLAIN        ;                                                  ; Bed Tipe PLAIN
-; PLUS               ;;PLUS         ;                                                  ; Bed Tipe PLUS
-; ORGHYB             ;;ORGHYB       ;                                                  ; Bed Tipe ORGHYB
-; ORGLITE            ;;ORGLITE      ;                                                  ; Bed Tipe ORGLITE
-; ORGPLUSH           ;;ORGPLUSH     ;                                                  ; Bed Tipe ORGPLUSH
 
-UPDATE DemoVariantProduct; code[unique = true]; name[lang = $lang]
-; ALPHASIZE90x200           ;Bed INTHEBOX Alpha size 90x200
-; ALPHASIZE100x200          ;Bed INTHEBOX Alpha size 100x200
-; ALPHASIZE120x200          ;Bed INTHEBOX Alpha size 120x200
-; ALPHASIZE140x200          ;Bed INTHEBOX Alpha size 140x200
-; ALPHASIZE160x200          ;Bed INTHEBOX Alpha size 160x200
-; ALPHASIZE180x200          ;Bed INTHEBOX Alpha size 180x200
-; ALPHASIZE200x200          ;Bed INTHEBOX Alpha size 200x200
-; XSIZE90x200               ;Bed INTHEBOX X size 90x200
-; XSIZE100x200              ;Bed INTHEBOX X size 100x200
-; XSIZE120x200              ;Bed INTHEBOX X size 120x200
-; XSIZE140x200              ;Bed INTHEBOX X size 140x200
-; XSIZE160x200              ;Bed INTHEBOX X size 160x200
-; XSIZE180x200              ;Bed INTHEBOX X size 180x200
-; XSIZE200x200              ;Bed INTHEBOX X size 200x200
-; SJSIZE90x200              ;Bed INTHEBOX Space Jam: A New Legacy size 90x200
-; SJSIZE100x200             ;Bed INTHEBOX Space Jam: A New Legacy size 100x200
-; SJSIZE120x200             ;Bed INTHEBOX Space Jam: A New Legacy size 120x200
-; SJSIZE140x200             ;Bed INTHEBOX Space Jam: A New Legacy size 140x200
-; SJSIZE160x200             ;Bed INTHEBOX Space Jam: A New Legacy size 160x200
-; SJSIZE180x200             ;Bed INTHEBOX Space Jam: A New Legacy size 180x200
-; SJSIZE200x200             ;Bed INTHEBOX Space Jam: A New Legacy size 200x200
-; SJPSIZE90x200             ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 90x200
-; SJPSIZE100x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 100x200
-; SJPSIZE120x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 120x200
-; SJPSIZE140x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 140x200
-; SJPSIZE160x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 160x200
-; SJPSIZE180x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 180x200
-; SJPSIZE200x200            ;Bed INTHEBOX Space Jam: A New Legacy Plush top size 200x200
-; DASHSIZE90x200            ;Bed INTHEBOX DASH size 90x200
-; DASHSIZE100x200           ;Bed INTHEBOX DASH size 100x200
-; DASHSIZE120x200           ;Bed INTHEBOX DASH size 120x200
-; DASHSIZE140x200           ;Bed INTHEBOX DASH size 140x200
-; DASHSIZE160x200           ;Bed INTHEBOX DASH size 160x200
-; DASHSIZE180x200           ;Bed INTHEBOX DASH size 180x200
-; DASHSIZE200x200           ;Bed INTHEBOX DASH size 200x200
-; 101SIZE90x200             ;Bed INTHEBOX 101 size 90x200
-; 101SIZE100x200            ;Bed INTHEBOX 101 size 100x200
-; 101SIZE120x200            ;Bed INTHEBOX 101 size 120x200
-; 101SIZE140x200            ;Bed INTHEBOX 101 size 140x200
-; 101SIZE160x200            ;Bed INTHEBOX 101 size 160x200
-; 101SIZE180x200            ;Bed INTHEBOX 101 size 180x200
-; 101SIZE200x200            ;Bed INTHEBOX 101 size 200x200
-; HYBRIDSIZE90x200          ;Bed INTHEBOX Hybrid size 90x200
-; HYBRIDSIZE100x200         ;Bed INTHEBOX Hybrid size 100x200
-; HYBRIDSIZE120x200         ;Bed INTHEBOX Hybrid size 120x200
-; HYBRIDSIZE140x200         ;Bed INTHEBOX Hybrid size 140x200
-; HYBRIDSIZE160x200         ;Bed INTHEBOX Hybrid size 160x200
-; HYBRIDSIZE180x200         ;Bed INTHEBOX Hybrid size 180x200
-; HYBRIDSIZE200x200         ;Bed INTHEBOX Hybrid size 200x200
-; HYBRID15SIZE90x200        ;Bed INTHEBOX Hybrid 15 size 90x200
-; HYBRID15SIZE100x200       ;Bed INTHEBOX Hybrid 15 size 100x200
-; HYBRID15SIZE120x200       ;Bed INTHEBOX Hybrid 15 size 120x200
-; HYBRID15SIZE140x200       ;Bed INTHEBOX Hybrid 15 size 140x200
-; HYBRID15SIZE160x200       ;Bed INTHEBOX Hybrid 15 size 160x200
-; HYBRID15SIZE180x200       ;Bed INTHEBOX Hybrid 15 size 180x200
-; HYBRID15SIZE200x200       ;Bed INTHEBOX Hybrid 15 size 200x200
-; PLAINSIZE90x200           ;Bed INTHEBOX size 90x200
-; PLAINSIZE100x200          ;Bed INTHEBOX size 100x200
-; PLAINSIZE120x200          ;Bed INTHEBOX size 120x200
-; PLAINSIZE140x200          ;Bed INTHEBOX size 140x200
-; PLAINSIZE160x200          ;Bed INTHEBOX size 160x200
-; PLAINSIZE180x200          ;Bed INTHEBOX size 180x200
-; PLAINSIZE200x200          ;Bed INTHEBOX size 200x200
-; PLUSSIZE90x200            ;Bed INTHEBOX Plus size 90x200
-; PLUSSIZE100x200           ;Bed INTHEBOX Plus size 100x200
-; PLUSSIZE120x200           ;Bed INTHEBOX Plus size 120x200
-; PLUSSIZE140x200           ;Bed INTHEBOX Plus size 140x200
-; PLUSSIZE160x200           ;Bed INTHEBOX Plus size 160x200
-; PLUSSIZE180x200           ;Bed INTHEBOX Plus size 180x200
-; PLUSSIZE200x200           ;Bed INTHEBOX Plus size 200x200
-; ORGHYBSIZE90x200          ;Bed INTHEBOX Organix Hybrid size 90x200
-; ORGHYBSIZE100x200         ;Bed INTHEBOX Organix Hybrid size 100x200
-; ORGHYBSIZE120x200         ;Bed INTHEBOX Organix Hybrid size 120x200
-; ORGHYBSIZE140x200         ;Bed INTHEBOX Organix Hybrid size 140x200
-; ORGHYBSIZE160x200         ;Bed INTHEBOX Organix Hybrid size 160x200
-; ORGHYBSIZE180x200         ;Bed INTHEBOX Organix Hybrid size 180x200
-; ORGHYBSIZE200x200         ;Bed INTHEBOX Organix Hybrid size 200x200
-; ORGLITESIZE90x200         ;Bed INTHEBOX Organix Lite size 90x200
-; ORGLITESIZE100x200        ;Bed INTHEBOX Organix Lite size 100x200
-; ORGLITESIZE120x200        ;Bed INTHEBOX Organix Lite size 120x200
-; ORGLITESIZE140x200        ;Bed INTHEBOX Organix Lite size 140x200
-; ORGLITESIZE160x200        ;Bed INTHEBOX Organix Lite size 160x200
-; ORGLITESIZE180x200        ;Bed INTHEBOX Organix Lite size 180x200
-; ORGLITESIZE200x200        ;Bed INTHEBOX Organix Lite size 200x200
-; ORGPLUSHSIZE90x200        ;Bed INTHEBOX Organix Plush size 90x200
-; ORGPLUSHSIZE100x200       ;Bed INTHEBOX Organix Plush size 100x200
-; ORGPLUSHSIZE120x200       ;Bed INTHEBOX Organix Plush size 120x200
-; ORGPLUSHSIZE140x200       ;Bed INTHEBOX Organix Plush size 140x200
-; ORGPLUSHSIZE160x200       ;Bed INTHEBOX Organix Plush size 160x200
-; ORGPLUSHSIZE180x200       ;Bed INTHEBOX Organix Plush size 180x200
-; ORGPLUSHSIZE200x200       ;Bed INTHEBOX Organix Plush size 200x200
+UPDATE DemoProduct; code[unique = true]; $catalogVersion; name[lang = $lang]; description[lang = $lang]
+                 ; ALPHA         ; ; INTHEBOX ALPHA                                 ;Kasur INTHEBOX Alpha
+                 ; X             ; ; INTHEBOX X                                     ;Kasur INTHEBOX X
+                 ; SPACEJAM      ; ; 'SPACE JAM: A NEW LEGACY' COLLECTION           ;Kasur INTHEBOX Space Jam: A New Legacy
+                 ; SPACEJAMPLUSH ; ; 'SPACE JAM: A NEW LEGACY' COLLECTION PLUSH TOP ;Kasur INTHEBOX Space Jam: A New Legacy Plush top
+                 ; DASH          ; ; INTHEBOX DASH                                  ;Kasur INTHEBOX DASH
+                 ; 101           ; ; INTHEBOX 101                                   ;Kasur INTHEBOX 101
+                 ; HYBRID        ; ; INTHEBOX HYBRID                                ;Kasur INTHEBOX Hybrid
+                 ; HYBRID15      ; ; INTHEBOX HYBRID 15                             ;Kasur INTHEBOX Hybrid 15
+                 ; PLAIN         ; ; KASUR INTHEBOX                                 ;Kasur INTHEBOX
+                 ; PLUS          ; ; INTHEBOX PLUS                                  ;Kasur INTHEBOX Plus
+                 ; ORGHYB        ; ; ORGANIX HYBRID                                 ;Kasur INTHEBOX Organix Hybrid
+                 ; ORGLITE       ; ; ORGANIX LITE                                   ;Kasur INTHEBOX Organix Lite
+                 ; ORGPLUSH      ; ; ORGANIX PLUSH                                  ;Kasur INTHEBOX Organix Plush
+
+UPDATE DemoVariantProduct; code[unique = true] ; name[lang = $lang]
+                         ; ALPHASIZE90x200     ; Kasur ALPHASIZE90x200
+                         ; ALPHASIZE100x200    ; Kasur ALPHASIZE100x200
+                         ; ALPHASIZE120x200    ; Kasur ALPHASIZE120x200
+                         ; ALPHASIZE140x200    ; Kasur ALPHASIZE140x200
+                         ; ALPHASIZE160x200    ; Kasur ALPHASIZE160x200
+                         ; ALPHASIZE180x200    ; Kasur ALPHASIZE180x200
+                         ; ALPHASIZE200x200    ; Kasur ALPHASIZE200x200
+                         ; XSIZE90x200         ; Kasur XSIZE90x200
+                         ; XSIZE100x200        ; Kasur XSIZE100x200
+                         ; XSIZE120x200        ; Kasur XSIZE120x200
+                         ; XSIZE140x200        ; Kasur XSIZE140x200
+                         ; XSIZE160x200        ; Kasur XSIZE160x200
+                         ; XSIZE180x200        ; Kasur XSIZE180x200
+                         ; XSIZE200x200        ; Kasur XSIZE200x200
+                         ; SJSIZE90x200        ; Kasur SJSIZE90x200
+                         ; SJSIZE100x200       ; Kasur SJSIZE100x200
+                         ; SJSIZE120x200       ; Kasur SJSIZE120x200
+                         ; SJSIZE140x200       ; Kasur SJSIZE140x200
+                         ; SJSIZE160x200       ; Kasur SJSIZE160x200
+                         ; SJSIZE180x200       ; Kasur SJSIZE180x200
+                         ; SJSIZE200x200       ; Kasur SJSIZE200x200
+                         ; SJPSIZE90x200       ; Kasur SJPSIZE90x200
+                         ; SJPSIZE100x200      ; Kasur SJPSIZE100x200
+                         ; SJPSIZE120x200      ; Kasur SJPSIZE120x200
+                         ; SJPSIZE140x200      ; Kasur SJPSIZE140x200
+                         ; SJPSIZE160x200      ; Kasur SJPSIZE160x200
+                         ; SJPSIZE180x200      ; Kasur SJPSIZE180x200
+                         ; SJPSIZE200x200      ; Kasur SJPSIZE200x200
+                         ; DASHSIZE90x200      ; Kasur DASHSIZE90x200
+                         ; DASHSIZE100x200     ; Kasur DASHSIZE100x200
+                         ; DASHSIZE120x200     ; Kasur DASHSIZE120x200
+                         ; DASHSIZE140x200     ; Kasur DASHSIZE140x200
+                         ; DASHSIZE160x200     ; Kasur DASHSIZE160x200
+                         ; DASHSIZE180x200     ; Kasur DASHSIZE180x200
+                         ; DASHSIZE200x200     ; Kasur DASHSIZE200x200
+                         ; 101SIZE90x200       ; Kasur 101SIZE90x200
+                         ; 101SIZE100x200      ; Kasur 101SIZE100x200
+                         ; 101SIZE120x200      ; Kasur 101SIZE120x200
+                         ; 101SIZE140x200      ; Kasur 101SIZE140x200
+                         ; 101SIZE160x200      ; Kasur 101SIZE160x200
+                         ; 101SIZE180x200      ; Kasur 101SIZE180x200
+                         ; 101SIZE200x200      ; Kasur 101SIZE200x200
+                         ; HYBRIDSIZE90x200    ; Kasur HYBRIDSIZE90x200
+                         ; HYBRIDSIZE100x200   ; Kasur HYBRIDSIZE100x200
+                         ; HYBRIDSIZE120x200   ; Kasur HYBRIDSIZE120x200
+                         ; HYBRIDSIZE140x200   ; Kasur HYBRIDSIZE140x200
+                         ; HYBRIDSIZE160x200   ; Kasur HYBRIDSIZE160x200
+                         ; HYBRIDSIZE180x200   ; Kasur HYBRIDSIZE180x200
+                         ; HYBRIDSIZE200x200   ; Kasur HYBRIDSIZE200x200
+                         ; HYBRID15SIZE90x200  ; Kasur HYBRID15SIZE90x200
+                         ; HYBRID15SIZE100x200 ; Kasur HYBRID15SIZE100x200
+                         ; HYBRID15SIZE120x200 ; Kasur HYBRID15SIZE120x200
+                         ; HYBRID15SIZE140x200 ; Kasur HYBRID15SIZE140x200
+                         ; HYBRID15SIZE160x200 ; Kasur HYBRID15SIZE160x200
+                         ; HYBRID15SIZE180x200 ; Kasur HYBRID15SIZE180x200
+                         ; HYBRID15SIZE200x200 ; Kasur HYBRID15SIZE200x200
+                         ; PLAINSIZE90x200     ; Kasur PLAINSIZE90x200
+                         ; PLAINSIZE100x200    ; Kasur PLAINSIZE100x200
+                         ; PLAINSIZE120x200    ; Kasur PLAINSIZE120x200
+                         ; PLAINSIZE140x200    ; Kasur PLAINSIZE140x200
+                         ; PLAINSIZE160x200    ; Kasur PLAINSIZE160x200
+                         ; PLAINSIZE180x200    ; Kasur PLAINSIZE180x200
+                         ; PLAINSIZE200x200    ; Kasur PLAINSIZE200x200
+                         ; PLUSSIZE90x200      ; Kasur PLUSSIZE90x200
+                         ; PLUSSIZE100x200     ; Kasur PLUSSIZE100x200
+                         ; PLUSSIZE120x200     ; Kasur PLUSSIZE120x200
+                         ; PLUSSIZE140x200     ; Kasur PLUSSIZE140x200
+                         ; PLUSSIZE160x200     ; Kasur PLUSSIZE160x200
+                         ; PLUSSIZE180x200     ; Kasur PLUSSIZE180x200
+                         ; PLUSSIZE200x200     ; Kasur PLUSSIZE200x200
+                         ; ORGHYBSIZE90x200    ; Kasur ORGHYBSIZE90x200
+                         ; ORGHYBSIZE100x200   ; Kasur ORGHYBSIZE100x200
+                         ; ORGHYBSIZE120x200   ; Kasur ORGHYBSIZE120x200
+                         ; ORGHYBSIZE140x200   ; Kasur ORGHYBSIZE140x200
+                         ; ORGHYBSIZE160x200   ; Kasur ORGHYBSIZE160x200
+                         ; ORGHYBSIZE180x200   ; Kasur ORGHYBSIZE180x200
+                         ; ORGHYBSIZE200x200   ; Kasur ORGHYBSIZE200x200
+                         ; ORGLITESIZE90x200   ; Kasur ORGLITESIZE90x200
+                         ; ORGLITESIZE100x200  ; Kasur ORGLITESIZE100x200
+                         ; ORGLITESIZE120x200  ; Kasur ORGLITESIZE120x200
+                         ; ORGLITESIZE140x200  ; Kasur ORGLITESIZE140x200
+                         ; ORGLITESIZE160x200  ; Kasur ORGLITESIZE160x200
+                         ; ORGLITESIZE180x200  ; Kasur ORGLITESIZE180x200
+                         ; ORGLITESIZE200x200  ; Kasur ORGLITESIZE200x200
+                         ; ORGPLUSHSIZE90x200  ; Kasur ORGPLUSHSIZE90x200
+                         ; ORGPLUSHSIZE100x200 ; Kasur ORGPLUSHSIZE100x200
+                         ; ORGPLUSHSIZE120x200 ; Kasur ORGPLUSHSIZE120x200
+                         ; ORGPLUSHSIZE140x200 ; Kasur ORGPLUSHSIZE140x200
+                         ; ORGPLUSHSIZE160x200 ; Kasur ORGPLUSHSIZE160x200
+                         ; ORGPLUSHSIZE180x200 ; Kasur ORGPLUSHSIZE180x200
+                         ; ORGPLUSHSIZE200x200 ; Kasur ORGPLUSHSIZE200x200

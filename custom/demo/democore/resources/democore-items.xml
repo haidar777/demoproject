@@ -27,7 +27,9 @@
         </enumtype>
     </enumtypes>
 
-<!--    <relations>
+
+<!--
+    <relations>
         <relation code="User2Testimonies" localized="false" autocreate="true" generate="true">
             <sourceElement type="User" cardinality="one" qualifier="user">
                 <modifiers read="true" write="true" search="true" optional="false"/>
@@ -36,7 +38,8 @@
                 <modifiers read="true" write="true" search="true" optional="true" partof="true"/>
             </targetElement>
         </relation>
-    </relations>   -->
+    </relations>   
+-->
 
     <itemtypes>
 
@@ -114,6 +117,7 @@
                 </attributes>
             </itemtype>
         </typegroup>
+
         <typegroup name="Demo">
             <itemtype code="DemoProduct" autocreate="true" generate="true"
                       extends="Product">
