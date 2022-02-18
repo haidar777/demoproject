@@ -716,7 +716,7 @@ if (typeof Object.create !== "function") {
         dragging : function (bool) {
             var base = this;
             base.options.dragging = bool;
-            
+
         },
 
 
@@ -812,10 +812,10 @@ if (typeof Object.create !== "function") {
                 isTouch;
 
             tempElem.style.cssText = "  -moz-transform:" + translate3D +
-                                  "; -ms-transform:"     + translate3D +
-                                  "; -o-transform:"      + translate3D +
-                                  "; -webkit-transform:" + translate3D +
-                                  "; transform:"         + translate3D;
+                "; -ms-transform:"     + translate3D +
+                "; -o-transform:"      + translate3D +
+                "; -webkit-transform:" + translate3D +
+                "; transform:"         + translate3D;
             regex = /translate3d\(0px, 0px, 0px\)/g;
             asSupport = tempElem.style.cssText.match(regex);
             support3d = (asSupport !== null && asSupport.length === 1);
@@ -932,9 +932,9 @@ if (typeof Object.create !== "function") {
                     position;
 
 
-                
+
                 if(!base.options.dragging){
-                	return;
+                    return;
                 }
 
                 if (ev.which === 3) {
@@ -977,8 +977,8 @@ if (typeof Object.create !== "function") {
 
             function dragMove(event) {
 
-            	 if(!base.options.dragging){
-                	return;
+                if(!base.options.dragging){
+                    return;
                 }
 
                 var ev = event.originalEvent || event || window.event,
@@ -989,12 +989,12 @@ if (typeof Object.create !== "function") {
                 base.newPosY = getTouches(ev).y - locals.offsetY;
                 base.newRelativeX = base.newPosX - locals.relativePos;
 
-              
+
 
                 if (typeof base.options.startDragging === "function" && locals.dragging !== true && base.newRelativeX !== 0) {
                     locals.dragging = true;
-                  	base.options.startDragging.apply(base, [base.$elem]);
-                  	
+                    base.options.startDragging.apply(base, [base.$elem]);
+
                 }
 
 
@@ -1145,7 +1145,7 @@ if (typeof Object.create !== "function") {
                 base.jumpTo(item);
             });
 
-             base.$elem.on("owl.dragging", function (event, item) {
+            base.$elem.on("owl.dragging", function (event, item) {
                 base.dragging(item);
             });
         },
@@ -1235,7 +1235,7 @@ if (typeof Object.create !== "function") {
                 iterations += 1;
                 if (base.completeImg($lazyImg.get(0)) || isBackgroundImg === true) {
                     showImage();
-                } else if (iterations <= 100) {//if image loads in less than 10 seconds 
+                } else if (iterations <= 100) {//if image loads in less than 10 seconds
                     window.setTimeout(checkLazyImage, 100);
                 } else {
                     showImage();
@@ -1264,7 +1264,7 @@ if (typeof Object.create !== "function") {
                 iterations += 1;
                 if (base.completeImg($currentimg.get(0))) {
                     addHeight();
-                } else if (iterations <= 100) { //if image loads in less than 10 seconds 
+                } else if (iterations <= 100) { //if image loads in less than 10 seconds
                     window.setTimeout(checkImage, 100);
                 } else {
                     base.wrapperOuter.css("height", ""); //Else remove height attribute
@@ -1490,9 +1490,9 @@ if (typeof Object.create !== "function") {
 
     $.fn.owlCarousel.options = {
 
-        items : 5,
+        items : 3,
         itemsCustom : false,
-        itemsDesktop : [1199, 4],
+        itemsDesktop : [1199, 3],
         itemsDesktopSmall : [979, 3],
         itemsTablet : [768, 2],
         itemsTabletSmall : false,
@@ -1504,7 +1504,7 @@ if (typeof Object.create !== "function") {
         paginationSpeed : 800,
         rewindSpeed : 1000,
 
-        autoPlay : false,
+        autoPlay : true,
         stopOnHover : false,
 
         navigation : false,

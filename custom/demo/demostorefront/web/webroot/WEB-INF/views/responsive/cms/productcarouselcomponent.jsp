@@ -12,7 +12,8 @@
 	<c:when test="${not empty productData}">
 		<div class="carousel__component">
 			<div class="carousel__component--headline">${fn:escapeXml(title)}</div>
-
+			<p class="text-center" style="color:white">Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium.
+				Pilih spring bed berkualitas dengan ukuran kasur sesuai kebutuhan.</p>
 			<c:choose>
 				<c:when test="${component.popup}">
 					<div class="carousel__component--carousel js-owl-carousel js-owl-lazy-reference js-owl-carousel-reference">
@@ -22,34 +23,61 @@
 							</div>
 						</div>
 						<c:forEach items="${productData}" var="product">
-
 							<c:url value="${product.url}/quickView" var="productQuickViewUrl"/>
-							<div class="carousel__item">
-								<a href="${productQuickViewUrl}" class="js-reference-item">
-									<div class="carousel__item--thumb">
-										<product:productPrimaryReferenceImage product="${product}" format="product"/>
-									</div>
-									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-								</a>
-							</div>
+<%--							<div class="carousel__item">--%>
+<%--								<div class="card-deck">--%>
+<%--									<div class="card">--%>
+<%--										<div class="carousel__item--thumb">--%>
+<%--											<product:productPrimaryReferenceImage product="${product}" format="product"/>--%>
+<%--										</div>--%>
+<%--										<div class="card-body">--%>
+<%--											<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>--%>
+<%--											<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--%>
+<%--											<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>--%>
+<%--											<a href="${productQuickViewUrl}" class="js-reference-item">Beli Sekarang</a>--%>
+<%--										</div>--%>
+<%--									</div>--%>
+<%--								</div>--%>
+<%--&lt;%&ndash;								<a href="${productQuickViewUrl}" class="js-reference-item">&ndash;%&gt;--%>
+<%--&lt;%&ndash;									<div class="carousel__item--thumb">&ndash;%&gt;--%>
+<%--&lt;%&ndash;										<product:productPrimaryReferenceImage product="${product}" format="product"/>&ndash;%&gt;--%>
+<%--&lt;%&ndash;									</div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>&ndash;%&gt;--%>
+<%--&lt;%&ndash;								</a>&ndash;%&gt;--%>
+<%--							</div>--%>
 						</c:forEach>
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="carousel__component--carousel js-owl-carousel js-owl-default">
+					<div class="carousel__component--carousel js-owl-carousel js-owl-default owl-carousel">
 						<c:forEach items="${productData}" var="product">
 
 							<c:url value="${product.url}" var="productUrl"/>
-
+<%--							<div class="carousel__item">--%>
+<%--									<div class="card-deck">--%>
+<%--										<div class="card">--%>
+<%--											<div class="carousel__item--thumb">--%>
+<%--												<product:productPrimaryImage product="${product}" format="product"/>--%>
+<%--											</div>--%>
+<%--											<div class="card-body">--%>
+<%--												<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>--%>
+<%--												<p class="card-text">This content is a little bit longer.</p>--%>
+<%--												<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>--%>
+<%--												<a class="btn btn-primary" role="button" href="${productUrl}">Beli Sekarang</a>--%>
+<%--											</div>--%>
+<%--										</div>--%>
+<%--									</div>--%>
+<%--&lt;%&ndash;								</a>&ndash;%&gt;--%>
+<%--							</div>--%>
 							<div class="carousel__item">
-								<a href="${productUrl}">
-									<div class="carousel__item--thumb">
+								<div class="carousel__item--thumb">
 										<product:productPrimaryImage product="${product}" format="product"/>
-									</div>
-									<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
-									<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
-								</a>
+								</div>
+								<div class="carousel__item--name">${fn:escapeXml(product.name)}</div>
+								<div class="carousel__item--price"><format:fromPrice priceData="${product.price}"/></div>
+								<p class="card-text">This content is a little bit longer.</p>
+								<a class="btn btn-primary" role="button" href="${productUrl}">Beli Sekarang</a>
 							</div>
 						</c:forEach>
 					</div>

@@ -5,11 +5,20 @@
 # English Localisation
 
 # Macros / Replacement Parameter definitions
-$contentCatalog = demoContentCatalog
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
 
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$picture = media(code, $contentCV);
-$siteResource = jar:com.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/contentCatalogs/$contentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$picture=media(code, $contentCV);
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV)[lang=$lang];
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$productCatalog
+
 
 # Language
 $lang=en
@@ -17,6 +26,8 @@ $lang=en
 $backGroundImage=backGroundImage(code, $contentCV)
 $hoverOverImage=hoverOverImage(code, $contentCV)
 $Image=image(code, $contentCV)
+
+
 
 # Demo Website
 
@@ -65,8 +76,11 @@ UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]     ; lin
                        ;                          ; PrivacyPolicyLink      ; "Privacy Policy"
                        ;                          ; OfflineStoreLink       ; "Offline Store"
 
-# CMS Footer Navigation Component
-UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
+# CMS Navigation Nodes
+UPDATE CMSNavigationNode;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                        ;;ProductGroupNavNode;"PRODUK"
+                        ;;SupportGroupNavNode;"SUPPORT"
+                        ;;AboutGroupNavNode;"ABOUT"
 
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
@@ -74,8 +88,39 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true] 
 # End Footer
 # End Navigation
 
-UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$lang];$picture[lang=$lang];content[lang=$lang]
-                      ;;CarouselProduct1;INTHEBOX;/images/HomePage/Carousel/Inthebox.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct2;INTHEBOX;/images/HomePage/Carousel/Inthebox Hybrid.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct3;INTHEBOX;/images/HomePage/Carousel/Inthebox 101.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct4;INTHEBOX;/images/HomePage/Carousel/Inthebox X.png;"Pocket Spring & Busa Medium Soft"
+
+
+# Home Page Splash
+
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner.png;$siteResource/images/HomePage/banner.png;;banner.png;;"Beli Sekarang"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;demo-homepage-spalsh-1-en;banner.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;IntheboxBannerComponent;demo-homepage-spalsh-1-en
+
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                               ;;HomepageProductCarouselComponent;BELI KASUR INTHEBOX
+
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/png'];realfilename;folder(qualifier)[default='images'];altText
+;widescreen;;keluarkan.png;$siteResource/images/HomePage/UnboxingInthebox/keluarkan_experience_1.png;;keluarkan_experience_1.png;;"Keluarkan"
+;widescreen;;posisikan.png;$siteResource/images/HomePage/UnboxingInthebox/posisikan_experience_2.png;;posisikan_experience_2.png;;"posisikan"
+;widescreen;;bukaplastik.png;$siteResource/images/HomePage/UnboxingInthebox/buka_plastik_experience_3.png;;buka_plastik_experience_3.png;;"Buka Plastik"
+;widescreen;;tunggumengembang.png;$siteResource/images/HomePage/UnboxingInthebox/tunggu_mengembang_experience_4.png;;tunggu_mengembang_experience_4.png;;"Tunggu Mengembang"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;demo-homepage-light-fam-en;keluarkan.png
+                            ;demo-homepage-light-text-en;posisikan.png
+                            ;demo-homepage-springbed-03-en;bukaplastik.png
+                            ;demo-homepage-springbed-04-en;tunggumengembang.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;Unboxing1;demo-homepage-light-fam-en
+                                             ;;Unboxing2;demo-homepage-light-text-en
+                                             ;;Unboxing3;demo-homepage-springbed-03-en
+                                             ;;Unboxing4;demo-homepage-springbed-04-en

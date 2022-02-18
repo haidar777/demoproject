@@ -9,7 +9,7 @@ $contentCatalogName = Demo Content Catalog
 $productCatalog = demoProductCatalog
 $productCatalogName = Demo Product Catalog
 
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default='Staged'])[default=$contentCatalog:Staged]
 $productCV = catalogVersion(catalog(id[default=$productCatalog]), version[default='Staged'])[unique=true, default=$productCatalog:Staged]
 $picture = media(code, $contentCV);
 $image = image(code, $contentCV);
@@ -30,10 +30,10 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; MiddleNavigationBarSlot   ; HeaderNavComponent
                          ;                          ; LoginLinkSlot             ; LoginLink
                          ;                          ; CartLinkSlot              ; CartHeaderLogoComponent
-
+                         ;                          ; FooterNavigationSlot                 ; FooterNavigationComponent
 
 # CMS Link
-INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]              ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]       ; uid[unique = true]                     ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
                               ;                          ; LoginLink                       ; Login Link                          ; /login                 ; LoginLink                       ; LoginLink                       ;
                               ;                          ; WarrantyActivationLink          ; Warranty Activation Link            ; /warranty-registration ; WarrantyActivationLink          ; WarrantyActivationLink          ;
                               ;                          ; TopHeaderWarrantyActivationLink ; Top Header Warranty Activation Link ; /warranty-registration ; TopHeaderWarrantyActivationLink ; TopHeaderWarrantyActivationLink ;
@@ -102,7 +102,7 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; 
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name                ; &nodeRef         ; parent(uid, $contentCV)
                                ; TopHeaderNavNode  ;                          ; Top Header Nav Node ; TopHeaderNavNode ; DemoSiteRootNode
                                ; HeaderNavNode     ;                          ; Header Nav Node     ; HeaderNavNode    ; DemoSiteRootNode
-                               ; FooterNavNode     ;                          ; Footer Nav Node     ; FooterNavNode    ; DemoSiteRootNode
+#                               ; FooterNavNode     ;                          ; Footer Nav Node     ; FooterNavNode    ; DemoSiteRootNode
 
 # Level 1
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; $contentCV[unique = true]; name                             ; &nodeRef                     ; parent(uid, $contentCV)
@@ -115,27 +115,27 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; $contentCV[uniqu
                                ; AboutUsNavNode               ;                          ; About Us Nav Node                ; AboutUsNavNode               ; HeaderNavNode
                                ; BlogsNavNode                 ;                          ; Blogs Nav Node                   ; BlogsNavNode                 ; HeaderNavNode
                                ; TestimonialNavNode           ;                          ; Testimonial Nav Node             ; TestimonialNavNode           ; HeaderNavNode
-# FooterNavNode
-                               ; ProductGroupNavNode          ;                          ; Product Footer Group             ; ProductGroupNavNode          ; FooterNavNode
-                               ; SupportGroupNavNode          ;                          ; Support Footer Group             ; SupportGroupNavNode          ; FooterNavNode
-                               ; AboutGroupNavNode            ;                          ; About Footer Group               ; AboutGroupNavNode            ; FooterNavNode
+## FooterNavNode
+#                               ; ProductGroupNavNode          ;                          ; Product Footer Group             ; ProductGroupNavNode          ; FooterNavNode
+#                               ; SupportGroupNavNode          ;                          ; Support Footer Group             ; SupportGroupNavNode          ; FooterNavNode
+#                               ; AboutGroupNavNode            ;                          ; About Footer Group               ; AboutGroupNavNode            ; FooterNavNode
 
 # Level 2
-INSERT_UPDATE CMSNavigationNode; uid[unique = true]        ; $contentCV[unique = true]; name                     ; &nodeRef                  ; parent(uid, $contentCV)
-# ProductGroupNavNode
-                               ; ProductFooterNavNode      ;                          ; Product Footer Nav Node  ; ProductFooterNavNode      ; ProductGroupNavNode
-# SupportGroupNavNode
-                               ; WarrantyActivationNavNode ;                          ; Warranty Activation Page ; WarrantyActivationNavNode ; SupportGroupNavNode
-                               ; OrderTrackingNavNode      ;                          ; Order Tracking Page      ; OrderTrackingNavNode      ; SupportGroupNavNode
-                               ; FAQNavNode                ;                          ; FAQ Page                 ; FAQNavNode                ; SupportGroupNavNode
-                               ; HelpNavNode               ;                          ; Help Page                ; HelpNavNode               ; SupportGroupNavNode
-                               ; TermsAndConditionNavNode  ;                          ; Terms And Condition Page ; TermsAndConditionNavNode  ; SupportGroupNavNode
-                               ; PrivacyPolicyNavNode      ;                          ; Privacy Policy Page      ; PrivacyPolicyNavNode      ; SupportGroupNavNode
-# AboutGroupNavNode
-                               ; AboutUsFooterNavNode      ;                          ; About Us Footer Page     ; AboutUsFooterNavNode      ; AboutGroupNavNode
-                               ; OfflineStoreNavNode       ;                          ; Offline Store Page       ; OfflineStoreNavNode       ; AboutGroupNavNode
-                               ; BlogsFooterNavNode        ;                          ; Blogs Footer Page        ; BlogsFooterNavNode        ; AboutGroupNavNode
-                               ; TestimonialFooterNavNode  ;                          ; Testimonial Footer Page  ; TestimonialFooterNavNode  ; AboutGroupNavNode
+#INSERT_UPDATE CMSNavigationNode; uid[unique = true]        ; $contentCV[unique = true]; name                     ; &nodeRef                  ; parent(uid, $contentCV)
+## ProductGroupNavNode
+#                               ; ProductFooterNavNode      ;                          ; Product Footer Nav Node  ; ProductFooterNavNode      ; ProductGroupNavNode
+## SupportGroupNavNode
+#                               ; WarrantyActivationNavNode ;                          ; Warranty Activation Page ; WarrantyActivationNavNode ; SupportGroupNavNode
+#                               ; OrderTrackingNavNode      ;                          ; Order Tracking Page      ; OrderTrackingNavNode      ; SupportGroupNavNode
+#                               ; FAQNavNode                ;                          ; FAQ Page                 ; FAQNavNode                ; SupportGroupNavNode
+#                               ; HelpNavNode               ;                          ; Help Page                ; HelpNavNode               ; SupportGroupNavNode
+#                               ; TermsAndConditionNavNode  ;                          ; Terms And Condition Page ; TermsAndConditionNavNode  ; SupportGroupNavNode
+#                               ; PrivacyPolicyNavNode      ;                          ; Privacy Policy Page      ; PrivacyPolicyNavNode      ; SupportGroupNavNode
+## AboutGroupNavNode
+#                               ; AboutUsFooterNavNode      ;                          ; About Us Footer Page     ; AboutUsFooterNavNode      ; AboutGroupNavNode
+#                               ; OfflineStoreNavNode       ;                          ; Offline Store Page       ; OfflineStoreNavNode       ; AboutGroupNavNode
+#                               ; BlogsFooterNavNode        ;                          ; Blogs Footer Page        ; BlogsFooterNavNode        ; AboutGroupNavNode
+#                               ; TestimonialFooterNavNode  ;                          ; Testimonial Footer Page  ; TestimonialFooterNavNode  ; AboutGroupNavNode
 
 # Level 3
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name; &nodeRef; parent(uid, $contentCV)
@@ -156,8 +156,44 @@ INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique
 INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique = true] ; name                        ; navigationNode(&nodeRef); &componentRef      ; wrapAfter; styleClass
                                          ;                          ; HeaderNavComponent ; Header Navigation Component ; HeaderNavNode           ; HeaderNavComponent ; 10       ;
 # Footer Navigation Component
-INSERT_UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; name                        ; navigationNode(&nodeRef); &componentRef             ; wrapAfter; showLanguageCurrency
-                                       ;                          ; FooterNavigationComponent ; Footer Navigation Component ; FooterNavNode           ; FooterNavigationComponent ; 4        ; true
+INSERT_UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true]         ;wrapAfter;&componentRef            ;showLanguageCurrency;navigationNode(&nodeRef)
+                                       ;                       ;FooterNavigationComponent;4        ;FooterNavigationComponent;true                ;FooterNavNode;
+
+
+#Node For Footer
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name            ;parent(uid, $contentCV);&nodeRef;children(uid,$contentCV)
+                               ;FooterNavNode;  ;Footer Nav Node        ;DemoSiteRootNode;FooterNavNode;ProductGroupNavNode,SupportGroupNavNode,AboutGroupNavNode
+
+# Level 1
+#INSERT_UPDATE CMSNavigationNode; uid[unique = true]           ; $contentCV[unique = true]; name                             ; &nodeRef                     ; parent(uid, $contentCV)
+## FooterNavNode
+#                               ; ProductGroupNavNode          ;                          ; Product Footer Group             ; ProductGroupNavNode          ; FooterNavNode
+#                               ; SupportGroupNavNode          ;                          ; Support Footer Group             ; SupportGroupNavNode          ; FooterNavNode
+#                               ; AboutGroupNavNode            ;                          ; About Footer Group               ; AboutGroupNavNode            ; FooterNavNode
+
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef)
+                               ;ProductGroupNavNode;;Product Footer Group ;ProductGroupNavNode;ProductFooterNavNode
+                               ;SupportGroupNavNode;;Support Footer Group ;SupportGroupNavNode;WarrantyActivationNavNode,OrderTrackingNavNode,FAQNavNode,HelpNavNode,TermsAndConditionNavNode,PrivacyPolicyNavNode
+                               ;AboutGroupNavNode;;About Footer Group ;AboutGroupNavNode;AboutUsFooterNavNode,OfflineStoreNavNode,BlogsFooterNavNode,TestimonialFooterNavNode
+
+
+# Level 2
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
+# ProductGroupNavNode
+                               ; ProductFooterNavNode      ;                          ; Product Footer Nav Node  ; ProductFooterNavNode
+# SupportGroupNavNode
+                               ; WarrantyActivationNavNode ;                          ; Warranty Activation Page ; WarrantyActivationNavNode
+                               ; OrderTrackingNavNode      ;                          ; Order Tracking Page      ; OrderTrackingNavNode
+                               ; FAQNavNode                ;                          ; FAQ Page                 ; FAQNavNode
+                               ; HelpNavNode               ;                          ; Help Page                ; HelpNavNode
+                               ; TermsAndConditionNavNode  ;                          ; Terms And Condition Page ; TermsAndConditionNavNode
+                               ; PrivacyPolicyNavNode      ;                          ; Privacy Policy Page      ; PrivacyPolicyNavNode
+# AboutGroupNavNode
+                               ; AboutUsFooterNavNode      ;                          ; About Us Footer Page     ; AboutUsFooterNavNode
+                               ; OfflineStoreNavNode       ;                          ; Offline Store Page       ; OfflineStoreNavNode
+                               ; BlogsFooterNavNode        ;                          ; Blogs Footer Page        ; BlogsFooterNavNode
+                               ; TestimonialFooterNavNode  ;                          ; Testimonial Footer Page  ; TestimonialFooterNavNode
 
 
 # CMS Navigation Entry
@@ -204,31 +240,44 @@ INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true
 UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
                            ;                          ; ProductGridComponent ; ListOrderFormAction
 
+
+
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
                                 ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
-                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
+                                ;;UnboxingInTheBoxSlot1-Homepage;UnboxingInTheBox1;;UnboxingInTheBoxSlot1-Homepage
+                                ;;UnboxingInTheBoxSlot2-Homepage;UnboxingInTheBox2;;UnboxingInTheBoxSlot2-Homepage
+                                ;;UnboxingInTheBoxSlot3-Homepage;UnboxingInTheBox3;;UnboxingInTheBoxSlot3-Homepage
+                                ;;UnboxingInTheBoxSlot4-Homepage;UnboxingInTheBox4;;UnboxingInTheBoxSlot4-Homepage
+#                         ;;Section3BSlot-Homepage;Section3B Slot for Homepage;true;CamcordersBanner,LensesBanner
+
 
 #Home page splash banner
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
                                              ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
-                         ;                       ;Banner-Homepage           ;true     ;IntheboxBannerComponent
+                         ;                       ;BannerSlot-Homepage           ;true     ;IntheboxBannerComponent
 
-UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;media(uid)
-                                      ;                       ;IntheboxBannerComponent;widescreen
 
-INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true]          ;name           ;&componentRef;urlLink
-                             ;                       ; CarouselProduct1         ;INTHEBOX       ;CarouselProduct1;/PRODUK/Bed/KASUR-INTHEBOX/p/PLAINSIZE90x200
-                             ;                       ; CarouselProduct2         ;INTHEBOX HYBRID;CarouselProduct2;/PRODUK/Bed/INTHEBOX-HYBRID/p/HYBRIDSIZE90x200
-                             ;                       ; CarouselProduct3         ;INTHEBOX 101   ;CarouselProduct3;/PRODUK/Bed/INTHEBOX-101/p/101SIZE90x200
-                             ;                       ; CarouselProduct4         ;INTHEBOX X     ;CarouselProduct4;/PRODUK/Bed/INTHEBOX-X/p/XSIZE90x200
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;searchQuery;categoryCode;&componentRef
+                                      ;;HomepageProductCarouselComponent;BELI KASUR INTHEBOX;XSIZE100x200,XSIZE90x200,SJSIZE90x200,SJPSIZE90x200,DASHSIZE90x200;allVisible;false;;;HomepageProductCarouselComponent
 
-INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
-                                     ;;INTHEBOXHomepageCarouselComponent;INTHEBOX Homepage Carousel;CarouselProduct1,CarouselProduct2,CarouselProduct3,CarouselProduct4;INTHEBOXHomepageCarouselComponent
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;ProductCarouselSlot-Homepage;Product Slot for Homepage;true;HomepageProductCarouselComponent
 
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
-                         ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
+
+#
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;Unboxing1;Banner Homepage;;Unboxing1
+                                             ;;Unboxing2;Banner Homepage;;Unboxing2
+                                             ;;Unboxing3;Banner Homepage;;Unboxing3
+                                             ;;Unboxing4;Banner Homepage;;Unboxing4
+#
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;UnboxingInTheBoxSlot1-Homepage;true;Unboxing1
+                         ;;UnboxingInTheBoxSlot2-Homepage;true;Unboxing2
+                         ;;UnboxingInTheBoxSlot3-Homepage;true;Unboxing3
+                         ;;UnboxingInTheBoxSlot4-Homepage;true;Unboxing4
 

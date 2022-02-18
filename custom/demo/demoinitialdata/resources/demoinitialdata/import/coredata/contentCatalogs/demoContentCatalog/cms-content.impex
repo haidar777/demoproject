@@ -28,7 +28,11 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
 # HomePage Content
                          ;                          ; BannerSlot                ; Banner Slot                   ; true
                          ;                          ; ProductCarouselSlot       ; Product Carousel Slot         ; true
-                         ;                          ; UnboxingInTheBoxSlot      ; Unboxing In The Box Slot      ; true
+                         ;                          ; UnboxingInTheBoxSlot1      ; Unboxing In The Box Slot      ; true
+                         ;                          ; UnboxingInTheBoxSlot2      ; Unboxing In The Box Slot      ; true
+                         ;                          ; UnboxingInTheBoxSlot3      ; Unboxing In The Box Slot      ; true
+                         ;                          ; UnboxingInTheBoxSlot4      ; Unboxing In The Box Slot      ; true
+
 # Footers
                          ;                          ; FooterLogoSlot            ; Footer Logo Slot              ; true
                          ;                          ; FooterSubscribeSlot       ; Footer Subscribe Slot         ; true
@@ -68,7 +72,11 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 # HomePage Content
                                     ;                          ; Banner-HomePage                ; Banner                 ;                                                                           ; BannerSlot                                 ; true
                                     ;                          ; ProductCarousel-HomePage       ; ProductCarousel        ;                                                                           ; ProductCarouselSlot                        ; true
-                                    ;                          ; UnboxingInTheBox-HomePage      ; UnboxingInTheBox       ;                                                                           ; UnboxingInTheBoxSlot                       ; true
+                                    ;                          ; UnboxingInTheBox1-HomePage      ; UnboxingInTheBox       ;                                                                           ; UnboxingInTheBoxSlot1                       ; true
+                                    ;                          ; UnboxingInTheBox2-HomePage      ; UnboxingInTheBox       ;                                                                           ; UnboxingInTheBoxSlot2                       ; true
+                                    ;                          ; UnboxingInTheBox3-HomePage      ; UnboxingInTheBox       ;                                                                           ; UnboxingInTheBoxSlot3                       ; true
+                                    ;                          ; UnboxingInTheBox4-HomePage      ; UnboxingInTheBox       ;                                                                           ; UnboxingInTheBoxSlot4                       ; true
+
 # Footers
                                     ;                          ; FooterLogo-HomePage            ; FooterLogo             ;                                                                           ; FooterLogoSlot                             ; true
                                     ;                          ; FooterSubscribe-HomePage       ; FooterSubscribe        ;                                                                           ; FooterSubscribeSlot                        ; true

@@ -15,6 +15,7 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
+		margin: auto;
 
 		&.autoHeight{
 			-webkit-transition: height 500ms ease-in-out;
@@ -26,6 +27,7 @@
 		.owl-wrapper{
 			display: none;
 			position: relative;
+			width: 400px;
 			-webkit-transform: translate3d(0px, 0px, 0px);
 			-webkit-backface-visibility: hidden;
 			-moz-backface-visibility:    hidden;
@@ -124,7 +126,7 @@
 
 .carousel,
 .carousel__component--carousel {
-	width: auto; 
+	width: auto;
 	margin: (@grid-gutter-width/2) -(@grid-gutter-width/2);
 	text-align: center;
 
@@ -132,7 +134,7 @@
 	.carousel__item{
 		display: block;
 		margin: 0 (@grid-gutter-width/2);
-		padding: (@grid-gutter-width/2) 0;
+		padding: (@grid-gutter-width/6) 0;
 
      	.thumb,
 		.carousel__item--thumb {
@@ -171,23 +173,6 @@
 			font-weight: 600;
 			font-size: 16px;
 			color: @headline-color;
-
-          &:before {
-            background: #FFF none repeat scroll 0 0;
-            bottom: 0;
-            position: absolute;
-            right: 0;
-            content: '\2026';
-          }
-
-          &:after {
-            content: "";
-            background: #FFF none repeat scroll 0% 0%;
-            position: absolute;
-            height: 50px;
-            width: 100%;
-            z-index: 1;
-          }
 		}
 
 		.item__price,
@@ -207,6 +192,7 @@
 
 .carousel-component,
 .carousel__component {
+	background-color: #6082B6;
   	padding: 0 20px;
   	margin: @grid-gutter-width+15 0 (@grid-gutter-width - 5);
 	.clearfix;
