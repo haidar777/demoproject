@@ -16,7 +16,7 @@ $approved=approvalstatus(code)[default='check']
 INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
 
 # Insert Demo Products
-INSERT_UPDATE DemoProduct; code[unique = true]       ; name                                            ; $supercategories  ; variantType(code)[default = 'DemoVariantProduct']; $approved; unit(code)[default = pieces]; $catalogVersion;
+INSERT_UPDATE DemoProduct; code[unique = true]; name                                            ; $supercategories  ; variantType(code)[default = 'DemoVariantProduct']; $approved; unit(code)[default = pieces]; $catalogVersion;
                          ; ALPHA              ; INTHEBOX ALPHA                                  ; "KASUR"           ;                                                  ;          ;                             ;
                          ; X                  ; INTHEBOX X                                      ; "KASUR"           ;                                                  ;          ;                             ;
                          ; SPACEJAM           ; 'SPACE JAM: A NEW LEGACY' COLLECTION            ; "KASUR"           ;                                                  ;          ;                             ;
@@ -38,125 +38,108 @@ INSERT_UPDATE DemoProduct; code[unique = true]       ; name                     
 
 
 # Create Demo Variants
-INSERT_UPDATE DemoVariantProduct; $baseProduct      ; code[unique = true]       ; unit(code)[default = pieces]; $approved; $catalogVersion; $supercategories; description; size; desc
+INSERT_UPDATE DemoVariantProduct; $baseProduct  ; code[unique = true] ; size    ; unit(code)[default = pieces]; $approved; $catalogVersion; $supercategories; description
 #Kasur
-                                ; ALPHA             ; ALPHASIZE90x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 90x200  ;90x200     ;RP999.000
-                                ; ALPHA             ; ALPHASIZE100x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 100x200 ;100x200    ;RP999.000
-                                ; ALPHA             ; ALPHASIZE120x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 120x200 ;120x200    ;RP1.199.000
-                                ; ALPHA             ; ALPHASIZE140x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 140x200 ;140x200    ;RP1.599.000
-                                ; ALPHA             ; ALPHASIZE160x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 160x200 ;160x200    ;RP1.599.000
-                                ; ALPHA             ; ALPHASIZE180x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 180x200 ;180x200    ;RP1.799.000
-                                ; ALPHA             ; ALPHASIZE200x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 200x200 ;200x200    ;RP1.999.000
-
-                                ; X                 ; XSIZE90x200               ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 90x200  ;90x200     ;RP1.899.000
-                                ; X                 ; XSIZE100x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 100x200 ;100x200    ;RP1.899.000
-                                ; X                 ; XSIZE120x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 120x200 ;120x200    ;RP1.899.000
-                                ; X                 ; XSIZE140x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 140x200 ;140x200    ;RP2.399.000
-                                ; X                 ; XSIZE160x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 160x200 ;160x200    ;RP2.399.000
-                                ; X                 ; XSIZE180x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 180x200 ;180x200    ;RP2.599.000
-                                ; X                 ; XSIZE200x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 200x200 ;200x200    ;RP2.799.000
-
-                                ; SPACEJAM          ; SJSIZE90x200              ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 90x200    ;90x200     ;RP1.599.000
-                                ; SPACEJAM          ; SJSIZE100x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 100x200   ;100x200    ;RP1.599.000
-                                ; SPACEJAM          ; SJSIZE120x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 120x200   ;120x200    ;RP1.599.000
-                                ; SPACEJAM          ; SJSIZE140x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 140x200   ;140x200    ;RP2.099.000
-                                ; SPACEJAM          ; SJSIZE160x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 160x200   ;160x200    ;RP2.099.000
-                                ; SPACEJAM          ; SJSIZE180x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 180x200   ;180x200    ;RP2.299.000
-                                ; SPACEJAM          ; SJSIZE200x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 200x200   ;200x200    ;RP2.499.000
-
-                                ; SPACEJAMPLUSH     ; SJPSIZE90x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 90x200  ;90x200     ;RP1.899.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE100x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 100x200 ;100x200    ;RP1.899.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE120x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 120x200 ;120x200    ;RP1.899.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE140x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 140x200 ;140x200    ;RP2.399.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE160x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 160x200 ;160x200    ;RP2.399.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE180x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 180x200 ;180x200    ;RP2.599.000
-                                ; SPACEJAMPLUSH     ; SJPSIZE200x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 200x200 ;200x200    ;RP2.799.000
-
-                                ; DASH              ; DASHSIZE90x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 90x200   ;90x200     ;RP3.099.000
-                                ; DASH              ; DASHSIZE100x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 100x200  ;100x200    ;RP3.099.000
-                                ; DASH              ; DASHSIZE120x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 120x200  ;120x200    ;RP3.099.000
-                                ; DASH              ; DASHSIZE140x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 140x200  ;140x200    ;RP3.599.000
-                                ; DASH              ; DASHSIZE160x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 160x200  ;160x200    ;RP3.599.000
-                                ; DASH              ; DASHSIZE180x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 180x200  ;180x200    ;RP3.999.000
-                                ; DASH              ; DASHSIZE200x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 200x200  ;200x200    ;RP4.499.000
-
-                                ; 101               ; 101SIZE90x200             ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 90x200    ;90x200     ;RP1.799.000
-                                ; 101               ; 101SIZE100x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 100x200   ;100x200    ;RP1.799.000
-                                ; 101               ; 101SIZE120x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 120x200   ;120x200    ;RP1.799.000
-                                ; 101               ; 101SIZE140x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 140x200   ;140x200    ;RP2.299.000
-                                ; 101               ; 101SIZE160x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 160x200   ;160x200    ;RP2.299.000
-                                ; 101               ; 101SIZE180x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 180x200   ;180x200    ;RP2.399.000
-                                ; 101               ; 101SIZE200x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 200x200   ;200x200    ;RP2.699.000
-
-                                ; HYBRID            ; HYBRIDSIZE90x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 90x200     ;90x200     ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE100x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 100x200    ;100x200    ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE120x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 120x200    ;120x200    ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE140x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 140x200    ;140x200    ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE160x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 160x200    ;160x200    ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE180x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 180x200    ;180x200    ;RP1.899.000
-                                ; HYBRID            ; HYBRIDSIZE200x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 200x200    ;200x200    ;RP1.899.000
-
-                                ; HYBRID15          ; HYBRID15SIZE90x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 90x200  ;90x200     ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE100x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 100x200 ;100x200    ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE120x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 120x200 ;120x200    ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE140x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 140x200 ;140x200    ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE160x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 160x200 ;160x200    ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE180x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 180x200 ;180x200    ;RP1.899.000
-                                ; HYBRID15          ; HYBRID15SIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 200x200 ;200x200    ;RP1.899.000
-
-                                ; PLAIN             ; PLAINSIZE90x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 90x200    ;90x200     ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE100x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 100x200   ;100x200    ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE120x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 120x200   ;120x200    ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE140x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 140x200   ;140x200    ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE160x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 160x200   ;160x200    ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE180x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 180x200   ;180x200    ;RP1.899.000
-                                ; PLAIN             ; PLAINSIZE200x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 200x200   ;200x200    ;RP1.899.000
-
-                                ; PLUS              ; PLUSSIZE90x200            ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 90x200   ;90x200     ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE100x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 100x200  ;100x200    ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE120x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 120x200  ;120x200    ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE140x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 140x200  ;140x200    ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE160x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 160x200  ;160x200    ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE180x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 180x200  ;180x200    ;RP1.899.000
-                                ; PLUS              ; PLUSSIZE200x200           ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 200x200  ;200x200    ;RP1.899.000
-
-                                ; ORGHYB            ; ORGHYBSIZE90x200          ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 90x200     ;90x200     ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE100x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 100x200    ;100x200    ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE120x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 120x200    ;120x200    ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE140x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 140x200    ;140x200    ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE160x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 160x200    ;160x200    ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE180x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 180x200    ;180x200    ;RP1.899.000
-                                ; ORGHYB            ; ORGHYBSIZE200x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 200x200    ;200x200    ;RP1.899.000
-
-                                ; ORGLITE           ; ORGLITESIZE90x200         ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 90x200   ;90x200     ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE100x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 100x200  ;100x200    ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE120x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 120x200  ;120x200    ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE140x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 140x200  ;140x200    ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE160x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 160x200  ;160x200    ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE180x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 180x200  ;180x200    ;RP1.899.000
-                                ; ORGLITE           ; ORGLITESIZE200x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 200x200  ;200x200    ;RP1.899.000
-
-                                ; ORGPLUSH          ; ORGPLUSHSIZE90x200        ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 90x200  ;90x200     ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE100x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 100x200 ;100x200    ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE120x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 120x200 ;120x200    ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE140x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 140x200 ;140x200    ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE160x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 160x200 ;160x200    ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE180x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 180x200 ;180x200    ;RP1.899.000
-                                ; ORGPLUSH          ; ORGPLUSHSIZE200x200       ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200 ;200x200    ;RP1.899.000
-
+                                ; ALPHA         ; ALPHASIZE90x200     ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 90x200
+                                ; ALPHA         ; ALPHASIZE100x200    ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 100x200
+                                ; ALPHA         ; ALPHASIZE120x200    ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 120x200
+                                ; ALPHA         ; ALPHASIZE140x200    ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 140x200
+                                ; ALPHA         ; ALPHASIZE160x200    ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 160x200
+                                ; ALPHA         ; ALPHASIZE180x200    ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 180x200
+                                ; ALPHA         ; ALPHASIZE200x200    ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Alpha size 200x200
+                                ; X             ; XSIZE90x200         ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 90x200
+                                ; X             ; XSIZE100x200        ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 100x200
+                                ; X             ; XSIZE120x200        ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 120x200
+                                ; X             ; XSIZE140x200        ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 140x200
+                                ; X             ; XSIZE160x200        ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 160x200
+                                ; X             ; XSIZE180x200        ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 180x200
+                                ; X             ; XSIZE200x200        ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX X size 200x200
+                                ; SPACEJAM      ; SJSIZE90x200        ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 90x200
+                                ; SPACEJAM      ; SJSIZE100x200       ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 100x200
+                                ; SPACEJAM      ; SJSIZE120x200       ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 120x200
+                                ; SPACEJAM      ; SJSIZE140x200       ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 140x200
+                                ; SPACEJAM      ; SJSIZE160x200       ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 160x200
+                                ; SPACEJAM      ; SJSIZE180x200       ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 180x200
+                                ; SPACEJAM      ; SJSIZE200x200       ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy size 200x200
+                                ; SPACEJAMPLUSH ; SJPSIZE90x200       ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 90x200
+                                ; SPACEJAMPLUSH ; SJPSIZE100x200      ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 100x200
+                                ; SPACEJAMPLUSH ; SJPSIZE120x200      ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 120x200
+                                ; SPACEJAMPLUSH ; SJPSIZE140x200      ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 140x200
+                                ; SPACEJAMPLUSH ; SJPSIZE160x200      ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 160x200
+                                ; SPACEJAMPLUSH ; SJPSIZE180x200      ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 180x200
+                                ; SPACEJAMPLUSH ; SJPSIZE200x200      ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Space Jam: A New Legacy Plush top size 200x200
+                                ; DASH          ; DASHSIZE90x200      ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 90x200
+                                ; DASH          ; DASHSIZE100x200     ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 100x200
+                                ; DASH          ; DASHSIZE120x200     ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 120x200
+                                ; DASH          ; DASHSIZE140x200     ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 140x200
+                                ; DASH          ; DASHSIZE160x200     ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 160x200
+                                ; DASH          ; DASHSIZE180x200     ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 180x200
+                                ; DASH          ; DASHSIZE200x200     ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX DASH size 200x200
+                                ; 101           ; 101SIZE90x200       ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 90x200
+                                ; 101           ; 101SIZE100x200      ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 100x200
+                                ; 101           ; 101SIZE120x200      ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 120x200
+                                ; 101           ; 101SIZE140x200      ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 140x200
+                                ; 101           ; 101SIZE160x200      ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 160x200
+                                ; 101           ; 101SIZE180x200      ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 180x200
+                                ; 101           ; 101SIZE200x200      ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX 101 size 200x200
+                                ; HYBRID        ; HYBRIDSIZE90x200    ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 90x200
+                                ; HYBRID        ; HYBRIDSIZE100x200   ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 100x200
+                                ; HYBRID        ; HYBRIDSIZE120x200   ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 120x200
+                                ; HYBRID        ; HYBRIDSIZE140x200   ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 140x200
+                                ; HYBRID        ; HYBRIDSIZE160x200   ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 160x200
+                                ; HYBRID        ; HYBRIDSIZE180x200   ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 180x200
+                                ; HYBRID        ; HYBRIDSIZE200x200   ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid size 200x200
+                                ; HYBRID15      ; HYBRID15SIZE90x200  ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 90x200
+                                ; HYBRID15      ; HYBRID15SIZE100x200 ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 100x200
+                                ; HYBRID15      ; HYBRID15SIZE120x200 ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 120x200
+                                ; HYBRID15      ; HYBRID15SIZE140x200 ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 140x200
+                                ; HYBRID15      ; HYBRID15SIZE160x200 ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 160x200
+                                ; HYBRID15      ; HYBRID15SIZE180x200 ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 180x200
+                                ; HYBRID15      ; HYBRID15SIZE200x200 ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Hybrid 15 size 200x200
+                                ; PLAIN         ; PLAINSIZE90x200     ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 90x200
+                                ; PLAIN         ; PLAINSIZE100x200    ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 100x200
+                                ; PLAIN         ; PLAINSIZE120x200    ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 120x200
+                                ; PLAIN         ; PLAINSIZE140x200    ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 140x200
+                                ; PLAIN         ; PLAINSIZE160x200    ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 160x200
+                                ; PLAIN         ; PLAINSIZE180x200    ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 180x200
+                                ; PLAIN         ; PLAINSIZE200x200    ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX size 200x200
+                                ; PLUS          ; PLUSSIZE90x200      ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 90x200
+                                ; PLUS          ; PLUSSIZE100x200     ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 100x200
+                                ; PLUS          ; PLUSSIZE120x200     ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 120x200
+                                ; PLUS          ; PLUSSIZE140x200     ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 140x200
+                                ; PLUS          ; PLUSSIZE160x200     ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 160x200
+                                ; PLUS          ; PLUSSIZE180x200     ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 180x200
+                                ; PLUS          ; PLUSSIZE200x200     ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Plus size 200x200
+                                ; ORGHYB        ; ORGHYBSIZE90x200    ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 90x200
+                                ; ORGHYB        ; ORGHYBSIZE100x200   ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 100x200
+                                ; ORGHYB        ; ORGHYBSIZE120x200   ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 120x200
+                                ; ORGHYB        ; ORGHYBSIZE140x200   ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 140x200
+                                ; ORGHYB        ; ORGHYBSIZE160x200   ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 160x200
+                                ; ORGHYB        ; ORGHYBSIZE180x200   ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 180x200
+                                ; ORGHYB        ; ORGHYBSIZE200x200   ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Hybrid size 200x200
+                                ; ORGLITE       ; ORGLITESIZE90x200   ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 90x200
+                                ; ORGLITE       ; ORGLITESIZE100x200  ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 100x200
+                                ; ORGLITE       ; ORGLITESIZE120x200  ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 120x200
+                                ; ORGLITE       ; ORGLITESIZE140x200  ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 140x200
+                                ; ORGLITE       ; ORGLITESIZE160x200  ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 160x200
+                                ; ORGLITE       ; ORGLITESIZE180x200  ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 180x200
+                                ; ORGLITE       ; ORGLITESIZE200x200  ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Lite size 200x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE90x200  ; 90x200  ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 90x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE100x200 ; 100x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 100x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE120x200 ; 120x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 120x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE140x200 ; 140x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 140x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE160x200 ; 160x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 160x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE180x200 ; 180x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 180x200
+                                ; ORGPLUSH      ; ORGPLUSHSIZE200x200 ; 200x200 ;                             ;          ;                ; "KASUR"         ; Kasur INTHEBOX Organix Plush size 200x200
 #Sofa
-                                ; SOFA              ; SOFA3SEATERW              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater            ;   ;RP1.899.000
-                                ; SOFA              ; SOFA3SEATERB              ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater BLACK      ;   ;RP1.899.000
-
+                                ; SOFA          ; SOFA3SEATERW        ;         ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater
+                                ; SOFA          ; SOFA3SEATERB        ;         ;                             ;          ;                ; "SOFA"          ; INTHEBOX SOFA 3 Seater BLACK
 #Kasur Lipat
-                                ; KLIPAT            ; KASURLIPAT                ;                             ;          ;                ; "KASURLIPAT"    ; Kasur Busa Lipat Travel Mattress  ;   ;RP1.899.000
-
+                                ; KLIPAT        ; KASURLIPAT          ;         ;                             ;          ;                ; "KASURLIPAT"    ; Kasur Busa Lipat Travel Mattress
 #Sofabed
-                                ; SBED              ; SBED1                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED Super Single ;   ;RP1.899.000
-                                ; SBED              ; SBED2                     ;                             ;          ;                ; "SOFABED"       ; SOFA BED 100          ;   ;RP1.899.000
-
+                                ; SBED          ; SBED1               ;         ;                             ;          ;                ; "SOFABED"       ; SOFA BED Super Single
+                                ; SBED          ; SBED2               ;         ;                             ;          ;                ; "SOFABED"       ; SOFA BED 100
 #Bantal
-                                ; BANTAL            ; PROPSBANTAL               ;                             ;          ;                ; "BANTAL"        ; PROPS INTHEBOX BANTAL INTHEBOX    ;   ;RP1.899.000
-
+                                ; BANTAL        ; PROPSBANTAL         ;         ;                             ;          ;                ; "BANTAL"        ; PROPS INTHEBOX BANTAL INTHEBOX
 #Guling
-                                ; GULING            ; PROPSGULING               ;                             ;          ;                ; "GULING"        ; PROPS INTHEBOX GULING INTHEBOX    ;   ;RP1.899.000
+                                ; GULING        ; PROPSGULING         ;         ;                             ;          ;                ; "GULING"        ; PROPS INTHEBOX GULING INTHEBOX
