@@ -190,7 +190,6 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; Kenapa-AboutUsPage            ; Kenapa                     ;                                                                           ; BannerSlot                                 ; true
                                     ;                          ; CaraBeli-AboutUsPage          ; CaraBeli                   ;                                                                           ; ProductCarouselSlot                        ; true
                                     ;                          ; Faq-AboutUsPage               ; Faq                        ;                                                                           ; UnboxingInTheBoxSlot                       ; true
-
 # Footers
                                     ;                          ; FooterLogo-AboutUsPage            ; FooterLogo             ;                                                                           ; FooterLogoSlot                             ; true
                                     ;                          ; FooterSubscribe-AboutUsPage       ; FooterSubscribe        ;                                                                           ; FooterSubscribeSlot                        ; true

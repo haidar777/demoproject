@@ -106,3 +106,17 @@ UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$l
                       ;;CarouselProduct4;INTHEBOX;/images/HomePage/Carousel/Inthebox X.png;"Pocket Spring & Busa Medium Soft"
 
 # About Us Page
+UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
+                                      ;                  ; AboutUsBannerComponent;/images/aboutus/about-header.png
+
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; $picture[lang = $lang]
+                            ;                   ;Section1BannerComponent;/images/aboutus/about-image-1.png
+                            ;                   ;Section2BannerComponent;/images/aboutus/about-image-2.png
+                            ;                   ;Section3BannerComponent;/images/aboutus/about-image-3.png
+
+UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; content[lang = $lang];
+                            ;                   ; TentangInthebox           ; "Tentang INTHEBOX"
+                            ;                   ; Section1ParagraphComponent          ; "Apa Itu Kasur INTHEBOX?"
+                            ;                   ; Section2ParagraphComponent          ; "Kenapa Harus Pilih INTHEBOX?"
+                            ;                   ; Section3ParagraphComponent          ; "Cara Beli Kasur INTHEBOX"
+                            ;                   ; FAQParagraphComponent               ; "Pertanyaan yang Sering Ditanyakan"

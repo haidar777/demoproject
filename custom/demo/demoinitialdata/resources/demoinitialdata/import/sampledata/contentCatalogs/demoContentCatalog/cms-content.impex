@@ -186,6 +186,12 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]             ; $contentCV[un
                                 ; BlogsFooterNavNodeEntry        ;                          ; Blogs Footer Navigation Node Entry        ; BlogsFooterNavNode        ; BlogsLink                                              ;
                                 ; TestimonialFooterNavNodeEntry  ;                          ; Testimonial Footer Navigation Node Entry  ; TestimonialFooterNavNode  ; TestimonialLink                                        ;
 
+# Content Slots for Homepage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
+                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
+                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
+
 
 # ProductGridPage
 INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
@@ -203,12 +209,6 @@ INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true
                                   ;                          ; ProductGridComponent ; Product Grid Component ; ListPickUpInStoreAction,ListAddToCartAction ; ProductGridComponent
 UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
                            ;                          ; ProductGridComponent ; ListOrderFormAction
-
-# Content Slots for Homepage
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
-                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
-                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
 
 #Home page splash banner
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
@@ -241,13 +241,13 @@ INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]; realfilenam
                    ;                           ; /images/aboutus/about-image-3.png; about-image-2.png ; $siteResource/images/aboutus/about-image-3.png;image/png;About Us Image 3 Banner;
 
 # Banner About Us
-INSERT_UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                       ; &componentRef     ; urlLink
-                                             ;                   ;AboutUsBannerComponent;About Us Banner Component;AboutUsBannerComponent;
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                       ; &componentRef     ; urlLink
+                                   ;                ;AboutUsBannerComponent;About Us Banner Component;AboutUsBannerComponent;
 
 # Tentang In The Box Section
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; name                                  ; &componentRef
                                    ;                   ;TentangInthebox            ; Tentang In The Box CMS Paragraph      ; TentangInthebox
-                                   ;                   ;DescTentangInthebox        ; Deskripsi Tentang In The Box CMS Paragraph; Desctentanginthebox
+                                   ;                   ;DescTentangInthebox        ; Deskripsi Tentang In The Box CMS Paragraph; DescTentangInthebox
 
 # Apa Itu Kasur In The Box Section
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                       ; &componentRef     ; urlLink
@@ -270,11 +270,34 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                    ;                   ;Section3ParagraphComponent ; Cara Beli CMS Paragraph      ; Section3ParagraphComponent
                                    ;                   ;DescSection3ParagraphComponent; Deskripsi Cara Beli CMS Paragraph ; DescSection3ParagraphComponent
 
+# FAQ
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; name                                  ; &componentRef
+                                   ;                   ; FAQParagraphComponent     ; FAQ CMS Paragraph Component           ; FAQParagraphComponent
+                                   ;                   ; DescFAQPargraphComponent  ; Description FAQ CMS Paragraph Component; DescFAQPargraphComponent
+
 # Container
 INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                        ; visible; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
-                                      ;                          ;TentangIntheboxContainer ; Tentang In The Box Container; true   ; TentangInthebox,Desctentanginthebox                          ; TentangIntheboxContainer
+                                      ;                          ;TentangIntheboxContainer ; Tentang In The Box Container; true   ; TentangInthebox,DescTentangInthebox                         ; TentangIntheboxContainer
                                       ;                          ;Section1Container        ; Apa Itu Kasur Container     ; true   ; Section1BannerComponent,Section1ParagraphComponent,DescSection1ParagraphComponent; Section1Container
                                       ;                          ;Section2Container        ; Kenapa Harus Container     ; true   ; Section2BannerComponent,Section2ParagraphComponent,DescSection2ParagraphComponent; Section2Container
                                       ;                          ;Section3Container        ; Cara Beli Container     ; true   ; Section3BannerComponent,Section3ParagraphComponent,DescSection3ParagraphComponent; Section3Container
+                                      ;                          ;FaqContainer             ; FAQ Container              ; true ; FAQParagraphComponent,DescFAQPargraphComponent;FaqContainer
 
-# FAQ
+# Isi Mengisi ContentSlot
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        ; cmsComponents(uid, $contentCV)
+                         ;                   ; BannerAboutUsSlot  ; AboutUsBannerComponent
+                         ;                   ; TentangSlot        ; TentangIntheboxContainer
+                         ;                   ; ApaItuKasurSlot    ; Section1Container
+                         ;                   ; KenapaSlot         ; Section2Container
+                         ;                   ; CaraBeliSlot       ; Section3Container
+                         ;                   ; FaqSlot            ; FaqContainer
+
+# Content Slot For Page pada About Us Page
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='aboutUsPage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerAboutUsSlot-aboutUsPage      ;BannerAboutUs  ;;BannerAboutUsSlot
+                                ;                       ;TentangSlot-aboutUsPage            ;Tentang        ;;TentangSlot
+                                ;                       ;ApaItuKasurSlot-aboutUsPage        ;ApaItuKasur    ;;ApaItuKasurSlot
+                                ;                       ;KenapaSlot-aboutUsPage             ;Kenapa         ;;KenapaSlot
+                                ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli       ;;CaraBeliSlot
+                                ;                       ;FaqSlot-aboutUsPage                ;Faq            ;;FaqSlot
+# END OF ABOUT US PAGE
