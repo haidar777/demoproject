@@ -28,7 +28,7 @@
     </enumtypes>
 
     <relations>
-        <relation code="User2Testimonies" localized="false" autocreate="true" generate="true">
+        <relation code="User2TestimoniesRelation" localized="false" autocreate="true" generate="true">
             <sourceElement type="User" cardinality="one" qualifier="user">
                 <modifiers read="true" write="true" search="true" optional="false"/>
             </sourceElement>
@@ -132,9 +132,19 @@
                       extends="VariantProduct">
                 <attributes>
                     <attribute qualifier="size" type="java.lang.String">
-                        <description>Product Size</description>
-                        <modifiers optional="true" initial="true" />
-                        <persistence type="property" />
+                        <description>Size</description>
+                        <modifiers search="true" write="true" read="true" optional="true" initial="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="desc" type="java.lang.String">
+                        <description>Headline</description>
+                        <modifiers search="true" write="true" read="true" optional="true" initial="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="type" type="java.lang.String">
+                        <description>Type of the product</description>
+                        <modifiers search="true" write="true" read="true" optional="true" initial="true"/>
+                        <persistence type="property"/>
                     </attribute>
                 </attributes>
             </itemtype>

@@ -12,4 +12,120 @@ $prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1Pr
 # Set product approval status to Approved only for those products that have prices.
 $approved=approvalstatus(code)[default='approved']
 
-UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;Europe1PriceFactory_PTG(code)
+INSERT_UPDATE PriceRow; product(code, $catalogVersion)[unique = true]; price[translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.PriceTranslator]; currency(isocode)[unique = true][default = IDR]; $catalogVersion; unit(code[unique = true, default = pieces])
+#Kasur
+                      ; ALPHASIZE90x200                              ; 999000                                                                                               ;                                                ;                ;
+                      ; ALPHASIZE100x200                             ; 999000                                                                                               ;                                                ;                ;
+                      ; ALPHASIZE120x200                             ; 1199000                                                                                              ;                                                ;                ;
+                      ; ALPHASIZE140x200                             ; 1599000                                                                                              ;                                                ;                ;
+                      ; ALPHASIZE160x200                             ; 1599000                                                                                              ;                                                ;                ;
+                      ; ALPHASIZE180x200                             ; 1799000                                                                                              ;                                                ;                ;
+                      ; ALPHASIZE200x200                             ; 1999000                                                                                              ;                                                ;                ;
+
+                      ; XSIZE90x200                                  ; 1899000                                                                                              ;                                                ;                ;
+                      ; XSIZE100x200                                 ; 1899000                                                                                              ;                                                ;                ;
+                      ; XSIZE120x200                                 ; 1899000                                                                                              ;                                                ;                ;
+                      ; XSIZE140x200                                 ; 2399000                                                                                              ;                                                ;                ;
+                      ; XSIZE160x200                                 ; 2399000                                                                                              ;                                                ;                ;
+                      ; XSIZE180x200                                 ; 2599000                                                                                              ;                                                ;                ;
+                      ; XSIZE200x200                                 ; 2799000                                                                                              ;                                                ;                ;
+
+                      ; SJSIZE90x200                                 ; 1599000                                                                                              ;                                                ;                ;
+                      ; SJSIZE100x200                                ; 1599000                                                                                              ;                                                ;                ;
+                      ; SJSIZE120x200                                ; 1599000                                                                                              ;                                                ;                ;
+                      ; SJSIZE140x200                                ; 2099000                                                                                              ;                                                ;                ;
+                      ; SJSIZE160x200                                ; 2099000                                                                                              ;                                                ;                ;
+                      ; SJSIZE180x200                                ; 2299000                                                                                              ;                                                ;                ;
+                      ; SJSIZE200x200                                ; 2499000                                                                                              ;                                                ;                ;
+
+                      ; SJPSIZE90x200                                ; 1899000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE100x200                               ; 1899000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE120x200                               ; 1899000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE140x200                               ; 2399000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE160x200                               ; 2399000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE180x200                               ; 2599000                                                                                              ;                                                ;                ;
+                      ; SJPSIZE200x200                               ; 2799000                                                                                              ;                                                ;                ;
+
+                      ; DASHSIZE90x200                               ; 3099000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE100x200                              ; 3099000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE120x200                              ; 3099000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE140x200                              ; 3599000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE160x200                              ; 3599000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE180x200                              ; 3999000                                                                                              ;                                                ;                ;
+                      ; DASHSIZE200x200                              ; 4499000                                                                                              ;                                                ;                ;
+
+                      ; 101SIZE90x200                                ; 1799000                                                                                              ;                                                ;                ;
+                      ; 101SIZE100x200                               ; 1799000                                                                                              ;                                                ;                ;
+                      ; 101SIZE120x200                               ; 1799000                                                                                              ;                                                ;                ;
+                      ; 101SIZE140x200                               ; 2299000                                                                                              ;                                                ;                ;
+                      ; 101SIZE160x200                               ; 2299000                                                                                              ;                                                ;                ;
+                      ; 101SIZE180x200                               ; 2399000                                                                                              ;                                                ;                ;
+                      ; 101SIZE200x200                               ; 2699000                                                                                              ;                                                ;                ;
+
+                      ; HYBRIDSIZE90x200                             ; 1399000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE100x200                            ; 1399000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE120x200                            ; 1499000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE140x200                            ; 1899000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE160x200                            ; 1899000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE180x200                            ; 2099000                                                                                              ;                                                ;                ;
+                      ; HYBRIDSIZE200x200                            ; 2299000                                                                                              ;                                                ;                ;
+
+                      ; HYBRID15SIZE90x200                           ; 999000                                                                                               ;                                                ;                ;
+                      ; HYBRID15SIZE100x200                          ; 1099000                                                                                              ;                                                ;                ;
+                      ; HYBRID15SIZE120x200                          ; 1299000                                                                                              ;                                                ;                ;
+                      ; HYBRID15SIZE140x200                          ; 1599000                                                                                              ;                                                ;                ;
+                      ; HYBRID15SIZE160x200                          ; 1599000                                                                                              ;                                                ;                ;
+                      ; HYBRID15SIZE180x200                          ; 1899000                                                                                              ;                                                ;                ;
+                      ; HYBRID15SIZE200x200                          ; 2199000                                                                                              ;                                                ;                ;
+
+                      ; PLAINSIZE90x200                              ; 1599000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE100x200                             ; 1599000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE120x200                             ; 1599000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE140x200                             ; 2099000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE160x200                             ; 2099000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE180x200                             ; 2299000                                                                                              ;                                                ;                ;
+                      ; PLAINSIZE200x200                             ; 2499000                                                                                              ;                                                ;                ;
+
+                      ; PLUSSIZE90x200                               ; 2799000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE100x200                              ; 2799000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE120x200                              ; 2799000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE140x200                              ; 3199000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE160x200                              ; 3199000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE180x200                              ; 3499000                                                                                              ;                                                ;                ;
+                      ; PLUSSIZE200x200                              ; 3799000                                                                                              ;                                                ;                ;
+
+                      ; ORGHYBSIZE90x200                             ; 3939000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE100x200                            ; 3939000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE120x200                            ; 3939000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE140x200                            ; 4699000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE160x200                            ; 4699000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE180x200                            ; 5199000                                                                                              ;                                                ;                ;
+                      ; ORGHYBSIZE200x200                            ; 6439000                                                                                              ;                                                ;                ;
+
+                      ; ORGLITESIZE90x200                            ; 4859000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE100x200                           ; 4859000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE120x200                           ; 4859000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE140x200                           ; 5699000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE160x200                           ; 5699000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE180x200                           ; 6309000                                                                                              ;                                                ;                ;
+                      ; ORGLITESIZE200x200                           ; 7069000                                                                                              ;                                                ;                ;
+
+                      ; ORGPLUSHSIZE90x200                           ; 6499000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE100x200                          ; 6499000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE120x200                          ; 6499000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE140x200                          ; 7799000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE160x200                          ; 7799000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE180x200                          ; 8599000                                                                                              ;                                                ;                ;
+                      ; ORGPLUSHSIZE200x200                          ; 9599000                                                                                              ;                                                ;                ;
+#Sofa
+                      ; SOFA3SEATERW                                 ; 3299000                                                                                              ;                                                ;                ;
+                      ; SOFA3SEATERB                                 ; 3299000                                                                                              ;                                                ;                ;
+#Kasur Lipat
+                      ; KASURLIPAT                                   ; 899000                                                                                               ;                                                ;                ;
+#Sofabed
+                      ; SBED1                                        ; 1499000                                                                                              ;                                                ;                ;
+                      ; SBED2                                        ; 1499000                                                                                              ;                                                ;                ;
+#Bantal
+                      ; PROPSBANTAL                                  ; 250000                                                                                               ;                                                ;                ;
+#Guling
+                      ; PROPSGULING                                  ; 250000

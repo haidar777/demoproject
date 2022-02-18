@@ -538,4 +538,19 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<alias name="demoProductService" alias="demoProductService"/>
+	<bean id="demoProductService" class="org.demo.core.product.service.impl.DemoProductServiceImpl"/>
+	<alias name="demoProductDAO" alias="demoProductDAO"/>
+	<bean id="demoProductDAO" class="org.demo.core.product.dao.impl.DemoProductDAOImpl"/>
+
+	<bean id="sizeValueProvider" class="org.demo.core.provider.SizeValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+	<bean id="descValueProvider" class="org.demo.core.provider.DescValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+	<bean id="typeValueProvider" class="org.demo.core.provider.TypeValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
 </beans>

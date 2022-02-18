@@ -1,7 +1,7 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at Feb 16, 2022, 10:31:16 AM                   ---
+ * --- Generated at Feb 18, 2022, 2:32:36 PM                    ---
  * ----------------------------------------------------------------
  */
 package org.demo.core.jalo;
@@ -39,7 +39,7 @@ public abstract class GeneratedDemoCoreManager extends Extension
 	/**
 	* {@link OneToManyHandler} for handling 1:n TESTIMONY's relation attributes from 'many' side.
 	**/
-	protected static final OneToManyHandler<Testimony> USER2TESTIMONIESTESTIMONYHANDLER = new OneToManyHandler<Testimony>(
+	protected static final OneToManyHandler<Testimony> USER2TESTIMONIESRELATIONTESTIMONYHANDLER = new OneToManyHandler<Testimony>(
 	DemoCoreConstants.TC.TESTIMONY,
 	true,
 	"user",
@@ -260,7 +260,7 @@ public abstract class GeneratedDemoCoreManager extends Extension
 	 */
 	public Collection<Testimony> getTestimony(final SessionContext ctx, final User item)
 	{
-		return USER2TESTIMONIESTESTIMONYHANDLER.getValues( ctx, item );
+		return USER2TESTIMONIESRELATIONTESTIMONYHANDLER.getValues( ctx, item );
 	}
 	
 	/**
@@ -278,7 +278,7 @@ public abstract class GeneratedDemoCoreManager extends Extension
 	 */
 	public void setTestimony(final SessionContext ctx, final User item, final Collection<Testimony> value)
 	{
-		USER2TESTIMONIESTESTIMONYHANDLER.setValues( ctx, item, value );
+		USER2TESTIMONIESRELATIONTESTIMONYHANDLER.setValues( ctx, item, value );
 	}
 	
 	/**
@@ -296,7 +296,7 @@ public abstract class GeneratedDemoCoreManager extends Extension
 	 */
 	public void addToTestimony(final SessionContext ctx, final User item, final Testimony value)
 	{
-		USER2TESTIMONIESTESTIMONYHANDLER.addValue( ctx, item, value );
+		USER2TESTIMONIESRELATIONTESTIMONYHANDLER.addValue( ctx, item, value );
 	}
 	
 	/**
@@ -314,7 +314,7 @@ public abstract class GeneratedDemoCoreManager extends Extension
 	 */
 	public void removeFromTestimony(final SessionContext ctx, final User item, final Testimony value)
 	{
-		USER2TESTIMONIESTESTIMONYHANDLER.removeValue( ctx, item, value );
+		USER2TESTIMONIESRELATIONTESTIMONYHANDLER.removeValue( ctx, item, value );
 	}
 	
 	/**

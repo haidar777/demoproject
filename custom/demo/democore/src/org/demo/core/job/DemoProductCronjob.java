@@ -1,6 +1,7 @@
 package org.demo.core.job;
 
 import de.hybris.platform.catalog.enums.ArticleApprovalStatus;
+import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.cronjob.enums.CronJobResult;
 import de.hybris.platform.cronjob.enums.CronJobStatus;
 import de.hybris.platform.cronjob.model.CronJobModel;
@@ -31,7 +32,7 @@ public class DemoProductCronjob extends AbstractJobPerformable<CronJobModel> {
     public PerformResult perform(CronJobModel cronJobModel) {
         LOG.info("Demo Product Cronjob was trigger");
 
-        List<Object> products = demoProductDAO.getAllProduct();
+        List<ProductModel> products = demoProductDAO.getProduct();
         if(products != null){
             for(Object  product: products){
                 if(product.getClass() == DemoProductModel.class){
