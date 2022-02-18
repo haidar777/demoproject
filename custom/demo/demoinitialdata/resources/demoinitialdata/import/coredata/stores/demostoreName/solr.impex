@@ -14,7 +14,7 @@ $facetSearchConfigName=$prefixIndex
 $facetSearchConfigDescription=Facet Demo Product Solr Index
 $searchIndexNamePrefix=demo
 $solrIndexedType=$prefixProductType
-$indexBaseSite=demo
+$indexBaseSite=demostore
 $indexLanguages=en,id
 $indexCurrencies=IDR
 
@@ -36,7 +36,7 @@ INSERT_UPDATE SolrIndexConfig;name[unique=true];batchSize;numberOfThreads;indexM
 
 # Create the faceted search configuration
 INSERT_UPDATE SolrSearchConfig;description[unique=true];pageSize
-                              ; $searchConfigName         ; 12
+                              ; $searchConfigName         ; 8
 
 # Declare the indexed type Product
 INSERT_UPDATE SolrIndexedType;identifier[unique=true];type(code);variant;sorts(&sortRefID)
@@ -50,13 +50,15 @@ UPDATE BaseSite;uid[unique=true];solrFacetSearchConfiguration(name)
 
 # Define price range set
 INSERT_UPDATE SolrValueRangeSet;name[unique=true];qualifier;type;solrValueRanges(&rangeValueRefID)
-                               ; demoPriceRangeIDR ; IDR      ; double ; rangeRefIDR1,rangeRefIDR2,rangeRefIDR3
+                               ; demoPriceRangeIDR ; IDR      ; double ; rangeRefIDR0,rangeRefIDR1,rangeRefIDR2,rangeRefIDR3,rangeRefIDR4
 
 # Define price ranges
 INSERT_UPDATE SolrValueRange;&rangeValueRefID;solrValueRangeSet(name)[unique=true];name[unique=true];from;to
-                            ; rangeRefIDR1    ; demoPriceRangeIDR                 ; Rp.1 Juta-Rp.1,5 Juta ; 0       ; 1500000
-                            ; rangeRefIDR2    ; demoPriceRangeIDR                 ; Rp.1,5 Juta-Rp.2 Juta ; 1500001 ; 2000000
-                            ; rangeRefIDR3    ; demoPriceRangeIDR                 ; > Rp.2 Juta           ; 2000001 ; 10000000
+                            ; rangeRefIDR0    ; demoPriceRangeIDR                 ; <Rp.1,5 Juta            ; 0       ; 1500000
+                            ; rangeRefIDR1    ; demoPriceRangeIDR                 ; Rp.1,5 Juta-Rp.2,5 Juta ; 1500001 ; 2500000
+                            ; rangeRefIDR2    ; demoPriceRangeIDR                 ; Rp.2,5 Juta-Rp.3,5 Juta ; 2500001 ; 3500000
+                            ; rangeRefIDR3    ; demoPriceRangeIDR                 ; Rp.3,5 Juta-Rp 4,5 Juta ; 3500001 ; 4500000
+                            ; rangeRefIDR4    ; demoPriceRangeIDR                 ; >Rp.4,5 Juta            ; 4500001 ; 10000000
 
 # Non-facet properties
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]  ; type(code); sortableType(code); currency[default = false]; localized[default = false]; multiValue[default = false]; categoryField[default = false]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider                      ; valueProviderParameter[map-delimiter = |]; ftsPhraseQuery[default = false]; ftsPhraseQueryBoost; ftsQuery[default = false]; ftsQueryBoost; ftsFuzzyQuery[default = false]; ftsFuzzyQueryBoost; ftsWildcardQuery[default = false]; ftsWildcardQueryType(code)[default = POSTFIX]; ftsWildcardQueryBoost; ftsWildcardQueryMinTermLength
@@ -89,8 +91,8 @@ INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; n
 
 # Add new indexed property
 INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); sortableType(code); currency[default = false]; localized[default = false]; multiValue[default = false]; useForSpellchecking[default = false]; useForAutocomplete[default = false]; fieldValueProvider    ; valueProviderParameter; ftsPhraseQuery[default = false]; ftsPhraseQueryBoost; ftsQuery[default = false]; ftsQueryBoost; ftsFuzzyQuery[default = false]; ftsFuzzyQueryBoost; ftsWildcardQuery[default = false]; ftsWildcardQueryType(code)[default = POSTFIX]; ftsWildcardQueryBoost; ftsWildcardQueryMinTermLength; customFacetSortProvider
-                                 ; $solrIndexedType  ; sku                ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; sku                   ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
-                                 ; $solrIndexedType  ; material           ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; material              ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
+#                                 ; $solrIndexedType  ; sku                ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; sku                   ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
+#                                 ; $solrIndexedType  ; material           ; string    ;                   ;                          ; false                     ;                            ; true                                ; true                               ; springELValueProvider ; material              ; true                           ; 30                 ; true                     ; 15           ;                               ;                   ;                                  ;                                              ;                      ;                              ;
 
 
 # Create the queries that will be used to extract data for Solr
@@ -113,12 +115,12 @@ SELECT DISTINCT tbl.pk, tbl.code FROM (
 ) tbl ORDER BY tbl.code" ; anonymous
 
 # Define the available sorts
-INSERT_UPDATE SolrSort; &sortRefID; indexedType(identifier)[unique = true]; code[unique = true]; useBoost
-                      ; sortRef1  ; $solrIndexedType                     ; relevance          ; false
-                      ; sortRef3  ; $solrIndexedType                      ; name-asc           ; false
-                      ; sortRef4  ; $solrIndexedType                      ; name-desc          ; false
-                      ; sortRef5  ; $solrIndexedType                      ; price-asc          ; false
-                      ; sortRef6  ; $solrIndexedType                      ; price-desc         ; false
+INSERT_UPDATE SolrSort; &sortRefID; indexedType(identifier)[unique = true]; code[unique = true]; useBoost   ;name
+                      ; sortRef1  ; $solrIndexedType                      ; relevance          ; false      ;Relevance
+                      ; sortRef3  ; $solrIndexedType                       ; name-asc           ; false      ;Name (ascending)
+                      ; sortRef4  ; $solrIndexedType                       ; name-desc          ; false      ;Name (descending)
+                      ; sortRef5  ; $solrIndexedType                       ; price-asc          ; false      ;Price (ascending)
+                      ; sortRef6  ; $solrIndexedType                       ; price-desc         ; false      ;Price (descending)
 
 # Define the sort fields
 INSERT_UPDATE SolrSortField; sort(indexedType(identifier), code)[unique = true]; fieldName[unique = true]; ascending[unique = true]
@@ -129,3 +131,10 @@ INSERT_UPDATE SolrSortField; sort(indexedType(identifier), code)[unique = true];
                            ; $solrIndexedType:price-desc                       ; priceValue              ; false
 
 # Add new indexed property
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]; type(code); multiValue[default = true]; facet[default = true]; facetType(code); facetSort(code); priority; visible; categoryField[default = true]; fieldValueProvider; facetDisplayNameProvider; topValuesProvider
+                                 ; $solrIndexedType                          ; size               ; string    ; false                     ;                      ; Refine         ; Alpha          ; 100     ; false  ; false                        ; sizeValueProvider ;                         ;
+                                 ; $solrIndexedType                          ; desc               ; string    ; false                     ;                      ; Refine         ; Alpha          ; 100     ; false  ; false                        ; descValueProvider ;                         ;
+                                 ; $solrIndexedType                          ; type               ; string    ; false                     ;                      ; Refine         ; Alpha          ; 100     ; true   ; false                        ; typeValueProvider ;                         ; defaultTopValuesProvider
+
+INSERT_UPDATE SolrIndexedProperty; solrIndexedType(identifier)[unique = true]; name[unique = true]  ; type(code); facet[default = true]; facetType(code); visible; fieldValueProvider           ; rangeSets(name)   ;priority   ;currency
+                                 ; $solrIndexedType                          ; price                ; double    ;                      ; Refine         ; true   ; productPriceValueProvider    ; demoPriceRangeIDR ;100        ;true

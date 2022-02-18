@@ -550,7 +550,7 @@
 	<bean id="descValueProvider" class="org.demo.core.provider.DescValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
-<!--	<bean id="typeValueProvider" class="org.demo.core.provider.TypeValueProvider" parent="abstractPropertyFieldValueProvider">-->
-<!--		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>-->
-<!--	</bean>-->
+	<bean id="typeValueProvider" class="org.demo.core.provider.TypeValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
 </beans>
