@@ -20,10 +20,13 @@
   }
 }
 
-.product-details,
 .product-details-price{
-  margin-bottom: 10px;
-
+   color: #6086C2;
+   font-family: Helvetica;
+   font-style: italic;
+   margin-bottom: 10px;
+}
+.product-details,.product-details-price{
   @media (max-width: @screen-xs-max){
 	padding: 0;
   }
@@ -61,10 +64,6 @@
       color: @item-promo-color;
   }
 
-  .description{
-      padding: (@grid-gutter-width/2) 0 25px;
-  }
-
   .price{
       font-size: 25px;
       font-weight: bold;
@@ -73,6 +72,11 @@
   .stock-status{
       font-weight: 300;
   }
+}
+
+.description{
+      padding: (@grid-gutter-width/2) 0 25px;
+      font-size: 18px;
 }
 
 @media (max-width: @screen-md-max) {

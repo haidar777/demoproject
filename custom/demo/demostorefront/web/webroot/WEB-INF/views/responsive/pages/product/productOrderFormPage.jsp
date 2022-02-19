@@ -36,7 +36,8 @@
         <div class="product-details page-title">
             <ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
                 <div class="name product-details-toggle">${fn:escapeXml(product.name)}<span class="sku">ID</span><span
-                        class="code">${fn:escapeXml(product.code)}</span><span class="glyphicon glyphicon-chevron-right"></span></div>
+                        class="code">${fn:escapeXml(product.code)}</span><span class="glyphicon glyphicon-chevron-right"></span>
+                </div>
             </ycommerce:testId>
         </div>
 

@@ -305,5 +305,48 @@ UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                  
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ;BannerProductGridPageSlot  ;Banner                 ;                                                         ;BannerProductGridPageSlot
 
+##### ProductDetailPage #####
+# Lightbox Banner for Mini Cart
+#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
+#                                   ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
+#
+## CMS Mini Cart Component
+#INSERT_UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;totalDisplay(code);shownProductCount;lightboxBannerComponent(&componentRef)
+#                               ;;MiniCart;Mini Cart;MiniCart;SUBTOTAL;3;LightboxHomeDeliveryBannerComponent
+#
+
+# CMS VariantSelector Components
+INSERT_UPDATE ProductVariantSelectorComponent; $contentCV[unique = true]; uid[unique = true]; name                     ; &componentRef
+                                             ;                          ; VariantSelector   ; Product Variant Selector ; VariantSelector
+
+# CMS ProductAddToCart Components
+INSERT_UPDATE AddToCartAction; $contentCV[unique = true]; uid[unique = true]; url       ; name                       ; &actionRef
+                             ;                          ; AddToCartAction   ; /cart/add ; Product Add To Cart Action ; AddToCartAction
+
+INSERT_UPDATE ProductAddToCartComponent; $contentCV[unique = true]; uid[unique = true]; name                ; actions(&actionRef); &componentRef
+                                       ;                          ; AddToCart         ; Product Add To Cart ; AddToCartAction    ; AddToCart
+
+# CMS ProductReferences Components
+INSERT_UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]; name          ; productReferenceTypes(code); maximumNumberProducts; &componentRef
+                                        ;                          ; CrossSelling      ; Cross Selling ; CROSSELLING                ; 5                    ; CrossSelling
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsComponents(&componentRef)
+#                         ;                          ; SiteLogoSlot        ; SiteLogoComponent
+#                         ;                          ; HomepageNavLinkSlot ; HomepageNavLink
+#                         ;                          ; MiniCartSlot        ; MiniCart
+#                         ;                          ; NavigationBarSlot   ;
+#                         ;                          ; TabsSlot            ; TabPanelContainer
+#                         ;                          ; FooterSlot          ;
+#                         ;                          ; HeaderLinksSlot     ;
+#                         ;                          ; SearchBoxSlot       ; SearchBox
+#                         ;                          ; VariantSelectorSlot ; VariantSelector
+                          ;                          ; AddToCartSlot       ; AddToCart
+#                         ;                          ; UpSellingSlot       ; Similar
+                          ;                          ; CrossSellingSlot    ; Similar
+                          ;                          ; KeteranganSlot      ;
+                          ;                          ; VariantSelectorSlot ; VariantSelector
+
+UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; previewImage(code, $contentCV)
+                  ;                          ; productDetails    ;
 
 
