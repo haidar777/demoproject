@@ -42,16 +42,15 @@ $siteResource = jar:com.demo.initialdata.setup.InitialDataSystemSetup&/demoiniti
 # Language
 $lang = id
 
-# Demo Website
 
 # Site Logo Component
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang]
-                            ;                          ; SiteLogoComponent ; /images/HomePage/header-logo-white.png ;
+                            ;                          ; SiteLogoComponent ; /images/header/header-logo-white.png ;
 
 # Top Left Header Logo Component
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; $picture[lang = $lang]
-                            ;                          ; TopHeaderLeftLogoComponent1 ; /images/header-icon-10y-warranty.png
-                            ;                          ; TopHeaderLeftLogoComponent2 ; /images/header-icon-free-shipping.png
+                            ;                          ; TopHeaderLeftLogoComponent1 ; /images/header/header-icon-10y-warranty.png
+                            ;                          ; TopHeaderLeftLogoComponent2 ; /images/header/header-icon-free-shipping.png
 
 # Top Left Header Paragraph Component
 UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; content[lang = $lang];
@@ -59,7 +58,35 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]     
                             ;                          ; TopHeaderLeftParagraphComponent2 ; "Free Shipping pulau Jawa & Sumatera"
 # Cart Icon Logo
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
-                            ;                          ; CartHeaderLogoComponent ; /images/cart-icon.png
+                            ;                          ; CartHeaderLogoComponent ; /images/icon/cart-icon.png
+
+# PGP Catalog Banner
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
+                            ;                          ; ProductGridPageBanner   ; /images/PLP/catalog-header.png
+
+# Bottom Left Footer Logo Component
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; $picture[lang = $lang]
+                            ;                          ; FooterLogoComponent1 ; /images/icon/facebook.svg
+                            ;                          ; FooterLogoComponent2 ; /images/icon/instagram.svg
+                            ;                          ; FooterLogoComponent3 ; /images/icon/email.svg
+
+# Bottom Left Footer Logo Component
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; $picture[lang = $lang]
+                            ;                          ; BottomLeftFooterLogoComponent1 ; /images/footer/icon-call.png
+                            ;                          ; BottomLeftFooterLogoComponent2 ; /images/footer/icon-message.png
+
+# Bottom Left Footer Paragraph Component
+UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; content[lang = $lang];
+                            ;                          ; BottomLeftFooterParagraphComponent1 ; "(021) 30306286"
+                            ;                          ; BottomLeftFooterParagraphComponent2 ; "+62 819 234 659"
+
+# Bottom Right Footer Paragraph Component
+UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; content[lang = $lang];
+                            ;                          ; BottomRightFooterParagraphComponent ; "Copyright © 2019-2022 PT Duta Mas Mandiri"
+
+
+UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
+                                      ;                          ; Banner-HomePage         ; /images/HomePage/banner.png
 
 # Navigation
 # Header
@@ -74,12 +101,12 @@ UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]          
                        ;                          ; LoginLink                       ; "LOGIN"
 
 # CMS Navigation Nodes
-UPDATE CMSNavigationNode; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
-#                        ;                          ; MyAccountNavNode  ; "My Account"
-# End Header
+UPDATE CMSNavigationNode; $contentCV[unique = true]; uid[unique = true]  ; title[lang = $lang]
+                        ;                          ; ProductGroupNavNode ; PRODUCTS
+                        ;                          ; SupportGroupNavNode ; SUPPORT
+                        ;                          ; AboutGroupNavNode   ; ABOUT
 
 # Footer
-
 UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]     ; linkName[lang = $lang]
                        ;                          ; WarrantyActivationLink ; "Aktivasi Garansi"
                        ;                          ; OrderTrackingLink      ; "Cek Resi"
@@ -95,6 +122,7 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true];
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
                                 ;                          ; FooterNavigationComponent ; "Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
+<<<<<<< HEAD
 # End Footer
 # End Navigation
 
@@ -123,3 +151,12 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true] 
 #
 UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
                                  ;;Similar;"You may also like..."
+=======
+
+# BannerComponents for Carousel
+UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$lang];$picture[lang=$lang]                          ;content[lang=$lang]
+                      ;                       ; CarouselProduct1;INTHEBOX            ;/images/HomePage/Carousel/Inthebox.png        ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct2;INTHEBOX            ;/images/HomePage/Carousel/Inthebox Hybrid.png ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct3;INTHEBOX            ;/images/HomePage/Carousel/Inthebox 101.png    ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct4;INTHEBOX            ;/images/HomePage/Carousel/Inthebox X.png      ;"Pocket Spring & Busa Medium Soft"
+>>>>>>> 912382c3cb00aca7c14c26dcae3254efdb1ba536

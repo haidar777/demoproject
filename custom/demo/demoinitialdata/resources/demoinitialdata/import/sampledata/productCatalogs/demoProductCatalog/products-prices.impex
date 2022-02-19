@@ -128,4 +128,4 @@ INSERT_UPDATE PriceRow; product(code, $catalogVersion)[unique = true]; price[tra
 #Bantal
                       ; PROPSBANTAL                                  ; 250000                                                                                               ;                                                ;                ;
 #Guling
-                      ; PROPSGULING                                  ; 250000                                                                                               ;                                                ;                ;
+                      ; PROPSGULING                                  ; 250000

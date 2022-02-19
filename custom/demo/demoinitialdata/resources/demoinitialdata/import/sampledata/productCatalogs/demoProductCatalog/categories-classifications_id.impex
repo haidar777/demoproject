@@ -15,7 +15,16 @@ $classSystemVersion=systemVersion(catalog(id[default='$classificationCatalog']),
 $lang=id
 
 # Insert Classifications
-UPDATE ClassificationClass;code[unique=true];$classCatalogVersion;name[lang=$lang]
+UPDATE ClassificationClass; $classCatalogVersion; code[unique = true]   ; name[lang = $lang]
+                          ;                     ; kasur                 ; Kasur
+                          ;                     ; sofa                  ; Sofa
+                          ;                     ; sofabed               ; Sofabed
+                          ;                     ; kasurlipat            ; Kasur lipat
+                          ;                     ; bantal                ; bantal
+                          ;                     ; guling                ; guling
 
 # Insert Classification Attributes
-UPDATE ClassificationAttribute;code[unique=true];$classSystemVersion;name[lang=$lang]
+UPDATE ClassificationAttribute; $classSystemVersion; code[unique = true]; name[lang = $lang]
+                              ;                    ; panjang            ; Panjang
+                              ;                    ; lebar              ; Lebar
+                              ;                    ; tinggi             ; Tinggi

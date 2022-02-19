@@ -31,9 +31,14 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; LoginLinkSlot             ; LoginLink
                          ;                          ; CartLinkSlot              ; CartHeaderLogoComponent
 
+                         ;                          ; FooterLogo1Slot           ; SiteLogoComponent
+                         ;                          ; FooterLogo2Slot           ; FooterLogoComponent1,FooterLogoComponent2,FooterLogoComponent3
+                         ;                          ; FooterNavigationSlot      ; FooterNavigationComponent
+                         ;                          ; FooterContactSlot         ; BottomLeftFooterContainer1,BottomLeftFooterContainer2
+                         ;                          ; FooterCopyrightSlot       ; BottomRightFooterParagraphComponent
 
 # CMS Link
-INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]                            ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
+INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]              ; name                                ; url                    ; &linkRef                        ; &componentRef                   ; target(code)[default = 'sameWindow']
                               ;                          ; LoginLink                       ; Login Link                          ; /login                 ; LoginLink                       ; LoginLink                       ;
                               ;                          ; WarrantyActivationLink          ; Warranty Activation Link            ; /warranty-registration ; WarrantyActivationLink          ; WarrantyActivationLink          ;
                               ;                          ; TopHeaderWarrantyActivationLink ; Top Header Warranty Activation Link ; /warranty-registration ; TopHeaderWarrantyActivationLink ; TopHeaderWarrantyActivationLink ;
@@ -45,26 +50,25 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
                               ;                          ; OfflineStoreLink                ; Offline Show Link                   ; /offline-store         ; OfflineStoreLink                ; OfflineStoreLink                ;
                               ;                          ; PaymentConfirmationLink         ; Payment Confirmation Link           ; /payment-confirmation  ; PaymentConfirmationLink         ; PaymentConfirmationLink         ;
 
-                              ;                          ; ProductLink                     ; Product Link                        ; c/PRODUK              ; ProductLink                     ; ProductLink                     ;
+                              ;                          ; ProductLink                     ; Product Link                        ; /c/PRODUK              ; ProductLink                     ; ProductLink                     ;
                               ;                          ; AboutUsLink                     ; About us Link                       ; /about                 ; AboutUsLink                     ; AboutUsLink                     ;
                               ;                          ; BlogsLink                       ; Blogs Link                          ; /blog                  ; BlogsLink                       ; BlogsLink                       ;
                               ;                          ; TestimonialLink                 ; Testimonial Link                    ; /testimony             ; TestimonialLink                 ; TestimonialLink                 ;
-##PDP
-                              ;                          ; HomepageNavLink                 ; Home Page Nav Link                  ; /                      ; HomepageNavLink                 ; HomepageNavLink                 ;
+
 
 
 # Site Logo Media
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                   ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText        ; folder(qualifier)[default = 'images']
-                   ;                          ; /images/HomePage/header-logo-white.png; header-logo-white.png ; $siteResource/images/HomePage/header-logo-white.png                          ; image/png                   ; Demo Site Logo ;
+                   ;                          ; /images/header/header-logo-white.png; header-logo-white.png ; $siteResource/images/header/header-logo-white.png                          ; image/png                   ; Demo Site Logo ;
 
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                ; &componentRef     ; urlLink
                                    ;                          ; SiteLogoComponent ; Site Logo Component ; SiteLogoComponent ; "/"
 
 # Top Left Header Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                           ; realfilename                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/header-icon-10y-warranty.png          ; header-icon-10y-warranty.png  ; $siteResource/images/header-icon-10y-warranty.png                           ; image/png                   ;        ;
-                   ;                          ; /images/header-icon-free-shipping.png         ; header-icon-free-shipping.png ; $siteResource/images/header-icon-free-shipping.png                          ; image/png                   ;        ;
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                                  ; realfilename                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/header/header-icon-10y-warranty.png          ; header-icon-10y-warranty.png  ; $siteResource/images/header/header-icon-10y-warranty.png                           ; image/png                   ;        ;
+                   ;                          ; /images/header/header-icon-free-shipping.png         ; header-icon-free-shipping.png ; $siteResource/images/header/header-icon-free-shipping.png                          ; image/png                   ;        ;
 
 # Top Left Header Logo Component
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; name                             ; &componentRef
@@ -79,17 +83,53 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 # Top Left Header Paragraph Container
 INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                        ; visible; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
                                       ;                          ; TopHeaderLeftContainer1 ; Top Header Left Container 1 ; true   ; TopHeaderLeftLogoComponent1,TopHeaderLeftParagraphComponent1 ; TopHeaderLeftContainer1
-                                      ;                          ; TopHeaderLeftContainer2 ; Top Header Left Contaier 2  ; true   ; TopHeaderLeftLogoComponent2,TopHeaderLeftParagraphComponent2 ; TopHeaderLeftContainer2
+                                      ;                          ; TopHeaderLeftContainer2 ; Top Header Left Container 2 ; true   ; TopHeaderLeftLogoComponent2,TopHeaderLeftParagraphComponent2 ; TopHeaderLeftContainer2
 # Top Left Header Paragraph Container
 
 # Cart Header Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]           ; realfilename  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/cart-icon.png         ; cart-icon.png ; $siteResource/images/cart-icon.png                                          ; image/png                   ;        ;
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                ; realfilename  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                                                                                 ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/icon/cart-icon.png         ; cart-icon.png ; $siteResource/images/icon/cart-icon.png    ; image/png                   ;        ;
 
 # Cart Header Logo Component
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; name                       ; &componentRef           ; urlLink
                                    ;                          ; CartHeaderLogoComponent ; Cart Header Logo Component ; CartHeaderLogoComponent ; "/cart"
 
+
+# Footer Logo Media
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]        ; realfilename  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/icon/facebook.svg  ; facebook.svg  ; $siteResource/images/icon/facebook.svg                                      ; image/svg                   ;        ;
+                   ;                          ; /images/icon/instagram.svg ; instagram.svg ; $siteResource/images/icon/instagram.svg                                     ; image/svg                   ;        ;
+                   ;                          ; /images/icon/email.svg     ; email.svg     ; $siteResource/images/icon/email.svg                                         ; image/svg                   ;        ;
+
+# Footer Logo Component
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; name                    ; &componentRef
+                                   ;                          ; FooterLogoComponent1 ; Footer Logo Component 1 ; FooterLogoComponent1
+                                   ;                          ; FooterLogoComponent2 ; Footer Logo Component 2 ; FooterLogoComponent2
+                                   ;                          ; FooterLogoComponent3 ; Footer Logo Component 3 ; FooterLogoComponent3
+
+# Bottom Left Footer Logo Media
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename              ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/footer/icon-call.png            ; icon-call.png             ; $siteResource/images/footer/icon-call.png                                     ; image/png                   ;        ;
+                   ;                          ; /images/footer/icon-message.png         ; icon-message.png          ; $siteResource/images/footer/icon-message.png                                  ; image/png                   ;        ;
+
+# Bottom Left Footer Logo Component
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; name                                ; &componentRef
+                                   ;                          ; BottomLeftFooterLogoComponent1 ; Bottom Left Footer Logo Component 1 ; BottomLeftFooterLogoComponent1
+                                   ;                          ; BottomLeftFooterLogoComponent2 ; Bottom Left Footer Logo Component 2 ; BottomLeftFooterLogoComponent2
+
+# Bottom Left Footer Paragraph
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                     ; &componentRef
+                                   ;                          ; BottomLeftFooterParagraphComponent1 ; Bottom Left Footer Paragraph Component 1 ; BottomLeftFooterParagraphComponent1
+                                   ;                          ; BottomLeftFooterParagraphComponent2 ; Bottom Left Footer Paragraph Component 2 ; BottomLeftFooterParagraphComponent2
+
+# Bottom Left Footer Paragraph Container
+INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]         ; name                           ; visible; simpleCMSComponents(uid, $contentCV)                               ; &componentRef
+                                      ;                          ; BottomLeftFooterContainer1 ; Bottom Left Footer Container 1 ; true   ; BottomLeftFooterLogoComponent1,BottomLeftFooterParagraphComponent1 ; BottomLeftFooterContainer1
+                                      ;                          ; BottomLeftFooterContainer2 ; Bottom Left Footer Container 2 ; true   ; BottomLeftFooterLogoComponent2,BottomLeftFooterParagraphComponent2 ; BottomLeftFooterContainer2
+
+# Bootom Right Footer Paragraph
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ; &componentRef
+                                   ;                          ; BottomRightFooterParagraphComponent ; Bottom Right Footer Paragraph Component ; BottomRightFooterParagraphComponent
 
 # Navigation
 # Root
@@ -148,7 +188,6 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; 
 # Level 5
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name; &nodeRef; parent(uid, $contentCV)
 
-
 # Navigation Component
 # Top Header Navigation Component
 INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique = true]    ; name                            ; navigationNode(&nodeRef); &componentRef         ; wrapAfter; styleClass
@@ -157,8 +196,8 @@ INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique
 INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique = true] ; name                        ; navigationNode(&nodeRef); &componentRef      ; wrapAfter; styleClass
                                          ;                          ; HeaderNavComponent ; Header Navigation Component ; HeaderNavNode           ; HeaderNavComponent ; 10       ;
 # Footer Navigation Component
-INSERT_UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; name                        ; navigationNode(&nodeRef); &componentRef             ; wrapAfter; showLanguageCurrency
-                                       ;                          ; FooterNavigationComponent ; Footer Navigation Component ; FooterNavNode           ; FooterNavigationComponent ; 4        ; true
+INSERT_UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; name                        ; navigationNode(&nodeRef); &componentRef             ;  showLanguageCurrency
+                                       ;                          ; FooterNavigationComponent ; Footer Navigation Component ; FooterNavNode           ; FooterNavigationComponent ; true
 
 
 # CMS Navigation Entry
@@ -187,24 +226,45 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]             ; $contentCV[un
                                 ; BlogsFooterNavNodeEntry        ;                          ; Blogs Footer Navigation Node Entry        ; BlogsFooterNavNode        ; BlogsLink                                              ;
                                 ; TestimonialFooterNavNodeEntry  ;                          ; Testimonial Footer Navigation Node Entry  ; TestimonialFooterNavNode  ; TestimonialLink                                        ;
 
+#Home page contents
+#Banner
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/HomePage/banner.png             ; banner.png            ; $siteResource/images/HomePage/banner.png                                          ; image/png                   ;        ;
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                           ; &componentRef            ;urlLink
+                                             ;                       ; Banner-HomePage           ;Banner component for Homepage  ; Banner-HomePage          ;/c/PRODUK
+
+UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
+                  ;                          ;BannerSlot                         ;true   ;Banner-HomePage
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
+
 
 # ProductGridPage
 INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
                                  ;                          ; ListOrderFormAction ; /orderForm ; Order Form Action ; ListOrderFormAction
+
 INSERT_UPDATE ListPickUpInStoreAction; $contentCV[unique = true]; uid[unique = true]      ; url                                         ; name                        ; &actionRef
                                      ;                          ; ListPickUpInStoreAction ; /store-pickup/{productCode}/pointOfServices ; Pickup in Store Action List ; ListPickUpInStoreAction
+
 INSERT_UPDATE ListAddToCartAction; $contentCV[unique = true]; uid[unique = true]  ; url       ; name                            ; &actionRef
                                  ;                          ; ListAddToCartAction ; /cart/add ; Product Add To Cart Action List ; ListAddToCartAction
+
 INSERT_UPDATE ProductRefinementComponent; $contentCV[unique = true]; uid[unique = true]       ; name                               ; &componentRef
                                         ;                          ; RefinementFacetComponent ; Product Refinement Facet Component ; RefinementFacetComponent
+
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name                               ; active; cmsComponents(&componentRef)
                          ;                          ; ProductGridSlot            ; Product Grid Slot for Product List ; true  ; ProductGridComponent
                          ;                          ; ProductLeftRefinementsSlot ; Product Left Refinements           ; true  ; RefinementFacetComponent
+
 INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; actions(uid, $contentCV)                    ; &componentRef
                                   ;                          ; ProductGridComponent ; Product Grid Component ; ListPickUpInStoreAction,ListAddToCartAction ; ProductGridComponent
+
 UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
                            ;                          ; ProductGridComponent ; ListOrderFormAction
 
+<<<<<<< HEAD
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
@@ -294,10 +354,21 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsC
 UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
                   ;;productDetails;
 
+=======
+>>>>>>> 912382c3cb00aca7c14c26dcae3254efdb1ba536
 
+#Banner PGP
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/PLP/catalog-header.png          ; catalog-header.png    ; $siteResource/images/PLP/catalog-header.png                                       ; image/png                   ;        ;
 
+INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                  ; &componentRef
+                                   ;                       ; ProductGridPageBanner     ;PGP Banner Component  ; ProductGridPageBanner
 
+UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
+                  ;                          ;BannerProductGridPageSlot          ;true   ;ProductGridPageBanner
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerProductGridPageSlot  ;Banner                 ;                                                         ;BannerProductGridPageSlot
 
 
 

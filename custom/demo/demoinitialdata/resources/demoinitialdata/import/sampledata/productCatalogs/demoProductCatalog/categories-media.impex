@@ -5,7 +5,10 @@
 
 # Macros / Replacement Parameter definitions
 $productCatalog=demoProductCatalog
+$contentCatalog=demoContentCatalog
 
+
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
 $media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
 $thumbnail=thumbnail(code, $catalogVersion)
@@ -21,10 +24,10 @@ $siteResource = jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoiniti
 $siteResourceImages=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$productCatalog
 
 # Import Category Media
-INSERT_UPDATE Media;code[unique=true];realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];$catalogVersion
-                   ;widescreen;banner;$siteResourceImages/images/HomePage/banner.png;;
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]    ;mime[default='image/jpeg'] ;realfilename   ;folder(qualifier)[default='images'];altText
+                   ;widescreen            ;                       ;banner-homepage  ;$siteResourceImages/images/HomePage/banner.png                                                 ;                           ;banner.png     ;                                   ;"Beli Kasur InTheBox"
 
-INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
-                            ;demo-homepage-project;banner;
+INSERT_UPDATE MediaContainer;qualifier[unique=true]     ;$medias                ;$contentCV[unique=true]
+                            ;demo-banner-homepage       ;banner-homepage        ;
 
 UPDATE Category;code[unique=true];$thumbnail;$picture;allowedPrincipals(uid)[default='customergroup'];$catalogVersion

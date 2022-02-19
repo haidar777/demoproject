@@ -31,11 +31,11 @@
 				</a>
 			</ycommerce:testId>
             <br>
-<!-- 			<ycommerce:testId code="product_productSize">
+ 			<ycommerce:testId code="product_productSize">
  				<a class="desc" href="${fn:escapeXml(productUrl)}">
- 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.size)}" />
+ 					<c:out escapeXml="false" value="${ycommerce:sanitizeHTML(product.size)} cm"/>
  				</a>
- 			</ycommerce:testId> -->
+ 			</ycommerce:testId>
             <br>
 			<ycommerce:testId code="product_productDesc">
 				<a class="desc" href="${fn:escapeXml(productUrl)}">
