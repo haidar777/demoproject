@@ -97,16 +97,15 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true];
 # CMS Footer Navigation Component
 UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
                                 ;                          ; FooterNavigationComponent ; "Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
-<<<<<<< HEAD
 # End Footer
 # End Navigation
 
-UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$lang];$picture[lang=$lang];content[lang=$lang]
-                      ;;CarouselProduct1;INTHEBOX;/images/HomePage/Carousel/Inthebox.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct2;INTHEBOX;/images/HomePage/Carousel/Inthebox Hybrid.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct3;INTHEBOX;/images/HomePage/Carousel/Inthebox 101.png;"Pocket Spring & Busa Medium Soft"
-                      ;;CarouselProduct4;INTHEBOX;/images/HomePage/Carousel/Inthebox X.png;"Pocket Spring & Busa Medium Soft"
-
+# BannerComponents for Carousel
+UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$lang];$picture[lang=$lang]                          ;content[lang=$lang]
+                      ;                       ; CarouselProduct1;INTHEBOX            ;/images/HomePage/Carousel/Inthebox.png        ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct2;INTHEBOX            ;/images/HomePage/Carousel/Inthebox Hybrid.png ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct3;INTHEBOX            ;/images/HomePage/Carousel/Inthebox 101.png    ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct4;INTHEBOX            ;/images/HomePage/Carousel/Inthebox X.png      ;"Pocket Spring & Busa Medium Soft"
 
 
 
@@ -133,12 +132,4 @@ UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];headline[lang=$l
 #
 UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
                                  ;;Similar;"You may also like..."
-=======
 
-# BannerComponents for Carousel
-UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$lang];$picture[lang=$lang]                          ;content[lang=$lang]
-                      ;                       ; CarouselProduct1;INTHEBOX            ;/images/HomePage/Carousel/Inthebox.png        ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct2;INTHEBOX            ;/images/HomePage/Carousel/Inthebox Hybrid.png ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct3;INTHEBOX            ;/images/HomePage/Carousel/Inthebox 101.png    ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct4;INTHEBOX            ;/images/HomePage/Carousel/Inthebox X.png      ;"Pocket Spring & Busa Medium Soft"
->>>>>>> 912382c3cb00aca7c14c26dcae3254efdb1ba536

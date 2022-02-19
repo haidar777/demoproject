@@ -58,8 +58,8 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
 
 
 # Site Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                   ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText        ; folder(qualifier)[default = 'images']
-                   ;                          ; /images/header/header-logo-white.png; header-logo-white.png ; $siteResource/images/header/header-logo-white.png                          ; image/png                   ; Demo Site Logo ;
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                  ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText        ; folder(qualifier)[default = 'images']
+                   ;                          ; /images/header/header-logo-white.png ; header-logo-white.png ; $siteResource/images/header/header-logo-white.png                           ; image/png                   ; Demo Site Logo ;
 
 # Site Logo Component
 INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                ; &componentRef     ; urlLink
@@ -264,7 +264,6 @@ INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true
 UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
                            ;                          ; ProductGridComponent ; ListOrderFormAction
 
-<<<<<<< HEAD
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
@@ -292,70 +291,6 @@ INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];n
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
                          ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
-
-
-##### ProductDetailPage #####
-# Lightbox Banner for Mini Cart
-#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-#                                   ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
-#
-## CMS Mini Cart Component
-#INSERT_UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;totalDisplay(code);shownProductCount;lightboxBannerComponent(&componentRef)
-#                               ;;MiniCart;Mini Cart;MiniCart;SUBTOTAL;3;LightboxHomeDeliveryBannerComponent
-#
-## CMS tabs components
-#INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-#                                 ;;ProductDetailsTabComponent;Product Details Tab;productDetailsTab.jsp;;ProductDetailsTabComponent
-#                                 ;;ProductSpecsTabComponent;Product Specification Tab;productSpecsTab.jsp;;ProductSpecsTabComponent
-#                                 ;;ProductReviewsTabComponent;Product Reviews Tab;productReviewsTab.jsp;;ProductReviewsTabComponent
-#
-#INSERT_UPDATE CMSTabParagraphComponent;$contentCV[unique=true];uid[unique=true];name;visible;&componentRef
-#                                      ;;deliveryTab;Delivery tab;true;deliveryTab
-#
-#INSERT_UPDATE CMSTabParagraphContainer;$contentCV[unique=true];uid[unique=true];name;visible;simpleCMSComponents(uid, $contentCV);&componentRef
-#                                      ;;TabPanelContainer;Tab container;true;ProductDetailsTabComponent,ProductSpecsTabComponent,ProductReviewsTabComponent,deliveryTab;TabPanelContainer
-#
-## CMS SearchBox Components
-#INSERT_UPDATE SearchBoxComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-#                                ;;SearchBox;Search Box;SearchBox
-
-# CMS VariantSelector Components
-INSERT_UPDATE ProductVariantSelectorComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
-                                             ;;VariantSelector;Product Variant Selector;VariantSelector
-
-# CMS ProductAddToCart Components
-INSERT_UPDATE AddToCartAction;$contentCV[unique=true];uid[unique=true];url;name;&actionRef
-                             ;;AddToCartAction;/cart/add;Product Add To Cart Action;AddToCartAction
-
-INSERT_UPDATE ProductAddToCartComponent;$contentCV[unique=true];uid[unique=true];name;actions(&actionRef);&componentRef
-                                       ;;AddToCart;Product Add To Cart;AddToCartAction;AddToCart
-
-# CMS ProductReferences Components
-INSERT_UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];name;productReferenceTypes(code);maximumNumberProducts;&componentRef
-                                        ;;CrossSelling;Cross Selling;CROSSELLING;5;CrossSelling
-
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsComponents(&componentRef)
-#                         ;                          ; SiteLogoSlot        ; SiteLogoComponent
-#                         ;                          ; HomepageNavLinkSlot ; HomepageNavLink
-#                         ;                          ; MiniCartSlot        ; MiniCart
-#                         ;                          ; NavigationBarSlot   ;
-#                         ;                          ; TabsSlot            ; TabPanelContainer
-#                         ;                          ; FooterSlot          ;
-#                         ;                          ; HeaderLinksSlot     ;
-#                         ;                          ; SearchBoxSlot       ; SearchBox
-#                         ;                          ; VariantSelectorSlot ; VariantSelector
-                          ;                          ; AddToCartSlot       ; AddToCart
-#                         ;                          ; UpSellingSlot       ; Similar
-                          ;                          ; CrossSellingSlot    ; Similar
-                          ;                          ; KeteranganSlot      ;
-                          ;                          ; VariantSelectorSlot ; VariantSelector
-
-# Product Details Page
-UPDATE ProductPage;$contentCV[unique=true];uid[unique=true];previewImage(code, $contentCV)
-                  ;;productDetails;
-
-=======
->>>>>>> 912382c3cb00aca7c14c26dcae3254efdb1ba536
 
 #Banner PGP
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
