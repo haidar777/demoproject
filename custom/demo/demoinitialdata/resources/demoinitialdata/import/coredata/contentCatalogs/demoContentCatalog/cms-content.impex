@@ -160,10 +160,9 @@ INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV
                              ; VariantSelector        ;                                                                                  ; ProductVariantSelectorComponent ; narrow
                              ; AddToCart              ;                                                                                  ; ProductAddToCartComponent       ; narrow
 
-#Footers
-                             ; FooterLogo             ;                                                                                  ;                                 ; logo
-                             ; FooterSubscribe        ;                                                                                  ;                                 ; narrow
-                             ; FooterHeader           ;                                                                                  ;                                 ; footer
+# Footers
+                             ; FooterLogo1            ;                                                                                  ;                                 ; logo
+                             ; FooterLogo2            ;                                                                                  ;                                 ; logo
                              ; FooterNavigation       ;                                                                                  ;                                 ; navigation
                              ; FooterContact          ;                                                                                  ;                                 ; footer
                              ; FooterCopyright        ;                                                                                  ;                                 ; footer
@@ -182,10 +181,9 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]       ; uid[uniq
                                     ;                                 ; VariantSelector-ProductDetails               ; VariantSelector               ;                                                                                     ; VariantSelectorSlot                        ; true
                                     ;                                 ; AddToCart-ProductDetails                     ; AddToCart                     ;                                                                                     ; AddToCartSlot                              ; true
 
-#Footers
-                                    ;                                 ; FooterLogo-ProductDetails                    ; FooterLogo                    ;                                                                                     ; FooterLogoSlot                             ; true
-                                    ;                                 ; FooterSubscribe-ProductDetails               ; FooterSubscribe               ;                                                                                     ; FooterSubscribeSlot                        ; true
-                                    ;                                 ; FooterHeader-ProductDetails                  ; FooterHeader                  ;                                                                                     ; FooterHeaderSlot                           ; true
+# Footers
+                                    ;                                 ; FooterLogo1-ProductDetails                   ; FooterLogo                    ;                                                                                     ; FooterLogo1Slot                            ; true
+                                    ;                                 ; FooterLogo2-ProductDetails                   ; FooterLogo2                   ;                                                                                     ; FooterLogo2Slot                            ; true
                                     ;                                 ; FooterNavigation-ProductDetails              ; FooterNavigation              ;                                                                                     ; FooterNavigationSlot                       ; true
                                     ;                                 ; FooterContact-ProductDetails                 ; FooterContact                 ;                                                                                     ; FooterContactSlot                          ; true
                                     ;                                 ; FooterCopyright-ProductDetails               ; FooterCopyright               ;                                                                                     ; FooterCopyrightSlot                        ; true
