@@ -36,7 +36,7 @@
                     </div>
 
                     <%-----Description Product-----%>
-				    <div class="size">${ycommerce:sanitizeHTML(pageType)}</div>
+				    <div class="size">${ycommerce:sanitizeHTML(product.code)}</div>
 				    <div class="description">${ycommerce:sanitizeHTML(product.description)}</div>
 					<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-variants-select-component"/>

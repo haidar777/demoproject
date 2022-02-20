@@ -29,7 +29,7 @@
 
     <%-----SUGGESTION PRODUCTS-----%>
     <div id="quickViewTitle" class="quickView-header display-none"><spring:theme code="popup.quick.view.select"/></div>
-
+    
     <c:choose>
         <%-----REQUIREMENT MAXIMUM PRODUCTS: FIVE-----%>
 

@@ -198,7 +198,7 @@
 
 	<alias alias="simpleDemoSuggestionFacade" name="demoSuggestionFacade"/>
 	<bean id="demoSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoSuggestionFacadeImpl" >
-		<property name="simpleDemoSuggestionService" ref="simpleDemoSuggestionService"/>
+		<property name="demoSimpleSuggestionService" ref="demoSimpleSuggestionService"/>
 		<property name="userService" ref="userService"/>
 		<property name="productService" ref="productService"/>
 		<property name="productConverter" ref="carouselProductConverter"/>

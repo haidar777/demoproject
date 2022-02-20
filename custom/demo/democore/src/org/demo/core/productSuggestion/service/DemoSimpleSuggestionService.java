@@ -6,7 +6,7 @@ import de.hybris.platform.core.model.user.UserModel;
 
 import java.util.List;
 
-public interface DemoSuggestionService {
+public interface DemoSimpleSuggestionService {
     List<ProductModel> getReferencesForProducts(final List<ProductModel> products, List<ProductReferenceTypeEnum> referenceTypes,
                                                 UserModel user, boolean excludePurchased, Integer limit);
 }

@@ -377,6 +377,18 @@
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
 
+	<!-- Product Suggestion Service -->
+	<alias alias="demoSimpleSuggestionService" name="DefaultDemoSimpleSuggestionService"/>
+	<bean id="DefaultDemoSimpleSuggestionService" class="org.demo.core.productSuggestion.service.impl.DefaultDemoSimpleSuggestionService" >
+		<property name="demoSimpleSuggestionDao" ref="demoSimpleSuggestionDao"/>
+	</bean>
+	<alias alias="demoSimpleSuggestionDao" name="defaultDemoSimpleSuggestionDao"/>
+	<bean id="defaultDemoSimpleSuggestionDao"
+		  class="org.demo.core.productSuggestion.dao.impl.DefaultDemoSimpleSuggestionDao"
+		  parent="abstractItemDao" >
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
 	<!-- Product Reference Lookup Strategies-->
 	<alias name="apparelCrossSellingProductReferenceTargetStrategy" alias="crossSellingProductReferenceTargetStrategy"/>
 	<bean id="apparelCrossSellingProductReferenceTargetStrategy"
@@ -554,16 +566,5 @@
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
-	<!-- Product Suggestion Service -->
-	<alias alias="simpleDemoSuggestionService" name="demoSuggestionService"/>
-	<bean id="demoSuggestionService" class="org.demo.core.productSuggestion.service.impl.DemoSuggestionServiceImpl" >
-		<property name="simpleDemoSuggestionDao" ref="simpleDemoSuggestionDao"/>
-	</bean>
-	<alias alias="simpleDemoSuggestionDao" name="demoSuggestionDao"/>
-	<bean id="demoSuggestionDao"
-		  class="org.demo.core.productSuggestion.dao.impl.DemoSuggestionDaoImpl"
-		  parent="abstractItemDao" >
-		<property name="flexibleSearchService" ref="flexibleSearchService"/>
-	</bean>
 
 </beans>

@@ -7,17 +7,14 @@ import de.hybris.platform.servicelayer.internal.dao.AbstractItemDao;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.SearchResult;
 import org.apache.commons.collections.CollectionUtils;
-import org.demo.core.productSuggestion.dao.DemoSuggestionDao;
+import org.demo.core.productSuggestion.dao.DemoSimpleSuggestionDao;
 import org.springframework.util.Assert;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-import static de.hybris.platform.servicelayer.util.ServicesUtil.validateParameterNotNull;
-
-public class DemoSuggestionDaoImpl extends AbstractItemDao implements DemoSuggestionDao {
+public class DefaultDemoSimpleSuggestionDao extends AbstractItemDao implements DemoSimpleSuggestionDao {
     private static final int DEFAULT_LIMIT = 5;
     private static final String REF_QUERY_PRODUCT_START = "SELECT DISTINCT {p.PK}, COUNT({p.PK}) AS NUM"
             + " FROM {Product AS p"
@@ -34,9 +31,13 @@ public class DemoSuggestionDaoImpl extends AbstractItemDao implements DemoSugges
     private static final String REF_QUERY_PARAM_PRODUCTS = "products";
 
     @Override
-    public List<ProductModel> findProductsRelatedToProducts(List<ProductModel> products, List<ProductReferenceTypeEnum> referenceTypes, UserModel user, boolean excludePurchased, Integer limit) {
+    public List<ProductModel> findProductsRelatedToProducts(final List<ProductModel> products,
+                                                            final List<ProductReferenceTypeEnum> referenceTypes, final UserModel user, final boolean excludePurchased,
+                                                            final Integer limit)
+    {
         Assert.notNull(products);
         Assert.notNull(user);
+
         final int maxResultCount = limit == null ? DEFAULT_LIMIT : limit.intValue();
 
         final Map<String, Object> params = new HashMap<String, Object>();
@@ -64,4 +65,5 @@ public class DemoSuggestionDaoImpl extends AbstractItemDao implements DemoSugges
         final SearchResult<ProductModel> result = getFlexibleSearchService().search(query);
         return result.getResult();
     }
+
 }

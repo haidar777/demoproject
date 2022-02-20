@@ -7,6 +7,6 @@ import de.hybris.platform.servicelayer.internal.dao.Dao;
 
 import java.util.List;
 
-public interface DemoSuggestionDao extends Dao {
+public interface DemoSimpleSuggestionDao extends Dao {
     List<ProductModel> findProductsRelatedToProducts(List<ProductModel> products, List<ProductReferenceTypeEnum> referenceTypes, UserModel user, boolean excludePurchased, Integer limit);
 }

@@ -9,7 +9,7 @@ import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 import de.hybris.platform.servicelayer.user.UserService;
 import de.hybris.platform.variants.model.VariantProductModel;
-import org.demo.core.productSuggestion.service.DemoSuggestionService;
+import org.demo.core.productSuggestion.service.DemoSimpleSuggestionService;
 import org.demo.facades.productSuggestion.DemoSuggestionFacade;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -21,7 +21,7 @@ import java.util.Set;
 public class DemoSuggestionFacadeImpl implements DemoSuggestionFacade {
     private UserService userService;
     private ProductService productService;
-    private DemoSuggestionService demoSuggestionService;
+    private DemoSimpleSuggestionService demoSimpleSuggestionService;
     private Converter<ProductModel, ProductData> productConverter;
 
 
@@ -34,7 +34,7 @@ public class DemoSuggestionFacadeImpl implements DemoSuggestionFacade {
             final ProductModel product = getProductService().getProductForCode(productCode);
             products.addAll(getAllBaseProducts(product));
         }
-        final List<ProductModel> suggestions = getDemoSuggestionService()
+        final List<ProductModel> suggestions = getDemoSimpleSuggestionService()
                 .getReferencesForProducts(new LinkedList<ProductModel>(products), referenceTypes, user, excludePurchased, limit);
 
         return Converters.convertAll(suggestions, getProductConverter());
@@ -59,6 +59,11 @@ public class DemoSuggestionFacadeImpl implements DemoSuggestionFacade {
         return allBaseProducts;
     }
 
+
+
+
+
+
     public UserService getUserService() {
         return userService;
     }
@@ -78,12 +83,12 @@ public class DemoSuggestionFacadeImpl implements DemoSuggestionFacade {
         this.productService = productService;
     }
 
-    public DemoSuggestionService getDemoSuggestionService() {
-        return demoSuggestionService;
+    public DemoSimpleSuggestionService getDemoSimpleSuggestionService() {
+        return demoSimpleSuggestionService;
     }
 
-    public void setDemoSuggestionService(DemoSuggestionService demoSuggestionService) {
-        this.demoSuggestionService = demoSuggestionService;
+    public void setDemoSimpleSuggestionService(DemoSimpleSuggestionService demoSimpleSuggestionService) {
+        this.demoSimpleSuggestionService = demoSimpleSuggestionService;
     }
 
     public Converter<ProductModel, ProductData> getProductConverter() {
