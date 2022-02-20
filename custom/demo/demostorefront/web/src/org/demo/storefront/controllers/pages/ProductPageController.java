@@ -133,8 +133,8 @@ public class ProductPageController extends AbstractPageController
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
 
 		model.addAttribute(new ReviewForm());
-		model.addAttribute("pageType", PageType.PRODUCT.name());
-		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
+		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
+		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false))); //ini nilainya false
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
@@ -406,7 +406,7 @@ public class ProductPageController extends AbstractPageController
 
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
-		populateProductData(productData, model);
+		populateProductData(productData, model); //Memasukkan data dengan attribute product.
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, productBreadcrumbBuilder.getBreadcrumbs(productCode));
 
 		if (CollectionUtils.isNotEmpty(productData.getVariantMatrix()))
@@ -418,7 +418,7 @@ public class ProductPageController extends AbstractPageController
 
 	protected void populateProductData(final ProductData productData, final Model model)
 	{
-		model.addAttribute("galleryImages", getGalleryImages(productData));
+		model.addAttribute("galleryImages", getGalleryImages(productData)); //Untuk memasukkan gambar di page PDP
 		model.addAttribute("product", productData);
 		if (productData.getConfigurable())
 		{

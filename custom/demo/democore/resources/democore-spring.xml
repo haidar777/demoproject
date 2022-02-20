@@ -553,4 +553,17 @@
 	<bean id="typeValueProvider" class="org.demo.core.provider.TypeValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
+
+	<!-- Product Suggestion Service -->
+	<alias alias="simpleDemoSuggestionService" name="demoSuggestionService"/>
+	<bean id="demoSuggestionService" class="org.demo.core.productSuggestion.service.impl.DemoSuggestionServiceImpl" >
+		<property name="simpleDemoSuggestionDao" ref="simpleDemoSuggestionDao"/>
+	</bean>
+	<alias alias="simpleDemoSuggestionDao" name="demoSuggestionDao"/>
+	<bean id="demoSuggestionDao"
+		  class="org.demo.core.productSuggestion.dao.impl.DemoSuggestionDaoImpl"
+		  parent="abstractItemDao" >
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+	</bean>
+
 </beans>

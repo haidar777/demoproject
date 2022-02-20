@@ -342,7 +342,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsC
 #                         ;                          ; VariantSelectorSlot ; VariantSelector
                           ;                          ; AddToCartSlot       ; AddToCart
 #                         ;                          ; UpSellingSlot       ; Similar
-                          ;                          ; CrossSellingSlot    ; Similar
+                          ;                          ; CrossSellingSlot    ; CrossSelling
                           ;                          ; KeteranganSlot      ;
                           ;                          ; VariantSelectorSlot ; VariantSelector
 
