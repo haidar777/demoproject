@@ -11849,6 +11849,10 @@ fieldset[disabled] .btn-primary.active {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 25px;
 }
+.product-grid-section1-slot {
+  padding-left: 120px;
+  padding-right: 120px;
+}
 .product__listing {
   padding-left: 0;
   list-style: none;
