@@ -60,6 +60,7 @@ public class DefaultSimpleSuggestionDao extends AbstractItemDao implements Simpl
 	private static final String REF_QUERY_PRODUCT_ORDER = " ORDER BY NUM DESC";
 
 
+
 	@Override
 	public List<ProductModel> findProductsRelatedToPurchasedProductsByCategory(final CategoryModel category,
 			final List<ProductReferenceTypeEnum> referenceTypes, final UserModel user, final boolean excludePurchased,
