@@ -67,8 +67,8 @@ public class LoginPageController extends AbstractLoginPageController
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String doLogin(@RequestHeader(value = "referer", required = false) final String referer,
-			@RequestParam(value = "error", defaultValue = "false") final boolean loginError, final Model model,
-			final HttpServletRequest request, final HttpServletResponse response, final HttpSession session)
+						  @RequestParam(value = "error", defaultValue = "false") final boolean loginError, final Model model,
+						  final HttpServletRequest request, final HttpServletResponse response, final HttpSession session)
 			throws CMSItemNotFoundException
 	{
 		if (!loginError)
@@ -89,8 +89,8 @@ public class LoginPageController extends AbstractLoginPageController
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String doRegister(@RequestHeader(value = "referer", required = false) final String referer, final RegisterForm form,
-			final BindingResult bindingResult, final Model model, final HttpServletRequest request,
-			final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
+							 final BindingResult bindingResult, final Model model, final HttpServletRequest request,
+							 final HttpServletResponse response, final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
 		getRegistrationValidator().validate(form, bindingResult);
 		return processRegisterUserRequest(referer, form, bindingResult, model, request, response, redirectModel);

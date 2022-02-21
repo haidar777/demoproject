@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HybrisProjectSettings">
+    <option name="completeSetOfAvailableExtensionsInHybris">
+      <set>
+        <option value="demobackoffice" />
+        <option value="democore" />
+        <option value="demofacades" />
+        <option value="demofulfilmentprocess" />
+        <option value="demoinitialdata" />
+        <option value="demostorefront" />
+        <option value="demotest" />
+      </set>
+    </option>
+    <option name="configDirectory" value="$PROJECT_DIR$/config" />
+    <option name="followSymlink" value="true" />
+    <option name="hybrisDirectory" value="..\..\Program Files\JetBrains\IntelliJ IDEA 2021.3.1\jbr\bin" />
+    <option name="hybrisProject" value="true" />
+    <option name="ideModulesFilesDirectory" value="$PROJECT_DIR$/idea-module-files" />
+    <option name="importOotbModulesInReadOnlyMode" value="true" />
+    <option name="importedByVersion" value="2021.3" />
+    <option name="javadocUrl" value="" />
+  </component>
+</project>

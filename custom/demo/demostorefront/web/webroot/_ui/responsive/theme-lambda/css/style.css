@@ -10833,10 +10833,14 @@ fieldset[disabled] .btn-primary.active {
 .owl-carousel:after {
   clear: both;
 }
+.owl-carousel .owl-grab {
+  cursor: grab;
+}
 .owl-carousel .owl-wrapper-outer {
   overflow: hidden;
   position: relative;
   width: 100%;
+  margin: auto;
 }
 .owl-carousel .owl-wrapper-outer.autoHeight {
   -webkit-transition: height 500ms ease-in-out;
@@ -10848,6 +10852,7 @@ fieldset[disabled] .btn-primary.active {
 .owl-carousel .owl-wrapper-outer .owl-wrapper {
   display: none;
   position: relative;
+  width: 400px;
   -webkit-transform: translate3d(0px, 0px, 0px);
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -10969,7 +10974,7 @@ fieldset[disabled] .btn-primary.active {
 .carousel__component--carousel .carousel__item {
   display: block;
   margin: 0 10px;
-  padding: 10px 0;
+  padding: 3.33333333px 0;
 }
 .carousel .item .thumb,
 .carousel__component--carousel .item .thumb,
@@ -11033,34 +11038,25 @@ fieldset[disabled] .btn-primary.active {
   font-size: 16px;
   color: #3c3c3c;
 }
-.carousel .item .item__name:before,
-.carousel__component--carousel .item .item__name:before,
-.carousel .carousel__item .item__name:before,
-.carousel__component--carousel .carousel__item .item__name:before,
-.carousel .item .carousel__item--name:before,
-.carousel__component--carousel .item .carousel__item--name:before,
-.carousel .carousel__item .carousel__item--name:before,
-.carousel__component--carousel .carousel__item .carousel__item--name:before {
-  background: #FFF none repeat scroll 0 0;
-  bottom: 0;
-  position: absolute;
-  right: 0;
-  content: '\2026';
-}
-.carousel .item .item__name:after,
-.carousel__component--carousel .item .item__name:after,
-.carousel .carousel__item .item__name:after,
-.carousel__component--carousel .carousel__item .item__name:after,
-.carousel .item .carousel__item--name:after,
-.carousel__component--carousel .item .carousel__item--name:after,
-.carousel .carousel__item .carousel__item--name:after,
-.carousel__component--carousel .carousel__item .carousel__item--name:after {
-  content: "";
-  background: #FFF none repeat scroll 0% 0%;
-  position: absolute;
-  height: 50px;
-  width: 100%;
-  z-index: 1;
+.carousel .item .item__desc,
+.carousel__component--carousel .item .item__desc,
+.carousel .carousel__item .item__desc,
+.carousel__component--carousel .carousel__item .item__desc,
+.carousel .item .carousel__item--desc,
+.carousel__component--carousel .item .carousel__item--desc,
+.carousel .carousel__item .carousel__item--desc,
+.carousel__component--carousel .carousel__item .carousel__item--desc {
+  margin-top: 13.33333333px;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.2em;
+  overflow: hidden;
+  position: relative;
+  height: 2.4em;
+  font-weight: 600;
+  font-size: 16px;
+  color: #3c3c3c;
 }
 .carousel .item .item__price,
 .carousel__component--carousel .item .item__price,
@@ -11079,6 +11075,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .carousel-component,
 .carousel__component {
+  background-color: #6082B6;
   padding: 0 20px;
   margin: 35px 0 15px;
 }
@@ -18943,6 +18940,79 @@ select[multiple].input-sm {
   border: none;
   border-radius: 8px;
   height: 37px;
+}
+.section-header {
+  font-family: Bw Gradual;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #6086c2;
+  border-radius: 10px;
+}
+.unboxing {
+  background-color: #d4effc;
+}
+.owl-carousel.owl-loaded {
+  display: block;
+}
+.owl-grab {
+  cursor: move;
+  cursor: grab;
+}
+.owl-carousel {
+  display: none;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+.carousel,
+.carousel__component--carousel {
+  width: auto;
+  margin: 10px -10px;
+  text-align: center;
+}
+.carousel .item,
+.carousel__component--carousel .item,
+.carousel .carousel_item,
+.carousel__component--carousel .carousel_item {
+  display: block;
+  margin: 0 10px;
+  padding: 3.33333333px 0;
+}
+.carousel .item .thumb,
+.carousel__component--carousel .item .thumb,
+.carousel .carousel_item .thumb,
+.carousel__component--carousel .carousel_item .thumb,
+.carousel .item .carousel__item--thumb,
+.carousel__component--carousel .item .carousel__item--thumb,
+.carousel .carousel_item .carousel__item--thumb,
+.carousel__component--carousel .carousel_item .carousel__item--thumb {
+  margin-bottom: 20px;
+  height: 140px;
+}
+.carousel .item .thumb img,
+.carousel__component--carousel .item .thumb img,
+.carousel .carousel_item .thumb img,
+.carousel__component--carousel .carousel_item .thumb img,
+.carousel .item .carousel__item--thumb img,
+.carousel__component--carousel .item .carousel__item--thumb img,
+.carousel .carousel_item .carousel__item--thumb img,
+.carousel__component--carousel .carousel_item .carousel__item--thumb img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  color: #6086c2;
+}
+.desc {
+  color: #6086c2;
 }
 .skip,
 .skiptocontent,

@@ -244,6 +244,104 @@ UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                  
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ;BannerProductGridPageSlot  ;Banner                 ;                                                         ;BannerProductGridPageSlot
 
+
+######  Homepage ######
+
+# Content Slots for Homepage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
+                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
+                                ;;UnboxingInTheBoxSlot1-Homepage;UnboxingInTheBox1;;UnboxingInTheBoxSlot1-Homepage
+                                ;;UnboxingInTheBoxSlot2-Homepage;UnboxingInTheBox2;;UnboxingInTheBoxSlot2-Homepage
+                                ;;UnboxingInTheBoxSlot3-Homepage;UnboxingInTheBox3;;UnboxingInTheBoxSlot3-Homepage
+                                ;;UnboxingInTheBoxSlot4-Homepage;UnboxingInTheBox4;;UnboxingInTheBoxSlot4-Homepage
+#                                ;;TestimonySlot-Homepage        ;Testimony        ;;TestimonySlot-Homepage
+
+
+#Home page splash banner
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+                         ;                       ;BannerSlot-Homepage           ;true     ;IntheboxBannerComponent
+
+
+#Carousel Produk
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;searchQuery;categoryCode;&componentRef
+                                      ;;HomepageProductCarouselComponent;BELI KASUR INTHEBOX;XSIZE100x200,XSIZE90x200,SJSIZE90x200,SJPSIZE90x200,DASHSIZE90x200;allVisible;false;;;HomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;ProductCarouselSlot-Homepage;Product Slot for Homepage;true;HomepageProductCarouselComponent
+
+
+#Unboxing Carousel
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;Unboxing1;Banner Homepage;;Unboxing1
+                                             ;;Unboxing2;Banner Homepage;;Unboxing2
+                                             ;;Unboxing3;Banner Homepage;;Unboxing3
+                                             ;;Unboxing4;Banner Homepage;;Unboxing4
+#
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;UnboxingInTheBoxSlot1-Homepage;true;Unboxing1
+                         ;;UnboxingInTheBoxSlot2-Homepage;true;Unboxing2
+                         ;;UnboxingInTheBoxSlot3-Homepage;true;Unboxing3
+                         ;;UnboxingInTheBoxSlot4-Homepage;true;Unboxing4
+
+#Testimony Carousel Slot
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+#                                             ;                       ;TestimonyComponent;Testimony Banner Component;;TestimonyComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+#                         ;                ;TestimonySlot-Homepage           ;true     ;TestimonyComponent
+
+#INSERT_UPDATE TestimonyCarouselComponent;$contentCV[unique=true];uid[unique=true];name;testimony(code);scroll(code);popup;searchQuery;categoryCode;&componentRef
+#                                      ;;TestimonyCarouselComponent;BELI KASUR INTHEBOX;;allVisible;false;;;TestimonyCarouselComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+#                         ;;TestimonySlot-Homepage;Product Slot for Homepage;true;TestimonyCarouselComponent
+
+
+#### End Homepage ######
+
+#### Login ######
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
+;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
+
+### Customer Login
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
+;;LoginContentSlot-login;LoginContentSlot;;LoginContentSlot-login;;;
+#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+
+
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+#                                             ;                       ;LoginLogoComponent;Login Logo Component;;LoginLogoComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+#                         ;                       ;LoginLogoSlot-login           ;true     ;LoginLogoComponent
+#
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+;;LoginContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
+
+#### End Login
+
+#### Register ######
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;RegisterComponent;New Customer Register Component;accountNewCustomerLogin.jsp;;RegisterComponent
+
+### Customer Register
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+                         ;;RegisterContentSlot-register;Center Content Slot for Customer Register;true;RegisterComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='register'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;RegisterContentSlot-register;RegisterContentSlot;;RegisterContentSlot-register;;;
+
+#### End Register
+
 ##### Product Detail Page #####
 # Lightbox Banner for Mini Cart
 #INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
@@ -281,7 +379,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsC
 #                         ;                          ; VariantSelectorSlot ; VariantSelector
                           ;                          ; AddToCartSlot       ; AddToCart
 #                         ;                          ; UpSellingSlot       ; Similar
-                          ;                          ; CrossSellingSlot    ; Similar
+                          ;                          ; CrossSellingSlot    ; CrossSelling
                           ;                          ; KeteranganSlot      ;
                           ;                          ; VariantSelectorSlot ; VariantSelector
 
@@ -360,3 +458,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]       
                                 ;                       ;KenapaSlot-aboutUsPage             ;Kenapa                 ;                                                           ;KenapaSlot
                                 ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli               ;                                                           ;CaraBeliSlot
                                 ;                       ;FaqSlot-aboutUsPage                ;Faq                    ;                                                           ;FaqSlot
+
+
+
