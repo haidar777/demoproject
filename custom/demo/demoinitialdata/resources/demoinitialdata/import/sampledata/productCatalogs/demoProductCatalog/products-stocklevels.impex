@@ -11,11 +11,234 @@ $vendor=demovendor
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
 
 
-INSERT_UPDATE Vendor;code[unique=true]
-#;$vendor
+INSERT_UPDATE Vendor; code[unique=true]
+                    ; $vendor
 
-INSERT_UPDATE Warehouse;code[unique=true];vendor(code);default[default=true]
+INSERT_UPDATE Warehouse; code[unique = true]; vendor(code); default[default = true]; baseStores(uid)
+                       ; warehouse_demo     ; $vendor     ;                        ; demostore
 
-INSERT_UPDATE StockLevel;available;warehouse(code)[unique=true];inStockStatus(code);maxPreOrder;maxStockLevelHistoryCount;overSelling;preOrder;productCode[unique=true];reserved
+INSERT_UPDATE StockLevel; available; warehouse(code)[unique = true] ; inStockStatus(code); maxPreOrder; maxStockLevelHistoryCount; overSelling; preOrder; productCode[unique = true]; reserved
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE90x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE100x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE120x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE140x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE160x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE180x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ALPHASIZE200x200          ; 0
 
-UPDATE Product;code[unique=true];$catalogVersion;stockLevels(productCode,warehouse(code));vendors(code)
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE90x200               ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE100x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE120x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE140x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE160x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE180x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; XSIZE200x200              ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE90x200              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE100x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE120x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE140x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE160x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE180x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJSIZE200x200             ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE90x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE100x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE120x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE140x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE160x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE180x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SJPSIZE200x200            ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE90x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE100x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE120x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE140x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE160x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE180x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; DASHSIZE200x200           ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE90x200             ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE100x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE120x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE140x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE160x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE180x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; 101SIZE200x200            ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE90x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE100x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE120x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE140x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE160x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE180x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRIDSIZE200x200         ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE90x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE100x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE120x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE140x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE160x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE180x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; HYBRID15SIZE200x200       ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE90x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE100x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE120x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE140x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE160x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE180x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLAINSIZE200x200          ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE90x200            ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE100x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE120x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE140x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE160x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE180x200           ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PLUSSIZE200x200           ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE90x200          ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE100x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE120x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE140x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE160x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE180x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGHYBSIZE200x200         ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE90x200         ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE100x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE120x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE140x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE160x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE180x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGLITESIZE200x200        ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE90x200        ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE100x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE120x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE140x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE160x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE180x200       ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; ORGPLUSHSIZE200x200       ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SOFA3SEATERW              ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SOFA3SEATERB              ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; KASURLIPAT                ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SBED1                     ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; SBED2                     ; 0
+
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PROPSBANTAL               ; 0
+                        ; 1000000  ; warehouse_demo                 ; forceInStock       ; 0          ; 0                        ; 0          ; 0       ; PROPSGULING               ; 0
+
+UPDATE Product; code[unique = true] ; $catalogVersion   ; stockLevels(productCode, warehouse(code)) ; vendors(code)[default=$vendor]
+              ; ALPHASIZE90x200     ;                   ; ALPHASIZE90x200:warehouse_demo            ;
+              ; ALPHASIZE100x200    ;                   ; ALPHASIZE100x200:warehouse_demo           ;
+              ; ALPHASIZE120x200    ;                   ; ALPHASIZE120x200:warehouse_demo           ;
+              ; ALPHASIZE140x200    ;                   ; ALPHASIZE140x200:warehouse_demo           ;
+              ; ALPHASIZE160x200    ;                   ; ALPHASIZE160x200:warehouse_demo           ;
+              ; ALPHASIZE180x200    ;                   ; ALPHASIZE180x200:warehouse_demo           ;
+              ; ALPHASIZE200x200    ;                   ; ALPHASIZE200x200:warehouse_demo           ;
+
+              ; XSIZE90x200         ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE100x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE120x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE140x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE160x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE180x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+              ; XSIZE200x200        ;                   ; XSIZE90x200:warehouse_demo                ;
+
+              ; SJSIZE90x200        ;                   ; SJSIZE90x200:warehouse_demo               ;
+              ; SJSIZE100x200       ;                   ; SJSIZE100x200:warehouse_demo              ;
+              ; SJSIZE120x200       ;                   ; SJSIZE120x200:warehouse_demo              ;
+              ; SJSIZE140x200       ;                   ; SJSIZE140x200:warehouse_demo              ;
+              ; SJSIZE160x200       ;                   ; SJSIZE160x200:warehouse_demo              ;
+              ; SJSIZE180x200       ;                   ; SJSIZE180x200:warehouse_demo              ;
+              ; SJSIZE200x200       ;                   ; SJSIZE200x200:warehouse_demo              ;
+
+              ; SJPSIZE90x200       ;                   ; SJPSIZE90x200:warehouse_demo              ;
+              ; SJPSIZE100x200      ;                   ; SJPSIZE100x200:warehouse_demo             ;
+              ; SJPSIZE120x200      ;                   ; SJPSIZE120x200:warehouse_demo             ;
+              ; SJPSIZE140x200      ;                   ; SJPSIZE140x200:warehouse_demo             ;
+              ; SJPSIZE160x200      ;                   ; SJPSIZE160x200:warehouse_demo             ;
+              ; SJPSIZE180x200      ;                   ; SJPSIZE180x200:warehouse_demo             ;
+              ; SJPSIZE200x200      ;                   ; SJPSIZE200x200:warehouse_demo             ;
+
+              ; DASHSIZE90x200      ;                   ; DASHSIZE90x200:warehouse_demo             ;
+              ; DASHSIZE100x200     ;                   ; DASHSIZE100x200:warehouse_demo            ;
+              ; DASHSIZE120x200     ;                   ; DASHSIZE120x200:warehouse_demo            ;
+              ; DASHSIZE140x200     ;                   ; DASHSIZE140x200:warehouse_demo            ;
+              ; DASHSIZE160x200     ;                   ; DASHSIZE160x200:warehouse_demo            ;
+              ; DASHSIZE180x200     ;                   ; DASHSIZE180x200:warehouse_demo            ;
+              ; DASHSIZE200x200     ;                   ; DASHSIZE200x200:warehouse_demo            ;
+
+              ; 101SIZE90x200       ;                   ; 101SIZE90x200:warehouse_demo              ;
+              ; 101SIZE100x200      ;                   ; 101SIZE100x200:warehouse_demo             ;
+              ; 101SIZE120x200      ;                   ; 101SIZE120x200:warehouse_demo             ;
+              ; 101SIZE140x200      ;                   ; 101SIZE140x200:warehouse_demo             ;
+              ; 101SIZE160x200      ;                   ; 101SIZE160x200:warehouse_demo             ;
+              ; 101SIZE180x200      ;                   ; 101SIZE180x200:warehouse_demo             ;
+              ; 101SIZE200x200      ;                   ; 101SIZE200x200:warehouse_demo             ;
+
+              ; HYBRIDSIZE90x200    ;                   ; HYBRIDSIZE90x200:warehouse_demo           ;
+              ; HYBRIDSIZE100x200   ;                   ; HYBRIDSIZE100x200:warehouse_demo          ;
+              ; HYBRIDSIZE120x200   ;                   ; HYBRIDSIZE120x200:warehouse_demo          ;
+              ; HYBRIDSIZE140x200   ;                   ; HYBRIDSIZE140x200:warehouse_demo          ;
+              ; HYBRIDSIZE160x200   ;                   ; HYBRIDSIZE160x200:warehouse_demo          ;
+              ; HYBRIDSIZE180x200   ;                   ; HYBRIDSIZE180x200:warehouse_demo          ;
+              ; HYBRIDSIZE200x200   ;                   ; HYBRIDSIZE200x200:warehouse_demo          ;
+
+              ; HYBRID15SIZE90x200  ;                   ; HYBRID15SIZE90x200:warehouse_demo         ;
+              ; HYBRID15SIZE100x200 ;                   ; HYBRID15SIZE100x200:warehouse_demo        ;
+              ; HYBRID15SIZE120x200 ;                   ; HYBRID15SIZE120x200:warehouse_demo        ;
+              ; HYBRID15SIZE140x200 ;                   ; HYBRID15SIZE140x200:warehouse_demo        ;
+              ; HYBRID15SIZE160x200 ;                   ; HYBRID15SIZE160x200:warehouse_demo        ;
+              ; HYBRID15SIZE180x200 ;                   ; HYBRID15SIZE180x200:warehouse_demo        ;
+              ; HYBRID15SIZE200x200 ;                   ; HYBRID15SIZE200x200:warehouse_demo        ;
+
+              ; PLAINSIZE90x200     ;                   ; PLAINSIZE90x200:warehouse_demo            ;
+              ; PLAINSIZE100x200    ;                   ; PLAINSIZE100x200:warehouse_demo           ;
+              ; PLAINSIZE120x200    ;                   ; PLAINSIZE120x200:warehouse_demo           ;
+              ; PLAINSIZE140x200    ;                   ; PLAINSIZE140x200:warehouse_demo           ;
+              ; PLAINSIZE160x200    ;                   ; PLAINSIZE160x200:warehouse_demo           ;
+              ; PLAINSIZE180x200    ;                   ; PLAINSIZE180x200:warehouse_demo           ;
+              ; PLAINSIZE200x200    ;                   ; PLAINSIZE200x200:warehouse_demo           ;
+
+              ; ORGHYBSIZE90x200    ;                   ; ORGHYBSIZE90x200:warehouse_demo           ;
+              ; ORGHYBSIZE100x200   ;                   ; ORGHYBSIZE100x200:warehouse_demo          ;
+              ; ORGHYBSIZE120x200   ;                   ; ORGHYBSIZE120x200:warehouse_demo          ;
+              ; ORGHYBSIZE140x200   ;                   ; ORGHYBSIZE140x200:warehouse_demo          ;
+              ; ORGHYBSIZE160x200   ;                   ; ORGHYBSIZE160x200:warehouse_demo          ;
+              ; ORGHYBSIZE180x200   ;                   ; ORGHYBSIZE180x200:warehouse_demo          ;
+              ; ORGHYBSIZE200x200   ;                   ; ORGHYBSIZE200x200:warehouse_demo          ;
+
+              ; ORGLITESIZE90x200   ;                   ; ORGLITESIZE90x200:warehouse_demo          ;
+              ; ORGLITESIZE100x200  ;                   ; ORGLITESIZE100x200:warehouse_demo         ;
+              ; ORGLITESIZE120x200  ;                   ; ORGLITESIZE120x200:warehouse_demo         ;
+              ; ORGLITESIZE140x200  ;                   ; ORGLITESIZE140x200:warehouse_demo         ;
+              ; ORGLITESIZE160x200  ;                   ; ORGLITESIZE160x200:warehouse_demo         ;
+              ; ORGLITESIZE180x200  ;                   ; ORGLITESIZE180x200:warehouse_demo         ;
+              ; ORGLITESIZE200x200  ;                   ; ORGLITESIZE200x200:warehouse_demo         ;
+
+
+              ; ORGPLUSHSIZE90x200  ;                   ; ORGPLUSHSIZE90x200:warehouse_demo         ;
+              ; ORGPLUSHSIZE100x200 ;                   ; ORGPLUSHSIZE100x200:warehouse_demo        ;
+              ; ORGPLUSHSIZE120x200 ;                   ; ORGPLUSHSIZE120x200:warehouse_demo        ;
+              ; ORGPLUSHSIZE140x200 ;                   ; ORGPLUSHSIZE140x200:warehouse_demo        ;
+              ; ORGPLUSHSIZE160x200 ;                   ; ORGPLUSHSIZE160x200:warehouse_demo        ;
+              ; ORGPLUSHSIZE180x200 ;                   ; ORGPLUSHSIZE180x200:warehouse_demo        ;
+              ; ORGPLUSHSIZE200x200 ;                   ; ORGPLUSHSIZE200x200:warehouse_demo        ;
+
+              ; SOFA3SEATERW        ;                   ; SOFA3SEATERW:warehouse_demo               ;
+              ; SOFA3SEATERB        ;                   ; SOFA3SEATERB:warehouse_demo               ;
+
+              ; KASURLIPAT          ;                   ; KASURLIPAT:warehouse_demo                 ;
+
+              ; SBED1               ;                   ; SBED1:warehouse_demo                      ;
+              ; SBED2               ;                   ; SBED2:warehouse_demo                      ;
+
+              ; PROPSBANTAL         ;                   ; PROPSBANTAL:warehouse_demo                ;
+
+              ; PROPSGULING         ;                   ; PROPSGULING:warehouse_demo                ;
