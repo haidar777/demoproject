@@ -6,22 +6,22 @@
 					<cockpit code="TopHeaderSlot"/>
 				</td>
 			</tr>
-			<tr>
-				<td height="125px" colspan="2" width="25%" rowspan="2" class="structureViewSection">
-					<cockpit code="SiteLogo" />
-				</td>
-				<td class="structureViewSection">
-					<cockpit code="HeaderLinks" />
-				</td>
-				<td width="15%" rowspan="2" class="structureViewSection">
-					<cockpit code="MiniCart" />
-				</td>
-			</tr>
-			<tr>
-				<td colspan="4" class="structureViewSection">
-					<cockpit code="NavigationBar" />
-				</td>
-			</tr>
+##			<tr>
+##				<td height="125px" colspan="2" width="25%" rowspan="2" class="structureViewSection">
+##					<cockpit code="SiteLogo" />
+##				</td>
+##				<td class="structureViewSection">
+##					<cockpit code="HeaderLinks" />
+##				</td>
+##				<td width="15%" rowspan="2" class="structureViewSection">
+##					<cockpit code="MiniCart" />
+##				</td>
+##			</tr>
+##			<tr>
+##				<td colspan="4" class="structureViewSection">
+##					<cockpit code="NavigationBar" />
+##				</td>
+##			</tr>
 			<tr>
 				<td colspan="4" class="structureViewSection">
 					<cockpit code="BottomHeaderSlot"/>

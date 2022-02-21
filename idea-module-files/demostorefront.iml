@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot" relative="/" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/src" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/resources" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/src" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/src" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/src" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/gensrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/src" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/scalasrc" />
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/resources" />
+        </sourceRoots>
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="demostorefrontspring" name="demostorefrontspring" removed="false">
+          <dependency>demofacadesspring==demofacades</dependency>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/project.properties</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/web-application-config.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/spring-filter-config.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/spring-security-config.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/spring-mvc-config.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/spring-cms-config.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/config/multi-step-checkout-config.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../custom/demo/demostorefront/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../custom/demo/demostorefront/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../custom/demo/demostorefront">
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/testsrc" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demostorefront/backoffice/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../custom/demo/demostorefront/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../custom/demo/demostorefront/web/webroot/WEB-INF/lib" recursive="true" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="demofacades" exported="" />
+  </component>
+</module>

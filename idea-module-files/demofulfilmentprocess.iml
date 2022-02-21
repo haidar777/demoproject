@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="demofulfilmentprocessspring" name="demofulfilmentprocessspring" removed="false">
+          <file>file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/project.properties</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/resources/demofulfilmentprocess-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/resources/demofulfilmentprocess/process/order-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/resources/demofulfilmentprocess/process/consignment-process-spring.xml</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/resources/demofulfilmentprocess/process/return-process-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess">
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/testsrc" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/web/webroot/WEB-INF/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demofulfilmentprocess/backoffice/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
