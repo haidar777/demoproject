@@ -146,7 +146,9 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; KenapaSlot                  ; Kenapa Slot                   ; true
                          ;                          ; CaraBeliSlot                ; Cara Beli Slot                ; true
                          ;                          ; FaqSlot                     ; FAQ Slot                      ; true
+                         ;                          ; DescFaqSlot                 ; Description FAQ Slot          ; true
 
+# Kalau mau menambahkan tinggal impex yang mau ditambahkan aja
 INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)[unique = true][default = 'AboutUsPageTemplate']; validComponentTypes(code); compTypeGroup(code)
 # Headers
                              ; TopLeftParagraph      ;                                                                       ;                          ; narrow
@@ -162,6 +164,7 @@ INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)
                              ; Kenapa                ;                                                                       ;                          ; wide
                              ; CaraBeli              ;                                                                       ;                          ; wide
                              ; Faq                   ;                                                                       ;                          ; wide
+                             ; DescFaq               ;                                                                       ;                          ; wide
 # Footers
                              ; FooterLogo            ;                                                                       ;                          ; logo
                              ; FooterSubscribe       ;                                                                       ;                          ; narrow
@@ -170,6 +173,34 @@ INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)
                              ; FooterContact         ;                                                                       ;                          ; footer
                              ; FooterCopyright       ;                                                                       ;                          ; footer
 
+# Kalau mau menambahkan tinggal impex yang mau ditambahkan aja
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]             ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'AboutUsPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+# Headers
+                                    ;                          ; TopLeftParagraph-AboutUsPage      ; TopLeftParagraph       ;                                                                           ; TopLeftParagraphSlot                       ; true
+                                    ;                          ; TopRightNavigationBar-AboutUsPage ; TopRightNavigationBar  ;                                                                           ; TopRightNavigationBarSlot                  ; true
+                                    ;                          ; HeaderLogo-AboutUsPage            ; HeaderLogo             ;                                                                           ; HeaderLogoSlot                             ; true
+                                    ;                          ; MiddleNavigationBar-AboutUsPage   ; MiddleNavigationBar    ;                                                                           ; MiddleNavigationBarSlot                    ; true
+                                    ;                          ; LoginLink-AboutUsPage             ; LoginLink              ;                                                                           ; LoginLinkSlot                              ; true
+                                    ;                          ; CartLink-AboutUsPage              ; CartLink               ;                                                                           ; CartLinkSlot                               ; true
+# About Us Content
+                                    ;                          ; BannerAboutUs-AboutUsPage         ; BannerAboutUs          ;                                                                           ; BannerAboutUsSlot                          ; true
+                                    ;                          ; Tentang-AboutUsPage               ; Tentang                ;                                                                           ; TentangSlot                                ; true
+                                    ;                          ; ApaItuKasur-AboutUsPage           ; ApaItuKasur            ;                                                                           ; ApaItuKasurSlot                            ; true
+                                    ;                          ; Kenapa-AboutUsPage                ; Kenapa                 ;                                                                           ; KenapaSlot                                 ; true
+                                    ;                          ; CaraBeli-AboutUsPage              ; CaraBeli               ;                                                                           ; CaraBeliSlot                               ; true
+                                    ;                          ; Faq-AboutUsPage                   ; Faq                    ;                                                                           ; FaqSlot                                    ; true
+                                    ;                          ; DescFaq-AboutUsPage               ; DescFaq                ;                                                                           ; DescFaqSlot                                ; true
+# Footers
+                                    ;                          ; FooterLogo-AboutUsPage            ; FooterLogo             ;                                                                           ; FooterLogoSlot                             ; true
+                                    ;                          ; FooterSubscribe-AboutUsPage       ; FooterSubscribe        ;                                                                           ; FooterSubscribeSlot                        ; true
+                                    ;                          ; FooterHeader-AboutUsPage          ; FooterHeader           ;                                                                           ; FooterHeaderSlot                           ; true
+                                    ;                          ; FooterNavigation-AboutUsPage      ; FooterNavigation       ;                                                                           ; FooterNavigationSlot                       ; true
+                                    ;                          ; FooterContact-AboutUsPage         ; FooterContact          ;                                                                           ; FooterContactSlot                          ; true
+                                    ;                          ; FooterCopyright-AboutUsPage       ; FooterCopyright        ;                                                                           ; FooterCopyrightSlot                        ; true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;aboutUsPage;About Us Content Page;AboutUsPageTemplate;about;;;
+# END OF ABOUT US
 
 # START OF PDP
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]                 ; name                          ; frontendTemplateName       ; restrictedPageTypes(code); active[default = true]
@@ -230,31 +261,4 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]       ; uid[uniq
 INSERT_UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; name            ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']
                          ;                          ; productDetails    ; Product Details ; ProductDetailsPageTemplate     ; true       ;
 
-
-INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]             ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'AboutUsPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
-# Headers
-                                    ;                          ; TopLeftParagraph-AboutUsPage      ; TopLeftParagraph       ;                                                                           ; TopLeftParagraphSlot                       ; true
-                                    ;                          ; TopRightNavigationBar-AboutUsPage ; TopRightNavigationBar  ;                                                                           ; TopRightNavigationBarSlot                  ; true
-                                    ;                          ; HeaderLogo-AboutUsPage            ; HeaderLogo             ;                                                                           ; HeaderLogoSlot                             ; true
-                                    ;                          ; MiddleNavigationBar-AboutUsPage   ; MiddleNavigationBar    ;                                                                           ; MiddleNavigationBarSlot                    ; true
-                                    ;                          ; LoginLink-AboutUsPage             ; LoginLink              ;                                                                           ; LoginLinkSlot                              ; true
-                                    ;                          ; CartLink-AboutUsPage              ; CartLink               ;                                                                           ; CartLinkSlot                               ; true
-# HomePage Content
-                                    ;                          ; BannerAboutUs-AboutUsPage     ; BannerAboutUs              ;                                                                           ; BannerSlot                                 ; true
-                                    ;                          ; Tentang-AboutUsPage           ; Tentang                    ;                                                                           ; ProductCarouselSlot                        ; true
-                                    ;                          ; ApaItuKasur-AboutUsPage       ; ApaItuKasur                ;                                                                           ; UnboxingInTheBoxSlot                       ; true
-                                    ;                          ; Kenapa-AboutUsPage            ; Kenapa                     ;                                                                           ; BannerSlot                                 ; true
-                                    ;                          ; CaraBeli-AboutUsPage          ; CaraBeli                   ;                                                                           ; ProductCarouselSlot                        ; true
-                                    ;                          ; Faq-AboutUsPage               ; Faq                        ;                                                                           ; UnboxingInTheBoxSlot                       ; true
-# Footers
-                                    ;                          ; FooterLogo-AboutUsPage            ; FooterLogo             ;                                                                           ; FooterLogoSlot                             ; true
-                                    ;                          ; FooterSubscribe-AboutUsPage       ; FooterSubscribe        ;                                                                           ; FooterSubscribeSlot                        ; true
-                                    ;                          ; FooterHeader-AboutUsPage          ; FooterHeader           ;                                                                           ; FooterHeaderSlot                           ; true
-                                    ;                          ; FooterNavigation-AboutUsPage      ; FooterNavigation       ;                                                                           ; FooterNavigationSlot                       ; true
-                                    ;                          ; FooterContact-AboutUsPage         ; FooterContact          ;                                                                           ; FooterContactSlot                          ; true
-                                    ;                          ; FooterCopyright-AboutUsPage       ; FooterCopyright        ;                                                                           ; FooterCopyrightSlot                        ; true
-
-INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
-                         ;;aboutUsPage;About Us Content Page;AboutUsPageTemplate;about;;;
-# END OF ABOUT US
 

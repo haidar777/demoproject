@@ -169,11 +169,3 @@ UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]     
                             ;                   ;Section1BannerComponent;/images/aboutus/about-image-1.png
                             ;                   ;Section2BannerComponent;/images/aboutus/about-image-2.png
                             ;                   ;Section3BannerComponent;/images/aboutus/about-image-3.png
-
-UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; content[lang = $lang];
-                            ;                   ; TentangInthebox           ; "Tentang INTHEBOX"
-                            ;                   ; Section1ParagraphComponent          ; "Apa Itu Kasur INTHEBOX?"
-                            ;                   ; Section2ParagraphComponent          ; "Kenapa Harus Pilih INTHEBOX?"
-                            ;                   ; Section3ParagraphComponent          ; "Cara Beli Kasur INTHEBOX"
-                            ;                   ; FAQParagraphComponent               ; "Pertanyaan yang Sering Ditanyakan"
-
