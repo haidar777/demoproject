@@ -360,3 +360,30 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]       
                                 ;                       ;KenapaSlot-aboutUsPage             ;Kenapa                 ;                                                           ;KenapaSlot
                                 ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli               ;                                                           ;CaraBeliSlot
                                 ;                       ;FaqSlot-aboutUsPage                ;Faq                    ;                                                           ;FaqSlot
+
+
+#### Cart Page ####
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true]   ; uid[unique=true]                          ; name                                          ; page                              ; actions(uid,$contentCV); &componentRef
+                                 ;                          ; CartComponent                             ; Cart Display Component                        ; cartDisplay.jsp                   ;                        ; CartComponent
+                                 ;                          ; CartTotalsComponent                       ; Cart Totals Display Component                 ; cartTotalsDisplay.jsp             ;                        ; CartTotalsComponent
+                                 ;                          ; CheckoutComponent                         ; Checkout Display Component                    ; checkoutDisplay.jsp               ;                        ; CheckoutComponent
+                                 ;                          ; ReturningCustomerLoginComponent           ; Returning Customer Login Component            ; accountReturningCustomerLogin.jsp ;                        ; ReturningCustomerLoginComponent
+                                 ;                          ; NewCustomerCheckoutLoginComponent         ; New Customer Checkout Login Component         ; checkoutNewCustomerLogin.jsp      ;                        ; NewCustomerCheckoutLoginComponent
+                                 ;                          ; ReturningCustomerCheckoutLoginComponent   ; Returning Customer Checkout Login Component   ; checkouReturningCustomerLogin.jsp ;                        ; ReturningCustomerCheckoutLoginComponent
+                                 ;                          ; GuestCheckoutLoginComponent               ; Guest Checkout Login Component                ; checkoutGuestLogin.jsp            ;                        ; GuestCheckoutLoginComponent
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true] ; uid[unique=true]              ; name                          ; &componentRef
+                                   ;                        ; EmptyCartParagraphComponent   ; Empty Cart Paragraph Component; EmptyCartParagraphComponent
+                                   ;                        ; CartTitleParagraphComponent   ; Cart Title Paragraph Component; CartTitleParagraphComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                   ; name                                       ; active ; cmsComponents(&componentRef)
+                         ;                          ; CartTitleContentSlot-cartPage      ; Cart Title Content Slot for Cart Page      ; true   ; CartTitleParagraphComponent
+                         ;                          ; EmptyCartContentSlot-cartPage      ; Empty Cart Content Slot for Cart Page      ; true   ; EmptyCartParagraphComponent
+                         ;                          ; CartTotalsContentSlot-cartPage     ; Cart Totals Content Slot for Cart Page     ; true   ; CartTotalsComponent
+#                         ;                          ; OrderNoteContentSlot-cartPage      ; Bottom Content Slot for Cart Page          ; true   ; CheckoutComponent,CartSuggestions
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                  ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ; CartTitleContentSlotForCartPage   ; CartTitleContentSlot  ;                                                      ; CartTitleContentSlot-cartPage
+                                ;                       ; EmptyCartContentSlotForCartPage   ; EmptyCartContentSlot  ;                                                      ; EmptyCartContentSlot-cartPage
+                                ;                       ; CartTotalsContentSlotForCartPage  ; CartTotalsContentSlot ;                                                      ; CartTotalsContentSlot-cartPage
+#                                ;                       ; BottomContentSlotForCartPage      ;BottomContentSlot;;BottomContentSlot-cartPage
