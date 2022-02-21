@@ -14,31 +14,31 @@
 <spring:url value="/login/register/termsandconditions" var="getTermsAndConditionsUrl"/>
 
 <div class="user-register__headline">
-	<spring:theme code="register.new.customer" />
+	Daftar Sekarang
 </div>
 <p>
-	<spring:theme code="register.description" />
+	Masukkan detail Anda untuk menciptakan akun:
 </p>
 
 <form:form method="post" modelAttribute="registerForm" action="${action}">
 	<formElement:formSelectBoxDefaultEnabled idKey="register.title"
-		labelKey="register.title" selectCSSClass="form-control"
-		path="titleCode" mandatory="true" skipBlank="false"
-		skipBlankMessageKey="form.select.none" items="${titles}" />
+											 labelKey="register.title" selectCSSClass="form-control"
+											 path="titleCode" mandatory="true" skipBlank="false"
+											 skipBlankMessageKey="form.select.none" items="${titles}" />
 	<formElement:formInputBox idKey="register.firstName"
-		labelKey="register.firstName" path="firstName" inputCSS="form-control"
-		mandatory="true" />
+							  labelKey="register.firstName" path="firstName" inputCSS="form-control"
+							  mandatory="true" />
 	<formElement:formInputBox idKey="register.lastName"
-		labelKey="register.lastName" path="lastName" inputCSS="form-control"
-		mandatory="true" />
+							  labelKey="register.lastName" path="lastName" inputCSS="form-control"
+							  mandatory="true" />
 	<formElement:formInputBox idKey="register.email"
-		labelKey="register.email" path="email" inputCSS="form-control"
-		mandatory="true" />
+							  labelKey="register.email" path="email" inputCSS="form-control"
+							  mandatory="true" />
 	<formElement:formPasswordBox idKey="password" labelKey="register.pwd"
-		path="pwd" inputCSS="form-control password-strength" mandatory="true" />
+								 path="pwd" inputCSS="form-control password-strength" mandatory="true" />
 	<formElement:formPasswordBox idKey="register.checkPwd"
-		labelKey="register.checkPwd" path="checkPwd" inputCSS="form-control"
-		mandatory="true" />
+								 labelKey="register.checkPwd" path="checkPwd" inputCSS="form-control"
+								 mandatory="true" />
 
     <c:if test="${ not empty consentTemplateData }">
         <form:hidden path="consentForm.consentTemplateId" value="${consentTemplateData.id}" />
