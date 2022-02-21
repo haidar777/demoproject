@@ -251,4 +251,59 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 INSERT_UPDATE ContentPage;$contentCV[unique=true]   ;uid[unique=true]   ;name                   ;masterTemplate(uid,$contentCV) ;label  ;defaultPage[default='true']    ;approvalStatus(code)[default='approved']   ;homepage[default='false']
                          ;                          ;aboutUsPage        ;About Us Content Page  ;AboutUsPageTemplate            ;about  ;                               ;                                           ;
 
+###### Cart Page ######
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]      ; name                       ; frontendTemplateName         ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; CartPageTemplate        ; Cart Page Template         ;                              ; ContentPage              ;
 
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          ; name                        ; active
+                         ;                          ; CartTitleContentSlot      ; Cart Title Content          ; true
+                         ;                          ; EmptyCartContentSlot      ; Empty Cart Content Slot     ; true
+                         ;                          ; CartTotalsContentSlot     ; Cart Totals Content Slot    ; true
+                         ;                          ; OrderNoteContentSlot      ; Order Note Content Slot     ; true
+
+INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'CartPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+# Headers
+                             ; TopLeftParagraph       ;                                                                       ;                          ; narrow
+                             ; TopRightNavigationBar  ;                                                                       ;                          ; navigation
+                             ; HeaderLogo             ;                                                                       ;                          ; logo
+                             ; MiddleNavigationBar    ;                                                                       ;                          ; navigation
+                             ; LoginLink              ;                                                                       ;                          ; navigation
+                             ; CartLink               ;                                                                       ;                          ; navigation
+# Cart Page Content
+                             ; CartTitleContentSlot   ;                                                                       ; CMSParagraphComponent    ;
+                             ; EmptyCartContentSlot   ;                                                                       ; CMSParagraphComponent    ;
+                             ; CartTotalsContentSlot  ;                                                                       ;                          ; wide
+                             ; OrderNoteContentSlot   ;                                                                       ;                          ; wide
+# Footers
+                             ; FooterLogo1            ;                                                                       ;                          ; logo
+                             ; FooterLogo2            ;                                                                       ;                          ; logo
+                             ; FooterNavigation       ;                                                                       ;                          ; navigation
+                             ; FooterContact          ;                                                                       ;                          ; footer
+                             ; FooterCopyright        ;                                                                       ;                          ; footer
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                     ; position[unique = true]   ; pageTemplate(uid, $contentCV)[unique = true][default = 'CartPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+# Headers
+                                    ;                          ; TopLeftParagraph-CartPage              ; TopLeftParagraph          ;                                                                           ; TopLeftParagraphSlot                       ; true
+                                    ;                          ; TopRightNavigationBar-CartPage         ; TopRightNavigationBar     ;                                                                           ; TopRightNavigationBarSlot                  ; true
+                                    ;                          ; HeaderLogo-CartPage                    ; HeaderLogo                ;                                                                           ; HeaderLogoSlot                             ; true
+                                    ;                          ; MiddleNavigationBar-CartPage           ; MiddleNavigationBar       ;                                                                           ; MiddleNavigationBarSlot                    ; true
+                                    ;                          ; LoginLink-CartPage                     ; LoginLink                 ;                                                                           ; LoginLinkSlot                              ; true
+                                    ;                          ; CartLink-CartPage                      ; CartLink                  ;                                                                           ; CartLinkSlot                               ; true
+# Cart Page Content
+                                    ;                          ; CartTitleContentSlot-CartPage          ; CartTitleContentSlot      ;                                                                           ; CartTitleContentSlot                       ; true
+                                    ;                          ; EmptyCartContentSlot-CartPage          ; EmptyCartContentSlot      ;                                                                           ; EmptyCartContentSlot                       ; true
+                                    ;                          ; CartTotalsContentSlot-CartPage         ; CartTotalsContentSlot     ;                                                                           ; CartTotalsContentSlot                      ; true
+                                    ;                          ; OrderNoteContentSlot-CartPage          ; OrderNoteContentSlot      ;                                                                           ; OrderNoteContentSlot                       ; true
+# Footers
+                                    ;                          ; FooterLogo1-CartPage                   ; FooterLogo                ;                                                                           ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo2-CartPage                   ; FooterLogo2               ;                                                                           ; FooterLogo2Slot                            ; true
+                                    ;                          ; FooterNavigation-CartPage              ; FooterNavigation          ;                                                                           ; FooterNavigationSlot                       ; true
+                                    ;                          ; FooterContact-CartPage                 ; FooterContact             ;                                                                           ; FooterContactSlot                          ; true
+                                    ;                          ; FooterCopyright-CartPage               ; FooterCopyright           ;                                                                           ; FooterCopyrightSlot                        ; true
+# Preview Image for use in the CMS Cockpit for special ContentPages
+INSERT_UPDATE Media; $contentCV[unique=true]; code[unique=true]                 ; mime       ; realfilename                             ; @media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
+                   ;                        ; ContentPageModel__function_preview; text/gif   ; ContentPageModel__function_preview.gif   ; $jarResourceCms/preview-images/ContentPageModel__function_preview.gif
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true] ; name      ; masterTemplate(uid,$contentCV); label ; defaultPage[default='true']; approvalStatus(code)[default='approved']   ; homepage[default='false']   ; previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+                         ;                       ; cartPage         ; Cart Page ; CartPageTemplate              ; cart  ;                            ;                                            ;                             ;
