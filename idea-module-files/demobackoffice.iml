@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module descriptorType="CUSTOM" importedAsReadOnly="false" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration process_explicitly_annotated="false">
+        <fileset id="demobackofficespring" name="demobackofficespring" removed="false">
+          <dependency>democorespring==democore</dependency>
+          <file>file://$MODULE_DIR$/../custom/demo/demobackoffice/project.properties</file>
+          <file>file://$MODULE_DIR$/../custom/demo/demobackoffice/resources/demobackoffice-spring.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/../custom/demo/demobackoffice/eclipsebin" />
+    <output-test url="file://$MODULE_DIR$/../custom/demo/demobackoffice/eclipsebin" />
+    <exclude-output />
+    <javadoc-paths>
+      <root url="" />
+    </javadoc-paths>
+    <content url="file://$MODULE_DIR$/../custom/demo/demobackoffice">
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/testsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/gensrc" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/groovytestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/scalasrc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/scalatestsrc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/testsrc" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/.externalToolBuilders" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/.settings" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/eclipsebin" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/bower_components" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/jsTarget" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/web/webroot/WEB-INF/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/commonweb/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/addonsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/testclasses" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/acceleratoraddon/web/commonwebsrc" />
+      <excludeFolder url="file://$MODULE_DIR$/../custom/demo/demobackoffice/backoffice/classes" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="democore" exported="" />
+  </component>
+</module>

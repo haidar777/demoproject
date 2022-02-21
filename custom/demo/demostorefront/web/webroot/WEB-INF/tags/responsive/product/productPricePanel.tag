@@ -26,9 +26,6 @@
 				<p class="price">
 					<format:fromPrice priceData="${product.price}"/>
 				</p>
-				<p class="desc">
-				    ${product.desc}
-				</p>
 			</c:otherwise>
 		</c:choose>
 	</c:when>

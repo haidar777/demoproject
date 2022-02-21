@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/config.iml" filepath="$PROJECT_DIR$/idea-module-files/config.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/demobackoffice.iml" filepath="$PROJECT_DIR$/idea-module-files/demobackoffice.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/democore.iml" filepath="$PROJECT_DIR$/idea-module-files/democore.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/demofacades.iml" filepath="$PROJECT_DIR$/idea-module-files/demofacades.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/demofulfilmentprocess.iml" filepath="$PROJECT_DIR$/idea-module-files/demofulfilmentprocess.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/demoinitialdata.iml" filepath="$PROJECT_DIR$/idea-module-files/demoinitialdata.iml" group="Custom" />
+      <module fileurl="file://$PROJECT_DIR$/idea-module-files/demostorefront.iml" filepath="$PROJECT_DIR$/idea-module-files/demostorefront.iml" group="Custom" />
+    </modules>
+  </component>
+</project>
