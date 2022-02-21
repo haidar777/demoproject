@@ -60,8 +60,8 @@
                 </div>
                 <div class="row-reverse item">
                     <div class="col-md-7 order-1 order-md-2 image">
-                        <cms:pageSlot position="ApaItuKasur" var="feature" element="div" class="apaitu">
-                            <cms:component component="${feature}" element="div" class="apaitukasur"/>
+                        <cms:pageSlot position="CaraBeli" var="feature" element="div" class="carabeli">
+                            <cms:component component="${feature}" element="div" class="carabelikasur"/>
                         </cms:pageSlot>
                     </div>
                     <div class="col-md-5 order-2 order-md-1 description mt-4 mt-md-0">

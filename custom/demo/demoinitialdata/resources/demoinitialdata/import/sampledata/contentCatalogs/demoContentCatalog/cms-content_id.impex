@@ -5,19 +5,11 @@
 # English Localisation
 
 # Macros / Replacement Parameter definitions
-$contentCatalog=demoContentCatalog
-$contentCatalogName=Demo Content Catalog
-$productCatalog=demoProductCatalog
-$productCatalogName=Demo Product Catalog
+$contentCatalog = demoContentCatalog
 
-$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
-
-$picture=media(code, $contentCV);
-$medias=medias(code, $contentCV);
-$mediaContainer=media(qualifier, $contentCV)[lang=$lang];
-$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/contentCatalogs/$contentCatalog
-$productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$productCatalog
+$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$picture = media(code, $contentCV);
+$siteResource = jar:com.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/contentCatalogs/$contentCatalog
 
 # Language
 $lang=id
@@ -26,67 +18,36 @@ $backGroundImage=backGroundImage(code, $contentCV)
 $hoverOverImage=hoverOverImage(code, $contentCV)
 $Image=image(code, $contentCV)
 
-# -----------------------------------------------------------------------
-# Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
-# -----------------------------------------------------------------------
-# ImpEx for Importing CMS Content
-# English Localisation
-
-# Macros / Replacement Parameter definitions
-$contentCatalog = demoContentCatalog
-
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$picture = media(code, $contentCV);
-$siteResource = jar:com.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/contentCatalogs/$contentCatalog
-
-# Language
-$lang = id
-
-
-# Site Logo Component
-UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang]
-                            ;                          ; SiteLogoComponent ; /images/header/header-logo-white.png ;
-
-# Top Left Header Logo Component
-UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; $picture[lang = $lang]
-                            ;                          ; TopHeaderLeftLogoComponent1 ; /images/header/header-icon-10y-warranty.png
-                            ;                          ; TopHeaderLeftLogoComponent2 ; /images/header/header-icon-free-shipping.png
-
-# Top Left Header Paragraph Component
-UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; content[lang = $lang];
-                            ;                          ; TopHeaderLeftParagraphComponent1 ; "Garansi 10 Tahun"
-                            ;                          ; TopHeaderLeftParagraphComponent2 ; "Free Shipping pulau Jawa & Sumatera"
-# Cart Icon Logo
-UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
-                            ;                          ; CartHeaderLogoComponent ; /images/icon/cart-icon.png
-
-# PGP Catalog Banner
-UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
-                            ;                          ; ProductGridPageBanner   ; /images/PLP/catalog-header.png
-
-# Bottom Left Footer Logo Component
-UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; $picture[lang = $lang]
-                            ;                          ; FooterLogoComponent1 ; /images/icon/facebook.svg
-                            ;                          ; FooterLogoComponent2 ; /images/icon/instagram.svg
-                            ;                          ; FooterLogoComponent3 ; /images/icon/email.svg
-
-# Bottom Left Footer Logo Component
+# Banner Components
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; $picture[lang = $lang]
+# Site Logo
+                            ;                          ; SiteLogoComponent              ; /images/header/header-logo-white.png
+# Top Left Header Logo
+                            ;                          ; TopHeaderLeftLogoComponent1    ; /images/header/header-icon-10y-warranty.png
+                            ;                          ; TopHeaderLeftLogoComponent2    ; /images/header/header-icon-free-shipping.png
+# Cart Logo
+                            ;                          ; CartHeaderLogoComponent        ; /images/icon/cart-icon.png
+# Top Left Footer
+                            ;                          ; FooterLogoComponent1           ; /images/icon/facebook.svg
+                            ;                          ; FooterLogoComponent2           ; /images/icon/instagram.svg
+                            ;                          ; FooterLogoComponent3           ; /images/icon/email.svg
+# Bottom Left Footer
                             ;                          ; BottomLeftFooterLogoComponent1 ; /images/footer/icon-call.png
                             ;                          ; BottomLeftFooterLogoComponent2 ; /images/footer/icon-message.png
-
-# Bottom Left Footer Paragraph Component
-UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; content[lang = $lang];
-                            ;                          ; BottomLeftFooterParagraphComponent1 ; "(021) 30306286"
-                            ;                          ; BottomLeftFooterParagraphComponent2 ; "+62 819 234 659"
-
-# Bottom Right Footer Paragraph Component
-UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; content[lang = $lang];
-                            ;                          ; BottomRightFooterParagraphComponent ; "Copyright © 2019-2022 PT Duta Mas Mandiri"
+# PGP Catalog Banner
+                            ;                          ; ProductGridPageBanner          ; /images/PLP/catalog-header.png
 
 
-UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
-                                      ;                          ; Banner-HomePage         ; /images/HomePage/banner.png
+# Paragraph Components
+UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                     ; content[lang = $lang];
+# Top Left Header
+                            ;                          ; TopHeaderLeftParagraphComponent1       ; "10 Tahun Garansi"
+                            ;                          ; TopHeaderLeftParagraphComponent2       ; "Free Shipping Pulau Jawa & Sumatera"
+# Bottom Left Footer
+                            ;                          ; BottomLeftFooterParagraphComponent1    ; "(021) 30306286"
+                            ;                          ; BottomLeftFooterParagraphComponent2    ; "+62 819 234 659"
+# Bottom Right Footer
+                            ;                          ; BottomRightFooterParagraphComponent    ; "Copyright © 2019-2022 PT Duta Mas Mandiri"
 
 # Navigation
 # Header
@@ -123,49 +84,33 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true];
 UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
                                 ;                          ; FooterNavigationComponent ; "Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
 
-# End Footer
-# End Navigation
-
-
-
 ##### Product Detail Page #####
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
 #                   ;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;$siteResource/images/banners/site/Elec_358x45_HomeDeliveryBanner_EN_01.gif;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;;"Order before 6pm for next day delivery"
 #UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
 #                            ;;LightboxHomeDeliveryBannerComponent;Elec_358x45_HomeDeliveryBanner_EN_01.gif
-#
-## CMS Mini Cart Component
+
+# CMS Mini Cart Component
 #UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;title[lang=$lang]
 #                        ;;MiniCart;Mini Cart;"YOUR SHOPPING CART"
-#
-## CMS tabs components
-#UPDATE CMSTabParagraphComponent; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]; content[lang = $lang]
-#                               ;                          ; deliveryTab       ; Delivery           ; "<div class=""tab-delivery"">Pengiriman Se-Indonesia</div>"
-#
-## CMS tabbed jsp include components
-#INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-#                                 ;;ProductDetailsTabComponent;"Product Details"
-#                                 ;;ProductReviewsTabComponent;"Reviews"
-#                                 ;;ProductSpecsTabComponent;"Specs"
-#
-UPDATE ProductReferencesComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
-                                 ;;Similar;"You may also like..."
 
+UPDATE ProductReferencesComponent;$contentCV[unique=true]   ; uid[unique=true]   ; title[lang=$lang]
+                                 ;                          ; Similar            ; "You may also like..."
 
-# BannerComponents for Carousel
-UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$lang];$picture[lang=$lang]                          ;content[lang=$lang]
-                      ;                       ; CarouselProduct1;INTHEBOX            ;/images/HomePage/Carousel/Inthebox.png        ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct2;INTHEBOX            ;/images/HomePage/Carousel/Inthebox Hybrid.png ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct3;INTHEBOX            ;/images/HomePage/Carousel/Inthebox 101.png    ;"Pocket Spring & Busa Medium Soft"
-                      ;                       ; CarouselProduct4;INTHEBOX            ;/images/HomePage/Carousel/Inthebox X.png      ;"Pocket Spring & Busa Medium Soft"
-
-
-# About Us Page
+##### About Us Page #####
 UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
-                                      ;                  ; AboutUsBannerComponent;/images/aboutus/about-header.png
+                            ;                  ; AboutUsBannerComponent;/images/aboutus/about-header.png
 
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; $picture[lang = $lang]
                             ;                   ;Section1BannerComponent;/images/aboutus/about-image-1.png
                             ;                   ;Section2BannerComponent;/images/aboutus/about-image-2.png
                             ;                   ;Section3BannerComponent;/images/aboutus/about-image-3.png
+
+UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
+                            ;                           ; TentangInthebox               ; "Tentang INTHEBOX"
+                            ;                           ; Section1ParagraphComponent    ; "Apa Itu Kasur INTHEBOX?"
+                            ;                           ; Section2ParagraphComponent    ; "Kenapa Harus Pilih INTHEBOX?"
+                            ;                           ; Section3ParagraphComponent    ; "Cara Beli Kasur INTHEBOX"
+                            ;                           ; FAQParagraphComponent         ; "Pertanyaan yang Sering Ditanyakan"
+
