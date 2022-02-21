@@ -23,6 +23,7 @@
 		<extension name="cmswebservices"/>
 		<extension name="permissionswebservices"/>
 		<extension name="previewwebservices"/>
+<<<<<<< HEAD
 		<extension name="npmancillary"/>
 		<extension name="smartedit"/>
 		<extension name="smarteditaddon"/>
@@ -30,6 +31,17 @@
 		<extension name="smartedittools"/>
 
 		<!--external ext-->
+=======
+
+		<extension name="cmssmartedit"/>
+		<extension name="cmssmarteditwebservices"/>
+		<extension name="smartedit"/>
+		<extension name="smarteditaddon"/>
+		<extension name="smarteditwebservices"/>
+		<extension name="smartedittools" />
+
+		<extension name="cmsoccaddon"/>
+>>>>>>> 6bdb06f76f6fb2db95a29df1692bc5a39941f9c8
 		<extension name="democore" />
 		<extension name="demobackoffice" />
 		<extension name="demofacades" />

@@ -91,8 +91,8 @@ INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = t
                                    ;                            ; BottomLeftFooterLogoComponent1    ; Bottom Left Footer Logo Component 1   ; BottomLeftFooterLogoComponent1;
                                    ;                            ; BottomLeftFooterLogoComponent2    ; Bottom Left Footer Logo Component 2   ; BottomLeftFooterLogoComponent2;
 
+
 ##### Paragraph #####
-#Components
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; name                                  ; &componentRef
 # Top Left Header Paragraph
                                    ;                          ; TopHeaderLeftParagraphComponent1 ; Top Header Left Paragraph Component 1 ; TopHeaderLeftParagraphComponent1
@@ -104,7 +104,6 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
                                    ;                          ; BottomRightFooterParagraphComponent ; Bottom Right Footer Paragraph Component ; BottomRightFooterParagraphComponent
 
 #Containers
-# Top Left Header Paragraph Container
 INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]           ; name                              ; visible; simpleCMSComponents(uid, $contentCV)                                 ; &componentRef
 # Top Left Header Paragraph
                                       ;                          ; TopHeaderLeftContainer1      ; Top Header Left Container 1       ; true   ; TopHeaderLeftLogoComponent1,TopHeaderLeftParagraphComponent1         ; TopHeaderLeftContainer1
@@ -170,6 +169,7 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; 
 # Level 5
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name; &nodeRef; parent(uid, $contentCV)
 
+
 #### Navigation Component ####
 # Top Header Navigation Component
 INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique = true]    ; name                            ; navigationNode(&nodeRef); &componentRef         ; wrapAfter; styleClass
@@ -208,6 +208,22 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]             ; $contentCV[un
                                 ; BlogsFooterNavNodeEntry        ;                          ; Blogs Footer Navigation Node Entry        ; BlogsFooterNavNode        ; BlogsLink                                              ;
                                 ; TestimonialFooterNavNodeEntry  ;                          ; Testimonial Footer Navigation Node Entry  ; TestimonialFooterNavNode  ; TestimonialLink                                        ;
 
+#Home page contents
+#Banner
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/HomePage/banner.png             ; banner.png            ; $siteResource/images/HomePage/banner.png                                          ; image/png                   ;        ;
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                           ; &componentRef            ;urlLink
+                                             ;                       ; Banner-HomePage           ;Banner component for Homepage  ; Banner-HomePage          ;/c/PRODUK
+
+UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
+                  ;                          ;BannerSlot                         ;true   ;Banner-HomePage
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
+
+
+
 #### ProductGridPage ####
 INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
                                  ;                          ; ListOrderFormAction ; /orderForm ; Order Form Action ; ListOrderFormAction
@@ -230,6 +246,7 @@ INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true
 
 UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
                            ;                          ; ProductGridComponent ; ListOrderFormAction
+
 
 #Banner PGP
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']

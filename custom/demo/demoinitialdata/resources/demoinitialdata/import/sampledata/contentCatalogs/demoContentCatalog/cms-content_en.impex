@@ -18,6 +18,7 @@ $backGroundImage=backGroundImage(code, $contentCV)
 $hoverOverImage=hoverOverImage(code, $contentCV)
 $Image=image(code, $contentCV)
 
+
 # Banner Components
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; $picture[lang = $lang]
 # Site Logo
@@ -48,6 +49,10 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]     
                             ;                          ; BottomLeftFooterParagraphComponent2    ; "+62 819 234 659"
 # Bottom Right Footer
                             ;                          ; BottomRightFooterParagraphComponent    ; "Copyright © 2019-2022 PT Duta Mas Mandiri"
+
+UPDATE SimpleResponsiveBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
+                                      ;                          ; Banner-HomePage         ; /images/HomePage/banner.png
+
 
 # Navigation
 # Header
@@ -114,4 +119,9 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]    
                             ;                           ; Section3ParagraphComponent    ; "Cara Beli Kasur INTHEBOX"
                             ;                           ; FAQParagraphComponent         ; "Pertanyaan yang Sering Ditanyakan"
 
-
+# BannerComponents for Carousel
+UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$lang];$picture[lang=$lang]                          ;content[lang=$lang]
+                      ;                       ; CarouselProduct1;INTHEBOX            ;/images/HomePage/Carousel/Inthebox.png        ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct2;INTHEBOX            ;/images/HomePage/Carousel/Inthebox Hybrid.png ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct3;INTHEBOX            ;/images/HomePage/Carousel/Inthebox 101.png    ;"Pocket Spring & Busa Medium Soft"
+                      ;                       ; CarouselProduct4;INTHEBOX            ;/images/HomePage/Carousel/Inthebox X.png      ;"Pocket Spring & Busa Medium Soft"
