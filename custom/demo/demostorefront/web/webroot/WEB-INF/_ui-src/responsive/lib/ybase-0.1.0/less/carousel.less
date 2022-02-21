@@ -6,8 +6,8 @@
 	width: 100%;
 	-ms-touch-action: pan-y;
 
-	.owl-grab {
-		cursor:grab;
+	.grabbing { 
+		// cursor:url(grabbing.png) 8 8, move;
 
 	}
 
@@ -15,7 +15,6 @@
 		overflow: hidden;
 		position: relative;
 		width: 100%;
-		margin: auto;
 
 		&.autoHeight{
 			-webkit-transition: height 500ms ease-in-out;
@@ -27,7 +26,6 @@
 		.owl-wrapper{
 			display: none;
 			position: relative;
-			width: 400px;
 			-webkit-transform: translate3d(0px, 0px, 0px);
 			-webkit-backface-visibility: hidden;
 			-moz-backface-visibility:    hidden;
@@ -52,7 +50,7 @@
 						min-height:1px;
 					}
 				}
-
+				
 			}
 		}
 	}
@@ -119,14 +117,14 @@
 	}
 
 
-
+	
 
 }
 
 
 .carousel,
 .carousel__component--carousel {
-	width: auto;
+	width: auto; 
 	margin: (@grid-gutter-width/2) -(@grid-gutter-width/2);
 	text-align: center;
 
@@ -134,19 +132,19 @@
 	.carousel__item{
 		display: block;
 		margin: 0 (@grid-gutter-width/2);
-		padding: (@grid-gutter-width/6) 0;
+		padding: (@grid-gutter-width/2) 0;
 
-		.thumb,
+     	.thumb,
 		.carousel__item--thumb {
-			margin-bottom: 20px;
-			height: 140px;
+        	margin-bottom: 20px;
+        	height: 140px;
 
 			img {
-				max-width: 140px;
-				max-height: 140px;
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
+			  max-width: 140px;
+			  max-height: 140px;
+			  display: block;
+			  margin-left: auto;
+			  margin-right: auto;
 			}
 		}
 
@@ -173,31 +171,33 @@
 			font-weight: 600;
 			font-size: 16px;
 			color: @headline-color;
-		}
 
-		.item__desc,
-		.carousel__item--desc{
-			margin-top: (@grid-gutter-width/1.5);
-			margin-bottom: 11px;
-			text-transform: uppercase;
-			text-align: center;
-			line-height: 1.2em;
-			overflow: hidden;
-			position: relative;
-			height: 2.4em;
-			font-weight: 600;
-			font-size: 16px;
-			color: @headline-color;
+          &:before {
+            background: #FFF none repeat scroll 0 0;
+            bottom: 0;
+            position: absolute;
+            right: 0;
+            content: '\2026';
+          }
+
+          &:after {
+            content: "";
+            background: #FFF none repeat scroll 0% 0%;
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            z-index: 1;
+          }
 		}
 
 		.item__price,
 		.carousel__item--price {
-			margin: (@grid-gutter-width/2);
-			color: @text-color;
-			text-align: center;
-			font-size: 24px;
-			font-weight: 600;
-			margin: 0;
+		  margin: (@grid-gutter-width/2);
+		  color: @text-color;
+		  text-align: center;
+		  font-size: 24px;
+		  font-weight: 600;
+		  margin: 0;
 		}
 
 	}
@@ -207,23 +207,22 @@
 
 .carousel-component,
 .carousel__component {
-	background-color: #6082B6;
-	padding: 0 20px;
-	margin: @grid-gutter-width+15 0 (@grid-gutter-width - 5);
+  	padding: 0 20px;
+  	margin: @grid-gutter-width+15 0 (@grid-gutter-width - 5);
 	.clearfix;
 
 	.carousel__component--headline {
-		color: @headline-color;
-		font-size: 28px;
-		margin: 10px 0 20px;
-		text-align: center;
-		font-weight: bold;
-		text-transform: @carousel-font-style;
+	  color: @headline-color;
+      font-size: 28px;
+      margin: 10px 0 20px;
+      text-align: center;
+      font-weight: bold;
+      text-transform: @carousel-font-style;
 	}
 
-	&:first-child {
-		margin: 50px 0 22px;
-	}
+ 	&:first-child {
+    	margin: 50px 0 22px;
+  	}
 
 	+ .carousel-component,
 	.carousel__component {
@@ -242,7 +241,7 @@
 	.carousel.rotating-image{
 		margin: 0;
 	}
-
+	
 	.owl-item{
 		.item{
 			padding: 0;
@@ -287,12 +286,12 @@
 
 	.gallery-carousel{
 		.item{
-
-
+			
+			
 
 		}
 		.owl-item{
-
+		
 			img{
 				width: 100%;
 				height: auto;

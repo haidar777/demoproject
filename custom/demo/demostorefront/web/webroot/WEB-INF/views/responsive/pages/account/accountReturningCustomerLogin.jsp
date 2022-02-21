@@ -3,7 +3,6 @@
 
 <c:url value="/j_spring_security_check" var="loginActionUrl" />
 
-
 <div class="login-section">
 	<user:login actionNameKey="login.login" action="${loginActionUrl}" />
 </div>
