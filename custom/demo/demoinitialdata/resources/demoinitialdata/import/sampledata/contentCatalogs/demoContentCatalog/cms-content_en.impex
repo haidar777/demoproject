@@ -5,11 +5,19 @@
 # English Localisation
 
 # Macros / Replacement Parameter definitions
-$contentCatalog = demoContentCatalog
+$contentCatalog=demoContentCatalog
+$contentCatalogName=Demo Content Catalog
+$productCatalog=demoProductCatalog
+$productCatalogName=Demo Product Catalog
 
-$contentCV = catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]), CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
-$picture = media(code, $contentCV);
-$siteResource = jar:com.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/contentCatalogs/$contentCatalog
+$contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$productCV=catalogVersion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$picture=media(code, $contentCV);
+$medias=medias(code, $contentCV);
+$mediaContainer=media(qualifier, $contentCV)[lang=$lang];
+$siteResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/contentCatalogs/$contentCatalog
+$productResource=jar:org.demo.initialdata.setup.InitialDataSystemSetup&/demoinitialdata/import/sampledata/productCatalogs/$productCatalog
 
 # Language
 $lang=en
@@ -17,6 +25,7 @@ $lang=en
 $backGroundImage=backGroundImage(code, $contentCV)
 $hoverOverImage=hoverOverImage(code, $contentCV)
 $Image=image(code, $contentCV)
+
 
 # Banner Components
 UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; $picture[lang = $lang]
@@ -84,6 +93,57 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true];
 UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true]        ; notice[lang = en][translator = de.hybris.platform.acceleratorservices.dataimport.batch.converter.CopyrightTranslator, dateFormat = yyyy]
                                 ;                          ; FooterNavigationComponent ; "Copyright © {0} SAP SE or an SAP affiliate company. All rights reserved."
 
+
+#### Homepage Start  #####
+# Home Page Splash
+
+# Media Content
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpg'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;banner.png;$siteResource/images/HomePage/banner.png;;banner.png;;"Beli Sekarang"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;demo-homepage-spalsh-1-en;banner.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;IntheboxBannerComponent;demo-homepage-spalsh-1-en
+
+
+UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];title[lang=$lang]
+                               ;;HomepageProductCarouselComponent;BELI KASUR INTHEBOX
+
+
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/png'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;keluarkan.png;$siteResource/images/HomePage/UnboxingInthebox/keluarkan_experience_1.png;;keluarkan_experience_1.png;;"Keluarkan"
+                   ;widescreen;;posisikan.png;$siteResource/images/HomePage/UnboxingInthebox/posisikan_experience_2.png;;posisikan_experience_2.png;;"posisikan"
+                   ;widescreen;;bukaplastik.png;$siteResource/images/HomePage/UnboxingInthebox/buka_plastik_experience_3.png;;buka_plastik_experience_3.png;;"Buka Plastik"
+                   ;widescreen;;tunggumengembang.png;$siteResource/images/HomePage/UnboxingInthebox/tunggu_mengembang_experience_4.png;;tunggu_mengembang_experience_4.png;;"Tunggu Mengembang"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;demo-homepage-light-fam-en;keluarkan.png
+                            ;demo-homepage-light-text-en;posisikan.png
+                            ;demo-homepage-springbed-03-en;bukaplastik.png
+                            ;demo-homepage-springbed-04-en;tunggumengembang.png
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;Unboxing1;demo-homepage-light-fam-en
+                                             ;;Unboxing2;demo-homepage-light-text-en
+                                             ;;Unboxing3;demo-homepage-springbed-03-en
+                                             ;;Unboxing4;demo-homepage-springbed-04-en
+
+##### End Of Homepage ####
+
+#### Login Logo
+
+#REMOVE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpg'];realfilename;folder(qualifier)[default='images'];altText
+#                   ;widescreen;;loginlogo.png;$siteResource/images/logo-inthebox-440x80.png;;logo-inthebox-440x80.png;;"logo"
+#
+#REMOVE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+#                            ;loginlogo;loginlogo.png
+#
+#REMOVE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+#                                             ;;LoginLogoComponent;loginlogo
+
+
 ##### Product Detail Page #####
 # Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
 #INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
@@ -96,7 +156,7 @@ UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique = true] 
 #                        ;;MiniCart;Mini Cart;"YOUR SHOPPING CART"
 
 UPDATE ProductReferencesComponent;$contentCV[unique=true]   ; uid[unique=true]   ; title[lang=$lang]
-                                 ;                          ; Similar            ; "You may also like..."
+                                 ;                          ; CrossSelling            ; "You may also like..."
 
 ##### About Us Page #####
 UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
