@@ -377,18 +377,6 @@
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
 
-	<!-- Product Suggestion Service -->
-	<alias alias="demoSimpleSuggestionService" name="DefaultDemoSimpleSuggestionService"/>
-	<bean id="DefaultDemoSimpleSuggestionService" class="org.demo.core.productSuggestion.service.impl.DefaultDemoSimpleSuggestionService" >
-		<property name="demoSimpleSuggestionDao" ref="demoSimpleSuggestionDao"/>
-	</bean>
-	<alias alias="demoSimpleSuggestionDao" name="defaultDemoSimpleSuggestionDao"/>
-	<bean id="defaultDemoSimpleSuggestionDao"
-		  class="org.demo.core.productSuggestion.dao.impl.DefaultDemoSimpleSuggestionDao"
-		  parent="abstractItemDao" >
-		<property name="flexibleSearchService" ref="flexibleSearchService"/>
-	</bean>
-
 	<!-- Product Reference Lookup Strategies-->
 	<alias name="apparelCrossSellingProductReferenceTargetStrategy" alias="crossSellingProductReferenceTargetStrategy"/>
 	<bean id="apparelCrossSellingProductReferenceTargetStrategy"
@@ -565,6 +553,4 @@
 	<bean id="typeValueProvider" class="org.demo.core.provider.TypeValueProvider" parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
-
-
 </beans>

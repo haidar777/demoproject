@@ -3,8 +3,6 @@
  */
 package org.demo.storefront.controllers.pages;
 
-import de.hybris.platform.acceleratorcms.jalo.components.CartSuggestionComponent;
-import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
 import de.hybris.platform.acceleratorfacades.futurestock.FutureStockFacade;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ProductBreadcrumbBuilder;
@@ -17,7 +15,6 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.ReviewVa
 import de.hybris.platform.acceleratorstorefrontcommons.util.MetaSanitizerUtil;
 import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
 import de.hybris.platform.acceleratorstorefrontcommons.variants.VariantSortStrategy;
-import de.hybris.platform.catalog.enums.ProductReferenceTypeEnum;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSPageService;
@@ -35,12 +32,16 @@ import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import org.demo.facades.productSuggestion.DemoSuggestionFacade;
-import org.demo.facades.suggestion.SimpleSuggestionFacade;
 import org.demo.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -110,12 +111,6 @@ public class ProductPageController extends AbstractPageController
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
 
-	@Resource(name = "simpleDemoSuggestionFacade")
-	private DemoSuggestionFacade demoSuggestionFacade;
-
-	@Resource(name = "simpleSuggestionFacade")
-	private SimpleSuggestionFacade simpleSuggestionFacade;
-
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response)
@@ -138,16 +133,8 @@ public class ProductPageController extends AbstractPageController
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
 
 		model.addAttribute(new ReviewForm());
-		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
-		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false))); //ini nilainya false
-
-		//------------Check Demo Suggestion Facade Impl--------------------//
-		Set<String> code = new HashSet<String>();
-		code.add(productCode);
-		List<ProductReferenceTypeEnum> referenceType = new ArrayList<ProductReferenceTypeEnum>();
-		referenceType.add(ProductReferenceTypeEnum.BASE_PRODUCT);
-		model.addAttribute("suggestions", demoSuggestionFacade.getReferencesForProducts(code,referenceType, true, 5));
-		//model.addAttribute("suggestion", simpleSuggestionFacade.getSuggestionsForProductsInCart(, component.isFilterPurchased(), component.getMaximumNumberProducts()));
+		model.addAttribute("pageType", PageType.PRODUCT.name());
+		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
@@ -419,7 +406,7 @@ public class ProductPageController extends AbstractPageController
 
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
-		populateProductData(productData, model); //Memasukkan data dengan attribute product.
+		populateProductData(productData, model);
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, productBreadcrumbBuilder.getBreadcrumbs(productCode));
 
 		if (CollectionUtils.isNotEmpty(productData.getVariantMatrix()))
@@ -431,11 +418,8 @@ public class ProductPageController extends AbstractPageController
 
 	protected void populateProductData(final ProductData productData, final Model model)
 	{
-		model.addAttribute("galleryImages", getGalleryImages(productData)); //Untuk memasukkan gambar di page PDP
+		model.addAttribute("galleryImages", getGalleryImages(productData));
 		model.addAttribute("product", productData);
-
-
-
 		if (productData.getConfigurable())
 		{
 			final List<ConfigurationInfoData> configurations = productFacade.getConfiguratorSettingsForCode(productData.getCode());
