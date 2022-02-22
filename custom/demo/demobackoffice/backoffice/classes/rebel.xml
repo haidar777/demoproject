@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <application xmlns="http://www.zeroturnaround.com">
   <classpath>
+<<<<<<< HEAD
+    <dir name="C:\opt\miniproject\hybris\bin\custom\demo\demobackoffice/backoffice/classes" />
+=======
     <dir name="C:\SAPHybris\inthebox\hybris\bin\custom\demo\demobackoffice/backoffice/classes" />
+>>>>>>> 04d603f2649c04b9bc0609343b0975da542fd80e
   </classpath>
 </application>
