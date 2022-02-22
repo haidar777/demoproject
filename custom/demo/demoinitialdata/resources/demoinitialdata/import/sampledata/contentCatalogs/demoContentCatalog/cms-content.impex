@@ -514,7 +514,6 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true] ; uid[unique=true]  
                                    ;                        ; EmptyCartParagraphComponent   ; Empty Cart Paragraph Component; EmptyCartParagraphComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                   ; name                                       ; active ; cmsComponents(&componentRef)
-                         ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ;
                          ;                          ; EmptyCartContentSlot-cartPage      ; Empty Cart Content Slot for Cart Page      ; true   ; EmptyCartParagraphComponent
                          ;                          ; CartTotalsContentSlot-cartPage     ; Cart Totals Content Slot for Cart Page     ; true   ; CartTotalsComponent
 #                         ;                          ; OrderNoteContentSlot-cartPage      ; Bottom Content Slot for Cart Page          ; true   ; CheckoutComponent,CartSuggestions
@@ -525,3 +524,6 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]      
                                 ;                       ; CartTotalsContentSlotForCartPage      ; CartTotalsContentSlot     ;                                                      ; CartTotalsContentSlot-cartPage
 #                                ;                       ; BottomContentSlotForCartPage      ;BottomContentSlot;;BottomContentSlot-cartPage
 
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid, $contentCV)
+                         ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ; CartComponent
