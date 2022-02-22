@@ -1,3 +1,4 @@
+@font : "Open Sans", Helvetica, Arial, sans-serif;
 body{
     font-size: 1.2rem;
     font-weight: 400;
@@ -17,7 +18,11 @@ body{
 .container{
     padding: 0px 15px;
 }
+.section-header{
+    color:#fff!important;
+}
 .tentang .content{
+    font-family: @font;
     font-size: 4rem;
     line-height: 1.5;
     font-weight: 700;
@@ -46,7 +51,7 @@ body{
 .description{
     padding: 0px 15px;
 }
-h2{
+.title h2{
     margin-top:0px;
     margin-bottom:40px;
     line-height:1.5;
@@ -77,4 +82,36 @@ h2{
 .btn-brand:hover{
     color: #6086c2!important;
     background-color: #fff;
+}
+.faq-section{
+    text-align: center;
+    margin: 40px 0px;
+}
+.faq .content{
+    color :#000;
+    font-family: @font;
+    font-size: 4rem;
+    line-height: inherit;
+}
+.accordion h2{
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 2rem;
+    color: #000;
+    font-weight: 600;
+    transition:0.4s;
+}
+.accordion h2:before{
+    content: '\002B'; /* Unicode character for "plus" sign (+) */
+}
+.active h2:before{
+    content: "\2212";
+}
+.panel{
+    overflow: hidden;
+    font-size:1.5rem;
+    color: #000;
+    font-weight: 600;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
 }

@@ -78,15 +78,37 @@
         </div>
     </section>
     <%-- FAQ Section --%>
-    <section class="faq section">
+    <section class="faq-section">
         <div class="container">
             <div class="section-header">
                 <cms:pageSlot position="Faq" var="feature" element="div" class="faqheader">
                     <cms:component component="${feature}" element="div" class="faq"/>
                 </cms:pageSlot>
             </div>
-            <div class="content-row">
-
+            <div class="content">
+                <div class="content-row">
+                    <a class="accordion"><h2>  Apakah INTHEBOX Hanya Menjual Spring Bed?</h2></a>
+                    <div class="panel"><p>Tidak, Selain Spring Bed, ada INTHEBOX Hybrid yang merupakan kasur busa berkualitas.
+                    INTHEBOX juga menjual sofa, sofabed, bantal, dan juga guling.</p></div>
+                </div>
+                <div class="content-row">
+                    <a class="accordion"><h2>  Berapa Harga Kasur INTHEBOX?</h2></a>
+                    <div class="panel"><p>Harga Kasur INTHEBOX terjangkau mulai dari Rp.999.000,-
+                    dan berbeda-beda tergantung ukuran dan tipe kasur yang dipilih.</p></div>
+                </div>
+                <div class="content-row">
+                    <a class="accordion"><h2>  Bagaimana Cara Beli di Website?</h2></a>
+                    <div class="panel"><p>1. Pilih produk yang Anda inginkan dan masukkan ke keranjang belanja kamu <br>
+                    2. Klik "selesaikan pesanan" jika pesanan sudah sesuai.<br>
+                    3. Pastikan isi nama penerima dan data alamat tujuan dengan lengkap.<br>
+                    4. Pilih metode pembayaran dan segera selesaikan transaksi.<br>
+                    5. Lakukan konfirmasi pembayran melalui menu yang ada di website agar pesananmu bisa segera diproses</p></div>
+                </div>
+                <div class="content-row">
+                    <a class="accordion"><h2>  Berapa Harga Kasur INTHEBOX?</h2></a>
+                    <div class="panel"><p>Harga Kasur INTHEBOX terjangkau mulai dari Rp.999.000,-
+                    dan berbeda-beda tergantung ukuran dan tipe kasur yang dipilih.</p></div>
+                </div>
             </div>
         </div>
     </section>
