@@ -196,11 +196,15 @@
 	</bean>
 
 
-	<alias alias="simpleDemoSuggestionFacade" name="demoSuggestionFacade"/>
-	<bean id="demoSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoSuggestionFacadeImpl" >
-		<property name="demoSimpleSuggestionService" ref="demoSimpleSuggestionService"/>
-		<property name="userService" ref="userService"/>
-		<property name="productService" ref="productService"/>
-		<property name="productConverter" ref="carouselProductConverter"/>
+	<alias alias="demoProductSuggestionFacade" name="demoProductSuggestionFacade"/>
+	<bean id="demoProductSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoProductSuggestionFacadeImpl" />
+
+	<bean id="demoProductSuggestionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.product.data.DemoVariantProductData"/>
+		<property name="populators">
+			<ref bean="demoProductSuggestionPopulator"/>
+		</property>
+	</bean>
+	<bean id="demoProductSuggestionPopulator" class="org.demo.facades.productSuggestion.populator.DemoProductSuggestionPopulator">
 	</bean>
 </beans>

@@ -1,5 +1,6 @@
 package org.demo.core.product.dao.impl;
 
+import de.hybris.platform.commercefacades.product.data.ProductData;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.servicelayer.search.FlexibleSearchQuery;
 import de.hybris.platform.servicelayer.search.FlexibleSearchService;
@@ -9,11 +10,12 @@ import javax.annotation.Resource;
 import org.apache.commons.collections.CollectionUtils;
 import org.demo.core.product.dao.DemoProductDAO;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class DemoProductDAOImpl implements DemoProductDAO {
     private static final String QUERY_DEMO_PRODUCT = "SELECT {pk} FROM {product}";
-
     @Resource
     private FlexibleSearchService flexibleSearchService;
 
@@ -41,4 +43,5 @@ public class DemoProductDAOImpl implements DemoProductDAO {
             return null;
         }
     }
+
 }

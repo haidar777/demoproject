@@ -121,5 +121,6 @@ UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true] ;headline[lang=$
 #                        ;;MiniCart;Mini Cart;"YOUR SHOPPING CART"
 
 UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
-                                 ;                          ; Similar           ; "You may also like..."
+                                 ;                          ; CrossSelling      ; "You may also like..."
+                                 ;                          ; BaseProduct       ; "Product Setipe lainnya..."
 

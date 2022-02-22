@@ -47,7 +47,6 @@
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 					</cms:pageSlot>
 
-					<%-----Product Suggestion-----%>
 
 				</div>
 			</div>

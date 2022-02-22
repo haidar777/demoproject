@@ -3,8 +3,6 @@
  */
 package org.demo.storefront.controllers.pages;
 
-import de.hybris.platform.acceleratorcms.jalo.components.CartSuggestionComponent;
-import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
 import de.hybris.platform.acceleratorfacades.futurestock.FutureStockFacade;
 import de.hybris.platform.acceleratorservices.controllers.page.PageType;
 import de.hybris.platform.acceleratorstorefrontcommons.breadcrumb.impl.ProductBreadcrumbBuilder;
@@ -17,25 +15,21 @@ import de.hybris.platform.acceleratorstorefrontcommons.forms.validation.ReviewVa
 import de.hybris.platform.acceleratorstorefrontcommons.util.MetaSanitizerUtil;
 import de.hybris.platform.acceleratorstorefrontcommons.util.XSSFilterUtil;
 import de.hybris.platform.acceleratorstorefrontcommons.variants.VariantSortStrategy;
-import de.hybris.platform.catalog.enums.ProductReferenceTypeEnum;
 import de.hybris.platform.cms2.exceptions.CMSItemNotFoundException;
 import de.hybris.platform.cms2.model.pages.AbstractPageModel;
 import de.hybris.platform.cms2.servicelayer.services.CMSPageService;
 import de.hybris.platform.commercefacades.order.data.ConfigurationInfoData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
-import de.hybris.platform.commercefacades.product.data.BaseOptionData;
-import de.hybris.platform.commercefacades.product.data.FutureStockData;
-import de.hybris.platform.commercefacades.product.data.ImageData;
-import de.hybris.platform.commercefacades.product.data.ImageDataType;
-import de.hybris.platform.commercefacades.product.data.ProductData;
-import de.hybris.platform.commercefacades.product.data.ReviewData;
+import de.hybris.platform.commercefacades.product.data.*;
 import de.hybris.platform.commerceservices.url.UrlResolver;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
-import org.demo.facades.productSuggestion.DemoSuggestionFacade;
+import org.demo.facades.product.data.DemoVariantProductData;
+import org.demo.facades.product.facade.DemoProductFacade;
+import org.demo.facades.productSuggestion.DemoProductSuggestionFacade;
 import org.demo.facades.suggestion.SimpleSuggestionFacade;
 import org.demo.storefront.controllers.ControllerConstants;
 
@@ -49,6 +43,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -86,6 +81,7 @@ public class ProductPageController extends AbstractPageController
 	private static final String STOCK_SERVICE_UNAVAILABLE = "basket.page.viewFuture.unavailable";
 	private static final String NOT_MULTISKU_ITEM_ERROR = "basket.page.viewFuture.not.multisku";
 
+
 	@Resource(name = "productDataUrlResolver")
 	private UrlResolver<ProductData> productDataUrlResolver;
 
@@ -110,11 +106,11 @@ public class ProductPageController extends AbstractPageController
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
 
-	@Resource(name = "simpleDemoSuggestionFacade")
-	private DemoSuggestionFacade demoSuggestionFacade;
-
 	@Resource(name = "simpleSuggestionFacade")
 	private SimpleSuggestionFacade simpleSuggestionFacade;
+
+	@Resource(name = "demoProductSuggestionFacade")
+	private DemoProductSuggestionFacade demoProductSuggestionFacade;
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
@@ -125,6 +121,10 @@ public class ProductPageController extends AbstractPageController
 				ProductOption.VARIANT_MATRIX_MEDIA);
 
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, extraOptions);
+		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
+		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
+
+
 
 		final String redirection = checkRequestUrl(request, response, productDataUrlResolver.resolve(productData));
 		if (StringUtils.isNotEmpty(redirection))
@@ -137,17 +137,11 @@ public class ProductPageController extends AbstractPageController
 
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
 
+		model.addAttribute("productSuggestions", productSuggestions);
 		model.addAttribute(new ReviewForm());
 		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false))); //ini nilainya false
 
-		//------------Check Demo Suggestion Facade Impl--------------------//
-		Set<String> code = new HashSet<String>();
-		code.add(productCode);
-		List<ProductReferenceTypeEnum> referenceType = new ArrayList<ProductReferenceTypeEnum>();
-		referenceType.add(ProductReferenceTypeEnum.BASE_PRODUCT);
-		model.addAttribute("suggestions", demoSuggestionFacade.getReferencesForProducts(code,referenceType, true, 5));
-		//model.addAttribute("suggestion", simpleSuggestionFacade.getSuggestionsForProductsInCart(, component.isFilterPurchased(), component.getMaximumNumberProducts()));
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
@@ -415,11 +409,12 @@ public class ProductPageController extends AbstractPageController
 
 		options.addAll(extraOptions);
 
-		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options);
+		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options); //CHECK
 
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
-		populateProductData(productData, model); //Memasukkan data dengan attribute product.
+		populateProductData(productData, model); //Memasukkan data dengan attribute product. ///CHECK
+
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, productBreadcrumbBuilder.getBreadcrumbs(productCode));
 
 		if (CollectionUtils.isNotEmpty(productData.getVariantMatrix()))
@@ -432,8 +427,7 @@ public class ProductPageController extends AbstractPageController
 	protected void populateProductData(final ProductData productData, final Model model)
 	{
 		model.addAttribute("galleryImages", getGalleryImages(productData)); //Untuk memasukkan gambar di page PDP
-		model.addAttribute("product", productData);
-
+		model.addAttribute("product", productData); //CHECK
 
 
 		if (productData.getConfigurable())
@@ -525,4 +519,5 @@ public class ProductPageController extends AbstractPageController
 		final ProductModel productModel = productService.getProductForCode(productCode);
 		return cmsPageService.getPageForProduct(productModel, getCmsPreviewService().getPagePreviewCriteria());
 	}
+
 }
