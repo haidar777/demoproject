@@ -10,15 +10,16 @@
 
 <c:set var="errorStatus" value="<%= de.hybris.platform.catalog.enums.ProductInfoStatus.valueOf(\"ERROR\") %>" />
 
+<%--<ul class="item__list item__list__cart">--%>
 <ul class="item__list item__list__cart">
     <li class="hidden-xs hidden-sm">
         <ul class="item__list--header">
             <li class="item__toggle"></li>
             <li class="item__image"></li>
-            <li class="item__info"><spring:theme code="basket.page.item"/></li>
-            <li class="item__price"><spring:theme code="basket.page.price"/></li>
-            <li class="item__quantity"><spring:theme code="basket.page.qty"/></li>
-            <li class="item__delivery"><spring:theme code="basket.page.delivery"/></li>
+            <li class="item__info"><spring:theme code="basket.page.product"/></li>
+            <%--<li class="item__price"><spring:theme code="basket.page.price"/></li> --%>
+            <li class="item__quantity"><spring:theme code="basket.page.quantity"/></li>
+            <%--<li class="item__delivery"><spring:theme code="basket.page.delivery"/></li> --%>
             <li class="item__total--column"><spring:theme code="basket.page.total"/></li>
             <li class="item__remove"></li>
         </ul>

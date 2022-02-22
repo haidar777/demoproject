@@ -12498,9 +12498,10 @@ a.product__listing .product__listing--promo:focus {
 }
 .item__list .item__list--header li {
   display: table-cell;
-  background-color: #142939;
-  color: #7f919e;
-  font-size: 13px;
+  background-color: #fff;
+  color: #000;
+  font-size: 18px;
+  font-style: bold;
   text-transform: uppercase;
   padding: 7px 10px;
 }
@@ -13004,6 +13005,18 @@ a.product__listing .product__listing--promo:focus {
 }
 .item__list__cart .item__list--item .item__image {
   padding: 10px;
+}
+.item__list__cart .item__list--item .item__info .item__name {
+  color: #000;
+}
+.item__list__cart .item__list--item .item__info .item__price {
+  padding-top: 10px;
+  color: #6086C2;
+  font-style: italic;
+  font-size: 18px;
+}
+.item__list__cart .item__list--item .item__total {
+  color: #6086C2;
 }
 @media (min-width: 1024px) {
   .item__list__cart .item__list--item .item__remove,
@@ -18955,6 +18968,88 @@ select[multiple].input-sm {
   border-radius: 8px;
   height: 37px;
 }
+.page-productGrid .name {
+  color: #000;
+  font-style: bold;
+}
+.page-productGrid .price {
+  color: #6086c2;
+  font-style: italic;
+}
+.page-productGrid .desc {
+  color: #000;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+.page-productGrid .product__listing.product__grid .thumb img {
+  max-height: 150px;
+  max-width: 190px;
+}
+.page-productGrid #product-facet {
+  padding-top: 99px;
+}
+.page-cartPage .cartpage-section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-style: bold;
+  padding-top: 35px;
+}
+.page-cartPage .cartcomponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 100px 10px 100px;
+}
+.page-cartPage .demo-note {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20px;
+}
+.page-cartPage .demo-note .order_note_form {
+  resize: both;
+  width: 700px;
+  height: 150px;
+  min-height: 0px;
+  border: 1px solid #D3D3D3;
+  border-radius: 1px;
+}
+.page-cartPage .total {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-style: italic;
+  color: #6086c2;
+  padding-bottom: 20px;
+}
+.page-cartPage .cartpagebutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+.page-cartPage .cartpagebutton button.btn--continue-shopping {
+  background-color: #fff;
+  color: #D3D3D3;
+  border: 1px solid #D3D3D3;
+  border-radius: 1px;
+  margin: 0 2rem;
+  padding: 0 2rem;
+  height: 40px;
+  width: auto;
+}
+.page-cartPage .cartpagebutton button.btn--continue-checkout {
+  background-color: #6086c2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin: 0 2rem;
+  padding: 0 2rem;
+  height: 40px;
+  width: auto;
+}
 body {
   font-size: 1.2rem;
   font-weight: 400;
@@ -19035,68 +19130,6 @@ h2 {
   color: #6086c2 !important;
   background-color: #fff;
 }
-.name {
-  color: #000;
-  font-style: bold;
-}
-.price {
-  color: #6086c2;
-  font-style: italic;
-}
-.desc {
-  color: #000;
-  white-space: nowrap;
-  text-align: center;
-  display: inline-block;
-}
-.product__listing.product__grid .thumb img {
-  max-height: 150px;
-  max-width: 190px;
-}
-#product-facet {
-  padding-top: 99px;
-}
-.cartpage-section-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-style: bold;
-  padding-top: 50px;
-}
-.demo-note {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.demo-note input {
-  border: 1px solid #D3D3D3;
-  border-radius: 1px;
-}
-.total {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-style: italic;
-  color: #6086c2;
-}
-.cartpagebutton button.continueshopping {
-  background-color: #fff;
-  color: #D3D3D3;
-  border: 1px solid #D3D3D3;
-  border-radius: 1px;
-  margin: 0 2rem;
-  padding: 0 2rem;
-  height: 40px;
-}
-.cartpagebutton button.checkout {
-  background-color: #6086c2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  margin: 0 2rem;
-  padding: 0 2rem;
-  height: 40px;
-}
 .section-header {
   font-family: Bw Gradual;
   font-size: 2.5rem;
@@ -19167,7 +19200,7 @@ h2 {
   font-size: 1.75rem;
   color: #6086c2;
 }
-.desc {
+.desc_unbox {
   border: solid green;
   overflow-wrap: normal;
   height: 100px;

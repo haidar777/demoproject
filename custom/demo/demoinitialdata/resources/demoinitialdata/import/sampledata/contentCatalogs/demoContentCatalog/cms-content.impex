@@ -512,17 +512,18 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true]   ; uid[unique=true]  
 
 INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true] ; uid[unique=true]              ; name                          ; &componentRef
                                    ;                        ; EmptyCartParagraphComponent   ; Empty Cart Paragraph Component; EmptyCartParagraphComponent
-                                   ;                        ; CartTitleParagraphComponent   ; Cart Title Paragraph Component; CartTitleParagraphComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                   ; name                                       ; active ; cmsComponents(&componentRef)
-                         ;                          ; CartTitleContentSlot-cartPage      ; Cart Title Content Slot for Cart Page      ; true   ; CartTitleParagraphComponent
                          ;                          ; EmptyCartContentSlot-cartPage      ; Empty Cart Content Slot for Cart Page      ; true   ; EmptyCartParagraphComponent
                          ;                          ; CartTotalsContentSlot-cartPage     ; Cart Totals Content Slot for Cart Page     ; true   ; CartTotalsComponent
 #                         ;                          ; OrderNoteContentSlot-cartPage      ; Bottom Content Slot for Cart Page          ; true   ; CheckoutComponent,CartSuggestions
 
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                  ; position[unique=true] ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
-                                ;                       ; CartTitleContentSlotForCartPage   ; CartTitleContentSlot  ;                                                      ; CartTitleContentSlot-cartPage
-                                ;                       ; EmptyCartContentSlotForCartPage   ; EmptyCartContentSlot  ;                                                      ; EmptyCartContentSlot-cartPage
-                                ;                       ; CartTotalsContentSlotForCartPage  ; CartTotalsContentSlot ;                                                      ; CartTotalsContentSlot-cartPage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                      ; position[unique=true]     ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ; CartComponentContentSlotForCartPage   ; CartComponentContentSlot  ;                                                      ; CartComponentContentSlot-cartPage
+                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartContentSlot      ;                                                      ; EmptyCartContentSlot-cartPage
+                                ;                       ; CartTotalsContentSlotForCartPage      ; CartTotalsContentSlot     ;                                                      ; CartTotalsContentSlot-cartPage
 #                                ;                       ; BottomContentSlotForCartPage      ;BottomContentSlot;;BottomContentSlot-cartPage
 
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid, $contentCV)
+                         ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ; CartComponent
