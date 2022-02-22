@@ -13,7 +13,8 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
+<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">--%>
+<template:demoPage pageTitle="${pageTitle}">
 <div class="row">
     <div class="col-sm-6">
         <div class="checkout-headline">
@@ -190,4 +191,4 @@
     </div>
 </div>
 
-</template:page>
+</template:demoPage>

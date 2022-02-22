@@ -12,7 +12,8 @@
 <spring:url value="/checkout/multi/summary/placeOrder" var="placeOrderUrl" htmlEscape="false"/>
 <spring:url value="/checkout/multi/termsAndConditions" var="getTermsAndConditionsUrl" htmlEscape="false"/>
 
-<template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
+<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true"> --%>
+<template:demoPage pageTitle="${pageTitle}">
 
 <div class="row">
     <div class="col-sm-6">
@@ -56,4 +57,4 @@
         </cms:pageSlot>
     </div>
 </div>
-</template:page>
+</template:demoPage>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<template:page pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}">
     <cms:pageSlot position="SideContent" var="feature" class="accountPageSideContent" element="div">
         <cms:component component="${feature}" element="div" class="accountPageSideContent-component"/>
     </cms:pageSlot>
@@ -17,4 +17,4 @@
     <cms:pageSlot position="BottomContent" var="feature" element="div" class="accountPageBottomContent">
         <cms:component component="${feature}" element="div" class="accountPageBottomContent-component"/>
     </cms:pageSlot>
-</template:page>
+</template:demoPage>

@@ -2,7 +2,7 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<template:page pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}">
 	<div class="checkout-login">
 		<div class="row">
 			<div class="col-md-6">
@@ -23,4 +23,4 @@
 			<cms:component component="${feature}" class="checkoutLoginPageCenter-component"/>
 		</cms:pageSlot>
 	</div>
-</template:page>
+</template:demoPage>
