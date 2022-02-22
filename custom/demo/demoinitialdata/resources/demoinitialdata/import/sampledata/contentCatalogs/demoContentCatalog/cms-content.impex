@@ -208,6 +208,48 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]             ; $contentCV[un
                                 ; BlogsFooterNavNodeEntry        ;                          ; Blogs Footer Navigation Node Entry        ; BlogsFooterNavNode        ; BlogsLink                                              ;
                                 ; TestimonialFooterNavNodeEntry  ;                          ; Testimonial Footer Navigation Node Entry  ; TestimonialFooterNavNode  ; TestimonialLink                                        ;
 
+#Home page contents
+#Banner
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+                   ;                          ; /images/HomePage/banner.png             ; banner.png            ; $siteResource/images/HomePage/banner.png                                          ; image/png                   ;        ;
+
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                           ; &componentRef            ;urlLink
+                                             ;                       ; Banner-HomePage           ;Banner component for Homepage  ; Banner-HomePage          ;/c/PRODUK
+
+UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
+                  ;                          ;BannerSlot                         ;true   ;Banner-HomePage
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
+
+# Content Slots for Homepage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
+                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
+                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
+
+#Home page splash banner
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+                         ;                       ;Banner-Homepage           ;true     ;IntheboxBannerComponent
+
+UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;media(uid)
+                                      ;                       ;IntheboxBannerComponent;widescreen
+
+INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true]          ;name           ;&componentRef;urlLink
+                             ;                       ; CarouselProduct1         ;INTHEBOX       ;CarouselProduct1;/PRODUK/Bed/KASUR-INTHEBOX/p/PLAINSIZE90x200
+                             ;                       ; CarouselProduct2         ;INTHEBOX HYBRID;CarouselProduct2;/PRODUK/Bed/INTHEBOX-HYBRID/p/HYBRIDSIZE90x200
+                             ;                       ; CarouselProduct3         ;INTHEBOX 101   ;CarouselProduct3;/PRODUK/Bed/INTHEBOX-101/p/101SIZE90x200
+                             ;                       ; CarouselProduct4         ;INTHEBOX X     ;CarouselProduct4;/PRODUK/Bed/INTHEBOX-X/p/XSIZE90x200
+
+INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
+                                     ;;INTHEBOXHomepageCarouselComponent;INTHEBOX Homepage Carousel;CarouselProduct1,CarouselProduct2,CarouselProduct3,CarouselProduct4;INTHEBOXHomepageCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
+                         ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
+
 #### ProductGridPage ####
 INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
                                  ;                          ; ListOrderFormAction ; /orderForm ; Order Form Action ; ListOrderFormAction
@@ -244,23 +286,15 @@ UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                  
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ;BannerProductGridPageSlot  ;Banner                 ;                                                         ;BannerProductGridPageSlot
 
-
 ######  Homepage ######
 
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
-                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
                                 ;;UnboxingInTheBoxSlot1-Homepage;UnboxingInTheBox1;;UnboxingInTheBoxSlot1-Homepage
                                 ;;UnboxingInTheBoxSlot2-Homepage;UnboxingInTheBox2;;UnboxingInTheBoxSlot2-Homepage
                                 ;;UnboxingInTheBoxSlot3-Homepage;UnboxingInTheBox3;;UnboxingInTheBoxSlot3-Homepage
                                 ;;UnboxingInTheBoxSlot4-Homepage;UnboxingInTheBox4;;UnboxingInTheBoxSlot4-Homepage
 #                                ;;TestimonySlot-Homepage        ;Testimony        ;;TestimonySlot-Homepage
-
-
-#Home page splash banner
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
-                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
                          ;                       ;BannerSlot-Homepage           ;true     ;IntheboxBannerComponent
@@ -304,11 +338,6 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #### End Homepage ######
 
 #### Login ######
-
-INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
-#;;NewCustomerLoginComponent;New Customer Login Component;accountNewCustomerLogin.jsp;;NewCustomerLoginComponent
-                                 ;;ReturningCustomerLoginComponent;Returning Customer Login Component;accountReturningCustomerLogin.jsp;;ReturningCustomerLoginComponent
-
 ### Customer Login
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
@@ -430,36 +459,46 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = t
                                    ;                            ; DescSection3ParagraphComponent    ; Deskripsi Cara Beli CMS Paragraph ; DescSection3ParagraphComponent
 
 # FAQ
-INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]            ; name                                      ; &componentRef
-                                   ;                            ; FAQParagraphComponent         ; FAQ CMS Paragraph Component               ; FAQParagraphComponent
-                                   ;                            ; DescFAQPargraphComponent      ; Description FAQ CMS Paragraph Component   ; DescFAQPargraphComponent
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                  ; &componentRef
+                                   ;                   ; FAQParagraphComponent        ; FAQ CMS Paragraph Component           ; FAQParagraphComponent
+                                   ;                   ; DescFAQPargraphComponent     ; Description FAQ CMS Paragraph Component; DescFAQPargraphComponent
+                                   ;                   ; AnswerFAQParagraphComponent  ; Answer Description FAQ CMS Pargraph Component; AnswerFAQParagraphComponent
+                                   ;                   ; Desc1FAQPargraphComponent    ; Description 1 FAQ CMS Paragraph Component; Desc1FAQPargraphComponent
+                                   ;                   ; Answer1FAQParagraphComponent ; Answer 1 Description FAQ CMS Pargraph Component; Answer1FAQParagraphComponent
+                                   ;                   ; Desc2FAQPargraphComponent    ; Description 2 FAQ CMS Paragraph Component; Desc2FAQPargraphComponent
+                                   ;                   ; Answer2FAQParagraphComponent ; Answer 2 Description FAQ CMS Pargraph Component; Answer2FAQParagraphComponent
+                                   ;                   ; Desc3FAQPargraphComponent    ; Description 3 FAQ CMS Paragraph Component; Desc3FAQPargraphComponent
+                                   ;                   ; Answer3FAQParagraphComponent ; Answer 3 Description FAQ CMS Pargraph Component; Answer3FAQParagraphComponent
 
 # Container
-INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                           ; visible   ; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
-                                      ;                          ;TentangIntheboxContainer ; Tentang In The Box Container   ; true      ; TentangInthebox,DescTentangInthebox                         ; TentangIntheboxContainer
-                                      ;                          ;Section1Container        ; Apa Itu Kasur Container        ; true      ; Section1BannerComponent,Section1ParagraphComponent,DescSection1ParagraphComponent; Section1Container
-                                      ;                          ;Section2Container        ; Kenapa Harus Container         ; true      ; Section2BannerComponent,Section2ParagraphComponent,DescSection2ParagraphComponent; Section2Container
-                                      ;                          ;Section3Container        ; Cara Beli Container            ; true      ; Section3BannerComponent,Section3ParagraphComponent,DescSection3ParagraphComponent; Section3Container
-                                      ;                          ;FaqContainer             ; FAQ Container                  ; true      ; FAQParagraphComponent,DescFAQPargraphComponent;FaqContainer
+INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                        ; visible; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
+                                      ;                          ;TentangIntheboxContainer ; Tentang In The Box Container; true   ; TentangInthebox,DescTentangInthebox                         ; TentangIntheboxContainer
+                                      ;                          ;Section1Container        ; Apa Itu Kasur Container     ; true   ; Section1BannerComponent,Section1ParagraphComponent,DescSection1ParagraphComponent; Section1Container
+                                      ;                          ;Section2Container        ; Kenapa Harus Container     ; true   ; Section2BannerComponent,Section2ParagraphComponent,DescSection2ParagraphComponent; Section2Container
+                                      ;                          ;Section3Container        ; Cara Beli Container     ; true   ; Section3BannerComponent,Section3ParagraphComponent,DescSection3ParagraphComponent; Section3Container
+                                      ;                          ;FaqContainer             ; FAQ Container              ; true ; FAQParagraphComponent;FaqContainer
+                                      ;                          ;DescFaqContainer         ; Description FAQ Container  ; true ; DescFAQPargraphComponent,AnswerFAQParagraphComponent,Desc1FAQPargraphComponent,Answer1FAQParagraphComponent,Desc2FAQPargraphComponent,Answer2FAQParagraphComponent,Desc3FAQPargraphComponent,Answer3FAQParagraphComponent;DescFaqContainer
 
 # Isi Mengisi ContentSlot
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]    ; uid[unique = true] ; cmsComponents(uid, $contentCV)
-                         ;                              ; BannerAboutUsSlot  ; AboutUsBannerComponent
-                         ;                              ; TentangSlot        ; TentangIntheboxContainer
-                         ;                              ; ApaItuKasurSlot    ; Section1Container
-                         ;                              ; KenapaSlot         ; Section2Container
-                         ;                              ; CaraBeliSlot       ; Section3Container
-                         ;                              ; FaqSlot            ; FaqContainer
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        ; cmsComponents(uid, $contentCV)
+                         ;                   ; BannerAboutUsSlot  ; AboutUsBannerComponent
+                         ;                   ; TentangSlot        ; TentangIntheboxContainer
+                         ;                   ; ApaItuKasurSlot    ; Section1BannerComponent
+                         ;                   ; KenapaSlot         ; Section2BannerComponent
+                         ;                   ; CaraBeliSlot       ; Section3BannerComponent
+                         ;                   ; FaqSlot            ; FAQParagraphComponent
+                         ;                   ; DescFaqSlot        ; DescFaqContainer
 
 # Content Slot For Page pada About Us Page
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]                   ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='aboutUsPage']   ;contentSlot(uid,$contentCV)[unique=true]
-                                ;                       ;BannerAboutUsSlot-aboutUsPage      ;BannerAboutUs          ;                                                           ;BannerAboutUsSlot
-                                ;                       ;TentangSlot-aboutUsPage            ;Tentang                ;                                                           ;TentangSlot
-                                ;                       ;ApaItuKasurSlot-aboutUsPage        ;ApaItuKasur            ;                                                           ;ApaItuKasurSlot
-                                ;                       ;KenapaSlot-aboutUsPage             ;Kenapa                 ;                                                           ;KenapaSlot
-                                ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli               ;                                                           ;CaraBeliSlot
-                                ;                       ;FaqSlot-aboutUsPage                ;Faq                    ;                                                           ;FaqSlot
-
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='aboutUsPage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerAboutUsSlot-aboutUsPage      ;BannerAboutUs  ;;BannerAboutUsSlot
+                                ;                       ;TentangSlot-aboutUsPage            ;Tentang        ;;TentangSlot
+                                ;                       ;ApaItuKasurSlot-aboutUsPage        ;ApaItuKasur    ;;ApaItuKasurSlot
+                                ;                       ;KenapaSlot-aboutUsPage             ;Kenapa         ;;KenapaSlot
+                                ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli       ;;CaraBeliSlot
+                                ;                       ;FaqSlot-aboutUsPage                ;Faq            ;;FaqSlot
+                                ;                       ;DescFaqSlot-aboutUsPage            ;DescFaq        ;;DescFaqSlot
+# END OF ABOUT US PAGE
 
 #### Cart Page ####
 INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true]   ; uid[unique=true]                          ; name                                          ; page                              ; actions(uid,$contentCV); &componentRef
@@ -486,3 +525,4 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]      
                                 ;                       ; EmptyCartContentSlotForCartPage   ; EmptyCartContentSlot  ;                                                      ; EmptyCartContentSlot-cartPage
                                 ;                       ; CartTotalsContentSlotForCartPage  ; CartTotalsContentSlot ;                                                      ; CartTotalsContentSlot-cartPage
 #                                ;                       ; BottomContentSlotForCartPage      ;BottomContentSlot;;BottomContentSlot-cartPage
+
