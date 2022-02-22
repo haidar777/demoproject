@@ -4,11 +4,11 @@
 
 <div class="demo-note">
     <body>
-        <form role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" name="ordernoteform">
+        <form role="form" method="post" name="ordernoteform">
             <fieldset>
-                <div>
-                    <label for="name">Order Note</label><br>
-                    <textarea input type="text" name="ordernote" placeholder="" cols="75" rows="3"></textarea>
+                <label for="order_note">Order Note</label>
+                <div class="order_note">
+                    <textarea class="order_note_form" input type="text" name="ordernote" placeholder=""></textarea>
                 </div>
             </fieldset>
         </form>
