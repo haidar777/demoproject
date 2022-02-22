@@ -256,30 +256,30 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]      ;
                           ;                          ; CartPageTemplate        ; Cart Page Template         ;                              ; ContentPage              ;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          ; name                        ; active
-                         ;                          ; CartTitleContentSlot      ; Cart Title Content          ; true
+                         ;                          ; CartComponentContentSlot  ; Cart Component Content      ; true
                          ;                          ; EmptyCartContentSlot      ; Empty Cart Content Slot     ; true
                          ;                          ; CartTotalsContentSlot     ; Cart Totals Content Slot    ; true
                          ;                          ; OrderNoteContentSlot      ; Order Note Content Slot     ; true
 
-INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'CartPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+INSERT_UPDATE ContentSlotName; name[unique = true]      ; template(uid, $contentCV)[unique = true][default = 'CartPageTemplate']; validComponentTypes(code); compTypeGroup(code)
 # Headers
-                             ; TopLeftParagraph       ;                                                                       ;                          ; narrow
-                             ; TopRightNavigationBar  ;                                                                       ;                          ; navigation
-                             ; HeaderLogo             ;                                                                       ;                          ; logo
-                             ; MiddleNavigationBar    ;                                                                       ;                          ; navigation
-                             ; LoginLink              ;                                                                       ;                          ; navigation
-                             ; CartLink               ;                                                                       ;                          ; navigation
+                             ; TopLeftParagraph         ;                                                                       ;                          ; narrow
+                             ; TopRightNavigationBar    ;                                                                       ;                          ; navigation
+                             ; HeaderLogo               ;                                                                       ;                          ; logo
+                             ; MiddleNavigationBar      ;                                                                       ;                          ; navigation
+                             ; LoginLink                ;                                                                       ;                          ; navigation
+                             ; CartLink                 ;                                                                       ;                          ; navigation
 # Cart Page Content
-                             ; CartTitleContentSlot   ;                                                                       ; CMSParagraphComponent    ;
-                             ; EmptyCartContentSlot   ;                                                                       ; CMSParagraphComponent    ;
-                             ; CartTotalsContentSlot  ;                                                                       ;                          ; wide
-                             ; OrderNoteContentSlot   ;                                                                       ;                          ; wide
+                             ; CartComponentContentSlot ;                                                                       ;                          ; wide
+                             ; EmptyCartContentSlot     ;                                                                       ; CMSParagraphComponent    ;
+                             ; CartTotalsContentSlot    ;                                                                       ;                          ; wide
+                             ; OrderNoteContentSlot     ;                                                                       ;                          ; wide
 # Footers
-                             ; FooterLogo1            ;                                                                       ;                          ; logo
-                             ; FooterLogo2            ;                                                                       ;                          ; logo
-                             ; FooterNavigation       ;                                                                       ;                          ; navigation
-                             ; FooterContact          ;                                                                       ;                          ; footer
-                             ; FooterCopyright        ;                                                                       ;                          ; footer
+                             ; FooterLogo1              ;                                                                       ;                          ; logo
+                             ; FooterLogo2              ;                                                                       ;                          ; logo
+                             ; FooterNavigation         ;                                                                       ;                          ; navigation
+                             ; FooterContact            ;                                                                       ;                          ; footer
+                             ; FooterCopyright          ;                                                                       ;                          ; footer
 
 
 INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                     ; position[unique = true]   ; pageTemplate(uid, $contentCV)[unique = true][default = 'CartPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
@@ -291,7 +291,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; LoginLink-CartPage                     ; LoginLink                 ;                                                                           ; LoginLinkSlot                              ; true
                                     ;                          ; CartLink-CartPage                      ; CartLink                  ;                                                                           ; CartLinkSlot                               ; true
 # Cart Page Content
-                                    ;                          ; CartTitleContentSlot-CartPage          ; CartTitleContentSlot      ;                                                                           ; CartTitleContentSlot                       ; true
+                                    ;                          ; CartComponentContentSlot-CartPage      ; CartComponentContentSlot  ;                                                                           ; CartComponentContentSlot                   ; true
                                     ;                          ; EmptyCartContentSlot-CartPage          ; EmptyCartContentSlot      ;                                                                           ; EmptyCartContentSlot                       ; true
                                     ;                          ; CartTotalsContentSlot-CartPage         ; CartTotalsContentSlot     ;                                                                           ; CartTotalsContentSlot                      ; true
                                     ;                          ; OrderNoteContentSlot-CartPage          ; OrderNoteContentSlot      ;                                                                           ; OrderNoteContentSlot                       ; true

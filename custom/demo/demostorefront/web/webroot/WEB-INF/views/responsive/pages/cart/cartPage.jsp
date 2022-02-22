@@ -22,7 +22,12 @@
 		<h1>
 	</div>
 
-	<div>
+    <div>
+        <cms:pageSlot position="TopContent" var="feature">
+            <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
+        </cms:pageSlot>
+    </div>
+<%--	<div>
 	   <c:if test="${not empty cartData.rootGroups}">
            <cms:pageSlot position="CenterLeftContentSlot" var="feature">
                 <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
@@ -40,7 +45,7 @@
                 <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
             </cms:pageSlot>
 		</c:if>
-	</div>
+	</div> --%>
 
     <note:demoNote/><br>
 
