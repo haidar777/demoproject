@@ -7,7 +7,8 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
+<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">--%>
+<template:demoPage pageTitle="${pageTitle}">
 
 	<input type="hidden" id="hopDebugMode" data-hop-debug-mode="${fn:escapeXml(hopDebugMode)}" />
 
@@ -60,4 +61,4 @@
 			</form:form>
 		</div>
 	</div>
-</template:page>
+</template:demoPage>

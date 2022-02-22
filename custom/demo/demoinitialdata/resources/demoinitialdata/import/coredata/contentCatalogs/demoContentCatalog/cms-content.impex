@@ -334,7 +334,7 @@ INSERT_UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; name  
 
 ###### Cart Page ######
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]      ; name                       ; frontendTemplateName         ; restrictedPageTypes(code); active[default = true]
-                          ;                          ; CartPageTemplate        ; Cart Page Template         ;                              ; ContentPage              ;
+                          ;                          ; CartPageTemplate        ; Cart Page Template         ;                              ; ContentPage              ; false
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          ; name                        ; active
                          ;                          ; CartComponentContentSlot  ; Cart Component Content      ; true
@@ -388,4 +388,100 @@ INSERT_UPDATE Media; $contentCV[unique=true]; code[unique=true]                 
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true] ; name      ; masterTemplate(uid,$contentCV); label ; defaultPage[default='true']; approvalStatus(code)[default='approved']   ; homepage[default='false']   ; previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
                          ;                       ; cartPage         ; Cart Page ; CartPageTemplate              ; cart  ;                            ;                                            ;                             ;
+
+###### Checkout Login Page ######
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       ; name                          ; frontendTemplateName         ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; CheckoutLoginPageTemplate; Checkout Login Page Template  ;                              ; ContentPage              ; false
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                          ; name                                      ; active
+                         ;                          ; ReturningCustomerCheckoutLoginContentSlot ; Returning Customer Checkout Login Content ; true
+                         ;                          ; GuestCheckoutLoginContentSlot             ; Guest Checkout Login Content Slot         ; true
+
+INSERT_UPDATE ContentSlotName; name[unique = true]                      ; template(uid, $contentCV)[unique = true][default = 'CheckOutLoginPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+# Headers
+                             ; TopLeftParagraph                         ;                                                                                ;                          ; narrow
+                             ; TopRightNavigationBar                    ;                                                                                ;                          ; navigation
+                             ; HeaderLogo                               ;                                                                                ;                          ; logo
+                             ; MiddleNavigationBar                      ;                                                                                ;                          ; navigation
+                             ; LoginLink                                ;                                                                                ;                          ; navigation
+                             ; CartLink                                 ;                                                                                ;                          ; navigation
+# Checkout Login Page Content
+                             ; ReturningCustomerCheckoutLoginContentSlot;                                                                                ;                          ; wide
+                             ; GuestCheckoutLoginContentSlot            ;                                                                                ;                          ; wide
+# Footers
+                             ; FooterLogo1                              ;                                                                                ;                          ; logo
+                             ; FooterLogo2                              ;                                                                                ;                          ; logo
+                             ; FooterNavigation                         ;                                                                                ;                          ; navigation
+                             ; FooterContact                            ;                                                                                ;                          ; footer
+                             ; FooterCopyright                          ;                                                                                ;                          ; footer
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                                         ; position[unique = true]   ; pageTemplate(uid, $contentCV)[unique = true][default = 'CheckoutLoginPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+# Headers
+                                    ;                          ; TopLeftParagraph-CheckoutLoginPage                         ; TopLeftParagraph          ;                                                                                    ; TopLeftParagraphSlot                       ; true
+                                    ;                          ; TopRightNavigationBar-CheckoutLoginPage                    ; TopRightNavigationBar     ;                                                                                    ; TopRightNavigationBarSlot                  ; true
+                                    ;                          ; HeaderLogo-CheckoutLoginPage                               ; HeaderLogo                ;                                                                                    ; HeaderLogoSlot                             ; true
+                                    ;                          ; MiddleNavigationBar-CheckoutLoginPage                      ; MiddleNavigationBar       ;                                                                                    ; MiddleNavigationBarSlot                    ; true
+                                    ;                          ; LoginLink-CheckoutLoginPage                                ; LoginLink                 ;                                                                                    ; LoginLinkSlot                              ; true
+                                    ;                          ; CartLink-CheckoutLoginPage                                 ; CartLink                  ;                                                                                    ; CartLinkSlot                               ; true
+# Checkout Login Page Content
+                                    ;                          ; ReturningCustomerCheckoutLoginContentSlot-CheckoutLoginPage; LeftContentSlot           ;                                                                                    ; ReturningCustomerCheckoutLoginContentSlot  ; true
+                                    ;                          ; GuestCheckoutLoginContentSlot-CheckoutLoginPage            ; RightContentSlot          ;                                                                                    ; GuestCheckoutLoginContentSlot              ; true
+# Footers
+                                    ;                          ; FooterLogo1-CheckoutLoginPage                              ; FooterLogo                ;                                                                                    ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo2-CheckoutLoginPage                              ; FooterLogo2               ;                                                                                    ; FooterLogo2Slot                            ; true
+                                    ;                          ; FooterNavigation-CheckoutLoginPage                         ; FooterNavigation          ;                                                                                    ; FooterNavigationSlot                       ; true
+                                    ;                          ; FooterContact-CheckoutLoginPage                            ; FooterContact             ;                                                                                    ; FooterContactSlot                          ; true
+                                    ;                          ; FooterCopyright-CheckoutLoginPage                          ; FooterCopyright           ;                                                                                    ; FooterCopyrightSlot                        ; true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true] ; name               ; masterTemplate(uid,$contentCV); label            ; defaultPage[default='true']; approvalStatus(code)[default='approved']   ; homepage[default='false']   ; previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+                         ;                       ; checkout-login   ; Checkout-Login Page; CheckoutLoginPageTemplate     ; checkout-login   ;;;;
+
+#### Multistep Checkout ####
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]                   ; name                                      ; frontendTemplateName         ; restrictedPageTypes(code); active[default = true]
+                          ;                          ; MultiStepCheckoutSummaryPageTemplate ; Multi Step Checkout Summary Page Template ;                              ; ContentPage              ; false
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                          ; name                                      ; active
+                         ;;SideContentSlot;Side Content;true
+                         ;;PlaceholderContentSlot;Placeholder for Addon tag files;true
+
+
+INSERT_UPDATE ContentSlotName; name[unique = true]                      ; template(uid, $contentCV)[unique = true][default = 'MultiStepCheckoutSummaryPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+# Headers
+                             ; TopLeftParagraph                         ;                                                                                           ;                          ; narrow
+                             ; TopRightNavigationBar                    ;                                                                                           ;                          ; navigation
+                             ; HeaderLogo                               ;                                                                                           ;                          ; logo
+                             ; MiddleNavigationBar                      ;                                                                                           ;                          ; navigation
+                             ; LoginLink                                ;                                                                                           ;                          ; navigation
+                             ; CartLink                                 ;                                                                                           ;                          ; navigation
+# Checkout Login Page Content
+;SideContent;;;narrow
+;PlaceholderContentSlot;;;
+# Footers
+                             ; FooterLogo1                              ;                                                                                           ;                          ; logo
+                             ; FooterLogo2                              ;                                                                                           ;                          ; logo
+                             ; FooterNavigation                         ;                                                                                           ;                          ; navigation
+                             ; FooterContact                            ;                                                                                           ;                          ; footer
+                             ; FooterCopyright                          ;                                                                                           ;                          ; footer
+
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]                                         ; position[unique = true]   ; pageTemplate(uid, $contentCV)[unique = true][default = 'MultiStepCheckoutSummaryPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+# Headers
+                                    ;                          ; TopLeftParagraph-CheckoutLoginPage                         ; TopLeftParagraph          ;                                                                                               ; TopLeftParagraphSlot                       ; true
+                                    ;                          ; TopRightNavigationBar-CheckoutLoginPage                    ; TopRightNavigationBar     ;                                                                                               ; TopRightNavigationBarSlot                  ; true
+                                    ;                          ; HeaderLogo-CheckoutLoginPage                               ; HeaderLogo                ;                                                                                               ; HeaderLogoSlot                             ; true
+                                    ;                          ; MiddleNavigationBar-CheckoutLoginPage                      ; MiddleNavigationBar       ;                                                                                               ; MiddleNavigationBarSlot                    ; true
+                                    ;                          ; LoginLink-CheckoutLoginPage                                ; LoginLink                 ;                                                                                               ; LoginLinkSlot                              ; true
+                                    ;                          ; CartLink-CheckoutLoginPage                                 ; CartLink                  ;                                                                                               ; CartLinkSlot                               ; true
+# Checkout Login Page Content
+;;PlaceholderContentSlot-MultiStepCheckoutSummaryPage;PlaceholderContentSlot;;PlaceholderContentSlot;true
+# Footers
+                                    ;                          ; FooterLogo1-CheckoutLoginPage                              ; FooterLogo                ;                                                                                               ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo2-CheckoutLoginPage                              ; FooterLogo2               ;                                                                                               ; FooterLogo2Slot                            ; true
+                                    ;                          ; FooterNavigation-CheckoutLoginPage                         ; FooterNavigation          ;                                                                                               ; FooterNavigationSlot                       ; true
+                                    ;                          ; FooterContact-CheckoutLoginPage                            ; FooterContact             ;                                                                                               ; FooterContactSlot                          ; true
+                                    ;                          ; FooterCopyright-CheckoutLoginPage                          ; FooterCopyright           ;                                                                                               ; FooterCopyrightSlot                        ; true
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true]             ; name                          ; masterTemplate(uid,$contentCV)        ; label                     ; defaultPage[default='true']; approvalStatus(code)[default='approved']   ; homepage[default='false']   ; previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
+                         ;                       ; multiStepCheckoutSummaryPage ; Multi Checkout Summary Page   ; MultiStepCheckoutSummaryPageTemplate  ; multiStepCheckoutSummary  ;;;;
 

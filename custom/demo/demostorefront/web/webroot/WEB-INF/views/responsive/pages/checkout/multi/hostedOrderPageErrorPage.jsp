@@ -8,7 +8,8 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:url value="${redirectUrl}" var="continueUrl"/>
-<template:page pageTitle="${pageTitle}" hideHeaderLinks="true">
+<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">--%>
+<template:demoPage pageTitle="${pageTitle}">
 
 	<h2><spring:theme code="checkout.multi.hostedOrderPageError.header"/></h2>
 	
@@ -27,4 +28,4 @@
 	<cms:pageSlot position="SideContent" var="feature" element="div" class="side-content-slot cms_disp-img_slot">
 		<cms:component component="${feature}"/>
 	</cms:pageSlot>
-</template:page>
+</template:demoPage>
