@@ -55,7 +55,6 @@
                                 <div class="item__name">${fn:escapeXml(productSuggestion.size)}</div>
                               </c:if>
                               <format:fromPrice priceData="${product.price}"/>
-                              ${productSuggestion.getPrice()}
 
                          </div>
                 </div>
