@@ -485,3 +485,61 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true]             ; name                          ; masterTemplate(uid,$contentCV)        ; label                     ; defaultPage[default='true']; approvalStatus(code)[default='approved']   ; homepage[default='false']   ; previewImage(code, $contentCV)[default='ContentPageModel__function_preview']
                          ;                       ; multiStepCheckoutSummaryPage ; Multi Checkout Summary Page   ; MultiStepCheckoutSummaryPageTemplate  ; multiStepCheckoutSummary  ;;;;
 
+#### TESTIMONY PAGE ####
+INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       ; name                       ; frontendTemplateName         ;restrictedPageTypes(code); active[default = true]
+                          ;                 ;TestimoniPageTemplate;Testimon Page Template     ;additional/testimoni            ;ContentPage
+
+UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true]          ;velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
+                   ;                       ;TestimoniPageTemplate       ;$jarResourceCms/structure-view/structure_testimoniTemplate.vm
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]          ; name                          ; active
+                         ;                          ; HeaderTestimoniSlot          ; Header Testimoni Slot         ; true
+                         ;                          ; Paragraph1TestimoniSlot      ; Paragraph Testimoni 1 Slot    ; true
+                         ;                          ; Paragraph2TestimoniSlot      ; Paragraph Testimoni 2 Slot    ; true
+                         ;                          ; ReviewAvatarTestimoniSlot    ; Review Avatar Testimoni Slot  ; true
+                         ;                          ; StarTestimoniSlot            ; Star Testimoni Slot           ; true
+
+INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)[unique = true][default = 'TestimoniPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+# Headers
+                             ; TopLeftParagraph      ;                                                                       ;                          ; narrow
+                             ; TopRightNavigationBar ;                                                                       ;                          ; navigation
+                             ; HeaderLogo            ;                                                                       ;                          ; logo
+                             ; MiddleNavigationBar   ;                                                                       ;                          ; navigation
+                             ; LoginLink             ;                                                                       ;                          ; navigation
+                             ; CartLink              ;                                                                       ;                          ; navigation
+# About Us Content
+                             ; HeaderTestimoni       ;                                                                       ;                          ; wide
+                             ; Paragraph1Testimoni   ;                                                                       ;                          ; wide
+                             ; Paragraph2Testimoni   ;                                                                       ;                          ; wide
+                             ; ReviewAvatarTestimoni ;                                                                       ;                          ; wide
+                             ; StarTestimoni         ;                                                                       ;                          ; wide
+# Footers
+                             ; FooterLogo1           ;                                                                       ;                          ; logo
+                             ; FooterLogo2           ;                                                                       ;                          ; logo
+                             ; FooterNavigation      ;                                                                       ;                          ; navigation
+                             ; FooterContact         ;                                                                       ;                          ; footer
+                             ; FooterCopyright       ;                                                                       ;                          ; footer
+
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]             ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'TestimoniPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
+# Headers
+                                    ;                          ; TopLeftParagraph-AboutUsPage      ; TopLeftParagraph       ;                                                                           ; TopLeftParagraphSlot                       ; true
+                                    ;                          ; TopRightNavigationBar-AboutUsPage ; TopRightNavigationBar  ;                                                                           ; TopRightNavigationBarSlot                  ; true
+                                    ;                          ; HeaderLogo-AboutUsPage            ; HeaderLogo             ;                                                                           ; HeaderLogoSlot                             ; true
+                                    ;                          ; MiddleNavigationBar-AboutUsPage   ; MiddleNavigationBar    ;                                                                           ; MiddleNavigationBarSlot                    ; true
+                                    ;                          ; LoginLink-AboutUsPage             ; LoginLink              ;                                                                           ; LoginLinkSlot                              ; true
+                                    ;                          ; CartLink-AboutUsPage              ; CartLink               ;                                                                           ; CartLinkSlot                               ; true
+# About Us Content
+                                    ;                          ; HeaderTestimoni-TestimoniPage     ; HeaderTestimoni        ;                                                                           ; HeaderTestimoniSlot                        ; true
+                                    ;                          ; Paragraph1Testimoni-TestimoniPage ; Paragraph1Testimoni    ;                                                                           ; Paragraph1TestimoniSlot                    ; true
+                                    ;                          ; Paragraph2Testimoni-TestimoniPage ; Paragraph2Testimoni    ;                                                                           ; Paragraph2TestimoniSlot                    ; true
+                                    ;                          ; ReviewAvatarTestimoni-TestimoniPage ; ReviewAvatarTestimoni    ;                                                                           ; ReviewAvatarTestimoniSlot                    ; true
+                                    ;                          ; StarTestimoni-TestimoniPage       ; StarTestimoni          ;                                                                           ; StarTestimoniSlot                          ; true
+# Footers
+                                    ;                          ; FooterLogo1-AboutUsPage            ; FooterLogo            ;                                                                           ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo2-AboutUsPage            ; FooterLogo2           ;                                                                           ; FooterLogo2Slot                            ; true
+                                    ;                          ; FooterNavigation-AboutUsPage       ; FooterNavigation      ;                                                                           ; FooterNavigationSlot                       ; true
+                                    ;                          ; FooterContact-AboutUsPage          ; FooterContact         ;                                                                           ; FooterContactSlot                          ; true
+                                    ;                          ; FooterCopyright-AboutUsPage        ; FooterCopyright       ;
+
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;testimoniPage;Testimoni Content Page;TestimoniPageTemplate;testimony;;;
