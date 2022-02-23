@@ -16,6 +16,7 @@ public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionSe
     @Resource(name="demoProductSuggestionDao")
     private DemoProductSuggestionDao demoProductSuggestionDao;
 
+
     @Override
     public DemoVariantProductData getDemoProductSuggestionById(String name) {
         DemoVariantProductModel productModel = demoProductSuggestionDao.getDemoProductSuggestionById(name);
@@ -61,6 +62,7 @@ public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionSe
             for(DemoVariantProductModel productModel : productModels){
                 DemoVariantProductData tempProductData = new DemoVariantProductData();
                 tempProductData.setId(productModel.getCode());
+                //tempProductData.setPrice(productModel.getEurope1Prices());
                 tempProductData.setName(productModel.getName());
                 tempProductData.setSize(productModel.getSize());
                 tempProductData.setDesc(productModel.getDesc());

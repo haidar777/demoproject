@@ -15,7 +15,6 @@ import java.util.Map;
 
 public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
     private static final String QUERY_PRODUCT_SUGGESTION = "SELECT {pk} FROM {DemoVariantProduct}";
-    private static final String QUERY_PRODUCT_SUGGESTION_BY_TYPE = "SELECT {pk} FROM {DemoVariantProduct} WHERE {type} = ?type AND ";
     private static final String QUERY_PRODUCT_EXCLUDE_CODE = "SELECT {pk} FROM {DemoVariantProduct} WHERE {type} = ?type AND {code} NOT LIKE ?excludeCode";
     @Resource
     private FlexibleSearchService flexibleSearchService;

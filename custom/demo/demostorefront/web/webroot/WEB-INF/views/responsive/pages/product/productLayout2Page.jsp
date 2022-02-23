@@ -41,6 +41,10 @@
         <c:forEach end="4" items="${productSuggestions}" var="productSuggestion">
             <div class="item">
                  <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
+                         <%--
+                         <c:url value="${productSuggestion.picture}" var="productUrl"/>
+                         <img class="item lazyOwl" data-src="${fn:escapeXml(productUrl)}" alt="${fn:escapeXml(productSuggestion.altText)}" title="${fn:escapeXml(productSuggestion.altText)}">
+                         --%>
                          <product:productImagePanel galleryImages="${galleryImages}"/>
 
                          <div class="content-suggestion">
@@ -50,6 +54,9 @@
                              <c:if test="${not empty productSuggestion.size}">
                                 <div class="item__name">${fn:escapeXml(productSuggestion.size)}</div>
                               </c:if>
+                              <format:fromPrice priceData="${product.price}"/>
+                              ${productSuggestion.getPrice()}
+
                          </div>
                 </div>
                 </a>
