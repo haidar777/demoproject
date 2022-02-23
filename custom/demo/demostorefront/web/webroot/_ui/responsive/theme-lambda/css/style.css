@@ -14462,37 +14462,31 @@ textarea.quote__comments--textarea {
 }
 .login-page__headline,
 .user-register__headline {
-  color: #3c3c3c;
-  font-size: 24px;
-  line-height: 35px;
-  font-weight: 700;
-  padding: 20px 0;
-  margin: 0;
+  text-align: center;
+  padding-bottom: 20px;
 }
-.login-page__headline.border,
-.user-register__headline.border {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 25px;
+.container-login {
+  background-color: #0e90d2;
 }
-.login-left-content-slot {
-  margin-right: 10px;
-  margin-left: 30px;
+.login-content-slot {
+  margin-top: 150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-@media (max-width: 1023px) {
-  .login-left-content-slot {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-}
-.login-right-content-slot {
-  margin-right: 30px;
-  margin-left: 10px;
-}
-@media (max-width: 1023px) {
-  .login-right-content-slot {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.register-content-slot {
+  margin-top: 150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 form .forgotten-password {
   margin-bottom: 25px;
@@ -19425,7 +19419,6 @@ body {
   color: #6086c2;
 }
 .desc_unbox {
-  border: solid green;
   overflow-wrap: normal;
   height: 100px;
   width: 270px;

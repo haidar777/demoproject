@@ -63,11 +63,64 @@
 
             <%--Login--%>
             <div class="demo-bottom-header-login">
-                <cms:pageSlot position="LoginLink" var="component">
-                    <c:if test="${component.visible}">
-                        <cms:component component="${component}"/>
-                    </c:if>
+                <cms:pageSlot position="HeaderLinks" var="link">
+                    <cms:component component="${link}" element="li" />
                 </cms:pageSlot>
+
+                <sec:authorize access="hasAnyRole('ROLE_ANONYMOUS')" >
+                    <li class="liOffcanvas" style="list-style-type: none;">
+                        <ycommerce:testId code="header_Login_link">
+                            <c:url value="/login" var="loginUrl" />
+                            <a href="${fn:escapeXml(loginUrl)}" id="log">
+                                <spring:theme code="header.link.login" />
+                            </a>
+                        </ycommerce:testId>
+                    </li>
+                </sec:authorize>
+
+                <div class="dropdown">
+                    <a class="dropdown-toggle" id="dduser" data-toggle="dropdown" href="#"><spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" /> <span class="caret"></span></a>
+                    <ul style="list-style-type: none;" class="dropdown-menu">
+                    <c:if test="${empty hideHeaderLinks}">
+                        <c:if test="${uiExperienceOverride}">
+                            <li class="backToMobileLink">
+                                <c:url value="/_s/ui-experience?level=" var="backToMobileStoreUrl" />
+                                <a href="${fn:escapeXml(backToMobileStoreUrl)}">
+                                    <spring:theme code="text.backToMobileStore" />
+                                </a>
+                            </li>
+                        </c:if>
+
+            <%--            <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')">--%>
+            <%--                <c:set var="maxNumberChars" value="25" />--%>
+            <%--                <c:if test="${fn:length(user.firstName) gt maxNumberChars}">--%>
+            <%--                    <c:set target="${user}" property="firstName"--%>
+            <%--                           value="${fn:substring(user.firstName, 0, maxNumberChars)}..." />--%>
+            <%--                </c:if>--%>
+
+            <%--                <li class="logged_in js-logged_in">--%>
+            <%--                    <ycommerce:testId code="header_LoggedUser">--%>
+            <%--                        <spring:theme code="header.welcome" arguments="${user.firstName},${user.lastName}" />--%>
+            <%--                    </ycommerce:testId>--%>
+            <%--                </li>--%>
+            <%--            </sec:authorize>--%>
+
+
+                        <sec:authorize access="!hasAnyRole('ROLE_ANONYMOUS')" >
+                            <li class="liOffcanvas">
+                                <ycommerce:testId code="header_signOut">
+                                    <c:url value="/logout" var="logoutUrl"/>
+                                    <a href="${fn:escapeXml(logoutUrl)}" style="color: #0c0c0c">
+                                        <spring:theme code="header.link.logout" />
+                                    </a>
+                                </ycommerce:testId>
+                            </li>
+                        </sec:authorize>
+
+                    </c:if>
+                </ul>
+                </div>
+
             </div>
 
             <%--Cart--%>
