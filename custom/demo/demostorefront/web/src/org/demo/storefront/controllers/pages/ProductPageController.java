@@ -416,13 +416,14 @@ public class ProductPageController extends AbstractPageController
 		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
 
 		final List<ProductData> checkProducts = new ArrayList<ProductData>();
+
 		for(DemoVariantProductData e : productSuggestions){
 			final ProductData tempProductData = productFacade.getProductForCodeAndOptions(e.getId(), options);
 			tempProductData.setSize(e.getSize());
 			checkProducts.add(tempProductData);
 		}
+
 		model.addAttribute("checkProducts", checkProducts);
-		model.addAttribute("productSuggestions", productSuggestions);
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
 		populateProductData(productData, model); //Memasukkan data dengan attribute product. ///CHECK

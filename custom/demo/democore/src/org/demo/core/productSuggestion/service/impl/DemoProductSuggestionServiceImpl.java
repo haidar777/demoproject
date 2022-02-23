@@ -14,8 +14,6 @@ public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionSe
     @Resource(name="demoProductSuggestionDao")
     private DemoProductSuggestionDao demoProductSuggestionDao;
 
-    @Resource(name = "demoProductSuggestionPopulator")
-
     @Override
     public DemoVariantProductData getDemoProductSuggestionById(String name) {
         DemoVariantProductModel productModel = demoProductSuggestionDao.getDemoProductSuggestionById(name);

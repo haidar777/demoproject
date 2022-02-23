@@ -13,12 +13,12 @@ INSERT_UPDATE Zone; code[unique = true]; countries(isocode)
                   ; id                 ; ID
 
 # Zone Delivery Modes
-INSERT_UPDATE ZoneDeliveryMode; code[unique = true]    ; net  ; active[default = true]
-                              ; premium-net            ; true
-                              ; standard-net           ; true
-                              ; premium-gross          ; false
-                              ; standard-gross         ; false
-                              ; free-standard-shipping ; true ; false ;
+INSERT_UPDATE ZoneDeliveryMode; code[unique = true]    ; net    ; active[default = true]; stores(uid)
+                              ; premium-net            ; true   ;                       ; demostore
+                              ; standard-net           ; true   ;                       ; demostore
+                              ; premium-gross          ; false  ;                       ; demostore
+                              ; standard-gross         ; false  ;                       ; demostore
+                              ; free-standard-shipping ; true   ; false                 ; demostore
 
 
 # ID

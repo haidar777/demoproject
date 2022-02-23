@@ -23,6 +23,10 @@ module.exports = function(grunt) {
         customjs: {
             files: ['webroot/WEB-INF/_ui-src/responsive/lib/custom/*.js'],
             tasks: ['sync:synccustomjs'],
+        },
+        democustomjs: {
+            files: ['webroot/WEB-INF/_ui-src/responsive/lib/custom/*.js'],
+            tasks: ['sync:democustomjs'],
         }
     },
     less: {
@@ -70,14 +74,21 @@ module.exports = function(grunt) {
     			dest: 'webroot/_ui/responsive/common/js',
     		}]
     	},
-    	synccustomjs: {
+        synccustomjs: {
             files: [{
                 cwd: 'webroot/WEB-INF/_ui-src/responsive/lib/custom',
-            	src: '*.js',
-            	dest: 'webroot/_ui/responsive/common/js',
+                src: '*.js',
+                dest: 'webroot/_ui/responsive/common/js',
+            }]
+        },
+        democustomjs: {
+            files: [{
+                cwd: 'webroot/WEB-INF/_ui-src/responsive/lib/custom',
+                src: '*.js',
+                dest: 'webroot/_ui/responsive/common/js',
             }]
         }
-    }
+    },
 });
  
   // Plugins
