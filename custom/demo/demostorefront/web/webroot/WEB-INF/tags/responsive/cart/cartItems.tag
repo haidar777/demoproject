@@ -10,7 +10,6 @@
 
 <c:set var="errorStatus" value="<%= de.hybris.platform.catalog.enums.ProductInfoStatus.valueOf(\"ERROR\") %>" />
 
-<%--<ul class="item__list item__list__cart">--%>
 <ul class="item__list item__list__cart">
     <li class="hidden-xs hidden-sm">
         <ul class="item__list--header">

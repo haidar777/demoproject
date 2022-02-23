@@ -22,7 +22,6 @@
 <c:set var="errorStatus" value="<%= de.hybris.platform.catalog.enums.ProductInfoStatus.valueOf(\"ERROR\") %>" />
 <c:set var="entryNumberHtml" value="${fn:escapeXml(entry.entryNumber)}"/>
 <c:set var="productCodeHtml" value="${fn:escapeXml(entry.product.code)}"/>
-<c:set var="productDescHtml" value="${fn:escapeXml(entry.product.desc)}"/>
 <c:set var="quantityHtml" value="${fn:escapeXml(entry.quantity)}"/>
 
 <c:if test="${empty index}">
@@ -39,7 +38,7 @@
                         <spring:param name="entryNumber"  value="${entry.entryNumber}"/>
                         <spring:param name="configuratorType"  value="${entry.configurationInfos[0].configuratorType}" />
                     </spring:url>
-                    
+
                     <spring:theme code="basket.error.invalid.configuration" arguments="${errorCount}"/>
                     <a href="${fn:escapeXml(entryConfigUrl)}">
                         <spring:theme code="basket.error.invalid.configuration.edit"/>
@@ -74,12 +73,8 @@
                 </ycommerce:testId>
 
                 <div class="item__code">${productCodeHtml}</div>
-                <div class="item__code">${productDescHtml}</div>
-                <%--<span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span> --%>
-                <div class="item__price"><format:price priceData="${entry.basePrice}" displayFreeForZero="true"/></div>
 
                 <%-- availability --%>
-                <%--
                 <div class="item__stock">
                     <c:set var="entryStock" value="${entry.product.stock.stockLevelStatus.code}"/>
                     <c:forEach items="${entry.product.baseOptions}" var="option">
@@ -105,7 +100,7 @@
                         </c:choose>
                     </div>
                 </div>
-                --%>
+
                 <c:if test="${ycommerce:doesPotentialPromotionExistForOrderEntryOrOrderEntryGroup(cartData, entry)}">
                     <c:forEach items="${cartData.potentialProductPromotions}" var="promotion">
                         <c:set var="displayed" value="false"/>
@@ -174,12 +169,11 @@
             </div>
 
             <%-- price --%>
-            <%--
             <div class="item__price">
                 <span class="visible-xs visible-sm"><spring:theme code="basket.page.itemPrice"/>: </span>
                 <format:price priceData="${entry.basePrice}" displayFreeForZero="true"/>
             </div>
-            --%>
+
             <%-- quantity --%>
             <div class="item__quantity hidden-xs hidden-sm">
                 <c:choose>
@@ -215,9 +209,7 @@
                 </c:choose>
             </div>
 
-
             <%-- delivery --%>
-            <%--
             <div class="item__delivery">
                 <c:if test="${entry.product.purchasable}">
                     <c:if test="${not empty entryStock and entryStock ne 'outOfStock'}">
@@ -233,7 +225,7 @@
                         <div class="item__delivery--store">${fn:escapeXml(entry.deliveryPointOfService.name)}</div>
                     </c:if>
                 </c:if>
-            </div> --%>
+            </div>
 
             <%-- total --%>
             <ycommerce:testId code="cart_totalProductPrice_label">
@@ -246,9 +238,9 @@
             <div class="item__menu">
                 <c:if test="${entry.updateable}" >
                     <div class="btn-group js-cartItemDetailGroup">
-                       <%-- <button type="button" class="btn btn-default js-cartItemDetailBtn" aria-haspopup="true" aria-expanded="false" id="editEntry_${entryNumberHtml}">
+                        <button type="button" class="btn btn-default js-cartItemDetailBtn" aria-haspopup="true" aria-expanded="false" id="editEntry_${entryNumberHtml}">
                             <span class="glyphicon glyphicon-option-vertical"></span>
-                        </button> --%>
+                        </button>
                         <ul class="dropdown-menu dropdown-menu-right">
                             <c:if test="${not empty cartData.quoteData}">
                                 <c:choose>

@@ -5,6 +5,7 @@ import org.demo.core.product.dao.DemoProductDAO;
 import org.demo.core.product.service.DemoProductService;
 import org.demo.facades.product.data.ProductData;
 
+
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -39,4 +40,6 @@ public class DemoProductServiceImpl implements DemoProductService {
             return null;
         }
     }
+
+
 }

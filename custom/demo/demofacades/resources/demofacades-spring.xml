@@ -194,4 +194,17 @@
 		<property name="list" ref="commerceSearchResultProductConverter"/>
 		<property name="add" ref="demoSearchResultProductPopulator"/>
 	</bean>
+
+	<alias alias="demoProductSuggestionFacade" name="demoProductSuggestionFacade"/>
+	<bean id="demoProductSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoProductSuggestionFacadeImpl" />
+
+	<bean id="demoProductSuggestionConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.demo.facades.product.data.DemoVariantProductData"/>
+		<property name="populators">
+			<ref bean="demoProductSuggestionPopulator"/>
+		</property>
+	</bean>
+	<bean id="demoProductSuggestionPopulator" class="org.demo.facades.productSuggestion.populator.DemoProductSuggestionPopulator">
+	</bean>
+
 </beans>

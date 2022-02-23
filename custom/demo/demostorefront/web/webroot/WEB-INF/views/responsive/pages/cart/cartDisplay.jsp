@@ -108,7 +108,7 @@
         </div>
     </div>--%>
 
-    <cart:cartItems cartData="${cartData}"/>
+    <cart:demoCartItems cartData="${cartData}"/>
 
     <%--<div class="row">
         <cart:exportCart/>
