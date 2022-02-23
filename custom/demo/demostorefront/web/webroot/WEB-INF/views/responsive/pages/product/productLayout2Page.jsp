@@ -37,7 +37,9 @@
                 <div class="item">
                      <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
                              <div class="item-image">
-                                  <img src="${checkProduct.images.iterator().next().getUrl()}"/>
+                                  <a href="${checkProduct.getCode()}" class="item-title">
+                                    <img src="${checkProduct.images.iterator().next().getUrl()}"/>
+                                  </a>
                              </div>
 
                              <div class="content-suggestion">
