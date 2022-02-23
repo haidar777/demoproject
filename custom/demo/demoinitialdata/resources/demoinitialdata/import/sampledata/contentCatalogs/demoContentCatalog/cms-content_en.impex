@@ -176,15 +176,10 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]    
                             ;                           ; FAQParagraphComponent         ; "Pertanyaan yang Sering Ditanyakan"
 
 ##### Testimoni Page #####
-UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
-                            ;                  ; ReviewAvatarBannerComponent ; images/HomePage/Testimoni/review-avatar.jpg
-
 UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
-                            ;                    ; HeaderTestimoniParagraphComponent ; "<h1>TESTIMONI PEMBELI INTHEBOX<h1>"
-                            ;                    ; Paragraph1TestimoniParagraphComponent ; "Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur
+                            ;                    ; TestimoniHeaderParagraphComponent ; "<h1>TESTIMONI PEMBELI INTHEBOX<h1>"
+                            ;                    ; TestimoniParagraph1ParagraphComponent ; "Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur
 spring bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed."
-                            ;                    ; Paragraph2TestimoniParagraphComponent ; "Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya, Kami paham bahwa istirahat yang cukup dan tidur
+                            ;                    ; TestimoniParagraph2ParagraphComponent ; "Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya, Kami paham bahwa istirahat yang cukup dan tidur
 berkualitas adalah hal penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau."
-
-
 

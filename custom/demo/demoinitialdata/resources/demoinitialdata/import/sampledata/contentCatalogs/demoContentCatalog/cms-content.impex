@@ -546,34 +546,29 @@ INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]     
                                 ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 
 #### Testimony Page ####
-INSERT_UPDATE Media; $contentCV[unique = true]  ; code[unique = true]               ; realfilename      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']  ; altText                   ; folder(qualifier)[default = 'images']
-                   ;                     ; images/HomePage/Testimoni/review-avatar.jpg ; review-avatar.jpg ; $siteResource/images/HomePage/review-avatar.jpg ; image/jpg ; Testimony Review Avatar ;
-
-# Banner Review Avatar
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]    ; name                          ; &componentRef         ; urlLink
-                                   ;                     ; ReviewAvatarBannerComponent ; Review Avatar Banner Component     ; ReviewAvatarBannerComponent ;
+# JSP Component
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;TestimonyListComponent;Testimony List Component;/WEB-INF/views/responsive/pages/additional/testimoniList.jsp;;TestimonyListComponent
 
 # CMS Paragraph Header
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                           ; name                                       ; &componentRef
-                                   ;                     ; HeaderTestimoniParagraphComponent     ; Header Testimoni Paragraph Component       ; HeaderTestimoniParagraphComponent
+                                   ;                     ; TestimoniHeaderParagraphComponent     ; Testimoni Header Paragraph Component       ; TestimoniHeaderParagraphComponent
 
 # CMS Paragraph Paragraph 1, 2
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                           ; name                                       ; &componentRef
-                                   ;                     ; Paragraph1TestimoniParagraphComponent ; Paragraph 1 Testimoni Paragraph Component  ; Paragraph1TestimoniParagraphComponent
-                                   ;                     ; Paragraph2TestimoniParagraphComponent ; Paragraph 2 Testimoni Paragraph Component  ; Paragraph2TestimoniParagraphComponent
+                                   ;                     ; TestimoniParagraph1ParagraphComponent ; Testimoni Paragraph 1 Paragraph Component  ; TestimoniParagraph1ParagraphComponent
+                                   ;                     ; TestimoniParagraph2ParagraphComponent ; Testimoni Paragraph 2 Paragraph Component  ; TestimoniParagraph2ParagraphComponent
 # Mengisi Slot
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]              ; cmsComponents(uid, $contentCV)
-                         ;                   ; HeaderTestimoniSlot      ; HeaderTestimoniParagraphComponent
-                         ;                   ; Paragraph1TestimoniSlot  ; Paragraph1TestimoniParagraphComponent
-                         ;                   ; Paragraph2TestimoniSlot  ; Paragraph2TestimoniParagraphComponent
-                         ;                   ; ReviewAvatarTestimoniSlot; ReviewAvatarBannerComponent
- #                        ;                   ; StarTestimoniSlot        ;
+                         ;                   ; TestimoniHeaderSlot      ; TestimoniHeaderParagraphComponent
+                         ;                   ; TestimoniParagraph1Slot  ; TestimoniParagraph1ParagraphComponent
+                         ;                   ; TestimoniParagraph2Slot  ; TestimoniParagraph2ParagraphComponent
+                         ;                   ; TestimoniListSlot        ; TestimonyListComponent
 
 # ContenSlotForPage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testimoniPage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;                       ;HeaderTestimoniSlot-testimoniPage      ;HeaderTestimoni            ;;HeaderTestimoniSlot
-                                ;                       ;Paragraph1TestimoniSlot-testimoniPage  ;Paragraph1Testimoni        ;;Paragraph1TestimoniSlot
-                                ;                       ;Paragraph2TestimoniSlot-testimoniPage  ;Paragraph2Testimoni        ;;Paragraph2TestimoniSlot
-                                ;                       ;ReviewAvatarTestimoniSlot-testimoniPage;ReviewAvatarTestimoni      ;;ReviewAvatarTestimoniSlot
-#                                ;                       ;StarTestimoniSlot-testimoniPage        ;StarTestimoni              ;;StarTestimoniSlot
+                                ;                       ;TestimoniHeaderSlot-testimoniPage      ;TestimoniHeader            ;;TestimoniHeaderSlot
+                                ;                       ;TestimoniParagraph1Slot-testimoniPage  ;TestimoniParagraph1        ;;TestimoniParagraph1Slot
+                                ;                       ;TestimoniParagraph2Slot-testimoniPage  ;TestimoniParagraph2        ;;TestimoniParagraph2Slot
+                                ;                       ;TestimoniListSlot-testimoniPage        ;TestimoniList              ;;TestimoniListSlot
 #### END OF TESTIMONY PAGE ####
