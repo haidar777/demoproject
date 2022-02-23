@@ -10,10 +10,9 @@
 <%@ taglib prefix="format" tagdir="/WEB-INF/tags/shared/format" %>
 <%@ taglib prefix="component" tagdir="/WEB-INF/tags/shared/component" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-
+<%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 <spring:htmlEscape defaultHtmlEscape="true" />
 <spring:url value="/c/PRODUK" var="toAllProduct" htmlEscape="false"/>
-
 
 <template:demoPage pageTitle="${pageTitle}">
     <%-----MAIN PRODUCT DETAIL-----%>

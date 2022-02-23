@@ -16,6 +16,7 @@
 			</c:when>
 			<c:otherwise>
 				<img class="lazyOwl item" data-src="${fn:escapeXml(primaryImage.url)}" alt="${fn:escapeXml(product.name)}" title="${fn:escapeXml(product.name)}"/>
+
 			</c:otherwise>
 		</c:choose>
 	</c:when>

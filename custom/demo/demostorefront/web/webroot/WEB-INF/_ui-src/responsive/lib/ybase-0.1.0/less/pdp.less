@@ -364,16 +364,16 @@ a.item-title{
     font-size: 14px;
 }
 .item-image{
-    text-align: center;
-    overflow: hidden;
-    width: auto;
-    height: auto;
-    max-width: none;
-    max-height: none;
+    img{
+       height: 100%;
+       width: 100%;
+       object-fit: contain;
+    }
+    height:300px;
+    width: 300px;
 }
-.detail-panel{
-    margin-top: 20px;
-}
+
+
 #AddToCart-PickUpInStoreAction{
 	.make-sm-column(6);
 	.make-md-column(12);

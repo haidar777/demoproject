@@ -10696,15 +10696,13 @@ a.item-title {
   font-size: 14px;
 }
 .item-image {
-  text-align: center;
-  overflow: hidden;
-  width: auto;
-  height: auto;
-  max-width: none;
-  max-height: none;
+  height: 300px;
+  width: 300px;
 }
-.detail-panel {
-  margin-top: 20px;
+.item-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 #AddToCart-PickUpInStoreAction {
   position: relative;
