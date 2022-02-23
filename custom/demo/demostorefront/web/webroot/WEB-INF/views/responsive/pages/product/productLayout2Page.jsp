@@ -17,7 +17,7 @@
 
 <template:demoPage pageTitle="${pageTitle}">
     <%-----MAIN PRODUCT DETAIL-----%>
-	<product:productDetailsPanel />
+	<product:productDetailsPanel/>
 
 	<div class="row item">
           <cms:pageSlot position="Keterangan" var="feature" element="div" class="keterangan">
@@ -27,38 +27,40 @@
     <cms:pageSlot position="CrossSelling" var="comp" element="div" class="productDetailsPageSectionCrossSelling">
           <cms:component component="${comp}" element="div" class="productDetailsPageSectionCrossSelling-component"/>
     </cms:pageSlot>
-    <div class="row item">
-        <cms:pageSlot position="BaseProduct" var="comp" element="div" class="productDetailsPageSectionBaseProduct">
-                <cms:component component="${comp}" element="div" class="productDetailsPageSectionBaseProduct-component"/>
-        </cms:pageSlot>
-    </div>
+
 
     <%-----SUGGESTION PRODUCTS-----%>
     <div class="headline">Produk Lainnya</div>
-    <div>
-        <c:forEach end="4" items="${productSuggestions}" var="productSuggestion">
-            <div class="item">
-                 <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
-                         <%--
-                         <c:url value="${productSuggestion.picture}" var="productUrl"/>
-                         <img class="item lazyOwl" data-src="${fn:escapeXml(productUrl)}" alt="${fn:escapeXml(productSuggestion.altText)}" title="${fn:escapeXml(productSuggestion.altText)}">
-                         --%>
-                         <product:productImagePanel galleryImages="${galleryImages}"/>
+    <div class="container-suggestion">
+        <div class="col-sm-12 col-md-10 col-lg-9">
+            <c:forEach end="4" items="${checkProducts}" var="checkProduct">
+                <div class="item">
+                     <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
+                             <%--
+                             <c:url value="${productSuggestion.picture}" var="productUrl"/>
+                             <img class="item lazyOwl" data-src="${fn:escapeXml(productUrl)}" alt="${fn:escapeXml(productSuggestion.altText)}" title="${fn:escapeXml(productSuggestion.altText)}">
+                             --%>
+                             <a href="${checkProduct.getCode()}">
+                                 <product:productImagePanel galleryImages="${galleryImages}"/>
+                             </a>
 
-                         <div class="content-suggestion">
-                             <c:if test="${not empty productSuggestion.name}">
-                               <a href="${productSuggestion.getId()}" class="cross-grid-details"> ${productSuggestion.getName()}<br/></a>
-                             </c:if>
-                             <c:if test="${not empty productSuggestion.size}">
-                                <div class="item__name">${fn:escapeXml(productSuggestion.size)}</div>
-                              </c:if>
-                              <format:fromPrice priceData="${product.price}"/>
+                             <div class="content-suggestion">
+                                 <c:if test="${not empty checkProduct.name}">
+                                   <a href="${checkProduct.getCode()}" class="item-title"> ${checkProduct.getName()}<br/></a>
+                                 </c:if>
+                                 <c:if test="${not empty checkProduct.size}">
+                                    <div class="item-size">${fn:escapeXml(checkProduct.size)}</div>
+                                  </c:if>
+                                  <div class="item-price">
+                                    <format:fromPrice priceData="${checkProduct.price}"/>
+                                  </div>
 
-                         </div>
+                             </div>
+                    </div>
+                    </a>
                 </div>
-                </a>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </div>
     </div>
     <form:form action="${toAllProduct}" method="get">
     <div class="col-lg-12 btn-all">
@@ -67,6 +69,10 @@
         </button>
     </div>
     </form:form>
-
+    <div class="row item">
+            <cms:pageSlot position="BaseProduct" var="comp" element="div" class="productDetailsPageSectionBaseProduct">
+                    <cms:component component="${comp}" element="div" class="productDetailsPageSectionBaseProduct-component"/>
+            </cms:pageSlot>
+    </div>
     <div id="quickViewTitle" class="quickView-header display-none"><spring:theme code="popup.quick.view.select"/></div>
 </template:demoPage>

@@ -372,22 +372,13 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 #### End Register
 
 
-##### Product Detail Page #####
-# Lightbox Banner for Mini Cart
-#INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
-#                                   ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
-#
-## CMS Mini Cart Component
-#INSERT_UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;totalDisplay(code);shownProductCount;lightboxBannerComponent(&componentRef)
-#                               ;;MiniCart;Mini Cart;MiniCart;SUBTOTAL;3;LightboxHomeDeliveryBannerComponent
-#
-
+##### Start Product Detail Page #####
 # CMS VariantSelector Components
 INSERT_UPDATE ProductVariantSelectorComponent; $contentCV[unique = true]; uid[unique = true]; name                     ; &componentRef
                                              ;                          ; VariantSelector   ; Product Variant Selector ; VariantSelector
 
 # CMS ProductAddToCart Components
-INSERT_UPDATE AddToCartAction; $contentCV[unique = true]; uid[unique = true]; url       ; name                       ; &actionRef
+INSERT_UPDATE AddToCartAction; $contentCV[unique = true]; uid[unique = true]; url         ; name                       ; &actionRef
                              ;                          ; AddToCartAction   ; /cart/add ; Product Add To Cart Action ; AddToCartAction
 
 INSERT_UPDATE ProductAddToCartComponent; $contentCV[unique = true]; uid[unique = true]; name                ; actions(&actionRef); &componentRef
@@ -408,7 +399,7 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]   ; cms
 UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; previewImage(code, $contentCV)
                   ;                          ; productDetails    ;
 
-
+##### End Product Detail Page #####
 
 ##### About Us Page #####
 # Media for About Us Page
