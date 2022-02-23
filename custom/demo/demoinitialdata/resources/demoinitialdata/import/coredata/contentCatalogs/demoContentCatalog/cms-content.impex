@@ -280,11 +280,13 @@ INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]       
 #UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]         ; velocityTemplate[translator = de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
 #                   ;                          ; ProductDetailsPageTemplate ; $jarResourceCms/structure-view/structure_productDetails2PageTemplate.vm
 
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name                     ; active
-                         ;                          ; KeteranganSlot             ; Keterangan Slot          ; true
-                         ;                          ; CrossSellingSlot           ; CrossSelling Slot        ; true
-                         ;                          ; VariantSelectorSlot        ; VariantSelector Slot     ; true
-                         ;                          ; AddToCartSlot              ; AddToCart Slot           ; true
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; name                 ; active
+                         ;                          ; KeteranganSlot      ; Keterangan Slot      ; true
+                         ;                          ; CrossSellingSlot    ; CrossSelling Slot    ; true
+                         ;                          ; VariantSelectorSlot ; VariantSelector Slot ; true
+                         ;                          ; AddToCartSlot       ; AddToCart Slot       ; true
+                         ;                          ; BaseProductSlot     ; BaseProduct Slot     ; true
+
 
 INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV)[unique = true][default = 'ProductDetailsPageTemplate']; validComponentTypes(code)       ; compTypeGroup(code)
 #Headers
@@ -299,6 +301,7 @@ INSERT_UPDATE ContentSlotName; name[unique = true]    ; template(uid, $contentCV
                              ; CrossSelling           ;                                                                                  ; ProductReferencesComponent      ; narrow
                              ; VariantSelector        ;                                                                                  ; ProductVariantSelectorComponent ; narrow
                              ; AddToCart              ;                                                                                  ; ProductAddToCartComponent       ; narrow
+                             ; BaseProduct            ;                                                                                  ; ProductReferencesComponent      ; narrow
 
 # Footers
                              ; FooterLogo1            ;                                                                                  ;                                 ; logo
@@ -320,6 +323,9 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]       ; uid[uniq
                                     ;                                 ; Keterangan-ProductDetails                    ; Keterangan                    ;                                                                                     ; KeteranganSlot                             ; true
                                     ;                                 ; VariantSelector-ProductDetails               ; VariantSelector               ;                                                                                     ; VariantSelectorSlot                        ; true
                                     ;                                 ; AddToCart-ProductDetails                     ; AddToCart                     ;                                                                                     ; AddToCartSlot                              ; true
+                                    ;                                 ; BaseProduct-ProductDetails                   ; BaseProduct                   ;                                                                                     ; BaseProductSlot                            ; true
+
+
 # Footers
                                     ;                                 ; FooterLogo1-ProductDetails                   ; FooterLogo                    ;                                                                                     ; FooterLogo1Slot                            ; true
                                     ;                                 ; FooterLogo2-ProductDetails                   ; FooterLogo2                   ;                                                                                     ; FooterLogo2Slot                            ; true
@@ -331,6 +337,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]       ; uid[uniq
 INSERT_UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; name            ; masterTemplate(uid, $contentCV); defaultPage; approvalStatus(code)[default = 'approved']
                          ;                          ; productDetails    ; Product Details ; ProductDetailsPageTemplate     ; true       ;
 # END OF PDP
+
 
 ###### Cart Page ######
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]      ; name                       ; frontendTemplateName         ; restrictedPageTypes(code); active[default = true]

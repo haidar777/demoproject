@@ -3,6 +3,9 @@
  */
 package org.demo.storefront.controllers.cms;
 
+import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
+import de.hybris.platform.acceleratorcms.model.components.ProductReferencesComponentModel;
+import de.hybris.platform.acceleratorcms.model.components.SimpleSuggestionComponentModel;
 import de.hybris.platform.acceleratorstorefrontcommons.controllers.cms.AbstractCMSComponentController;
 import de.hybris.platform.cms2.model.contents.components.AbstractCMSComponentModel;
 import org.demo.storefront.controllers.ControllerConstants;
@@ -22,5 +25,8 @@ public abstract class AbstractAcceleratorCMSComponentController<T extends Abstra
 		// build a jsp response based on the component type
 		return ControllerConstants.Views.Cms.ComponentPrefix + StringUtils.lowerCase(getTypeCode(component));
 	}
+
+
+
 
 }

@@ -396,25 +396,18 @@ INSERT_UPDATE ProductAddToCartComponent; $contentCV[unique = true]; uid[unique =
 # CMS ProductReferences Components
 INSERT_UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]; name          ; productReferenceTypes(code); maximumNumberProducts; &componentRef
                                         ;                          ; CrossSelling      ; Cross Selling ; CROSSELLING                ; 5                    ; CrossSelling
+                                        ;                          ; BaseProduct       ; Base Product  ; BASE_PRODUCT               ; 5                    ; BaseProduct
 
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]  ; cmsComponents(&componentRef)
-#                         ;                          ; SiteLogoSlot        ; SiteLogoComponent
-#                         ;                          ; HomepageNavLinkSlot ; HomepageNavLink
-#                         ;                          ; MiniCartSlot        ; MiniCart
-#                         ;                          ; NavigationBarSlot   ;
-#                         ;                          ; TabsSlot            ; TabPanelContainer
-#                         ;                          ; FooterSlot          ;
-#                         ;                          ; HeaderLinksSlot     ;
-#                         ;                          ; SearchBoxSlot       ; SearchBox
-#                         ;                          ; VariantSelectorSlot ; VariantSelector
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]   ; cmsComponents(&componentRef)
                           ;                          ; AddToCartSlot       ; AddToCart
-#                         ;                          ; UpSellingSlot       ; Similar
                           ;                          ; CrossSellingSlot    ; CrossSelling
                           ;                          ; KeteranganSlot      ;
                           ;                          ; VariantSelectorSlot ; VariantSelector
+                          ;                          ; BaseProductSlot     ; BaseProduct
 
 UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; previewImage(code, $contentCV)
                   ;                          ; productDetails    ;
+
 
 
 ##### About Us Page #####
@@ -551,3 +544,4 @@ INSERT_UPDATE ContentSlot; $contentCV[unique=true]; uid[unique=true]            
 
 INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
                                 ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
+
