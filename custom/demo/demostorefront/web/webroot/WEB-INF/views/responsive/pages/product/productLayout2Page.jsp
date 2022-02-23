@@ -16,18 +16,16 @@
 
 
 <template:demoPage pageTitle="${pageTitle}">
-
     <%-----MAIN PRODUCT DETAIL-----%>
-	<product:productDetailsPanel/>
+	<product:productDetailsPanel />
 
 	<div class="row item">
-            <cms:pageSlot position="Keterangan" var="feature" element="div" class="keterangan">
-                 <cms:component component="${feature}" element="div" class=""/>
-            </cms:pageSlot>
+          <cms:pageSlot position="Keterangan" var="feature" element="div" class="keterangan">
+             <cms:component component="${feature}" element="div" class=""/>
+          </cms:pageSlot>
     </div>
     <cms:pageSlot position="CrossSelling" var="comp" element="div" class="productDetailsPageSectionCrossSelling">
-                  <cms:component component="${comp}" element="div" class="productDetailsPageSectionCrossSelling-component"/>
-
+          <cms:component component="${comp}" element="div" class="productDetailsPageSectionCrossSelling-component"/>
     </cms:pageSlot>
     <div class="row item">
         <cms:pageSlot position="BaseProduct" var="comp" element="div" class="productDetailsPageSectionBaseProduct">
@@ -71,5 +69,4 @@
     </form:form>
 
     <div id="quickViewTitle" class="quickView-header display-none"><spring:theme code="popup.quick.view.select"/></div>
-
 </template:demoPage>

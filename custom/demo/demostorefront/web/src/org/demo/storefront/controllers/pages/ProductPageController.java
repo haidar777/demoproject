@@ -28,13 +28,17 @@ import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
 import org.demo.facades.product.data.DemoVariantProductData;
-import org.demo.facades.product.facade.DemoProductFacade;
 import org.demo.facades.productSuggestion.DemoProductSuggestionFacade;
-import org.demo.facades.suggestion.SimpleSuggestionFacade;
 import org.demo.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -106,11 +110,11 @@ public class ProductPageController extends AbstractPageController
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
 
-	@Resource(name = "simpleSuggestionFacade")
-	private SimpleSuggestionFacade simpleSuggestionFacade;
+
 
 	@Resource(name = "demoProductSuggestionFacade")
 	private DemoProductSuggestionFacade demoProductSuggestionFacade;
+
 
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
@@ -139,6 +143,7 @@ public class ProductPageController extends AbstractPageController
 
 		model.addAttribute("productSuggestions", productSuggestions);
 		model.addAttribute(new ReviewForm());
+
 		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
 		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false))); //ini nilainya false
 
@@ -428,8 +433,6 @@ public class ProductPageController extends AbstractPageController
 	{
 		model.addAttribute("galleryImages", getGalleryImages(productData)); //Untuk memasukkan gambar di page PDP
 		model.addAttribute("product", productData); //CHECK
-
-
 		if (productData.getConfigurable())
 		{
 			final List<ConfigurationInfoData> configurations = productFacade.getConfiguratorSettingsForCode(productData.getCode());

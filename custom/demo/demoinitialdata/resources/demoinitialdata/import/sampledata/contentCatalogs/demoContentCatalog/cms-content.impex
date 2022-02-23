@@ -55,83 +55,65 @@ INSERT_UPDATE CMSLinkComponent; $contentCV[unique = true]; uid[unique = true]   
                               ;                          ; BlogsLink                       ; Blogs Link                          ; /blog                  ; BlogsLink                       ; BlogsLink                       ;
                               ;                          ; TestimonialLink                 ; Testimonial Link                    ; /testimony             ; TestimonialLink                 ; TestimonialLink                 ;
 
+##### Media Files for Site #####
+INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                             ; realfilename                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; altText         ; folder(qualifier)[default = 'images']
+#Site Logo
+                   ;                          ; /images/header/header-logo-white.png            ; header-logo-white.png         ; $siteResource/images/header/header-logo-white.png                             ; image/png                   ; Demo Site Logo  ;
+#Left Header Logo
+                   ;                          ; /images/header/header-icon-10y-warranty.png     ; header-icon-10y-warranty.png  ; $siteResource/images/header/header-icon-10y-warranty.png                      ; image/png                   ;                 ;
+                   ;                          ; /images/header/header-icon-free-shipping.png    ; header-icon-free-shipping.png ; $siteResource/images/header/header-icon-free-shipping.png                     ; image/png                   ;                 ;
+#Cart Logo
+                   ;                          ; /images/icon/cart-icon.png                      ; cart-icon.png                 ; $siteResource/images/icon/cart-icon.png                                       ; image/png                   ;                 ;
+#Footer Logo(s)
+    ## Top Left Footer
+                   ;                          ; /images/icon/facebook.svg                       ; facebook.svg                  ; $siteResource/images/icon/facebook.svg                                        ; image/svg                   ;                 ;
+                   ;                          ; /images/icon/instagram.svg                      ; instagram.svg                 ; $siteResource/images/icon/instagram.svg                                       ; image/svg                   ;                 ;
+                   ;                          ; /images/icon/email.svg                          ; email.svg                     ; $siteResource/images/icon/email.svg                                           ; image/svg                   ;                 ;
+    ## Bottom Left Footer
+                   ;                          ; /images/footer/icon-call.png                    ; icon-call.png                 ; $siteResource/images/footer/icon-call.png                                     ; image/png                   ;                 ;
+                   ;                          ; /images/footer/icon-message.png                 ; icon-message.png              ; $siteResource/images/footer/icon-message.png                                  ; image/png                   ;                 ;
 
+##### Component for the Media #####
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                                  ; &componentRef                 ; urlLink
+#Site Logo
+                                   ;                            ; SiteLogoComponent                 ; Site Logo Component                   ; SiteLogoComponent             ; "/"
+#Left Header Logo
+                                   ;                            ; TopHeaderLeftLogoComponent1       ; Top Header Left Logo Component 1      ; TopHeaderLeftLogoComponent1   ;
+                                   ;                            ; TopHeaderLeftLogoComponent2       ; Top Header Left Logo Component 2      ; TopHeaderLeftLogoComponent2   ;
+#Cart Logo
+                                   ;                            ; CartHeaderLogoComponent           ; Cart Header Logo Component            ; CartHeaderLogoComponent       ; "/cart"
+#Footer Logo(s)
+    ## Top Left Footer
+                                   ;                            ; FooterLogoComponent1              ; Footer Logo Component 1               ; FooterLogoComponent1          ;
+                                   ;                            ; FooterLogoComponent2              ; Footer Logo Component 2               ; FooterLogoComponent2          ;
+                                   ;                            ; FooterLogoComponent3              ; Footer Logo Component 3               ; FooterLogoComponent3          ;
+    ## Bottom Left Footer
+                                   ;                            ; BottomLeftFooterLogoComponent1    ; Bottom Left Footer Logo Component 1   ; BottomLeftFooterLogoComponent1;
+                                   ;                            ; BottomLeftFooterLogoComponent2    ; Bottom Left Footer Logo Component 2   ; BottomLeftFooterLogoComponent2;
 
-# Site Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                  ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText        ; folder(qualifier)[default = 'images']
-                   ;                          ; /images/header/header-logo-white.png ; header-logo-white.png ; $siteResource/images/header/header-logo-white.png                           ; image/png                   ; Demo Site Logo ;
-
-# Site Logo Component
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]; name                ; &componentRef     ; urlLink
-                                   ;                          ; SiteLogoComponent ; Site Logo Component ; SiteLogoComponent ; "/"
-
-# Top Left Header Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                                  ; realfilename                  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/header/header-icon-10y-warranty.png          ; header-icon-10y-warranty.png  ; $siteResource/images/header/header-icon-10y-warranty.png                           ; image/png                   ;        ;
-                   ;                          ; /images/header/header-icon-free-shipping.png         ; header-icon-free-shipping.png ; $siteResource/images/header/header-icon-free-shipping.png                          ; image/png                   ;        ;
-
-# Top Left Header Logo Component
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; name                             ; &componentRef
-                                   ;                          ; TopHeaderLeftLogoComponent1 ; Top Header Left Logo Component 1 ; TopHeaderLeftLogoComponent1
-                                   ;                          ; TopHeaderLeftLogoComponent2 ; Top Header Left Logo Component 2 ; TopHeaderLeftLogoComponent2
-
-# Top Left Header Paragraph
+##### Paragraph #####
+#Components
 INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]               ; name                                  ; &componentRef
+# Top Left Header Paragraph
                                    ;                          ; TopHeaderLeftParagraphComponent1 ; Top Header Left Paragraph Component 1 ; TopHeaderLeftParagraphComponent1
                                    ;                          ; TopHeaderLeftParagraphComponent2 ; Top Header Left Paragraph Component 2 ; TopHeaderLeftParagraphComponent2
-
-# Top Left Header Paragraph Container
-INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                        ; visible; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
-                                      ;                          ; TopHeaderLeftContainer1 ; Top Header Left Container 1 ; true   ; TopHeaderLeftLogoComponent1,TopHeaderLeftParagraphComponent1 ; TopHeaderLeftContainer1
-                                      ;                          ; TopHeaderLeftContainer2 ; Top Header Left Container 2 ; true   ; TopHeaderLeftLogoComponent2,TopHeaderLeftParagraphComponent2 ; TopHeaderLeftContainer2
-# Top Left Header Paragraph Container
-
-# Cart Header Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                ; realfilename  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]                                                                                 ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/icon/cart-icon.png         ; cart-icon.png ; $siteResource/images/icon/cart-icon.png    ; image/png                   ;        ;
-
-# Cart Header Logo Component
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; name                       ; &componentRef           ; urlLink
-                                   ;                          ; CartHeaderLogoComponent ; Cart Header Logo Component ; CartHeaderLogoComponent ; "/cart"
-
-
-# Footer Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]        ; realfilename  ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/icon/facebook.svg  ; facebook.svg  ; $siteResource/images/icon/facebook.svg                                      ; image/svg                   ;        ;
-                   ;                          ; /images/icon/instagram.svg ; instagram.svg ; $siteResource/images/icon/instagram.svg                                     ; image/svg                   ;        ;
-                   ;                          ; /images/icon/email.svg     ; email.svg     ; $siteResource/images/icon/email.svg                                         ; image/svg                   ;        ;
-
-# Footer Logo Component
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]   ; name                    ; &componentRef
-                                   ;                          ; FooterLogoComponent1 ; Footer Logo Component 1 ; FooterLogoComponent1
-                                   ;                          ; FooterLogoComponent2 ; Footer Logo Component 2 ; FooterLogoComponent2
-                                   ;                          ; FooterLogoComponent3 ; Footer Logo Component 3 ; FooterLogoComponent3
-
-# Bottom Left Footer Logo Media
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename              ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/footer/icon-call.png            ; icon-call.png             ; $siteResource/images/footer/icon-call.png                                     ; image/png                   ;        ;
-                   ;                          ; /images/footer/icon-message.png         ; icon-message.png          ; $siteResource/images/footer/icon-message.png                                  ; image/png                   ;        ;
-
-# Bottom Left Footer Logo Component
-INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]             ; name                                ; &componentRef
-                                   ;                          ; BottomLeftFooterLogoComponent1 ; Bottom Left Footer Logo Component 1 ; BottomLeftFooterLogoComponent1
-                                   ;                          ; BottomLeftFooterLogoComponent2 ; Bottom Left Footer Logo Component 2 ; BottomLeftFooterLogoComponent2
-
 # Bottom Left Footer Paragraph
-INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                     ; &componentRef
                                    ;                          ; BottomLeftFooterParagraphComponent1 ; Bottom Left Footer Paragraph Component 1 ; BottomLeftFooterParagraphComponent1
                                    ;                          ; BottomLeftFooterParagraphComponent2 ; Bottom Left Footer Paragraph Component 2 ; BottomLeftFooterParagraphComponent2
-
-# Bottom Left Footer Paragraph Container
-INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]         ; name                           ; visible; simpleCMSComponents(uid, $contentCV)                               ; &componentRef
-                                      ;                          ; BottomLeftFooterContainer1 ; Bottom Left Footer Container 1 ; true   ; BottomLeftFooterLogoComponent1,BottomLeftFooterParagraphComponent1 ; BottomLeftFooterContainer1
-                                      ;                          ; BottomLeftFooterContainer2 ; Bottom Left Footer Container 2 ; true   ; BottomLeftFooterLogoComponent2,BottomLeftFooterParagraphComponent2 ; BottomLeftFooterContainer2
-
-# Bootom Right Footer Paragraph
-INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                    ; &componentRef
+# Bottom Right Footer Paragraph
                                    ;                          ; BottomRightFooterParagraphComponent ; Bottom Right Footer Paragraph Component ; BottomRightFooterParagraphComponent
 
-# Navigation
+#Containers
+# Top Left Header Paragraph Container
+INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]           ; name                              ; visible; simpleCMSComponents(uid, $contentCV)                                 ; &componentRef
+# Top Left Header Paragraph
+                                      ;                          ; TopHeaderLeftContainer1      ; Top Header Left Container 1       ; true   ; TopHeaderLeftLogoComponent1,TopHeaderLeftParagraphComponent1         ; TopHeaderLeftContainer1
+                                      ;                          ; TopHeaderLeftContainer2      ; Top Header Left Container 2       ; true   ; TopHeaderLeftLogoComponent2,TopHeaderLeftParagraphComponent2         ; TopHeaderLeftContainer2
+# Bottom Left Footer Paragraph
+                                      ;                          ; BottomLeftFooterContainer1   ; Bottom Left Footer Container 1    ; true   ; BottomLeftFooterLogoComponent1,BottomLeftFooterParagraphComponent1   ; BottomLeftFooterContainer1
+                                      ;                          ; BottomLeftFooterContainer2   ; Bottom Left Footer Container 2    ; true   ; BottomLeftFooterLogoComponent2,BottomLeftFooterParagraphComponent2   ; BottomLeftFooterContainer2
+
+#### Navigation ####
 # Root
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name
                                ; root              ;                          ; root
@@ -188,7 +170,7 @@ INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; 
 # Level 5
 INSERT_UPDATE CMSNavigationNode; uid[unique = true]; $contentCV[unique = true]; name; &nodeRef; parent(uid, $contentCV)
 
-# Navigation Component
+#### Navigation Component ####
 # Top Header Navigation Component
 INSERT_UPDATE CategoryNavigationComponent; $contentCV[unique = true]; uid[unique = true]    ; name                            ; navigationNode(&nodeRef); &componentRef         ; wrapAfter; styleClass
                                          ;                          ; TopHeaderNavComponent ; Top Header Navigation Component ; TopHeaderNavNode        ; TopHeaderNavComponent ; 10       ;
@@ -200,7 +182,7 @@ INSERT_UPDATE FooterNavigationComponent; $contentCV[unique = true]; uid[unique =
                                        ;                          ; FooterNavigationComponent ; Footer Navigation Component ; FooterNavNode           ; FooterNavigationComponent ; true
 
 
-# CMS Navigation Entry
+#### CMS Navigation Entry ####
 # Top Header Navigation Entry
 INSERT_UPDATE CMSNavigationEntry; uid[unique = true]                ; $contentCV[unique = true]; name                                          ; navigationNode(&nodeRef)     ; item(CMSLinkComponent.uid, CMSLinkComponent.$contentCV)
                                 ; TopWarrantyActivationNavNodeEntry ;                          ; Top Warranty Activation Navigation Node Entry ; TopWarrantyActivationNavNode ; TopHeaderWarrantyActivationLink
@@ -240,30 +222,6 @@ UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                  
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
 
-
-# ProductGridPage
-INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
-                                 ;                          ; ListOrderFormAction ; /orderForm ; Order Form Action ; ListOrderFormAction
-
-INSERT_UPDATE ListPickUpInStoreAction; $contentCV[unique = true]; uid[unique = true]      ; url                                         ; name                        ; &actionRef
-                                     ;                          ; ListPickUpInStoreAction ; /store-pickup/{productCode}/pointOfServices ; Pickup in Store Action List ; ListPickUpInStoreAction
-
-INSERT_UPDATE ListAddToCartAction; $contentCV[unique = true]; uid[unique = true]  ; url       ; name                            ; &actionRef
-                                 ;                          ; ListAddToCartAction ; /cart/add ; Product Add To Cart Action List ; ListAddToCartAction
-
-INSERT_UPDATE ProductRefinementComponent; $contentCV[unique = true]; uid[unique = true]       ; name                               ; &componentRef
-                                        ;                          ; RefinementFacetComponent ; Product Refinement Facet Component ; RefinementFacetComponent
-
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name                               ; active; cmsComponents(&componentRef)
-                         ;                          ; ProductGridSlot            ; Product Grid Slot for Product List ; true  ; ProductGridComponent
-                         ;                          ; ProductLeftRefinementsSlot ; Product Left Refinements           ; true  ; RefinementFacetComponent
-
-INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; actions(uid, $contentCV)                    ; &componentRef
-                                  ;                          ; ProductGridComponent ; Product Grid Component ; ListPickUpInStoreAction,ListAddToCartAction ; ProductGridComponent
-
-UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
-                           ;                          ; ProductGridComponent ; ListOrderFormAction
-
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
@@ -292,6 +250,29 @@ INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];n
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
                          ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
 
+#### ProductGridPage ####
+INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
+                                 ;                          ; ListOrderFormAction ; /orderForm ; Order Form Action ; ListOrderFormAction
+
+INSERT_UPDATE ListPickUpInStoreAction; $contentCV[unique = true]; uid[unique = true]      ; url                                         ; name                        ; &actionRef
+                                     ;                          ; ListPickUpInStoreAction ; /store-pickup/{productCode}/pointOfServices ; Pickup in Store Action List ; ListPickUpInStoreAction
+
+INSERT_UPDATE ListAddToCartAction; $contentCV[unique = true]; uid[unique = true]  ; url       ; name                            ; &actionRef
+                                 ;                          ; ListAddToCartAction ; /cart/add ; Product Add To Cart Action List ; ListAddToCartAction
+
+INSERT_UPDATE ProductRefinementComponent; $contentCV[unique = true]; uid[unique = true]       ; name                               ; &componentRef
+                                        ;                          ; RefinementFacetComponent ; Product Refinement Facet Component ; RefinementFacetComponent
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]         ; name                               ; active; cmsComponents(&componentRef)
+                         ;                          ; ProductGridSlot            ; Product Grid Slot for Product List ; true  ; ProductGridComponent
+                         ;                          ; ProductLeftRefinementsSlot ; Product Left Refinements           ; true  ; RefinementFacetComponent
+
+INSERT_UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; name                   ; actions(uid, $contentCV)                    ; &componentRef
+                                  ;                          ; ProductGridComponent ; Product Grid Component ; ListPickUpInStoreAction,ListAddToCartAction ; ProductGridComponent
+
+UPDATE ProductGridComponent; $contentCV[unique = true]; uid[unique = true]   ; actions(&actionRef)[mode = append]
+                           ;                          ; ProductGridComponent ; ListOrderFormAction
+
 #Banner PGP
 INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
                    ;                          ; /images/PLP/catalog-header.png          ; catalog-header.png    ; $siteResource/images/PLP/catalog-header.png                                       ; image/png                   ;        ;
@@ -305,7 +286,93 @@ UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                  
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ;BannerProductGridPageSlot  ;Banner                 ;                                                         ;BannerProductGridPageSlot
 
-##### ProductDetailPage #####
+######  Homepage ######
+
+# Content Slots for Homepage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;UnboxingInTheBoxSlot1-Homepage;UnboxingInTheBox1;;UnboxingInTheBoxSlot1-Homepage
+                                ;;UnboxingInTheBoxSlot2-Homepage;UnboxingInTheBox2;;UnboxingInTheBoxSlot2-Homepage
+                                ;;UnboxingInTheBoxSlot3-Homepage;UnboxingInTheBox3;;UnboxingInTheBoxSlot3-Homepage
+                                ;;UnboxingInTheBoxSlot4-Homepage;UnboxingInTheBox4;;UnboxingInTheBoxSlot4-Homepage
+#                                ;;TestimonySlot-Homepage        ;Testimony        ;;TestimonySlot-Homepage
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+                         ;                       ;BannerSlot-Homepage           ;true     ;IntheboxBannerComponent
+
+
+#Carousel Produk
+INSERT_UPDATE ProductCarouselComponent;$contentCV[unique=true];uid[unique=true];name;products(code,$productCV);scroll(code);popup;searchQuery;categoryCode;&componentRef
+                                      ;;HomepageProductCarouselComponent;BELI KASUR INTHEBOX;XSIZE100x200,XSIZE90x200,SJSIZE90x200,SJPSIZE90x200,DASHSIZE90x200;allVisible;false;;;HomepageProductCarouselComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;ProductCarouselSlot-Homepage;Product Slot for Homepage;true;HomepageProductCarouselComponent
+
+
+#Unboxing Carousel
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                             ;;Unboxing1;Banner Homepage;;Unboxing1
+                                             ;;Unboxing2;Banner Homepage;;Unboxing2
+                                             ;;Unboxing3;Banner Homepage;;Unboxing3
+                                             ;;Unboxing4;Banner Homepage;;Unboxing4
+#
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsComponents(&componentRef)
+                         ;;UnboxingInTheBoxSlot1-Homepage;true;Unboxing1
+                         ;;UnboxingInTheBoxSlot2-Homepage;true;Unboxing2
+                         ;;UnboxingInTheBoxSlot3-Homepage;true;Unboxing3
+                         ;;UnboxingInTheBoxSlot4-Homepage;true;Unboxing4
+
+#Testimony Carousel Slot
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+#                                             ;                       ;TestimonyComponent;Testimony Banner Component;;TestimonyComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+#                         ;                ;TestimonySlot-Homepage           ;true     ;TestimonyComponent
+
+#INSERT_UPDATE TestimonyCarouselComponent;$contentCV[unique=true];uid[unique=true];name;testimony(code);scroll(code);popup;searchQuery;categoryCode;&componentRef
+#                                      ;;TestimonyCarouselComponent;BELI KASUR INTHEBOX;;allVisible;false;;;TestimonyCarouselComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+#                         ;;TestimonySlot-Homepage;Product Slot for Homepage;true;TestimonyCarouselComponent
+
+
+#### End Homepage ######
+
+#### Login ######
+### Customer Login
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;LoginContentSlot-login;LoginContentSlot;;LoginContentSlot-login;;;
+#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+
+
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+#                                             ;                       ;LoginLogoComponent;Login Logo Component;;LoginLogoComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+#                         ;                       ;LoginLogoSlot-login           ;true     ;LoginLogoComponent
+#
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+                         ;;LoginContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
+#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
+
+#### End Login
+
+#### Register ######
+
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;RegisterComponent;New Customer Register Component;accountNewCustomerLogin.jsp;;RegisterComponent
+
+### Customer Register
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
+                         ;;RegisterContentSlot-register;Center Content Slot for Customer Register;true;RegisterComponent;;;
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='register'];contentSlot(uid,$contentCV)[unique=true];;;
+                                ;;RegisterContentSlot-register;RegisterContentSlot;;RegisterContentSlot-register;;;
+
+#### End Register
+
+
+##### Product Detail Page #####
 # Lightbox Banner for Mini Cart
 #INSERT_UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;urlLink
 #                                   ;;LightboxHomeDeliveryBannerComponent;Lightbox Home Delivery Banner Component;LightboxHomeDeliveryBannerComponent;
@@ -343,5 +410,138 @@ UPDATE ProductPage; $contentCV[unique = true]; uid[unique = true]; previewImage(
 
 
 
+##### About Us Page #####
+# Media for About Us Page
+INSERT_UPDATE Media; $contentCV[unique = true]  ; code[unique = true]               ; realfilename      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']  ; altText                   ; folder(qualifier)[default = 'images']
+                   ;                            ; /images/aboutus/about-header.png  ; about-header.png  ; $siteResource/images/aboutus/about-header.png                                 ;image/png                      ;About Us Header Banner     ;
+                   ;                            ; /images/aboutus/about-image-1.png ; about-image-1.png ; $siteResource/images/aboutus/about-image-1.png                                ;image/png                      ;About Us Image 1 Banner    ;
+                   ;                            ; /images/aboutus/about-image-2.png ; about-image-2.png ; $siteResource/images/aboutus/about-image-2.png                                ;image/png                      ;About Us Image 2 Banner    ;
+                   ;                            ; /images/aboutus/about-image-3.png ; about-image-2.png ; $siteResource/images/aboutus/about-image-3.png                                ;image/png                      ;About Us Image 3 Banner    ;
 
+# Banner About Us
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]    ; name                          ; &componentRef         ; urlLink
+                                   ;                            ; AboutUsBannerComponent; About Us Banner Component     ; AboutUsBannerComponent;
+
+# Tentang In The Box Section
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]    ; name                                      ; &componentRef
+                                   ;                            ; TentangInthebox       ; Tentang In The Box CMS Paragraph          ; TentangInthebox
+                                   ;                            ; DescTentangInthebox   ; Deskripsi Tentang In The Box CMS Paragraph; DescTentangInthebox
+
+# Apa Itu Kasur In The Box Section
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]     ; name                         ; &componentRef             ; urlLink
+                                   ;                            ; Section1BannerComponent; Apa Itu Banner Component     ; Section1BannerComponent   ;
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                                  ; &componentRef
+                                   ;                            ; Section1ParagraphComponent        ; Apa Itu Kasur CMS Paragraph           ; Section1ParagraphComponent
+                                   ;                            ; DescSection1ParagraphComponent    ; Deskripsi Apa Itu Kasur CMS Paragraph ; DescSection1ParagraphComponent
+
+# Kenapa Harus Pilih In The Box Section
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]        ; name                          ; &componentRef             ; urlLink
+                                   ;                            ; Section2BannerComponent   ; Kenapa Harus Banner Component ; Section2BannerComponent   ;
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                                  ; &componentRef
+                                   ;                            ; Section2ParagraphComponent        ; Kenapa Harus CMS Paragraph            ; Section2ParagraphComponent
+                                   ;                            ; DescSection2ParagraphComponent    ; Deskripsi Kenapa Harus CMS Paragraph  ; DescSection2ParagraphComponent
+
+# Cara Beli In The Box Section
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]        ; name                          ; &componentRef             ; urlLink
+                                   ;                            ; Section3BannerComponent   ; Cara Beli Banner Component    ; Section3BannerComponent   ;
+
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                              ; &componentRef
+                                   ;                            ; Section3ParagraphComponent        ; Cara Beli CMS Paragraph           ; Section3ParagraphComponent
+                                   ;                            ; DescSection3ParagraphComponent    ; Deskripsi Cara Beli CMS Paragraph ; DescSection3ParagraphComponent
+
+# FAQ
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]                  ; name                                  ; &componentRef
+                                   ;                   ; FAQParagraphComponent        ; FAQ CMS Paragraph Component           ; FAQParagraphComponent
+                                   ;                   ; DescFAQPargraphComponent     ; Description FAQ CMS Paragraph Component; DescFAQPargraphComponent
+                                   ;                   ; AnswerFAQParagraphComponent  ; Answer Description FAQ CMS Pargraph Component; AnswerFAQParagraphComponent
+                                   ;                   ; Desc1FAQPargraphComponent    ; Description 1 FAQ CMS Paragraph Component; Desc1FAQPargraphComponent
+                                   ;                   ; Answer1FAQParagraphComponent ; Answer 1 Description FAQ CMS Pargraph Component; Answer1FAQParagraphComponent
+                                   ;                   ; Desc2FAQPargraphComponent    ; Description 2 FAQ CMS Paragraph Component; Desc2FAQPargraphComponent
+                                   ;                   ; Answer2FAQParagraphComponent ; Answer 2 Description FAQ CMS Pargraph Component; Answer2FAQParagraphComponent
+                                   ;                   ; Desc3FAQPargraphComponent    ; Description 3 FAQ CMS Paragraph Component; Desc3FAQPargraphComponent
+                                   ;                   ; Answer3FAQParagraphComponent ; Answer 3 Description FAQ CMS Pargraph Component; Answer3FAQParagraphComponent
+
+# Container
+INSERT_UPDATE CMSTabParagraphContainer; $contentCV[unique = true]; uid[unique = true]      ; name                        ; visible; simpleCMSComponents(uid, $contentCV)                         ; &componentRef
+                                      ;                          ;TentangIntheboxContainer ; Tentang In The Box Container; true   ; TentangInthebox,DescTentangInthebox                         ; TentangIntheboxContainer
+                                      ;                          ;Section1Container        ; Apa Itu Kasur Container     ; true   ; Section1BannerComponent,Section1ParagraphComponent,DescSection1ParagraphComponent; Section1Container
+                                      ;                          ;Section2Container        ; Kenapa Harus Container     ; true   ; Section2BannerComponent,Section2ParagraphComponent,DescSection2ParagraphComponent; Section2Container
+                                      ;                          ;Section3Container        ; Cara Beli Container     ; true   ; Section3BannerComponent,Section3ParagraphComponent,DescSection3ParagraphComponent; Section3Container
+                                      ;                          ;FaqContainer             ; FAQ Container              ; true ; FAQParagraphComponent;FaqContainer
+                                      ;                          ;DescFaqContainer         ; Description FAQ Container  ; true ; DescFAQPargraphComponent,AnswerFAQParagraphComponent,Desc1FAQPargraphComponent,Answer1FAQParagraphComponent,Desc2FAQPargraphComponent,Answer2FAQParagraphComponent,Desc3FAQPargraphComponent,Answer3FAQParagraphComponent;DescFaqContainer
+
+# Isi Mengisi ContentSlot
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        ; cmsComponents(uid, $contentCV)
+                         ;                   ; BannerAboutUsSlot  ; AboutUsBannerComponent
+                         ;                   ; TentangSlot        ; TentangIntheboxContainer
+                         ;                   ; ApaItuKasurSlot    ; Section1BannerComponent
+                         ;                   ; KenapaSlot         ; Section2BannerComponent
+                         ;                   ; CaraBeliSlot       ; Section3BannerComponent
+                         ;                   ; FaqSlot            ; FAQParagraphComponent
+                         ;                   ; DescFaqSlot        ; DescFaqContainer
+
+# Content Slot For Page pada About Us Page
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='aboutUsPage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;BannerAboutUsSlot-aboutUsPage      ;BannerAboutUs  ;;BannerAboutUsSlot
+                                ;                       ;TentangSlot-aboutUsPage            ;Tentang        ;;TentangSlot
+                                ;                       ;ApaItuKasurSlot-aboutUsPage        ;ApaItuKasur    ;;ApaItuKasurSlot
+                                ;                       ;KenapaSlot-aboutUsPage             ;Kenapa         ;;KenapaSlot
+                                ;                       ;CaraBeliSlot-aboutUsPage           ;CaraBeli       ;;CaraBeliSlot
+                                ;                       ;FaqSlot-aboutUsPage                ;Faq            ;;FaqSlot
+                                ;                       ;DescFaqSlot-aboutUsPage            ;DescFaq        ;;DescFaqSlot
+# END OF ABOUT US PAGE
+
+#### Cart Page ####
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true]   ; uid[unique=true]                          ; name                                          ; page                              ; actions(uid,$contentCV); &componentRef
+                                 ;                          ; CartComponent                             ; Cart Display Component                        ; cartDisplay.jsp                   ;                        ; CartComponent
+                                 ;                          ; CartTotalsComponent                       ; Cart Totals Display Component                 ; cartTotalsDisplay.jsp             ;                        ; CartTotalsComponent
+                                 ;                          ; CheckoutComponent                         ; Checkout Display Component                    ; checkoutDisplay.jsp               ;                        ; CheckoutComponent
+                                 ;                          ; ReturningCustomerLoginComponent           ; Returning Customer Login Component            ; accountReturningCustomerLogin.jsp ;                        ; ReturningCustomerLoginComponent
+                                 ;                          ; NewCustomerCheckoutLoginComponent         ; New Customer Checkout Login Component         ; checkoutNewCustomerLogin.jsp      ;                        ; NewCustomerCheckoutLoginComponent
+                                 ;                          ; ReturningCustomerCheckoutLoginComponent   ; Returning Customer Checkout Login Component   ; checkouReturningCustomerLogin.jsp ;                        ; ReturningCustomerCheckoutLoginComponent
+                                 ;                          ; GuestCheckoutLoginComponent               ; Guest Checkout Login Component                ; checkoutGuestLogin.jsp            ;                        ; GuestCheckoutLoginComponent
+                                 ;;OrderConfirmationThankMessageComponent;Order Confirmation Thank You Message Component;checkoutConfirmationThankMessage.jsp;;OrderConfirmationThankMessageComponent
+                                 ;;OrderConfirmationOverviewComponent;Order Confirmation Overview Info Component;/WEB-INF/views/responsive/pages/account/accountOrderDetailOverview.jsp;;OrderConfirmationOverviewComponent
+                                 ;;OrderConfirmationTotalsComponent;Order Confirmation Totals Component;/WEB-INF/views/responsive/pages/account/accountOrderDetailOrderTotals.jsp;;OrderConfirmationTotalsComponent
+                                 ;;OrderConfirmationShippingComponent;Order Confirmation Shipping Info Component;/WEB-INF/views/responsive/pages/account/accountOrderDetailShippingInfo.jsp;;OrderConfirmationShippingComponent
+                                 ;;OrderConfirmationItemsComponent;Order Confirmation Items Info Component;/WEB-INF/views/responsive/pages/account/accountOrderDetailItems.jsp;;OrderConfirmationItemsComponent
+                                 ;;OrderConfirmationContinueButtonComponent;Order Confirmation Continue Button Component;checkoutConfirmationContinueButton.jsp;;OrderConfirmationContinueButtonComponent
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true] ; uid[unique=true]              ; name                          ; &componentRef
+                                   ;                        ; EmptyCartParagraphComponent   ; Empty Cart Paragraph Component; EmptyCartParagraphComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]                   ; name                                       ; active ; cmsComponents(&componentRef)
+                         ;                          ; EmptyCartContentSlot-cartPage      ; Empty Cart Content Slot for Cart Page      ; true   ; EmptyCartParagraphComponent
+                         ;                          ; CartTotalsContentSlot-cartPage     ; Cart Totals Content Slot for Cart Page     ; true   ; CartTotalsComponent
+#                         ;                          ; OrderNoteContentSlot-cartPage      ; Bottom Content Slot for Cart Page          ; true   ; CheckoutComponent,CartSuggestions
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                      ; position[unique=true]     ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ; CartComponentContentSlotForCartPage   ; CartComponentContentSlot  ;                                                      ; CartComponentContentSlot-cartPage
+                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartContentSlot      ;                                                      ; EmptyCartContentSlot-cartPage
+                                ;                       ; CartTotalsContentSlotForCartPage      ; CartTotalsContentSlot     ;                                                      ; CartTotalsContentSlot-cartPage
+#                                ;                       ; BottomContentSlotForCartPage      ;BottomContentSlot;;BottomContentSlot-cartPage
+
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid, $contentCV)
+                         ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ; CartComponent
+
+#### Checkout Login ####
+INSERT_UPDATE ContentSlot;$contentCV[unique=true]  ; uid[unique=true]                                           ; name                                  ; active; cmsComponents(&componentRef)
+                         ;                         ; ReturningCustomerCheckoutLoginContentSlot-checkout-login   ; Left Content Slot for Checkout Login  ; true  ; ReturningCustomerCheckoutLoginComponent
+                         ;                         ; GuestCheckoutLoginContentSlot-checkout-login               ; Right Content Slot for Checkout Login ; true  ; GuestCheckoutLoginComponent
+
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                                         ; position[unique=true]; page(uid,$contentCV)[unique=true][default='checkout-login'] ; contentSlot(uid,$contentCV)[unique=true]
+                                ;                        ; ReturningCustomerCheckoutLoginContentSlot-checkout-login ; LeftContentSlot      ;                                                             ; ReturningCustomerCheckoutLoginContentSlot-checkout-login
+                                ;                        ; GuestCheckoutLoginContentSlot-checkout-login             ; RightContentSlot     ;                                                             ; GuestCheckoutLoginContentSlot-checkout-login
+
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+                                   ;;HelpParagraphComponent;Help Paragraph Component;HelpParagraphComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef)
+                         ;;SideContent-multiStepCheckoutSummaryPage;Side Slot for multiStepCheckoutSummaryPage;true;HelpParagraphComponent
+
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true];contentSlot(uid,$contentCV)[unique=true]
+                                ;;Side-multiStepCheckoutSummaryPage;SideContent;multiStepCheckoutSummaryPage;SideContent-multiStepCheckoutSummaryPage
 

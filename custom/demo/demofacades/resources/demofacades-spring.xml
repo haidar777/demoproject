@@ -195,7 +195,6 @@
 		<property name="add" ref="demoSearchResultProductPopulator"/>
 	</bean>
 
-
 	<alias alias="demoProductSuggestionFacade" name="demoProductSuggestionFacade"/>
 	<bean id="demoProductSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoProductSuggestionFacadeImpl" />
 
@@ -207,4 +206,5 @@
 	</bean>
 	<bean id="demoProductSuggestionPopulator" class="org.demo.facades.productSuggestion.populator.DemoProductSuggestionPopulator">
 	</bean>
+
 </beans>

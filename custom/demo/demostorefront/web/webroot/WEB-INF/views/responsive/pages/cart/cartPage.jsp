@@ -6,57 +6,52 @@
 <%@ taglib prefix="cart" tagdir="/WEB-INF/tags/responsive/cart" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
+<%@ taglib prefix="note" tagdir="/WEB-INF/tags/responsive/common" %>
+<%@ taglib prefix="format" tagdir="/WEB-INF/tags/shared/format" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
+<c:url value="/cart/checkout" var="checkoutUrl" scope="session"/>
+<c:url value="/quote/create" var="createQuoteUrl" scope="session"/>
+<c:url value="${continueUrl}" var="continueShoppingUrl" scope="session"/>
 
-<template:page pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}">
 
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
-	<div class="cart-top-bar">
-        <div class="text-right">
-            <spring:theme var="textHelpHtml" code="text.help" />
-            <a href="" class="help js-cart-help" data-help="${fn:escapeXml(textHelpHtml)}">${textHelpHtml}
-                <span class="glyphicon glyphicon-info-sign"></span>
-            </a>
-            <div class="help-popup-content-holder js-help-popup-content">
-                <div class="help-popup-content">
-                    <strong>${fn:escapeXml(cartData.code)}</strong>
-                    <spring:theme var="cartHelpContentVar" code="basket.page.cartHelpContent" htmlEscape="false" />
-                    <c:set var="cartHelpContentVarSanitized" value="${ycommerce:sanitizeHTML(cartHelpContentVar)}" />
-                    <div>${cartHelpContentVarSanitized}</div>
-                </div>
+	<div class="cartpage-section-header">
+        <h1>
+            Shopping Cart
+		<h1>
+	</div>
+
+    <div class="cartcomponent">
+        <cms:pageSlot position="CartComponentContentSlot" var="feature">
+            <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
+        </cms:pageSlot>
+    </div>
+
+    <c:if test="${not empty cartData.rootGroups}">
+        <note:demoNote/>
+
+        <div class="total">
+            <c:if test="${not empty cartData.rootGroups}">
+                <ycommerce:testId code="cart_totalPrice_label">
+                    <h1> TOTAL : <format:price priceData="${cartData.totalPrice}"/> </h1>
+                </ycommerce:testId>
+            </c:if>
+        </div>
+        <center>
+            <div class="cartpagebutton">
+                <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">
+                    <spring:theme code="cart.page.continue"/>
+                </button>
+                <ycommerce:testId code="checkoutButton">
+                    <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}">
+                        <spring:theme code="checkout.checkout"/>
+                    </button>
+                </ycommerce:testId>
             </div>
-		</div>
-	</div>
-
-	<div>
-		<div>
-            <cms:pageSlot position="TopContent" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-            </cms:pageSlot>
-		</div>
-
-	   <c:if test="${not empty cartData.rootGroups}">
-           <cms:pageSlot position="CenterLeftContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-           </cms:pageSlot>
-        </c:if>
-		
-		 <c:if test="${not empty cartData.rootGroups}">
-            <cms:pageSlot position="CenterRightContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-            </cms:pageSlot>
-            <cms:pageSlot position="BottomContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-            </cms:pageSlot>
-		</c:if>
-				
-		<c:if test="${empty cartData.rootGroups}">
-            <cms:pageSlot position="EmptyCartMiddleContent" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
-            </cms:pageSlot>
-		</c:if>
-	</div>
-</template:page>
+        </center>
+    </c:if>
+</template:demoPage>

@@ -58,6 +58,14 @@
 	}
 }
 
+.section-header {
+    h1{
+        padding-top: 30px;
+        font-size: 40px;
+        color: #000;
+    }
+}
+
 .cart-restoration-bar{
 	background: #F2F4F7;
 	margin-bottom: @grid-gutter-width;
@@ -120,11 +128,11 @@
 .item__list__cart {
   margin-top: 15px;
   margin-bottom: 10px;
-  
+
   table td {
       padding: 0;
    }
-   
+
   // entry-group starts here now
   & > table {
     tbody > .entry-group-header {
@@ -167,11 +175,24 @@
 
   .item__list--item {
     border-top: 1px solid @border-color-2;
-    
+
     .item__image {
       padding: 10px;
     }
-
+    .item__info {
+        .item__name {
+            color: #000;
+        }
+        .item__price{
+            padding-top: 10px;
+            color: #6086C2;
+            font-style: italic;
+            font-size: 18px;
+        }
+    }
+    .item__total {
+        color: #6086C2;
+    }
     .item__remove,
     .item__menu {
       @media (min-width: @screen-md) {
