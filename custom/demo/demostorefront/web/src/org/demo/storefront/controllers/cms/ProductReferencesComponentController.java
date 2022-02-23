@@ -3,11 +3,14 @@
  */
 package org.demo.storefront.controllers.cms;
 
+import de.hybris.platform.acceleratorcms.model.components.CartSuggestionComponentModel;
 import de.hybris.platform.acceleratorcms.model.components.ProductReferencesComponentModel;
+import de.hybris.platform.acceleratorcms.model.components.SimpleSuggestionComponentModel;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
 import de.hybris.platform.commercefacades.product.data.ProductReferenceData;
 import de.hybris.platform.core.model.product.ProductModel;
+import org.apache.commons.lang.StringUtils;
 import org.demo.storefront.controllers.ControllerConstants;
 
 import java.util.Arrays;
@@ -45,6 +48,11 @@ public class ProductReferencesComponentController extends
 
 			model.addAttribute("title", component.getTitle());
 			model.addAttribute("productReferences", productReferences);
+
+
 		}
 	}
+
+
+	//EDIT
 }

@@ -46,10 +46,7 @@ import org.demo.storefront.controllers.ControllerConstants;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -58,6 +55,8 @@ import javax.validation.Valid;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StreamUtils;
@@ -283,9 +282,9 @@ public class CartPageController extends AbstractCartPageController
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String updateCartQuantities(@RequestParam("entryNumber") final long entryNumber, final Model model,
-			@Valid final UpdateQuantityForm form, final BindingResult bindingResult, final HttpServletRequest request,
-			final RedirectAttributes redirectModel) throws CMSItemNotFoundException
+	public ResponseEntity<?> updateCartQuantities(@RequestParam("entryNumber") final long entryNumber, final Model model,
+											   @Valid final UpdateQuantityForm form, final BindingResult bindingResult, final HttpServletRequest request,
+											   final RedirectAttributes redirectModel) throws CMSItemNotFoundException
 	{
 		if (bindingResult.hasErrors())
 		{
@@ -307,10 +306,11 @@ public class CartPageController extends AbstractCartPageController
 			{
 				final CartModificationData cartModification = getCartFacade().updateCartEntry(entryNumber,
 						form.getQuantity().longValue());
-				addFlashMessage(form, request, redirectModel, cartModification);
+				HashMap<String, String> updateResponse = new HashMap<>();
+				updateResponse.put("itemTotalPrice", cartModification.getEntry().getTotalPrice().getFormattedValue());
+				updateResponse.put("cartTotalPrice", getCartFacade().getSessionCart().getTotalPrice().getFormattedValue());
 
-				// Redirect to the cart page on update success so that the browser doesn't re-post again
-				return getCartPageRedirectUrl();
+				return new ResponseEntity<HashMap<String, String>>(updateResponse, HttpStatus.OK);
 			}
 			catch (final CommerceCartModificationException ex)
 			{
@@ -318,8 +318,7 @@ public class CartPageController extends AbstractCartPageController
 			}
 		}
 
-		// if could not update cart, display cart/quote page again with error
-		return prepareCartUrl(model);
+		return new ResponseEntity<String>("Bad Request", HttpStatus.BAD_REQUEST);
 	}
 
 	@Override

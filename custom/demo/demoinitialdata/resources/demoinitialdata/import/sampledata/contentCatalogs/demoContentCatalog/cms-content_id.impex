@@ -102,10 +102,10 @@ UPDATE ProductReferencesComponent;$contentCV[unique=true]   ; uid[unique=true]  
 UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
                             ;                  ; AboutUsBannerComponent;/images/aboutus/about-header.png
 
-UPDATE SimpleBannerComponent; $contentCV[unique = true] ; uid[unique = true]        ; $picture[lang = $lang]
-                            ;                           ; Section1BannerComponent   ; /images/aboutus/about-image-1.png
-                            ;                           ; Section2BannerComponent   ; /images/aboutus/about-image-2.png
-                            ;                           ; Section3BannerComponent   ; /images/aboutus/about-image-3.png
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]          ; $picture[lang = $lang]
+                            ;                   ;Section1BannerComponent;/images/aboutus/about-image-1.png
+                            ;                   ;Section2BannerComponent;/images/aboutus/about-image-2.png
+                            ;                   ;Section3BannerComponent;/images/aboutus/about-image-3.png
 
 UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
                             ;                           ; TentangInthebox               ; "Tentang INTHEBOX"

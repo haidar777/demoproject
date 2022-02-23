@@ -7,7 +7,7 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
-
+<%--
 <div class="cart-header border">
     <div class="row">
         <div class="col-xs-12 col-sm-5">
@@ -40,7 +40,7 @@
             <cart:saveCart/>
         </div>
     </div>
-</div>
+</div> --%>
 
 
 <c:if test="${not empty cartData.rootGroups}">
@@ -49,7 +49,7 @@
     <c:url value="${continueUrl}" var="continueShoppingUrl" scope="session"/>
     <c:set var="showTax" value="false"/>
 
-    <div class="row">
+    <%--<div class="row">
         <div class="col-xs-12 pull-right cart-actions--print">
             <div class="cart__actions border">
                 <div class="row">
@@ -77,9 +77,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--%>
 
-    <div class="row">
+    <%--<div class="row">
         <cart:exportCart/>
 
         <div class="col-sm-12 col-md-4 col-md-push-5">
@@ -106,12 +106,12 @@
                 </ycommerce:testId>
             </div>
         </div>
-    </div>
+    </div>--%>
 
-    <cart:cartItems cartData="${cartData}"/>
+    <cart:demoCartItems cartData="${cartData}"/>
 
-    <div class="row">
+    <%--<div class="row">
         <cart:exportCart/>
-    </div>
+    </div>--%>
 </c:if>
 <cart:ajaxCartTopTotalSection/>

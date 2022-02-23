@@ -10,59 +10,56 @@
 <%@ taglib prefix="format" tagdir="/WEB-INF/tags/shared/format" %>
 
 <spring:htmlEscape defaultHtmlEscape="true" />
+<c:url value="/cart/checkout" var="checkoutUrl" scope="session"/>
+<c:url value="/quote/create" var="createQuoteUrl" scope="session"/>
+<c:url value="${continueUrl}" var="continueShoppingUrl" scope="session"/>
 
 <template:demoPage pageTitle="${pageTitle}">
-
 	<cart:cartValidation/>
 	<cart:cartPickupValidation/>
 
+    <%-- Header title --%>
 	<div class="cartpage-section-header">
         <h1>
             Shopping Cart
 		<h1>
 	</div>
 
-	<div>
-	   <c:if test="${not empty cartData.rootGroups}">
-           <cms:pageSlot position="CenterLeftContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-           </cms:pageSlot>
-        </c:if>
-		
-		 <c:if test="${not empty cartData.rootGroups}">
-            <cms:pageSlot position="CartTotalsContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
-            </cms:pageSlot>
-		</c:if>
-				
-		<c:if test="${empty cartData.rootGroups}">
-            <cms:pageSlot position="EmptyCartContentSlot" var="feature">
-                <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
-            </cms:pageSlot>
-		</c:if>
-	</div>
+    <%-- List of items in the cart --%>
+    <div class="cartcomponent">
+        <cms:pageSlot position="CartComponentContentSlot" var="feature">
+            <cms:component component="${feature}" element="div" class="yComponentWrapper"/>
+        </cms:pageSlot>
+    </div>
 
-    <note:demoNote/><br>
+    <%-- Order note --%>
+    <div class="demo-cart-checkout-note">
+        <p>
+            Order Note
+        </p>
+        <textarea></textarea>
+    </div>
 
-    <div class="total">
-        <c:if test="${not empty cartData.rootGroups}">
-            <ycommerce:testId code="cart_totalPrice_label">
-                <h1> TOTAL : <format:price priceData="${cartData.totalPrice}"/> </h1>
-            </ycommerce:testId>
-	    </c:if>
-	</div> <br>
-
-    <center>
-        <div class="cartpagebutton">
-            <a href="demostorefront/demostore/en/c/PRODUK">
-            <button id="back" class="continueshopping" data-callback="onSubmit">
-                Continue Shopping
-            </button>
-            </a>
-            <button id="submit" class="checkout" data-callback="onSubmit">
-                Complete Order
-            </button>
+    <%-- Order Total --%>
+    <div class="demo-cart-order-total">
+        <div>
+            <spring:theme code="basket.page.totals.total"/>
         </div>
-    </center> <br><br>
+        <div>
+            <ycommerce:testId code="cart_totalPrice_label">
+                <format:price priceData="${cartData.totalPrice}"/>
+            </ycommerce:testId>
+        </div>
+    </div>
 
+    <div class="cartpagebutton">
+        <button class="btn btn-default btn-block btn--continue-shopping js-continue-shopping-button" data-continue-shopping-url="${fn:escapeXml(continueShoppingUrl)}">
+            <spring:theme code="cart.page.continue"/>
+        </button>
+        <ycommerce:testId code="checkoutButton">
+            <button class="btn btn-primary btn-block btn--continue-checkout js-continue-checkout-button" data-checkout-url="${fn:escapeXml(checkoutUrl)}">
+                <spring:theme code="checkout.checkout"/>
+            </button>
+        </ycommerce:testId>
+    </div>
 </template:demoPage>

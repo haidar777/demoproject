@@ -38,7 +38,7 @@
                         <spring:param name="entryNumber"  value="${entry.entryNumber}"/>
                         <spring:param name="configuratorType"  value="${entry.configurationInfos[0].configuratorType}" />
                     </spring:url>
-                    
+
                     <spring:theme code="basket.error.invalid.configuration" arguments="${errorCount}"/>
                     <a href="${fn:escapeXml(entryConfigUrl)}">
                         <spring:theme code="basket.error.invalid.configuration.edit"/>
