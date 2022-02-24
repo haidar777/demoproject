@@ -35,8 +35,8 @@
                             <img src="${entry.product.images.iterator().next().getUrl()}"/>
                         </div>
                         <div class="demo-cart-product-info">
-                            <p class="demo-cart-product-info-base">${entry.product.baseProduct}</p>
                             <p class="demo-cart-product-info-name">${entry.product.name}</p>
+                            <p class="demo-cart-product-info-base">${entry.product.baseProduct}</p>
                             <p class="demo-cart-product-info-price">${entry.basePrice.formattedValue}</p>
                         </div>
                     </div>

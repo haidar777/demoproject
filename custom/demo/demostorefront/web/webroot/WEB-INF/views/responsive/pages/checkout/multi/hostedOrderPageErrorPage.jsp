@@ -8,8 +8,7 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <c:url value="${redirectUrl}" var="continueUrl"/>
-<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">--%>
-<template:demoPage pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">
 
 	<h2><spring:theme code="checkout.multi.hostedOrderPageError.header"/></h2>
 	
