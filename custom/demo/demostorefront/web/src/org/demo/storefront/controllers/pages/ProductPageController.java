@@ -21,17 +21,14 @@ import de.hybris.platform.cms2.servicelayer.services.CMSPageService;
 import de.hybris.platform.commercefacades.order.data.ConfigurationInfoData;
 import de.hybris.platform.commercefacades.product.ProductFacade;
 import de.hybris.platform.commercefacades.product.ProductOption;
-import de.hybris.platform.commercefacades.product.data.BaseOptionData;
-import de.hybris.platform.commercefacades.product.data.FutureStockData;
-import de.hybris.platform.commercefacades.product.data.ImageData;
-import de.hybris.platform.commercefacades.product.data.ImageDataType;
-import de.hybris.platform.commercefacades.product.data.ProductData;
-import de.hybris.platform.commercefacades.product.data.ReviewData;
+import de.hybris.platform.commercefacades.product.data.*;
 import de.hybris.platform.commerceservices.url.UrlResolver;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
 import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import de.hybris.platform.util.Config;
+import org.demo.facades.product.data.DemoVariantProductData;
+import org.demo.facades.productSuggestion.DemoProductSuggestionFacade;
 import org.demo.storefront.controllers.ControllerConstants;
 
 import java.io.UnsupportedEncodingException;
@@ -50,6 +47,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -87,6 +85,7 @@ public class ProductPageController extends AbstractPageController
 	private static final String STOCK_SERVICE_UNAVAILABLE = "basket.page.viewFuture.unavailable";
 	private static final String NOT_MULTISKU_ITEM_ERROR = "basket.page.viewFuture.not.multisku";
 
+
 	@Resource(name = "productDataUrlResolver")
 	private UrlResolver<ProductData> productDataUrlResolver;
 
@@ -111,6 +110,12 @@ public class ProductPageController extends AbstractPageController
 	@Resource(name = "futureStockFacade")
 	private FutureStockFacade futureStockFacade;
 
+
+
+	@Resource(name = "demoProductSuggestionFacade")
+	private DemoProductSuggestionFacade demoProductSuggestionFacade;
+
+
 	@RequestMapping(value = PRODUCT_CODE_PATH_VARIABLE_PATTERN, method = RequestMethod.GET)
 	public String productDetail(@PathVariable("productCode") final String productCode, final Model model,
 			final HttpServletRequest request, final HttpServletResponse response)
@@ -118,8 +123,10 @@ public class ProductPageController extends AbstractPageController
 	{
 		final List<ProductOption> extraOptions = Arrays.asList(ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
 				ProductOption.VARIANT_MATRIX_MEDIA);
-
+		//Current Product
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, extraOptions);
+
+
 
 		final String redirection = checkRequestUrl(request, response, productDataUrlResolver.resolve(productData));
 		if (StringUtils.isNotEmpty(redirection))
@@ -133,8 +140,10 @@ public class ProductPageController extends AbstractPageController
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
 
 		model.addAttribute(new ReviewForm());
-		model.addAttribute("pageType", PageType.PRODUCT.name());
-		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false)));
+
+		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
+		model.addAttribute("futureStockEnabled", Boolean.valueOf(Config.getBoolean(FUTURE_STOCK_ENABLED, false))); //ini nilainya false
+
 
 		final String metaKeywords = MetaSanitizerUtil.sanitizeKeywords(productData.getKeywords());
 		final String metaDescription = MetaSanitizerUtil.sanitizeDescription(productData.getDescription());
@@ -402,11 +411,23 @@ public class ProductPageController extends AbstractPageController
 
 		options.addAll(extraOptions);
 
-		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options);
+		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options); //CHECK
+		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
+		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
 
+		final List<ProductData> checkProducts = new ArrayList<ProductData>();
+
+		for(DemoVariantProductData e : productSuggestions){
+			final ProductData tempProductData = productFacade.getProductForCodeAndOptions(e.getId(), options);
+			tempProductData.setSize(e.getSize());
+			checkProducts.add(tempProductData);
+		}
+
+		model.addAttribute("checkProducts", checkProducts);
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
-		populateProductData(productData, model);
+		populateProductData(productData, model); //Memasukkan data dengan attribute product. ///CHECK
+
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, productBreadcrumbBuilder.getBreadcrumbs(productCode));
 
 		if (CollectionUtils.isNotEmpty(productData.getVariantMatrix()))
@@ -418,8 +439,8 @@ public class ProductPageController extends AbstractPageController
 
 	protected void populateProductData(final ProductData productData, final Model model)
 	{
-		model.addAttribute("galleryImages", getGalleryImages(productData));
-		model.addAttribute("product", productData);
+		model.addAttribute("galleryImages", getGalleryImages(productData)); //Untuk memasukkan gambar di page PDP
+		model.addAttribute("product", productData); //CHECK
 		if (productData.getConfigurable())
 		{
 			final List<ConfigurationInfoData> configurations = productFacade.getConfiguratorSettingsForCode(productData.getCode());
@@ -509,4 +530,5 @@ public class ProductPageController extends AbstractPageController
 		final ProductModel productModel = productService.getProductForCode(productCode);
 		return cmsPageService.getPageForProduct(productModel, getCmsPreviewService().getPagePreviewCriteria());
 	}
+
 }
