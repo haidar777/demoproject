@@ -552,3 +552,30 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
 INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
                                 ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 
+#### Testimony Page ####
+# JSP Component
+INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;page;actions(uid,$contentCV);&componentRef
+                                 ;;TestimonyListComponent;Testimony List Component;/WEB-INF/views/responsive/pages/additional/testimoniList.jsp;;TestimonyListComponent
+
+# CMS Paragraph Header
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                           ; name                                       ; &componentRef
+                                   ;                     ; TestimoniHeaderParagraphComponent     ; Testimoni Header Paragraph Component       ; TestimoniHeaderParagraphComponent
+
+# CMS Paragraph Paragraph 1, 2
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]                           ; name                                       ; &componentRef
+                                   ;                     ; TestimoniParagraph1ParagraphComponent ; Testimoni Paragraph 1 Paragraph Component  ; TestimoniParagraph1ParagraphComponent
+                                   ;                     ; TestimoniParagraph2ParagraphComponent ; Testimoni Paragraph 2 Paragraph Component  ; TestimoniParagraph2ParagraphComponent
+# Mengisi Slot
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]              ; cmsComponents(uid, $contentCV)
+                         ;                   ; TestimoniHeaderSlot      ; TestimoniHeaderParagraphComponent
+                         ;                   ; TestimoniParagraph1Slot  ; TestimoniParagraph1ParagraphComponent
+                         ;                   ; TestimoniParagraph2Slot  ; TestimoniParagraph2ParagraphComponent
+                         ;                   ; TestimoniListSlot        ; TestimonyListComponent
+
+# ContenSlotForPage
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testimoniPage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;                       ;TestimoniHeaderSlot-testimoniPage      ;TestimoniHeader            ;;TestimoniHeaderSlot
+                                ;                       ;TestimoniParagraph1Slot-testimoniPage  ;TestimoniParagraph1        ;;TestimoniParagraph1Slot
+                                ;                       ;TestimoniParagraph2Slot-testimoniPage  ;TestimoniParagraph2        ;;TestimoniParagraph2Slot
+                                ;                       ;TestimoniListSlot-testimoniPage        ;TestimoniList              ;;TestimoniListSlot
+#### END OF TESTIMONY PAGE ####
