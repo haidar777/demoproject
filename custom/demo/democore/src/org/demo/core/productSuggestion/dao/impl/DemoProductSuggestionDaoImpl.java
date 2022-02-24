@@ -14,8 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
-    private static final String QUERY_PRODUCT_SUGGESTION = "SELECT {pk} FROM {DemoVariantProduct}";
+    private static final String QUERY_PRODUCT_SUGGESTION = "SELECT {pk} FROM {DemoVariantProduct} WHERE {code} = ?name";
     private static final String QUERY_PRODUCT_EXCLUDE_CODE = "SELECT {pk} FROM {DemoVariantProduct} WHERE {type} = ?type AND {code} NOT LIKE ?excludeCode";
+
     @Resource
     private FlexibleSearchService flexibleSearchService;
 
@@ -23,6 +24,7 @@ public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
     @Override
     public DemoVariantProductModel getDemoProductSuggestionById(String name) {
        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_SUGGESTION);
+       flexibleSearchQuery.addQueryParameter("name", name);
        final SearchResult<DemoVariantProductModel> products = flexibleSearchService.search(flexibleSearchQuery);
 
        if(CollectionUtils.isNotEmpty(products.getResult())){
@@ -44,18 +46,6 @@ public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
         }
     }
 
-//    @Override
-//    public List<DemoVariantProductModel> getDemoProductSuggestionByType(String type) {
-//        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_SUGGESTION_BY_TYPE);
-//        flexibleSearchQuery.addQueryParameter("type", type);
-//        final SearchResult<DemoVariantProductModel> result = flexibleSearchService.search(flexibleSearchQuery);
-//
-//        if(CollectionUtils.isNotEmpty(result.getResult())){
-//            return result.getResult();
-//        }else{
-//            return null;
-//        }
-//    }
     @Override
     public List<DemoVariantProductModel> getDemoProductSuggestionByType(String type, String excludeCode) {
     final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_EXCLUDE_CODE);

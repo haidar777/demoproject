@@ -163,17 +163,17 @@ UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]
 UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
                             ;                  ; AboutUsBannerComponent;/images/aboutus/about-header.png
 
-UPDATE SimpleBannerComponent; $contentCV[unique = true] ; uid[unique = true]        ; $picture[lang = $lang]
-                            ;                    ; Section1BannerComponent   ; /images/aboutus/about-image-1.png
-                            ;                    ; Section2BannerComponent   ; /images/aboutus/about-image-2.png
-                            ;                    ; Section3BannerComponent   ; /images/aboutus/about-image-3.png
+UPDATE SimpleBannerComponent; $contentCV[unique = true]; uid[unique = true]      ; $picture[lang = $lang]
+                            ;                          ; Section1BannerComponent ; /images/aboutus/about-image-1.png
+                            ;                          ; Section2BannerComponent ; /images/aboutus/about-image-2.png
+                            ;                          ; Section3BannerComponent ; /images/aboutus/about-image-3.png
 
-UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
-                            ;                           ; TentangInthebox               ; "Tentang INTHEBOX"
-                            ;                           ; Section1ParagraphComponent    ; "Apa Itu Kasur INTHEBOX?"
-                            ;                           ; Section2ParagraphComponent    ; "Kenapa Harus Pilih INTHEBOX?"
-                            ;                           ; Section3ParagraphComponent    ; "Cara Beli Kasur INTHEBOX"
-                            ;                           ; FAQParagraphComponent         ; "Pertanyaan yang Sering Ditanyakan"
+UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = true]         ; content[lang = $lang]
+                            ;                          ; TentangInthebox            ; "Tentang INTHEBOX"
+                            ;                          ; Section1ParagraphComponent ; "Apa Itu Kasur INTHEBOX?"
+                            ;                          ; Section2ParagraphComponent ; "Kenapa Harus Pilih INTHEBOX?"
+                            ;                          ; Section3ParagraphComponent ; "Cara Beli Kasur INTHEBOX"
+                            ;                          ; FAQParagraphComponent      ; "Pertanyaan yang Sering Ditanyakan"
 
 ##### Testimoni Page #####
 UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
@@ -182,4 +182,8 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]    
 spring bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed."
                             ;                    ; TestimoniParagraph2ParagraphComponent ; "Kami selalu berinovasi menghadirkan beragam jenis kasur dan produk penunjang istirahat lainnya, Kami paham bahwa istirahat yang cukup dan tidur
 berkualitas adalah hal penting. Oleh karena itu, kami selalu menggunakan material berkualitas premium, namun kamu bisa memilikinya dengan harga terjangkau."
+
+UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
+                            ;;EmptyCartParagraphComponent;"<h2>Your shopping cart is empty</h2><p>Suggestions</p><ul><li>Browse our products by selecting a category above</li></ul>"
+                            ;;HelpParagraphComponent;"<strong>Need Help with your checkout process?</strong> <span>Contact Us or Call phone number.</span>"
 

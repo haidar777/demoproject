@@ -1,11 +1,9 @@
 package org.demo.core.productSuggestion.service.impl;
 
-import org.demo.core.jalo.DemoVariantProduct;
 import org.demo.core.model.DemoVariantProductModel;
 import org.demo.core.productSuggestion.dao.DemoProductSuggestionDao;
 import org.demo.core.productSuggestion.service.DemoProductSuggestionService;
 import org.demo.facades.product.data.DemoVariantProductData;
-import org.demo.facades.product.data.PriceData;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -15,7 +13,6 @@ import java.util.List;
 public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionService {
     @Resource(name="demoProductSuggestionDao")
     private DemoProductSuggestionDao demoProductSuggestionDao;
-
 
     @Override
     public DemoVariantProductData getDemoProductSuggestionById(String name) {
@@ -62,7 +59,6 @@ public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionSe
             for(DemoVariantProductModel productModel : productModels){
                 DemoVariantProductData tempProductData = new DemoVariantProductData();
                 tempProductData.setId(productModel.getCode());
-                //tempProductData.setPrice(productModel.getEurope1Prices());
                 tempProductData.setName(productModel.getName());
                 tempProductData.setSize(productModel.getSize());
                 tempProductData.setDesc(productModel.getDesc());

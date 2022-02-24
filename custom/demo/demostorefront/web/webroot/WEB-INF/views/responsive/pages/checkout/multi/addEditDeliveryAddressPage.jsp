@@ -11,8 +11,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true"> --%>
-<template:demoPage pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">
 
 <div class="row">
     <div class="col-sm-6">

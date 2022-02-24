@@ -39,7 +39,7 @@
         </c:when>
         <c:otherwise>
 
-            <div class="carousel image-gallery__image js-gallery-image">
+         <div class="carousel image-gallery__image js-gallery-image">
                 <c:forEach items="${galleryImages}" var="container" varStatus="varStatus">
                     <div class="item">
                         <div>

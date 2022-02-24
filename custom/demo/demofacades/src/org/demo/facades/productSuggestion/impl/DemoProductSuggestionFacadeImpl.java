@@ -1,6 +1,5 @@
 package org.demo.facades.productSuggestion.impl;
 
-import org.demo.core.model.DemoVariantProductModel;
 import org.demo.core.productSuggestion.service.DemoProductSuggestionService;
 import org.demo.facades.product.data.DemoVariantProductData;
 import org.demo.facades.productSuggestion.DemoProductSuggestionFacade;
@@ -33,16 +32,6 @@ public class DemoProductSuggestionFacadeImpl implements DemoProductSuggestionFac
         }
     }
 
-//    @Override
-//    public List<DemoVariantProductData> getDemoProductSuggestionByType(String type) {
-//        List<DemoVariantProductData> productData = demoProductSuggestionService.getDemoProductSuggestionByType(type);
-//        if(productData != null){
-//            return productData;
-//        }else{
-//            return null;
-//        }
-//
-//    }
 
     @Override
     public List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode) {

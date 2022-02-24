@@ -10242,6 +10242,7 @@ fieldset[disabled] .btn-primary.active {
   color: #6086C2;
   font-family: Helvetica;
   font-style: italic;
+  font-size: 20px;
   margin-bottom: 10px;
 }
 @media (max-width: 639px) {
@@ -10565,21 +10566,48 @@ fieldset[disabled] .btn-primary.active {
   font-size: 200px;
   font-weight: bold;
 }
-.btn-all {
+.btn-all,
+.headline {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 10px;
 }
-.content-suggestion,
-.headline {
-  text-align: center;
-  padding: 10px;
+.content-suggestion {
+  padding: 40px;
 }
 .container-image {
   width: 300px;
   height: 200px;
   border: 2px solid black;
+}
+.item-price {
+  color: #6086C2;
+  font-family: Helvetica;
+  font-style: italic;
+  font-size: 20px;
+}
+a.item-title {
+  color: #000000;
+  font-weight: bold;
+  font-size: 15px;
+}
+.container-suggestion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item-size {
+  font-size: 14px;
+}
+.item-image {
+  height: 300px;
+  width: 300px;
+}
+.item-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 #AddToCart-PickUpInStoreAction {
   position: relative;
@@ -14813,17 +14841,18 @@ form .forgotten-password {
   background-color: #f4f4f4;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading {
-  background-color: #142939 !important;
+  background-color: #6086c2;
   color: #ffffff;
   padding: 15px 20px;
-  border-bottom: 1px solid #142939;
+  border-bottom: 1px solid #6086c2;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading > div {
   float: left;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading .title {
   font-weight: 700;
-  padding-right: 5px;
+  padding-right: 15px;
+  color: #ffffff;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading .address {
   text-overflow: ellipsis;
@@ -18952,10 +18981,10 @@ select[multiple].input-sm {
 .page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info p {
   padding: 0 2rem;
 }
-.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-base {
+.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-name {
   font-size: 24px;
 }
-.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-name {
+.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-size {
   font-size: 19px;
 }
 .page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-price {
@@ -19091,8 +19120,8 @@ select[multiple].input-sm {
 }
 .page-cartPage .cartpagebutton button.btn--continue-shopping {
   background-color: #fff;
-  color: #D3D3D3;
-  border: 1px solid #D3D3D3;
+  color: #bdbbbb;
+  border: 1px solid #bdbbbb;
   border-radius: 1px;
   margin: 0 2rem;
   padding: 0 2rem;
