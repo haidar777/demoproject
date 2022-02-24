@@ -12,7 +12,7 @@
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout" />
 
 <div class="login-page__headline">
-	Sign in
+	Masuk
 </div>
 
 <form:form action="${action}" method="post" modelAttribute="loginForm">
@@ -27,11 +27,9 @@
 								 labelKey="login.password" path="j_password" inputCSS="form-control"
 								 mandatory="true" />
 
-	<div class="row">
-		<div class="col-md-6">
-			<label><input type="checkbox" name="_spring_security_remember_me" id="_spring_security_remember_me"  />Ingat Saya</label>
-		</div>
-		<div class="forgotten-password col-md-6">
+	<div style="  display: flex;justify-content: space-between;">
+		<label><input type="checkbox" name="_spring_security_remember_me" id="_spring_security_remember_me"  />Ingat Saya</label>
+		<div>
 			<ycommerce:testId code="login_forgotPassword_link">
 				<a href="#" data-link="<c:url value='/login/pw/request'/>" class="js-password-forgotten" data-cbox-title="<spring:theme code="forgottenPwd.title"/>">
 					<spring:theme code="login.link.forgottenPwd" />
@@ -57,9 +55,9 @@
 <br>
 
 <c:if test="${actionNameKey ne hideDescription}">
-	<p>
+	<p style="text-align: center">
 		Belum memiliki akun?
-		<a href="/demostorefront/demostore/en/register">Daftar Sekarang</a>
+		<a href="/demostorefront/demostore/en/register">   Daftar Sekarang</a>
 	</p>
 </c:if>
 

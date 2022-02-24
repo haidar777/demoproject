@@ -1,26 +1,52 @@
 .login-page__headline,
 .user-register__headline{
-  .page-headline();
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-.login-left-content-slot{
-  margin-right: 10px;
-  margin-left: 30px;
-
-  @media (max-width: @screen-sm-max) {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.loginregislogo{
+  margin-top:50px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container-login{
+  background-color: #0e90d2;
 }
 
-.login-right-content-slot{
-  margin-right: 30px;
-  margin-left: 10px;
+.login-content-slot{
+  margin-top:150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-  @media (max-width: @screen-sm-max) {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+  //@media (max-width: @screen-sm-max) {
+  //  margin:0 auto;
+  //}
+}
+
+.register-content-slot{
+  margin-top:150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  //@media (max-width: @screen-sm-max) {
+  //  margin-left: 20px;
+  //  margin-right: 20px;
+  //}
 }
 
 .forgotten-password{
@@ -72,7 +98,12 @@
 @media (max-width: @screen-xs-max) {
   .login-section,
   .register-section {
-
+    //height: 10em;
+    //display: flex;
+    //align-items: center;
+    //justify-content: center;
+    //width: 430px;
+    //margin: 0 auto;
     .forgotten-password {
       margin-bottom: 45px;
     }

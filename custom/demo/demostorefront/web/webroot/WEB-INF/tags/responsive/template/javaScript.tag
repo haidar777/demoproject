@@ -86,6 +86,7 @@
 		<script src="${commonResourcePathHtml}/js/_autoload.js"></script>
 		<script src="${commonResourcePathHtml}/js/about.js"></script>
 		<script src="${commonResourcePathHtml}/js/demo.js"></script>
+		<script src="${commonResourcePathHtml}/js/showdropdown.js"></script>
 		
 		<%-- Cms Action JavaScript files --%>
 		<c:forEach items="${cmsActionsJsFiles}" var="actionJsFile">

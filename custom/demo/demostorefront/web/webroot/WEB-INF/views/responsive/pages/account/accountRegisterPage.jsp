@@ -2,12 +2,15 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/responsive/template"%>
 <%@ taglib prefix="cms" uri="http://hybris.com/tld/cmstags"%>
 
-<template:page pageTitle="${pageTitle}">
-	<div class="row">
-		<div class="col-md-6">
-			<cms:pageSlot position="RegisterContentSlot" var="feature" element="div" class="login-left-content-slot">
+<template:logregPage pageTitle="${pageTitle}">
+	<div class="container">
+		<div class="loginregislogo">
+			<cms:pageSlot position="RegisterLogo" var="feature" element="div">
 				<cms:component component="${feature}"/>
 			</cms:pageSlot>
 		</div>
+		<cms:pageSlot position="RegisterContentSlot" var="feature" element="div" class="register-content-slot">
+			<cms:component component="${feature}"/>
+		</cms:pageSlot>
 	</div>
-</template:page>
+</template:logregPage>
