@@ -549,6 +549,18 @@
       }
     }
 
+    .content__empty {
+        padding: 10px 10px 10px 10px;
+        .content{
+            padding-left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            border: 3px solid #bdbbbb;
+            background-color: #dedede;
+        }
+    }
+
     .demo-cart-checkout-note {
       display: flex;
       flex-direction: column;
@@ -568,6 +580,7 @@
         border: 1px solid #bdbbbb;
         width: 455px;
         max-width: 1080px;
+        height: 100px;
         min-height: 0px;
         padding: 1rem;
       }
@@ -597,5 +610,38 @@
             height: 40px;
             width: auto;
         }
+    }
+}
+
+.page-checkout-login {
+    .demo-footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.page-multiStepCheckoutSummaryPage {
+    .main__inner-wrapper {
+        padding-bottom: 30px;
+    }
+}
+
+.page-orderConfirmationPage {
+    .well-headline {
+        background-color: #6086c2;
+    }
+    .well-headline.orderPending {
+        background-color: #6086c2;
+    }
+    .well {
+        background-color: #6086c2;
+    }
+    .checkout-success {
+        padding-bottom: 15px;
+    }
+    .btn.btn-primary {
+        margin: 20px;
     }
 }
