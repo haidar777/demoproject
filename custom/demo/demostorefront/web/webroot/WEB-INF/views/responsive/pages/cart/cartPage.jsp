@@ -25,6 +25,12 @@
 		<h1>
 	</div>
 
+    <c:if test="${empty cartData.rootGroups}">
+        <cms:pageSlot position="EmptyCartMiddleContent" var="feature">
+            <cms:component component="${feature}" element="div" class="yComponentWrapper content__empty"/>
+        </cms:pageSlot>
+    </c:if>
+
     <%-- List of items in the cart --%>
     <div class="cartcomponent">
         <cms:pageSlot position="CartComponentContentSlot" var="feature">

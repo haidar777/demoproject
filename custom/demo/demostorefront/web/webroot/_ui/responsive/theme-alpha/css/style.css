@@ -8203,7 +8203,7 @@ output {
   color: #ffffff;
 }
 .well.well-tertiary .item-label {
-  color: #7f919e;
+  color: #fff;
 }
 .well.well-tertiary .item-value {
   color: #fff;
@@ -14844,17 +14844,18 @@ form .forgotten-password {
   background-color: #f4f4f4;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading {
-  background-color: #142939 !important;
+  background-color: #6086c2;
   color: #ffffff;
   padding: 15px 20px;
-  border-bottom: 1px solid #142939;
+  border-bottom: 1px solid #6086c2;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading > div {
   float: left;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading .title {
   font-weight: 700;
-  padding-right: 5px;
+  padding-right: 15px;
+  color: #ffffff;
 }
 .checkout-order-summary .checkout-order-summary-list .checkout-order-summary-list-heading .address {
   text-overflow: ellipsis;
@@ -16908,6 +16909,7 @@ a.price ins:focus {
 .account-orderdetail .order-store-address .label-order,
 .account-orderdetail .order-store-hours .label-order {
   text-transform: uppercase;
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
   padding-bottom: 2px;
@@ -16925,6 +16927,7 @@ a.price ins:focus {
 .account-orderdetail .value-order {
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #ededed;
 }
 @media (max-width: 639px) {
   .account-orderdetail .order-shipping-method,
@@ -18910,7 +18913,7 @@ select[multiple].input-sm {
   max-width: 190px;
 }
 .page-productGrid #product-facet {
-  padding-top: 99px;
+  padding-top: 15px;
 }
 .page-cartPage .cartpage-section-header {
   width: 100%;
@@ -18983,10 +18986,10 @@ select[multiple].input-sm {
 .page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info p {
   padding: 0 2rem;
 }
-.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-base {
+.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-name {
   font-size: 24px;
 }
-.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-name {
+.page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-size {
   font-size: 19px;
 }
 .page-cartPage .cartcomponent .demo-cart-table .demo-cart-data td .demo-cart-product .demo-cart-product-info .demo-cart-product-info-price {
@@ -19094,6 +19097,17 @@ select[multiple].input-sm {
   font-style: italic;
   padding: 1rem 1rem;
 }
+.page-cartPage .content__empty {
+  padding: 10px 10px 10px 10px;
+}
+.page-cartPage .content__empty .content {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  border: 3px solid #bdbbbb;
+  background-color: #dedede;
+}
 .page-cartPage .demo-cart-checkout-note {
   display: flex;
   flex-direction: column;
@@ -19111,6 +19125,7 @@ select[multiple].input-sm {
   border: 1px solid #bdbbbb;
   width: 455px;
   max-width: 1080px;
+  height: 100px;
   min-height: 0px;
   padding: 1rem;
 }
@@ -19122,8 +19137,8 @@ select[multiple].input-sm {
 }
 .page-cartPage .cartpagebutton button.btn--continue-shopping {
   background-color: #fff;
-  color: #D3D3D3;
-  border: 1px solid #D3D3D3;
+  color: #bdbbbb;
+  border: 1px solid #bdbbbb;
   border-radius: 1px;
   margin: 0 2rem;
   padding: 0 2rem;
@@ -19139,6 +19154,30 @@ select[multiple].input-sm {
   padding: 0 2rem;
   height: 40px;
   width: auto;
+}
+.page-checkout-login .demo-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+.page-multiStepCheckoutSummaryPage .main__inner-wrapper {
+  padding-bottom: 30px;
+}
+.page-orderConfirmationPage .well-headline {
+  background-color: #6086c2;
+}
+.page-orderConfirmationPage .well-headline.orderPending {
+  background-color: #6086c2;
+}
+.page-orderConfirmationPage .well {
+  background-color: #6086c2;
+}
+.page-orderConfirmationPage .checkout-success {
+  padding-bottom: 15px;
+}
+.page-orderConfirmationPage .btn.btn-primary {
+  margin: 20px;
 }
 body {
   font-size: 1.2rem;
