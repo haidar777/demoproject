@@ -12,7 +12,7 @@
 <c:set var="hideDescription" value="checkout.login.loginAndCheckout" />
 
 <div class="login-page__headline">
-	Masuk
+	<spring:theme code="login.title" />
 </div>
 
 <form:form action="${action}" method="post" modelAttribute="loginForm">
