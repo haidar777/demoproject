@@ -196,7 +196,7 @@
 	</bean>
 
 	<alias alias="demoProductSuggestionFacade" name="demoProductSuggestionFacade"/>
-	<bean id="demoProductSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoProductSuggestionFacadeImpl" />
+	<bean id="demoProductSuggestionFacade" class="org.demo.facades.productSuggestion.impl.DemoProductSuggestionFacadeImpl"/>
 
 	<bean id="demoProductSuggestionConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.demo.facades.product.data.DemoVariantProductData"/>

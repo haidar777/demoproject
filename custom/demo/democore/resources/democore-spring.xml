@@ -556,9 +556,11 @@
 
 	<!-- Product Suggestion Service -->
 	<alias alias="demoProductSuggestionService" name="demoProductSuggestionService"/>
-	<bean id="demoProductSuggestionService" class="org.demo.core.productSuggestion.service.impl.DemoProductSuggestionServiceImpl" />
+	<bean id="demoProductSuggestionService" class="org.demo.core.productSuggestion.service.impl.DemoProductSuggestionServiceImpl"/>
 
 	<alias alias="demoProductSuggestionDao" name="demoProductSuggestionDao"/>
 	<bean id="demoProductSuggestionDao" class="org.demo.core.productSuggestion.dao.impl.DemoProductSuggestionDaoImpl" />
 
+	<!--	Demo Cronjob-->
+	<bean id="demoJob" class="org.demo.core.job.DemoProductCronjob" parent="abstractJobPerformable"></bean>
 </beans>
