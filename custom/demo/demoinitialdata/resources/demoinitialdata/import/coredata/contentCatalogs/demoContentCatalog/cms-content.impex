@@ -555,7 +555,7 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]            ; name                             ; frontendTemplateName                    ; restrictedPageTypes(code); active[default = true]
                           ;                          ; OrderConfirmationPageTemplate ; Order Confirmation Page Template ; checkout/checkoutConfirmationLayoutPage ; ContentPage              ;
 
-# Order Confirmation Page Template
+##### Order Confirmation Page Template #####
 INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)[unique = true][default = 'OrderConfirmationPageTemplate']; validComponentTypes(code); compTypeGroup(code)
 # Headers
                              ; TopLeftParagraph      ;                                                                                    ;                          ; narrow
