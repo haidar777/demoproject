@@ -4,6 +4,11 @@
 
 <template:logregPage pageTitle="${pageTitle}">
 	<div class="container">
+		<div class="loginregislogo">
+			<cms:pageSlot position="RegisterLogo" var="feature" element="div">
+				<cms:component component="${feature}"/>
+			</cms:pageSlot>
+		</div>
 		<cms:pageSlot position="RegisterContentSlot" var="feature" element="div" class="register-content-slot">
 			<cms:component component="${feature}"/>
 		</cms:pageSlot>

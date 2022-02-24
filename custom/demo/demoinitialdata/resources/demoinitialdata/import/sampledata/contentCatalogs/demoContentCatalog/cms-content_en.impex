@@ -127,12 +127,17 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
                                              ;;Unboxing1;demo-homepage-light-fam-en
                                              ;;Unboxing2;demo-homepage-light-text-en
-                                             ;;Unboxing3;demo-homepage-springbed-03-en
+                                             ;;Unboxing3;demo-homepage-springbedN-03-en
                                              ;;Unboxing4;demo-homepage-springbed-04-en
 
+UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]
+                            ;                           ; TestimonyComponent               ; "TESTIMONI"
 ##### End Of Homepage ####
 
-#### Login Logo
+#### Login/Register Logo
+UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $picture[lang = $lang];
+                            ;                  ; LoginLogoComponent;/images/logo-inthebox-440x80.png
+                            ;                  ; RegisterLogoComponent;/images/logo-inthebox-440x80.png
 
 #REMOVE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/jpg'];realfilename;folder(qualifier)[default='images'];altText
 #                   ;widescreen;;loginlogo.png;$siteResource/images/logo-inthebox-440x80.png;;logo-inthebox-440x80.png;;"logo"

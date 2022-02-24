@@ -42,33 +42,110 @@
                 <div class="item__desc">Kasur INTHEBOX akan langsung mengembang. Tunggu 60 menit untuk digunakan.</div>
             </div>
         </div>
-            <%--            <div class="item"><img src="assets/owl2.jpg" alt="Owl Image"></div>--%>
-            <%--            <div class="item"><img src="assets/owl3.jpg" alt="Owl Image"></div>--%>
-            <%--            <cms:pageSlot position="UnboxingInTheBox" var="feature" element="div" class="row no-margin">--%>
-            <%--                <cms:component component="${feature}" element="div" class="col-xs-3 no-space yComponentWrapper"/>--%>
-
-            <%--            </cms:pageSlot>--%>
-
     </div>
 
-    <%--    <div class="row no-margin">--%>
-    <%--        <div class="col-xs-12 col-md-6 no-space">--%>
-    <%--            <cms:pageSlot position="Section2A" var="feature" element="div" class="row no-margin">--%>
-    <%--                <cms:component component="${feature}" element="div"--%>
-    <%--                               class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>--%>
-    <%--            </cms:pageSlot>--%>
-    <%--        </div>--%>
-    <%--        <div class="col-xs-12 col-md-6 no-space">--%>
-    <%--            <cms:pageSlot position="ProductCarousel" var="feature" element="div" class="row no-margin">--%>
-    <%--                <cms:component component="${feature}" element="div"--%>
-    <%--                               class="col-xs-12 col-sm-6 no-space yComponentWrapper"/>--%>
-    <%--            </cms:pageSlot>--%>
-    <%--        </div>--%>
-    <%--&lt;%&ndash;        <div class="col-xs-12">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;            <cms:pageSlot position="UnboxingInTheBox" var="feature" element="div" class="landingLayout2PageSection2C">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                <cms:component component="${feature}" element="div" class="yComponentWrapper"/>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;            </cms:pageSlot>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;        </div>&ndash;%&gt;--%>
-    <%--    </div>--%>
+<%--    <cms:pageSlot position="Testimony" var="feature" element="div">--%>
+<%--        <cms:component component="${feature}" element="div"/>--%>
+<%--    </cms:pageSlot>--%>
+    <div class="testimony-section">
+        <div class="container-title">
+            <h3 class="testimony-title">TESTIMONI</h3>
+            <div class="subtitle">
+                <div class="mb-2">
+                    Banyak pembeli yang merasa puas dengan kualitas kasur INTHEBOX
+                </div>
+                Kami menerima beragam komentar positif dari pembeli di seluruh Indonesia, bahkan dari kalangan artis. Bukan hanya pengalaman membeli kasur sping bed atau kasur busa, banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</div>
+        </div>
+        <div class="container">
+            <div class="row flex-row-stretch">
+                <div class="col-sm-6 col-md-4 col-lg-3 flex-col">
+                    <div class="card testimony-card">
+                        <div class="card-header d-flex align-items-center">
+                            <div class="name">Baim Wong</div>
+                            <img class="account-icons" src="https://inthebox.net/images/review-avatar.webp">
+                        </div>
+                        <div class="card-body">
+                            <div class="stars d-inline-flex">
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                            </div>
+                            <div class="content">
+                                <div class="kt-margin-b-10">
+                                    <strong>Mantap banget</strong>
+                                </div>
+
+                                <p>Kasur baru yang packing nya simple banget, masuk ke dalam box! Kasur @inthebox.id dengan teknologi Pocket Springbed ini enak banget, nyaman dan empuk! Ada Free Bantal dan Free Ongkirnya juga lhoo! Mantap banget
+                                </p>
+                            </div>
+                            <div class="datetime">9 Sep 2020 - 6:22 pm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 flex-col">
+                    <div class="card testimony-card">
+                        <div class="card-header d-flex align-items-center">
+                            <div class="name">Raffi Ahmad</div>
+                            <img class="account-icons" src="https://inthebox.net/images/review-avatar.webp">
+                        </div>
+                        <div class="card-body">
+                            <div class="stars d-inline-flex">
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                            </div>
+                            <div class="content">
+                                <div class="kt-margin-b-10">
+                                    <strong>Pilih kasur INTHEBOX aja!</strong>
+                                </div>
+
+                                <p>
+                                    Pokoknya kalau mau beli spring bed yang bagus, materialnya berkualitas, nyaman, dan harganya murah, langsung pilih kasur INTHEBOX aja. Apalagi INTHEBOX+ ini nih bagus banget. Selama gue pakai kasur INTHEBOX di rumah itu bikin tidur jadi nyenyak, pas bangun langsung segar badannya.
+                                </p>
+                            </div>
+                            <div class="datetime">
+                                10 Aug 2020 - 11:41 pm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-3 flex-col">
+                    <div class="card testimony-card">
+                        <div class="card-header d-flex align-items-center">
+                            <div class="name">Baim Wong</div>
+                            <img class="account-icons" src="https://inthebox.net/images/review-avatar.webp">
+                        </div>
+                        <div class="card-body">
+                            <div class="stars d-inline-flex">
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                                <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
+                            </div>
+                            <div class="content">
+                                <div class="kt-margin-b-10">
+                                    <strong>Terima kasih Inthebox!</strong>
+                                </div>
+
+                                <p>
+                                    Produk memuaskaan sekalii.. dan seru waktu unboxing ya :-D Nyaman sekalii. Pas dapet harga ﬂash sale lagi. Mantap banget sihh klo ini Semoga aweet ya. Trimakasih Inthebox. Trimakasih Tokopedia.
+                                </p>
+                            </div>
+                            <div class="datetime">
+                                8 Jun 2020 - 8:00 pm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-primary" href="https://localhost:9002/demostorefront/demostore/en/testimony">Lihat semua testimony</a>
+    </div>
+
 
 </template:demoPage>

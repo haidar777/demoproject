@@ -99,26 +99,25 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
                           ;;LoginPageTemplate;Login Page Template;;ContentPage;false;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
-                         ;;LoginContentSlot;Left Content Slot;true
-#;;RightContentSlot;Right Content Slot;true
+                         ;;LoginContentSlot;Login Content Slot;true
 
 #                         ;;RegisterContentLoginSlot;Center Login Content Slot;true
-#                         ;;LoginLogoSlot;Login Logo Slot;true
+                         ;;LoginLogoSlot;Login Logo Slot;true
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
 # Headers
-#                            ;LoginLogo               ;                                                                       ;                           ;logo
+                            ;LoginLogo               ;                                                                       ;                           ;logo
 #LoginContent
-                             ;LoginContentSlot;;;wide
-#;RightContentSlot;;;wide
+                             ;LoginContentSlot       ;                                                                       ;                           ;wide
 
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true]                   ;position[unique=true]      ;pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 
 # Headers
-#;                          ; LoginLogoSlot-LoginPage      ; LoginLogo       ;                                                                           ; LoginLogoSlot                       ; true
+                                    ;                  ; LoginLogoSlot-LoginPage      ; LoginLogo                        ;                            ; LoginLogoSlot                       ; true
+
 # Login Content
-                                    ;;LoginContentSlot-LoginPage;LoginContentSlot;;LoginContentSlot;true
+                                    ;                  ;LoginContentSlot-LoginPage    ; LoginContentSlot                    ;                            ;LoginContentSlot                     ; true
 #;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
 
 
@@ -132,20 +131,20 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
                          ;;RegisterContentSlot;Center Content Slot;true
-#                         ;;SiteLogoSlot;Default Site Logo Slot;true
+                         ;;RegisterLogoSlot;Register Logo Slot;true
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];validComponentTypes(code);compTypeGroup(code)
 ## Headers
-#                             ;SiteLogo               ;                                                                       ;                           ;logo
+                             ;RegisterLogo             ;                                                                       ;                           ;logo
 ##RegisterContent
                              ; RegisterContentSlot     ;                                                                       ;                          ; wide
 
 #
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ## Headers
-#                                    ;                          ; SiteLogo-RegisterPage      ; SiteLogo       ;                                                                           ; SiteLogoSlot                       ; true
+                                    ;                  ; RegisterLogoSlot-LoginPage                      ; RegisterLogo                   ;                            ; RegisterLogoSlot                       ; true
 ## Register Content
-                                    ;                          ; RegisterContentSlot-RegisterPage                ; RegisterContentSlot                 ;                                                                           ; RegisterContentSlot                                 ; true
+                                    ;                  ; RegisterContentSlot-RegisterPage                ; RegisterContentSlot                 ;                              ; RegisterContentSlot                    ; true
 
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
@@ -405,6 +404,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          
                          ;                          ; GuestCheckoutLoginContentSlot             ; Guest Checkout Login Content Slot         ; true
 
 INSERT_UPDATE ContentSlotName; name[unique = true]                      ; template(uid, $contentCV)[unique = true][default = 'CheckOutLoginPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+
 # Headers
                              ; TopLeftParagraph                         ;                                                                                ;                          ; narrow
                              ; TopRightNavigationBar                    ;                                                                                ;                          ; navigation

@@ -76,12 +76,13 @@ public class LoginPageController extends AbstractLoginPageController
 
 	protected static final String SPRING_SECURITY_LAST_USERNAME = "SPRING_SECURITY_LAST_USERNAME";
 
+	@Override
 	protected String getDefaultLoginPage(final boolean loginError, final HttpSession session, final Model model)
 			throws CMSItemNotFoundException
 	{
 		final LoginForm loginForm = new LoginForm();
 		model.addAttribute(loginForm);
-		model.addAttribute(new RegisterForm());
+		model.addAttribute(new CustomRegisterForm());
 		model.addAttribute(new GuestForm());
 
 		final String username = (String) session.getAttribute(SPRING_SECURITY_LAST_USERNAME);
