@@ -155,33 +155,44 @@
                 <attributes>
                     <attribute qualifier="code" type="java.lang.String">
                         <description>Testimony Code</description>
-                        <modifiers read="true" write="true" search="true" optional="false" unique="true" />
-                        <persistence type="property" />
+                        <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                        <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="name" type="localized:java.lang.String">
-                        <description> User Name </description>
-                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
-                        <persistence type="property" />
+                    <attribute qualifier="name" type="java.lang.String">
+                        <description>Testimony Name</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false"/>
+                        <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="rating" type="localized:java.lang.Integer">
-                        <description> User Rating </description>
-                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
-                        <persistence type="property" />
+                    <attribute qualifier="text" type="java.lang.String">
+                        <description>Testimony Text</description>
+                        <modifiers read="true" write="true" search="true" optional="true" unique="false"/>
+                        <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="title" type="localized:java.lang.String">
-                        <description> Testimony Title </description>
-                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
-                        <persistence type="property" />
+                    <attribute qualifier="paragraph" type="java.lang.String">
+                        <description>Testimony Paragraph</description>
+                        <modifiers/>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
                     </attribute>
-                    <attribute qualifier="desc" type="localized:java.lang.String">
-                        <description> Testimony Description </description>
-                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
-                        <persistence type="property" />
+                    <attribute qualifier="time" type="java.util.Date">
+                        <description>Testimony Creation Time</description>
+                        <modifiers initial="true"/>
+                        <persistence type="property"/>
                     </attribute>
-                    <attribute qualifier="date" type="localized:java.util.Date">
-                        <description> Testimony Date </description>
-                        <modifiers read="true" write="true" search="true" optional="true" unique="false" />
-                        <persistence type="property" />
+                    <attribute type="java.lang.Double" qualifier="rating">
+                        <description>Testimony Rating</description>
+                        <modifiers optional="false"/>
+                        <defaultvalue>5.0</defaultvalue>
+                        <persistence type="property"/>
                     </attribute>
                 </attributes>
                 <indexes>
@@ -191,6 +202,5 @@
                 </indexes>
             </itemtype>
         </typegroup>
-
     </itemtypes>
 </items>
