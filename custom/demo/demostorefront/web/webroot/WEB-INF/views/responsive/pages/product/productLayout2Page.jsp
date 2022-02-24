@@ -30,7 +30,7 @@
     </cms:pageSlot>--%>
 
    <%-----SUGGESTION PRODUCTS-----%>
-       <div class="headline">Produk Lainnya</div>
+       <div class="headline">Other Products</div>
        <div class="container-suggestion">
            <div class="col-sm-12 col-md-10 col-lg-8">
                <c:forEach end="4" items="${checkProducts}" var="checkProduct">
