@@ -7,7 +7,7 @@
     <cms:pageSlot position="Banner" var="feature">
         <cms:component component="${feature}"/>
     </cms:pageSlot>
-    <cms:pageSlot position="ProductCarousel" var="feature" element="div" class="row no-margin">
+    <cms:pageSlot position="ProductCarousel" var="feature" element="div">
         <cms:component component="${feature}"/>
     </cms:pageSlot>
     <div class="container-fluid unboxing">
