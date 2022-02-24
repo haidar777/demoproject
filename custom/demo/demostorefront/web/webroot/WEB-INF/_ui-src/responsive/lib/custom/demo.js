@@ -1,3 +1,14 @@
+$(".demo-dropdown").click(() => {
+    if ($(".demo-dropdown-content").css("display") == "none")
+        $(".demo-dropdown-content").css("display", "block");
+    else
+        $(".demo-dropdown-content").css("display", "none");
+
+    $(".demo-dropdown-content").onclick = function()  {
+        location.href = "https://localhost:9002/demostorefront/?site=demostore";
+    }
+})
+
 $(".demo-cart-data").map((i, el) => {
     let buttonMin = $(el).find(".demo-cart-data-qty .demo-cart-qty .demo-cart-qty-min")[0];
     let buttonPlus = $(el).find(".demo-cart-data-qty .demo-cart-qty .demo-cart-qty-plus")[0];

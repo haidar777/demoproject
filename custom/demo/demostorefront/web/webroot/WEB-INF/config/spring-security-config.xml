@@ -274,6 +274,7 @@
 		<property name="useReferer" value="true"/>
 		<property name="restrictedPages" ref="logoutRestrictedPages"/>
 		<property name="sessionService" ref="sessionService"/>
+		<property name="alwaysUseDefaultTargetUrl" value="true" />
 	</bean>
 	
      <bean id="logoutFilter" class="org.springframework.security.web.authentication.logout.LogoutFilter">

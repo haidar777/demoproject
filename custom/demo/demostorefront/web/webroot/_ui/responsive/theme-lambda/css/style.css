@@ -10797,6 +10797,7 @@ a.item-title {
   position: relative;
   width: 100%;
   margin: auto;
+  justify-content: center;
 }
 .owl-carousel .owl-wrapper-outer.autoHeight {
   -webkit-transition: height 500ms ease-in-out;
@@ -19202,6 +19203,9 @@ select[multiple].input-sm {
 .page-orderConfirmationPage .btn.btn-primary {
   margin: 20px;
 }
+.demo-dropdown-content {
+  display: none;
+}
 body {
   font-size: 1.2rem;
   font-weight: 400;
@@ -19319,7 +19323,7 @@ body {
   max-height: 0;
   transition: max-height 0.2s ease-out;
 }
-.section-header {
+.section-header-un {
   font-family: Bw Gradual;
   font-size: 2.5rem;
   text-align: center;
@@ -19395,7 +19399,87 @@ body {
   width: 270px;
   color: #6086c2;
 }
+.testimony {
+  margin: 50px 0px;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.testimony .section-header {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  color: #000!important;
+  font-weight: 700;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+.under-header {
+  text-align: center;
+}
+.desc-header {
+  text-align: justify;
+  margin: 25px 0px;
+}
+/* Ada di Homepage, sama di Testimoni List */
+.content-testimoni {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+/* Ada di Homepage, sama di Testimoni List*/
+.testimoni {
+  background-color: white;
+  border-radius: 20px;
+  font-family: "Lucida Console", "Courier New", monospace;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+/* Ada di Homepage, sama di Testimony List*/
+.p1 {
+  display: flex;
+  justify-content: space-between;
+}
+.p1 .t-name {
+  color: #6086c2;
+  font-size: 17px;
+  font-weight: 600;
+}
+.p1 .t-profil {
+  width: 40px;
+  height: 40px;
+  background: #6086c2;
+  border-radius: 100%;
+}
+.p1 .t-profil img {
+  width: 40px;
+  height: 40px;
+}
+/* Ada di Homepage, sama di Testimony List*/
+.p2 img {
+  width: 20px;
+  height: 20px;
+}
+/* Ada di Homepage, sama di Testimony List*/
+.p3 .p31 {
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+.p3 .p32 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.p3 .p33 {
+  margin-top: 25px;
+  font-size: 15px;
+  font-weight: 600;
+  color: grey;
+}
 .testimony-section {
+  text-align: center;
   background-color: #f3f4f4;
   padding: 50px 0;
 }
@@ -19409,8 +19493,10 @@ body {
   border-radius: 10px;
 }
 .subtitle {
-  margin: 30px 0;
-  font-size: 1.5rem;
+  //margin: 30px 0;
+  //font-size: 1.5rem;
+  margin: 20px 0;
+  text-align: center;
 }
 .flex-row-stretch {
   display: flex;
@@ -19438,6 +19524,17 @@ body {
   display: flex;
   align-items: center;
   max-width: 20px;
+}
+.desc-star {
+  margin-left: 5px;
+  position: relative;
+  bottom: -2px;
+}
+.title-testi {
+  margin-bottom: 10px;
+}
+.total-stars {
+  text-align: right;
 }
 .flex-col {
   margin-bottom: 30px;
