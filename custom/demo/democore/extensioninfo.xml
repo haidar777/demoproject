@@ -12,8 +12,8 @@
                 		
         
         <requires-extension name="acceleratorcms"/>
-<!--        <requires-extension name="demofacades" />-->
-
+                		
+        
         <coremodule generated="true" manager="org.demo.core.jalo.DemoCoreManager" packageroot="org.demo.core"/>
                 		
         

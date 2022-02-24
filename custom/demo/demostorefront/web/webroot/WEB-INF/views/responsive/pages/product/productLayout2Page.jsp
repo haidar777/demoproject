@@ -33,7 +33,7 @@
        <div class="headline">Other Products</div>
        <div class="container-suggestion">
            <div class="col-sm-12 col-md-10 col-lg-8">
-               <c:forEach end="4" items="${checkProducts}" var="checkProduct">
+               <c:forEach items="${checkProducts}" var="checkProduct">
                    <div class="item">
                         <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
                                 <div class="item-image">

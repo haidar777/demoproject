@@ -563,7 +563,7 @@
 
 	<!--	Demo Cronjob-->
 	<bean id="demoJob" class="org.demo.core.job.DemoProductCronjob" parent="abstractJobPerformable"></bean>
-	
+
 	<!-- Demo Testimony -->
 	<alias name="demoTestimonyService" alias="demoTestimonyService"/>
 	<bean id="demoTestimonyService" class="org.demo.core.testimony.service.impl.DemoTestimonyServiceImpl"/>
