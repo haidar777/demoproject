@@ -9,9 +9,13 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 		<div class="carousel__component">
-			<div class="carousel__component--headline">${fn:escapeXml(title)}</div>
-			<p class="text-center" style="color:white">Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium.
-				Pilih spring bed berkualitas dengan ukuran kasur sesuai kebutuhan.</p>
+<%--			<div class="carousel__component--headline">${fn:escapeXml(title)}</div>--%>
+			<div class="section-header-ca">
+				<h3 style="color: white"> BELI <em>KASUR</em> INTHEBOX</h3>
+			</div>
+			<div class="subtitle-ca text-center">Tersedia beragam jenis kasur INTHEBOX dengan kualitas premium.
+			<br class="d-none d-md-block">Pilih spring bed berkualitas dengan ukuran kasur sesuai kebutuhan.
+			</div>
 					<div class="carousel__component--carousel js-owl-carousel js-owl-default owl-carousel">
 						<c:forEach items="${productData}" var="product">
 
