@@ -7,8 +7,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<%--<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">--%>
-<template:demoPage pageTitle="${pageTitle}">
+<template:demoPage pageTitle="${pageTitle}" hideHeaderLinks="true">
 
 	<input type="hidden" id="hopDebugMode" data-hop-debug-mode="${fn:escapeXml(hopDebugMode)}" />
 

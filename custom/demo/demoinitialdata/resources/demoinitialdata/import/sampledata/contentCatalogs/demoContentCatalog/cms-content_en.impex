@@ -174,4 +174,7 @@ UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]    
                             ;                           ; Section3ParagraphComponent    ; "Cara Beli Kasur INTHEBOX"
                             ;                           ; FAQParagraphComponent         ; "Pertanyaan yang Sering Ditanyakan"
 
+UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
+                            ;;EmptyCartParagraphComponent;"<h2>Your shopping cart is empty</h2><p>Suggestions</p><ul><li>Browse our products by selecting a category above</li></ul>"
+                            ;;HelpParagraphComponent;"<strong>Need Help with your checkout process?</strong> <span>Contact Us or Call phone number.</span>"
 
