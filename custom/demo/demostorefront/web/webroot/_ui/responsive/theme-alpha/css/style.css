@@ -11132,6 +11132,25 @@ a.item-title {
   max-width: none;
   max-height: none;
 }
+em {
+  font-family: Palmer Lake Print;
+  font-weight: 50;
+  color: #7fc5f9;
+  font-size: 4rem;
+  line-height: 0;
+}
+.section-header-ca {
+  font-family: Bw Gradual;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.subtitle-ca {
+  margin: 30px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
 .simpleimagecomponent a {
   display: block;
 }
@@ -14398,37 +14417,41 @@ textarea.quote__comments--textarea {
 }
 .login-page__headline,
 .user-register__headline {
-  color: #3c3c3c;
-  font-size: 24px;
-  line-height: 35px;
-  font-weight: 700;
-  padding: 20px 0;
-  margin: 0;
+  text-align: center;
+  padding-bottom: 20px;
 }
-.login-page__headline.border,
-.user-register__headline.border {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 25px;
+.loginregislogo {
+  margin-top: 50px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.login-left-content-slot {
-  margin-right: 10px;
-  margin-left: 30px;
+.container-login {
+  background-color: #0e90d2;
 }
-@media (max-width: 1023px) {
-  .login-left-content-slot {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.login-content-slot {
+  margin-top: 150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.login-right-content-slot {
-  margin-right: 30px;
-  margin-left: 10px;
-}
-@media (max-width: 1023px) {
-  .login-right-content-slot {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
+.register-content-slot {
+  margin-top: 150px;
+  width: 300px;
+  height: 50px;
+  /* Center vertically and horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 form .forgotten-password {
   margin-bottom: 25px;
@@ -19367,11 +19390,118 @@ body {
   color: #6086c2;
 }
 .desc_unbox {
-  border: solid green;
   overflow-wrap: normal;
   height: 100px;
   width: 270px;
   color: #6086c2;
+}
+.testimony-section {
+  background-color: #f3f4f4;
+  padding: 50px 0;
+}
+.testimony-title {
+  font-family: Bw Gradual;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #6086c2;
+  border-radius: 10px;
+}
+.subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.flex-row-stretch {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.testimony-card .card-header .name {
+  color: #6086c2;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.card-header {
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.account-icons {
+  max-width: 40px;
+}
+.stars {
+  display: flex;
+  align-items: center;
+  max-width: 20px;
+}
+.flex-col {
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .flex-col {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/* ======Cards======= */
+.card {
+  position: relative;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: left;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 4px 15px -2px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.alltes {
+  text-align: center;
+  position: relative;
+}
+.card-body {
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+.card-label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  background-color: #231f20;
+  padding: 7px 15px;
+}
+.card-photo {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100px;
+}
+.card p {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.card h4 {
+  text-align: left !important;
+  margin: 0 0 13px;
+}
+.card a {
+  align-self: center;
+  margin-top: auto;
 }
 .skip,
 .skiptocontent,
