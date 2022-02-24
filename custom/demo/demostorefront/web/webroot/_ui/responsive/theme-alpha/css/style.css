@@ -10892,6 +10892,7 @@ a.item-title {
   position: relative;
   width: 100%;
   margin: auto;
+  justify-content: center;
 }
 .owl-carousel .owl-wrapper-outer.autoHeight {
   -webkit-transition: height 500ms ease-in-out;
@@ -19447,7 +19448,7 @@ body {
   max-height: 0;
   transition: max-height 0.2s ease-out;
 }
-.section-header {
+.section-header-un {
   font-family: Bw Gradual;
   font-size: 2.5rem;
   text-align: center;
@@ -19538,7 +19539,7 @@ body {
 }
 .subtitle {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  margin: 20px 0;
   text-align: center;
 }
 .flex-row-stretch {
@@ -19567,6 +19568,17 @@ body {
   display: flex;
   align-items: center;
   max-width: 20px;
+}
+.desc-star {
+  margin-left: 5px;
+  position: relative;
+  bottom: -2px;
+}
+.title-testi {
+  margin-bottom: 10px;
+}
+.total-stars {
+  text-align: right;
 }
 .flex-col {
   margin-bottom: 30px;

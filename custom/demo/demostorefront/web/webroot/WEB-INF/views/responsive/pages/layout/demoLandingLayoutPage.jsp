@@ -12,7 +12,7 @@
             <cms:component component="${feature}"/>
         </cms:pageSlot>
         <div class="container-fluid unboxing">
-            <h2 class="section-header">UNBOXING INTHEBOX</h2>
+            <h2 class="section-header-un">UNBOXING INTHEBOX</h2>
             <div class="carousel__component--carousel js-owl-carousel js-owl-lazy-reference owl-carousel owl-grab">
                 <div class="carousel__item" style="width: 270px;">
                     <cms:pageSlot position="UnboxingInTheBox1" var="feature" element="div">
@@ -59,7 +59,20 @@
                     <br>
                     Bukan hanya pengalaman membeli kasur sping bed atau kasur busa,
                     <br>
-                    banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.</div>
+                    banyak juga yang merasa puas dengan produk INTHEBOX lainnya yang terdiri dari bantal, guling, dan sofa bed.
+                </div>
+<%--                <div class="total-stars text-right">--%>
+<%--                    <div class="stars d-inline-flex">--%>
+<%--                        <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>--%>
+<%--                        <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>--%>
+<%--                        <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>--%>
+<%--                        <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>--%>
+<%--                        <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>--%>
+<%--                    </div>--%>
+<%--                    <span class="desc-star">--%>
+<%--                        4.9/5 (268 Reviews)--%>
+<%--                    </span>--%>
+<%--                </div>--%>
             </div>
             <div class="container">
                 <div class="row flex-row-stretch">
@@ -78,7 +91,7 @@
                                     <span><img class="stars" src="https://inthebox.net/images/star-full.png"></span>
                                 </div>
                                 <div class="content">
-                                    <div class="kt-margin-b-10">
+                                    <div class="kt-margin-b-10 title-testi">
                                         <strong>Mantap banget</strong>
                                     </div>
 
@@ -149,7 +162,7 @@
                     </div>
                 </div>
             </div>
-            <a class="btn btn-primary alltes" href="https://localhost:9002/demostorefront/demostore/en/testimony">Lihat semua testimony</a>
+            <center><a class="btn btn-primary alltes" href="https://localhost:9002/demostorefront/demostore/en/testimony">Lihat semua testimony</a></center>
         </div>
     </div>
 
