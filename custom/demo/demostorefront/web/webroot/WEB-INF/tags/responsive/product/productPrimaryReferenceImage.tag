@@ -7,7 +7,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags" %>
 
 <c:set value="${ycommerce:productImage(product, format)}" var="primaryImage"/>
-<c:url value="${product.url}" var="productUrl"/>
+<c:url value="${product.images.url}" var="productUrl"/>
 <c:choose>
 	<c:when test="${not empty primaryImage}">
 		<c:choose>
@@ -16,6 +16,7 @@
 			</c:when>
 			<c:otherwise>
 				<img class="lazyOwl item" data-src="${fn:escapeXml(primaryImage.url)}" alt="${fn:escapeXml(product.name)}" title="${fn:escapeXml(product.name)}"/>
+
 			</c:otherwise>
 		</c:choose>
 	</c:when>

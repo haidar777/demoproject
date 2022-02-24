@@ -9,8 +9,6 @@
 <spring:htmlEscape defaultHtmlEscape="true" />
 
 <div class="image-gallery js-gallery">
-    <span class="image-gallery__zoom-icon glyphicon glyphicon-resize-full"></span>
-
     <c:choose>
         <c:when test="${galleryImages == null || galleryImages.size() == 0}">
             <div class="carousel image-gallery__image js-gallery-image">
@@ -39,7 +37,7 @@
         </c:when>
         <c:otherwise>
 
-            <div class="carousel image-gallery__image js-gallery-image">
+         <div class="carousel image-gallery__image js-gallery-image">
                 <c:forEach items="${galleryImages}" var="container" varStatus="varStatus">
                     <div class="item">
                         <div>
@@ -50,7 +48,6 @@
                     </div>
                 </c:forEach>
             </div>
-            <product:productGalleryThumbnail galleryImages="${galleryImages}" />
         </c:otherwise>
     </c:choose>
 </div>

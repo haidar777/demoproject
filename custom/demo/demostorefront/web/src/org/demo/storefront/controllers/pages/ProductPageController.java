@@ -123,10 +123,8 @@ public class ProductPageController extends AbstractPageController
 	{
 		final List<ProductOption> extraOptions = Arrays.asList(ProductOption.VARIANT_MATRIX_BASE, ProductOption.VARIANT_MATRIX_URL,
 				ProductOption.VARIANT_MATRIX_MEDIA);
-
+		//Current Product
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, extraOptions);
-		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
-		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
 
 
 
@@ -141,7 +139,6 @@ public class ProductPageController extends AbstractPageController
 
 		populateProductDetailForDisplay(productCode, model, request, extraOptions);
 
-		model.addAttribute("productSuggestions", productSuggestions);
 		model.addAttribute(new ReviewForm());
 
 		model.addAttribute("pageType", PageType.PRODUCT.name()); //ini valuenya: PRODUCT
@@ -415,7 +412,18 @@ public class ProductPageController extends AbstractPageController
 		options.addAll(extraOptions);
 
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options); //CHECK
+		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
+		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
 
+		final List<ProductData> checkProducts = new ArrayList<ProductData>();
+
+		for(DemoVariantProductData e : productSuggestions){
+			final ProductData tempProductData = productFacade.getProductForCodeAndOptions(e.getId(), options);
+			tempProductData.setSize(e.getSize());
+			checkProducts.add(tempProductData);
+		}
+
+		model.addAttribute("checkProducts", checkProducts);
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
 		populateProductData(productData, model); //Memasukkan data dengan attribute product. ///CHECK

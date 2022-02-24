@@ -33,6 +33,7 @@ $(".demo-cart-data").map((i, el) => {
             }
         });
     }
+
     remove.onclick = () => {
         qty = 0
         $(el).find(".js-update-entry-quantity-input")[0].value = qty

@@ -561,4 +561,10 @@
 	<alias alias="demoProductSuggestionDao" name="demoProductSuggestionDao"/>
 	<bean id="demoProductSuggestionDao" class="org.demo.core.productSuggestion.dao.impl.DemoProductSuggestionDaoImpl" />
 
+	<!-- Demo Testimony -->
+	<alias name="demoTestimonyService" alias="demoTestimonyService"/>
+	<bean id="demoTestimonyService" class="org.demo.core.testimony.service.impl.DemoTestimonyServiceImpl"/>
+	<alias name="demoTestimonyDao" alias="demoTestimonyDao"/>
+	<bean id="demoTestimonyDao" class="org.demo.core.testimony.dao.impl.DemoTestimonyDaoImpl"/>
+
 </beans>
