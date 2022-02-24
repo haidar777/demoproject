@@ -14,10 +14,10 @@
 <spring:url value="/login/register/termsandconditions" var="getTermsAndConditionsUrl"/>
 
 <div class="user-register__headline">
-	Daftar Sekarang
+	<spring:theme code="register.new.customer" />
 </div>
 <p>
-	Masukkan detail Anda untuk menciptakan akun:
+	<spring:theme code="register.description" />
 </p>
 
 <form:form method="post" modelAttribute="customRegisterForm" action="${action}">
