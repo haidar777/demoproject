@@ -498,7 +498,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                      ; position[unique=true]     ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ; CartComponentContentSlotForCartPage   ; CartComponentContentSlot  ;                                                      ; CartComponentContentSlot-cartPage
-                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartContentSlot      ;                                                      ; EmptyCartContentSlot-cartPage
+                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartMiddleContent    ;                                                      ; EmptyCartContentSlot-cartPage
                                 ;                       ; CartTotalsContentSlotForCartPage      ; CartTotalsContentSlot     ;                                                      ; CartTotalsContentSlot-cartPage
 
 
@@ -506,6 +506,12 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ; CartComponent
 
 #### Checkout Login ####
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                        ; name                                          ; page                                                           ; actions(uid, $contentCV)  ; &componentRef
+                                 ;                          ; NewCustomerLoginComponent                 ; New Customer Login Component                  ; accountNewCustomerLogin.jsp                                    ;                           ; NewCustomerLoginComponent
+                                 ;                          ; NewCustomerCheckoutLoginComponent         ; New Customer Checkout Login Component         ; checkoutNewCustomerLogin.jsp                                   ;                           ; NewCustomerCheckoutLoginComponent
+                                 ;                          ; ReturningCustomerCheckoutLoginComponent   ; Returning Customer Checkout Login Component   ; checkouReturningCustomerLogin.jsp                              ;                           ; ReturningCustomerCheckoutLoginComponent
+                                 ;                          ; GuestCheckoutLoginComponent               ; Guest Checkout Login Component                ; checkoutGuestLogin.jsp                                         ;                           ; GuestCheckoutLoginComponent
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]  ; uid[unique=true]                                           ; name                                  ; active; cmsComponents(&componentRef)
                          ;                         ; ReturningCustomerCheckoutLoginContentSlot-checkout-login   ; Left Content Slot for Checkout Login  ; true  ; ReturningCustomerCheckoutLoginComponent
                          ;                         ; GuestCheckoutLoginContentSlot-checkout-login               ; Right Content Slot for Checkout Login ; true  ; GuestCheckoutLoginComponent
@@ -532,6 +538,8 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; cmsComponents(uid, $contentCV)
                          ;                          ; BottomHeaderSlot  ; GuaranteeParagraphComponent,FreeShippingParagraphComponent,MediaCenterParagraphComponent
 
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
+                                ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 ######## Order Confirmation Page Start #######
 INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                       ; name                                           ; page                                                                       ; actions(uid, $contentCV); &componentRef
                                  ;                          ; OrderConfirmationThankMessageComponent   ; Order Confirmation Thank You Message Component ; checkoutConfirmationThankMessage.jsp                                       ;                         ; OrderConfirmationThankMessageComponent
@@ -549,8 +557,6 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; SideContent-orderConfirmation ; Side Content Slot for Order Confirmation ; true  ;                                                                                                                                                                                                                        ; ; ;
                          ;                          ; BodyContent-orderConfirmation ; Body Content Slot for Order Confirmation ; true  ; OrderConfirmationThankMessageComponent,OrderConfirmationOverviewComponent,OrderConfirmationItemsComponent,OrderConfirmationShippingComponent,OrderConfirmationTotalsComponent,OrderConfirmationContinueButtonComponent ; ; ;
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
-                                ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 
 #### Testimony Page ####
 # JSP Component
