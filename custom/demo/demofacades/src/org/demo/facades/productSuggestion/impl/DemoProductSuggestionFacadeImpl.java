@@ -32,7 +32,6 @@ public class DemoProductSuggestionFacadeImpl implements DemoProductSuggestionFac
         }
     }
 
-
     @Override
     public List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode) {
         List<DemoVariantProductData> productData = demoProductSuggestionService.getDemoProductSuggestionByType(type, excludeCode);
@@ -43,4 +42,8 @@ public class DemoProductSuggestionFacadeImpl implements DemoProductSuggestionFac
         }
 
     }
+
 }
+
+
+
