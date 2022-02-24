@@ -4,6 +4,7 @@
 <%@ taglib prefix="ycommerce" uri="http://hybris.com/tld/ycommercetags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
+<div class="container-product">
 <div class="row">
     <%-----Image Product-----%>
 	<div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
@@ -50,5 +51,5 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 </div>

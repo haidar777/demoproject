@@ -29,41 +29,41 @@
          <cms:component component="${comp}" element="div" class="productDetailsPageSectionCrossSelling-component"/>
     </cms:pageSlot>--%>
 
-    <%-----SUGGESTION PRODUCTS-----%>
-    <div class="headline">Produk Lainnya</div>
-    <div class="container-suggestion">
-        <div class="col-sm-12 col-md-10 col-lg-8">
-            <c:forEach end="4" items="${checkProducts}" var="checkProduct">
-                <div class="item">
-                     <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
-                             <div class="item-image">
-                                  <a href="${checkProduct.getCode()}" class="item-title">
-                                    <img src="${checkProduct.images.iterator().next().getUrl()}"/>
-                                  </a>
-                             </div>
+   <%-----SUGGESTION PRODUCTS-----%>
+       <div class="headline">Other Products</div>
+       <div class="container-suggestion">
+           <div class="col-sm-12 col-md-10 col-lg-8">
+               <c:forEach items="${checkProducts}" var="checkProduct">
+                   <div class="item">
+                        <div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
+                                <div class="item-image">
+                                     <a href="${checkProduct.getCode()}" class="item-title">
+                                       <img src="${checkProduct.images.iterator().next().getUrl()}"/>
+                                     </a>
+                                </div>
 
-                             <div class="content-suggestion">
-                                 <c:if test="${not empty checkProduct.name}">
-                                   <a href="${checkProduct.getCode()}" class="item-title"> ${checkProduct.getName()}<br/></a>
-                                 </c:if>
-                                 <c:if test="${not empty checkProduct.size}">
-                                    <div class="item-size">${fn:escapeXml(checkProduct.size)}</div>
-                                  </c:if>
-                                  <div class="item-price">
-                                    <format:fromPrice priceData="${checkProduct.price}"/>
-                                  </div>
+                                <div class="content-suggestion">
+                                    <c:if test="${not empty checkProduct.name}">
+                                      <a href="${checkProduct.getCode()}" class="item-title"> ${checkProduct.getName()}<br/></a>
+                                    </c:if>
+                                    <c:if test="${not empty checkProduct.size}">
+                                       <div class="item-size">${fn:escapeXml(checkProduct.size)}</div>
+                                     </c:if>
+                                     <div class="item-price">
+                                       <format:fromPrice priceData="${checkProduct.price}"/>
+                                     </div>
 
-                             </div>
-                    </div>
-                    </a>
-                </div>
-            </c:forEach>
-        </div>
-    </div>
+                                </div>
+                       </div>
+                       </a>
+                   </div>
+               </c:forEach>
+           </div>
+       </div>
 
     <div class="col-lg-12 btn-all">
-        <button type="button" onclick="window.location.href = '/demostorefront/demostore/en/c/PRODUK';" class="btn btn-primary all_product">
-            Lihat Semua Produk
+        <button type="button" onclick="window.location.href = '/demostorefront/demostore/en/c/PRODUK';" class="btn btn-primary button-all-product">
+            See All Product
         </button>
     </div>
 

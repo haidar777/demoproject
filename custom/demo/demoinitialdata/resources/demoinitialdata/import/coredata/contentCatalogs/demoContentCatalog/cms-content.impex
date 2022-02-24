@@ -76,13 +76,13 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 # HomePage Content
                                     ;                          ; Banner-HomePage                ; Banner                 ;                                                                           ; BannerSlot                                 ; true
                                     ;                          ; ProductCarousel-HomePage       ; ProductCarousel        ;                                                                           ; ProductCarouselSlot                        ; true
-                                    ;                          ; UnboxingInTheBox1-HomePage      ; UnboxingInTheBox1       ;                                                                           ; UnboxingInTheBoxSlot1                       ; true
-                                    ;                          ; UnboxingInTheBox2-HomePage      ; UnboxingInTheBox2       ;                                                                           ; UnboxingInTheBoxSlot2                       ; true
-                                    ;                          ; UnboxingInTheBox3-HomePage      ; UnboxingInTheBox3       ;                                                                           ; UnboxingInTheBoxSlot3                       ; true
-                                    ;                          ; UnboxingInTheBox4-HomePage      ; UnboxingInTheBox4       ;                                                                           ; UnboxingInTheBoxSlot4                       ; true
-                                    ;                          ; Testimony-HomePage             ; Testimony       ;                                                                           ; UnboxingInTheBoxSlot4                       ; true
+                                    ;                          ; UnboxingInTheBox1-HomePage     ; UnboxingInTheBox1      ;                                                                           ; UnboxingInTheBoxSlot1                       ; true
+                                    ;                          ; UnboxingInTheBox2-HomePage     ; UnboxingInTheBox2      ;                                                                           ; UnboxingInTheBoxSlot2                       ; true
+                                    ;                          ; UnboxingInTheBox3-HomePage     ; UnboxingInTheBox3      ;                                                                           ; UnboxingInTheBoxSlot3                       ; true
+                                    ;                          ; UnboxingInTheBox4-HomePage     ; UnboxingInTheBox4      ;                                                                           ; UnboxingInTheBoxSlot4                       ; true
+                                    ;                          ; Testimony-HomePage             ; Testimony              ;                                                                           ; UnboxingInTheBoxSlot4                       ; true
 # Footers
-                                    ;                          ; FooterLogo1-HomePage           ; FooterLogo             ;                                                                           ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-HomePage           ; FooterLogo1            ;                                                                           ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-HomePage           ; FooterLogo2            ;                                                                           ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-HomePage      ; FooterNavigation       ;                                                                           ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-HomePage         ; FooterContact          ;                                                                           ; FooterContactSlot                          ; true
@@ -98,26 +98,25 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
                           ;;LoginPageTemplate;Login Page Template;;ContentPage;false;
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
-                         ;;LoginContentSlot;Left Content Slot;true
-#;;RightContentSlot;Right Content Slot;true
+                         ;;LoginContentSlot;Login Content Slot;true
 
 #                         ;;RegisterContentLoginSlot;Center Login Content Slot;true
-#                         ;;LoginLogoSlot;Login Logo Slot;true
+                         ;;LoginLogoSlot;Login Logo Slot;true
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LoginPageTemplate'];validComponentTypes(code);compTypeGroup(code)
 # Headers
-#                            ;LoginLogo               ;                                                                       ;                           ;logo
+                            ;LoginLogo               ;                                                                       ;                           ;logo
 #LoginContent
-                             ;LoginContentSlot;;;wide
-#;RightContentSlot;;;wide
+                             ;LoginContentSlot       ;                                                                       ;                           ;wide
 
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true]                   ;position[unique=true]      ;pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 
 # Headers
-#;                          ; LoginLogoSlot-LoginPage      ; LoginLogo       ;                                                                           ; LoginLogoSlot                       ; true
+                                    ;                  ; LoginLogoSlot-LoginPage      ; LoginLogo                        ;                            ; LoginLogoSlot                       ; true
+
 # Login Content
-                                    ;;LoginContentSlot-LoginPage;LoginContentSlot;;LoginContentSlot;true
+                                    ;                  ;LoginContentSlot-LoginPage    ; LoginContentSlot                    ;                            ;LoginContentSlot                     ; true
 #;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
 
 
@@ -131,20 +130,20 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active
                          ;;RegisterContentSlot;Center Content Slot;true
-#                         ;;SiteLogoSlot;Default Site Logo Slot;true
+                         ;;RegisterLogoSlot;Register Logo Slot;true
 
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];validComponentTypes(code);compTypeGroup(code)
 ## Headers
-#                             ;SiteLogo               ;                                                                       ;                           ;logo
+                             ;RegisterLogo             ;                                                                       ;                           ;logo
 ##RegisterContent
                              ; RegisterContentSlot     ;                                                                       ;                          ; wide
 
 #
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='RegisterPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ## Headers
-#                                    ;                          ; SiteLogo-RegisterPage      ; SiteLogo       ;                                                                           ; SiteLogoSlot                       ; true
+                                    ;                  ; RegisterLogoSlot-LoginPage                      ; RegisterLogo                   ;                            ; RegisterLogoSlot                       ; true
 ## Register Content
-                                    ;                          ; RegisterContentSlot-RegisterPage                ; RegisterContentSlot                 ;                                                                           ; RegisterContentSlot                                 ; true
+                                    ;                  ; RegisterContentSlot-RegisterPage                ; RegisterContentSlot                 ;                              ; RegisterContentSlot                    ; true
 
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
@@ -194,7 +193,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; ProductLeftRefinements-ProductGridPage ; ProductLeftRefinements ;                                                                                  ; ProductLeftRefinementsSlot                 ; true
                                     ;                          ; ProductGrid-ProductGridPage            ; ProductGrid            ;                                                                                  ; ProductGridSlot                            ; true
 # Footers
-                                    ;                          ; FooterLogo1-ProductGridPage            ; FooterLogo             ;                                                                                  ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-ProductGridPage            ; FooterLogo1            ;                                                                                  ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-ProductGridPage            ; FooterLogo2            ;                                                                                  ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-ProductGridPage       ; FooterNavigation       ;                                                                                  ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-ProductGridPage          ; FooterContact          ;                                                                                  ; FooterContactSlot                          ; true
@@ -262,7 +261,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; Faq-AboutUsPage                   ; Faq                    ;                                                                           ; FaqSlot                                    ; true
                                     ;                          ; DescFaq-AboutUsPage               ; DescFaq                ;                                                                           ; DescFaqSlot                                ; true
 # Footers
-                                    ;                          ; FooterLogo1-AboutUsPage            ; FooterLogo            ;                                                                               ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-AboutUsPage            ; FooterLogo1           ;                                                                               ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-AboutUsPage            ; FooterLogo2           ;                                                                               ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-AboutUsPage       ; FooterNavigation      ;                                                                               ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-AboutUsPage          ; FooterContact         ;                                                                               ; FooterContactSlot                          ; true
@@ -326,7 +325,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]       ; uid[uniq
 
 
 # Footers
-                                    ;                                 ; FooterLogo1-ProductDetails                   ; FooterLogo                    ;                                                                                     ; FooterLogo1Slot                            ; true
+                                    ;                                 ; FooterLogo1-ProductDetails                   ; FooterLogo1                   ;                                                                                     ; FooterLogo1Slot                            ; true
                                     ;                                 ; FooterLogo2-ProductDetails                   ; FooterLogo2                   ;                                                                                     ; FooterLogo2Slot                            ; true
                                     ;                                 ; FooterNavigation-ProductDetails              ; FooterNavigation              ;                                                                                     ; FooterNavigationSlot                       ; true
                                     ;                                 ; FooterContact-ProductDetails                 ; FooterContact                 ;                                                                                     ; FooterContactSlot                          ; true
@@ -382,11 +381,11 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; CartLink-CartPage                      ; CartLink                  ;                                                                           ; CartLinkSlot                               ; true
 # Cart Page Content
                                     ;                          ; CartComponentContentSlot-CartPage      ; CartComponentContentSlot  ;                                                                           ; CartComponentContentSlot                   ; true
-                                    ;                          ; EmptyCartContentSlot-CartPage          ; EmptyCartContentSlot      ;                                                                           ; EmptyCartContentSlot                       ; true
+                                    ;                          ; EmptyCartContentSlot-CartPage          ; EmptyCartMiddleContent    ;                                                                           ; EmptyCartContentSlot                       ; true
                                     ;                          ; CartTotalsContentSlot-CartPage         ; CartTotalsContentSlot     ;                                                                           ; CartTotalsContentSlot                      ; true
                                     ;                          ; OrderNoteContentSlot-CartPage          ; OrderNoteContentSlot      ;                                                                           ; OrderNoteContentSlot                       ; true
 # Footers
-                                    ;                          ; FooterLogo1-CartPage                   ; FooterLogo                ;                                                                           ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-CartPage                   ; FooterLogo1               ;                                                                           ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-CartPage                   ; FooterLogo2               ;                                                                           ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-CartPage              ; FooterNavigation          ;                                                                           ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-CartPage                 ; FooterContact             ;                                                                           ; FooterContactSlot                          ; true
@@ -407,6 +406,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          
                          ;                          ; GuestCheckoutLoginContentSlot             ; Guest Checkout Login Content Slot         ; true
 
 INSERT_UPDATE ContentSlotName; name[unique = true]                      ; template(uid, $contentCV)[unique = true][default = 'CheckOutLoginPageTemplate']; validComponentTypes(code); compTypeGroup(code)
+
 # Headers
                              ; TopLeftParagraph                         ;                                                                                ;                          ; narrow
                              ; TopRightNavigationBar                    ;                                                                                ;                          ; navigation
@@ -437,7 +437,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; ReturningCustomerCheckoutLoginContentSlot-CheckoutLoginPage; LeftContentSlot           ;                                                                                    ; ReturningCustomerCheckoutLoginContentSlot  ; true
                                     ;                          ; GuestCheckoutLoginContentSlot-CheckoutLoginPage            ; RightContentSlot          ;                                                                                    ; GuestCheckoutLoginContentSlot              ; true
 # Footers
-                                    ;                          ; FooterLogo1-CheckoutLoginPage                              ; FooterLogo                ;                                                                                    ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-CheckoutLoginPage                              ; FooterLogo1               ;                                                                                    ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-CheckoutLoginPage                              ; FooterLogo2               ;                                                                                    ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-CheckoutLoginPage                         ; FooterNavigation          ;                                                                                    ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-CheckoutLoginPage                            ; FooterContact             ;                                                                                    ; FooterContactSlot                          ; true
@@ -450,9 +450,9 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true]; uid[unique=true] ; name      
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]                   ; name                                      ; restrictedPageTypes(code); active[default = true]
                           ;                          ; MultiStepCheckoutSummaryPageTemplate ; Multi Step Checkout Summary Page Template ; ContentPage              ; false
 
-INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; name          ; active
-                         ;                          ; TopHeaderSlot     ; Top Header    ; true
-                         ;                          ; BottomHeaderSlot  ; Bottom Header ; true
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]    ; name                      ; active
+                         ;                          ; TopHeaderSlot         ; Top Header                ; true
+                         ;                          ; BottomHeaderSlot      ; Bottom Header             ; true
 
 INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)[unique = true][default = 'MultiStepCheckoutSummaryPageTemplate']; validComponentTypes(code); compTypeGroup(code)
 # Headers
@@ -462,11 +462,9 @@ INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)
                              ; MiddleNavigationBar   ;                                                                                           ;                          ; navigation
                              ; LoginLink             ;                                                                                           ;                          ; navigation
                              ; CartLink              ;                                                                                           ;                          ; navigation
-# End Headers
-
+# Multistep checkout page content
                              ; TopHeaderSlot         ;                                                                                           ;                          ; wide
                              ; BottomHeaderSlot      ;                                                                                           ;                          ; wide
-
 # Footers
                              ; FooterLogo1           ;                                                                                           ;                          ; logo
                              ; FooterLogo2           ;                                                                                           ;                          ; logo
@@ -542,7 +540,7 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
                                     ;                          ; TestimoniParagraph2-TestimoniPage   ; TestimoniParagraph2    ;                                                                           ; TestimoniParagraph2Slot                    ; true
                                     ;                          ; TestimoniList-TestimoniPage         ; TestimoniList          ;                                                                           ; TestimoniListSlot                          ; true
 # Footers
-                                    ;                          ; FooterLogo1-TestimoniPage            ; FooterLogo            ;                                                                           ; FooterLogo1Slot                            ; true
+                                    ;                          ; FooterLogo1-TestimoniPage            ; FooterLogo1           ;                                                                           ; FooterLogo1Slot                            ; true
                                     ;                          ; FooterLogo2-TestimoniPage            ; FooterLogo2           ;                                                                           ; FooterLogo2Slot                            ; true
                                     ;                          ; FooterNavigation-TestimoniPage       ; FooterNavigation      ;                                                                           ; FooterNavigationSlot                       ; true
                                     ;                          ; FooterContact-TestimoniPage          ; FooterContact         ;                                                                           ; FooterContactSlot                          ; true
@@ -551,11 +549,10 @@ INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = tr
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
                          ;;testimoniPage;Testimoni Content Page;TestimoniPageTemplate;testimony;;;
 
-# Order Confrimation Page
+##### Order Confirmation Page Template #####
 INSERT_UPDATE PageTemplate; $contentCV[unique = true]; uid[unique = true]            ; name                             ; frontendTemplateName                    ; restrictedPageTypes(code); active[default = true]
                           ;                          ; OrderConfirmationPageTemplate ; Order Confirmation Page Template ; checkout/checkoutConfirmationLayoutPage ; ContentPage              ;
 
-##### Order Confirmation Page Template #####
 INSERT_UPDATE ContentSlotName; name[unique = true]   ; template(uid, $contentCV)[unique = true][default = 'OrderConfirmationPageTemplate']; validComponentTypes(code); compTypeGroup(code)
 # Headers
                              ; TopLeftParagraph      ;                                                                                    ;                          ; narrow

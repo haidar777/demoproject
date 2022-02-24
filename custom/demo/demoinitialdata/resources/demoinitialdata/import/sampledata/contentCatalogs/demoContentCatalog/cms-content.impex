@@ -208,47 +208,47 @@ INSERT_UPDATE CMSNavigationEntry; uid[unique = true]             ; $contentCV[un
                                 ; BlogsFooterNavNodeEntry        ;                          ; Blogs Footer Navigation Node Entry        ; BlogsFooterNavNode        ; BlogsLink                                              ;
                                 ; TestimonialFooterNavNodeEntry  ;                          ; Testimonial Footer Navigation Node Entry  ; TestimonialFooterNavNode  ; TestimonialLink                                        ;
 
-#Home page contents
-#Banner
-INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
-                   ;                          ; /images/HomePage/banner.png             ; banner.png            ; $siteResource/images/HomePage/banner.png                                          ; image/png                   ;        ;
-
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                           ; &componentRef            ;urlLink
-                                             ;                       ; Banner-HomePage           ;Banner component for Homepage  ; Banner-HomePage          ;/c/PRODUK
-
-UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
-                  ;                          ;BannerSlot                         ;true   ;Banner-HomePage
-
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
-                                ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
-
-# Content Slots for Homepage
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
-                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
-                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
-                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
-
-#Home page splash banner
-INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
-                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
-                         ;                       ;Banner-Homepage           ;true     ;IntheboxBannerComponent
-
-UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;media(uid)
-                                      ;                       ;IntheboxBannerComponent;widescreen
-
-INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true]          ;name           ;&componentRef;urlLink
-                             ;                       ; CarouselProduct1         ;INTHEBOX       ;CarouselProduct1;/PRODUK/Bed/KASUR-INTHEBOX/p/PLAINSIZE90x200
-                             ;                       ; CarouselProduct2         ;INTHEBOX HYBRID;CarouselProduct2;/PRODUK/Bed/INTHEBOX-HYBRID/p/HYBRIDSIZE90x200
-                             ;                       ; CarouselProduct3         ;INTHEBOX 101   ;CarouselProduct3;/PRODUK/Bed/INTHEBOX-101/p/101SIZE90x200
-                             ;                       ; CarouselProduct4         ;INTHEBOX X     ;CarouselProduct4;/PRODUK/Bed/INTHEBOX-X/p/XSIZE90x200
-
-INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
-                                     ;;INTHEBOXHomepageCarouselComponent;INTHEBOX Homepage Carousel;CarouselProduct1,CarouselProduct2,CarouselProduct3,CarouselProduct4;INTHEBOXHomepageCarouselComponent
-
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
-                         ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
+##Home page contents
+##Banner
+#INSERT_UPDATE Media; $contentCV[unique = true]; code[unique = true]                     ; realfilename          ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]      ; mime[default = 'image/jpeg']; altText; folder(qualifier)[default = 'images']
+#                   ;                          ; /images/HomePage/banner.png             ; banner.png            ; $siteResource/images/HomePage/banner.png                                          ; image/png                   ;        ;
+#
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true]; uid[unique=true]          ;name                           ; &componentRef            ;urlLink
+#                                             ;                       ; Banner-HomePage           ;Banner component for Homepage  ; Banner-HomePage          ;/c/PRODUK
+#
+#UPDATE ContentSlot;$contentCV[unique=true]   ;uid[unique=true]                   ;active ;cmsComponents(uid, $contentCV)
+#                  ;                          ;BannerSlot                         ;true   ;Banner-HomePage
+#
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]           ;position[unique=true]  ;page(uid,$contentCV)[unique=true][default='productGrid'] ;contentSlot(uid,$contentCV)[unique=true]
+#                                ;                       ;BannerSlot                 ;Banner                 ;                                                         ;BannerSlot
+#
+## Content Slots for Homepage
+#INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+#                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
+#                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
+#                                ;;UnboxingInTheBoxSlot-Homepage;UnboxingInTheBox;;UnboxingInTheBoxSlot-Homepage
+#
+##Home page splash banner
+#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+#                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+#                         ;                       ;Banner-Homepage           ;true     ;IntheboxBannerComponent
+#
+#UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;media(uid)
+#                                      ;                       ;IntheboxBannerComponent;widescreen
+#
+#INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true]          ;name           ;&componentRef;urlLink
+#                             ;                       ; CarouselProduct1         ;INTHEBOX       ;CarouselProduct1;/PRODUK/Bed/KASUR-INTHEBOX/p/PLAINSIZE90x200
+#                             ;                       ; CarouselProduct2         ;INTHEBOX HYBRID;CarouselProduct2;/PRODUK/Bed/INTHEBOX-HYBRID/p/HYBRIDSIZE90x200
+#                             ;                       ; CarouselProduct3         ;INTHEBOX 101   ;CarouselProduct3;/PRODUK/Bed/INTHEBOX-101/p/101SIZE90x200
+#                             ;                       ; CarouselProduct4         ;INTHEBOX X     ;CarouselProduct4;/PRODUK/Bed/INTHEBOX-X/p/XSIZE90x200
+#
+#INSERT_UPDATE RotatingImagesComponent;$contentCV[unique=true];uid[unique=true];name;banners(&componentRef);&componentRef
+#                                     ;;INTHEBOXHomepageCarouselComponent;INTHEBOX Homepage Carousel;CarouselProduct1,CarouselProduct2,CarouselProduct3,CarouselProduct4;INTHEBOXHomepageCarouselComponent
+#
+#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]                       ;active   ;cmsComponents(&componentRef)
+#                         ;                       ;ProductCarousel-Homepage           ;true     ;INTHEBOXHomepageCarouselComponent
 
 #### ProductGridPage ####
 INSERT_UPDATE ListOrderFormAction; $contentCV[unique = true]; uid[unique = true]  ; url        ; name              ; &actionRef
@@ -290,11 +290,18 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true]       
 
 # Content Slots for Homepage
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homePage'];contentSlot(uid,$contentCV)[unique=true]
+                                ;;BannerSlot-Homepage;Banner;;BannerSlot-Homepage
+                                ;;ProductCarouselSlot-Homepage;ProductCarousel;;ProductCarouselSlot-Homepage
                                 ;;UnboxingInTheBoxSlot1-Homepage;UnboxingInTheBox1;;UnboxingInTheBoxSlot1-Homepage
                                 ;;UnboxingInTheBoxSlot2-Homepage;UnboxingInTheBox2;;UnboxingInTheBoxSlot2-Homepage
                                 ;;UnboxingInTheBoxSlot3-Homepage;UnboxingInTheBox3;;UnboxingInTheBoxSlot3-Homepage
                                 ;;UnboxingInTheBoxSlot4-Homepage;UnboxingInTheBox4;;UnboxingInTheBoxSlot4-Homepage
-#                                ;;TestimonySlot-Homepage        ;Testimony        ;;TestimonySlot-Homepage
+                                ;;TestimonySlot-Homepage        ;Testimony        ;;TestimonySlot-Homepage
+
+#Home page splash banner
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
+                                             ;                       ;IntheboxBannerComponent;Inthebox Splash Banner Component;/c/PRODUK;IntheboxBannerComponent
+
 
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
                          ;                       ;BannerSlot-Homepage           ;true     ;IntheboxBannerComponent
@@ -324,9 +331,11 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 #Testimony Carousel Slot
 #INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
 #                                             ;                       ;TestimonyComponent;Testimony Banner Component;;TestimonyComponent
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
-#                         ;                ;TestimonySlot-Homepage           ;true     ;TestimonyComponent
+INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]  ; uid[unique = true]    ; name                                      ; &componentRef
+                                   ;                            ; TestimonyComponent       ; Testimony Banner Componen          ; TestimonyComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
+                         ;                ;TestimonySlot-Homepage           ;true     ;TestimonyComponent
 
 #INSERT_UPDATE TestimonyCarouselComponent;$contentCV[unique=true];uid[unique=true];name;testimony(code);scroll(code);popup;searchQuery;categoryCode;&componentRef
 #                                      ;;TestimonyCarouselComponent;BELI KASUR INTHEBOX;;allVisible;false;;;TestimonyCarouselComponent
@@ -339,21 +348,22 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];active;cmsCom
 
 #### Login ######
 ### Customer Login
+INSERT_UPDATE Media; $contentCV[unique = true]  ; code[unique = true]               ; realfilename      ; @media[translator = de.hybris.platform.impex.jalo.media.MediaDataTranslator]  ; mime[default = 'image/jpeg']  ; altText                   ; folder(qualifier)[default = 'images']
+;                          ; /images/logo-inthebox-440x80.png            ; logo-inthebox-440x80.png         ; $siteResource/images/logo-inthebox-440x80.png                             ; image/png                   ; Login Site Logo  ;
 
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true];;;
-                                ;;LoginContentSlot-login;LoginContentSlot;;LoginContentSlot-login;;;
-#;;RightContentSlot-login;RightContentSlot;;RightContentSlot-login;;;
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                                  ; &componentRef                 ; urlLink
+#Site Logo
+                                   ;                            ; LoginLogoComponent                 ; Login Logo Component                   ; LoginLogoComponent             ; "/"
 
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='login'];contentSlot(uid,$contentCV)[unique=true]
+                                ;                  ; LoginLogoSlot-login      ; LoginLogo                           ;                            ; LoginLogoSlot
 
-#INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true]       ;name                            ;urlLink  ;&componentRef
-#                                             ;                       ;LoginLogoComponent;Login Logo Component;;LoginLogoComponent
-#
-#INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true]          ;active   ;cmsComponents(&componentRef)
-#                         ;                       ;LoginLogoSlot-login           ;true     ;LoginLogoComponent
-#
+                                ;                  ;LoginContentSlot-Login    ;LoginContentSlot                     ;                            ;LoginContentSlot-login
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        ; cmsComponents(uid, $contentCV)
+;                   ;LoginLogoSlot       ;LoginLogoComponent
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
-                         ;;LoginContentSlot-login;Left Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
-#;;RightContentSlot-login;Right Content Slot for Customer Login;true;NewCustomerLoginComponent;;;
+                         ;;LoginContentSlot-login;Login Content Slot for Customer Login;true;ReturningCustomerLoginComponent;;;
 
 #### End Login
 
@@ -363,11 +373,22 @@ INSERT_UPDATE JspIncludeComponent;$contentCV[unique=true];uid[unique=true];name;
                                  ;;RegisterComponent;New Customer Register Component;accountNewCustomerLogin.jsp;;RegisterComponent
 
 ### Customer Register
+
+INSERT_UPDATE SimpleBannerComponent; $contentCV[unique = true]  ; uid[unique = true]                ; name                                  ; &componentRef                 ; urlLink
+#Site Logo
+                                   ;                            ; RegisterLogoComponent                 ; Register Logo Component                   ; RegisterLogoComponent             ; "/"
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(&componentRef);;;
                          ;;RegisterContentSlot-register;Center Content Slot for Customer Register;true;RegisterComponent;;;
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='register'];contentSlot(uid,$contentCV)[unique=true];;;
                                 ;;RegisterContentSlot-register;RegisterContentSlot;;RegisterContentSlot-register;;;
+                                ;; RegisterLogoSlot--register      ; RegisterLogo                           ;                            ; RegisterLogoSlot
+
+
+INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        ; cmsComponents(uid, $contentCV)
+                         ;                   ;RegisterLogoSlot       ;RegisterLogoComponent
+
 
 #### End Register
 
@@ -498,7 +519,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true]   ; uid[unique=true]          
 
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true]; uid[unique=true]                      ; position[unique=true]     ; page(uid,$contentCV)[unique=true][default='cartPage']; contentSlot(uid,$contentCV)[unique=true]
                                 ;                       ; CartComponentContentSlotForCartPage   ; CartComponentContentSlot  ;                                                      ; CartComponentContentSlot-cartPage
-                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartContentSlot      ;                                                      ; EmptyCartContentSlot-cartPage
+                                ;                       ; EmptyCartContentSlotForCartPage       ; EmptyCartMiddleContent    ;                                                      ; EmptyCartContentSlot-cartPage
                                 ;                       ; CartTotalsContentSlotForCartPage      ; CartTotalsContentSlot     ;                                                      ; CartTotalsContentSlot-cartPage
 
 
@@ -506,6 +527,12 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
                          ;                          ; CartComponentContentSlot-cartPage  ; Cart Component Content Slot for Cart Page  ; true   ; CartComponent
 
 #### Checkout Login ####
+INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                        ; name                                          ; page                                                           ; actions(uid, $contentCV)  ; &componentRef
+                                 ;                          ; NewCustomerLoginComponent                 ; New Customer Login Component                  ; accountNewCustomerLogin.jsp                                    ;                           ; NewCustomerLoginComponent
+                                 ;                          ; NewCustomerCheckoutLoginComponent         ; New Customer Checkout Login Component         ; checkoutNewCustomerLogin.jsp                                   ;                           ; NewCustomerCheckoutLoginComponent
+                                 ;                          ; ReturningCustomerCheckoutLoginComponent   ; Returning Customer Checkout Login Component   ; checkouReturningCustomerLogin.jsp                              ;                           ; ReturningCustomerCheckoutLoginComponent
+                                 ;                          ; GuestCheckoutLoginComponent               ; Guest Checkout Login Component                ; checkoutGuestLogin.jsp                                         ;                           ; GuestCheckoutLoginComponent
+
 INSERT_UPDATE ContentSlot;$contentCV[unique=true]  ; uid[unique=true]                                           ; name                                  ; active; cmsComponents(&componentRef)
                          ;                         ; ReturningCustomerCheckoutLoginContentSlot-checkout-login   ; Left Content Slot for Checkout Login  ; true  ; ReturningCustomerCheckoutLoginComponent
                          ;                         ; GuestCheckoutLoginContentSlot-checkout-login               ; Right Content Slot for Checkout Login ; true  ; GuestCheckoutLoginComponent
@@ -532,6 +559,8 @@ INSERT_UPDATE CMSParagraphComponent; $contentCV[unique = true]; uid[unique = tru
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]; cmsComponents(uid, $contentCV)
                          ;                          ; BottomHeaderSlot  ; GuaranteeParagraphComponent,FreeShippingParagraphComponent,MediaCenterParagraphComponent
 
+INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
+                                ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 ######## Order Confirmation Page Start #######
 INSERT_UPDATE JspIncludeComponent; $contentCV[unique = true]; uid[unique = true]                       ; name                                           ; page                                                                       ; actions(uid, $contentCV); &componentRef
                                  ;                          ; OrderConfirmationThankMessageComponent   ; Order Confirmation Thank You Message Component ; checkoutConfirmationThankMessage.jsp                                       ;                         ; OrderConfirmationThankMessageComponent
@@ -549,8 +578,6 @@ INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]        
                          ;                          ; SideContent-orderConfirmation ; Side Content Slot for Order Confirmation ; true  ;                                                                                                                                                                                                                        ; ; ;
                          ;                          ; BodyContent-orderConfirmation ; Body Content Slot for Order Confirmation ; true  ; OrderConfirmationThankMessageComponent,OrderConfirmationOverviewComponent,OrderConfirmationItemsComponent,OrderConfirmationShippingComponent,OrderConfirmationTotalsComponent,OrderConfirmationContinueButtonComponent ; ; ;
 
-INSERT_UPDATE ContentSlotForPage; $contentCV[unique=true]; uid[unique=true]                 ; position[unique=true] ; page(uid,$contentCV)[unique=true] ; contentSlot(uid,$contentCV)[unique=true]
-                                ;                        ; Side-multiStepCheckoutSummaryPage; SideContent           ; multiStepCheckoutSummaryPage      ; SideContent-multiStepCheckoutSummaryPage
 
 #### Testimony Page ####
 # JSP Component
