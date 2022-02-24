@@ -10307,6 +10307,9 @@ fieldset[disabled] .btn-primary.active {
   padding: 10px 0 25px;
   font-size: 18px;
 }
+.button-all-product {
+  margin-top: 15px;
+}
 @media (max-width: 1399px) {
   .product-details .description,
   .product-details-price .description {
@@ -10573,8 +10576,8 @@ fieldset[disabled] .btn-primary.active {
   align-items: center;
   margin-bottom: 10px;
 }
-.content-suggestion {
-  padding: 40px;
+.container-product {
+  padding: 30px;
 }
 .container-image {
   width: 300px;
