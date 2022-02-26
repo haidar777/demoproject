@@ -68,9 +68,65 @@ public class AddToCartController extends AbstractController
 	@Resource(name = "groupCartModificationListPopulator")
 	private GroupCartModificationListPopulator groupCartModificationListPopulator;
 
-	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
-	public String addToCart(@RequestParam("productCodePost") final String code, final Model model,
+	@RequestMapping(value = "/cart/add/noPopup", method = RequestMethod.POST, produces = "application/json")
+	public void addToCart(@RequestParam("productCodePost") final String code, final Model model,
 			@Valid final AddToCartForm form, final BindingResult bindingErrors)
+	{
+		if (bindingErrors.hasErrors())
+		{
+			//return getViewWithBindingErrorMessages(model, bindingErrors);
+		}
+
+		final long qty = form.getQty();
+
+		if (qty <= 0)
+		{
+			model.addAttribute(ERROR_MSG_TYPE, "basket.error.quantity.invalid");
+			model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
+		}
+		else
+		{
+			try
+			{
+				final CartModificationData cartModification = cartFacade.addToCart(code, qty);
+				model.addAttribute(QUANTITY_ATTR, Long.valueOf(cartModification.getQuantityAdded()));
+				model.addAttribute("entry", cartModification.getEntry());
+				model.addAttribute("cartCode", cartModification.getCartCode());
+				model.addAttribute("isQuote", cartFacade.getSessionCart().getQuoteData() != null ? Boolean.TRUE : Boolean.FALSE);
+
+				if (cartModification.getQuantityAdded() == 0L)
+				{
+					model.addAttribute(ERROR_MSG_TYPE, "basket.information.quantity.noItemsAdded." + cartModification.getStatusCode());
+				}
+				else if (cartModification.getQuantityAdded() < qty)
+				{
+					model.addAttribute(ERROR_MSG_TYPE,
+							"basket.information.quantity.reducedNumberOfItemsAdded." + cartModification.getStatusCode());
+				}
+			}
+			catch (final CommerceCartModificationException ex)
+			{
+				logDebugException(ex);
+				model.addAttribute(ERROR_MSG_TYPE, "basket.error.occurred");
+				model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
+			}
+			catch (final UnknownIdentifierException ex)
+			{
+				LOG.debug(String.format("Product could not be added to cart - %s", ex.getMessage()));
+				model.addAttribute(ERROR_MSG_TYPE, "basket.error.occurred");
+				model.addAttribute(QUANTITY_ATTR, Long.valueOf(0L));
+				//return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+			}
+		}
+
+		model.addAttribute("product", productFacade.getProductForCodeAndOptions(code, Arrays.asList(ProductOption.BASIC)));
+		//return ControllerConstants.Views.Fragments.Cart.AddToCartPopup;
+	}
+
+	//EDIT
+	@RequestMapping(value = "/cart/add", method = RequestMethod.POST, produces = "application/json")
+	public String addToCartPopup(@RequestParam("productCodePost") final String code, final Model model,
+							@Valid final AddToCartForm form, final BindingResult bindingErrors)
 	{
 		if (bindingErrors.hasErrors())
 		{

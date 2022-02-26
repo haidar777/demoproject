@@ -17,16 +17,20 @@
 		<div class="product-main-info">
 			<div class="row">
 			    <%-----Space between Image Product and Detail Product-----%>
-				<div class="col-lg-6 space"></div>
+				<div class="col-lg-4 space"></div>
 
 				<%-----Title Product-----%>
 				<div class="col-sm-12 col-md-8 col-lg-6">
-				    <div class="product-details page-title">
+				    <div class="pdp-type">
                         <ycommerce:testId code="productDetails_productNamePrice_label_${product.code}">
-                        		<div class="name">
-                        		     ${fn:escapeXml(product.name)}
-                        		</div>
+                            <div class="name">
+                                INTHEBOX ${fn:escapeXml(product.baseProduct)}
+                            </div>
                        </ycommerce:testId>
+                    </div>
+
+                    <div class="pdp-name">
+                        ${fn:escapeXml(product.name)}
                     </div>
 
                     <%-----Price Product-----%>
@@ -35,18 +39,25 @@
                     			<product:productPricePanel product="${product}" />
                         </ycommerce:testId>
                     </div>
+                    <div class="pdp-size">
+                        ${fn:escapeXml(product.size)} cm
+                    </div>
 
-                    <%-----Description Product-----%>
-				    <div class="size">${ycommerce:sanitizeHTML(product.size)}</div>
-				    <div class="description">${ycommerce:sanitizeHTML(product.description)}</div>
-					<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
+                    <%-----Description Product----%>
+				    <div class="pdp-description">
+				        ${ycommerce:sanitizeHTML(product.description)}
+				    </div>
+
+				    <%----VariantSelector------%>
+					<%---<cms:pageSlot position="VariantSelector" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-variants-select-component"/>
-					</cms:pageSlot>
+					</cms:pageSlot>---%>
 
 					<%-----Add to Chart-----%>
 					<cms:pageSlot position="AddToCart" var="component" element="div" class="page-details-variants-select">
 						<cms:component component="${component}" element="div" class="yComponentWrapper page-details-add-to-cart-component"/>
 					</cms:pageSlot>
+
 				</div>
 			</div>
 		</div>

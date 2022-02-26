@@ -414,12 +414,12 @@ public class ProductPageController extends AbstractPageController
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options); //CHECK
 		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
 		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
-
+		productData.setSize(singleProduct.getSize());
 		final List<ProductData> checkProducts = new ArrayList<ProductData>();
-
 		for(DemoVariantProductData e : productSuggestions){
 			final ProductData tempProductData = productFacade.getProductForCodeAndOptions(e.getId(), options);
 			tempProductData.setSize(e.getSize());
+			tempProductData.setDesc(e.getDesc());
 			checkProducts.add(tempProductData);
 		}
 

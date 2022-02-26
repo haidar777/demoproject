@@ -127,7 +127,7 @@ INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=tr
 INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
                                              ;;Unboxing1;demo-homepage-light-fam-en
                                              ;;Unboxing2;demo-homepage-light-text-en
-                                             ;;Unboxing3;demo-homepage-springbedN-03-en
+                                             ;;Unboxing3;demo-homepage-springbed-03-en
                                              ;;Unboxing4;demo-homepage-springbed-04-en
 
 UPDATE CMSParagraphComponent; $contentCV[unique = true] ; uid[unique = true]            ; content[lang = $lang]

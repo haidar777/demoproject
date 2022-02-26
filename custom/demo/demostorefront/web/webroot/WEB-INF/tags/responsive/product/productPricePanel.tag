@@ -23,12 +23,7 @@
 				</span>
 			</c:when>
 			<c:otherwise>
-				<p class="price">
-					<format:fromPrice priceData="${product.price}"/>
-				</p>
-				<p class="desc">
-				    ${product.desc}
-				</p>
+				<p class="price"><format:fromPrice priceData="${product.price}"/></p>
 			</c:otherwise>
 		</c:choose>
 	</c:when>

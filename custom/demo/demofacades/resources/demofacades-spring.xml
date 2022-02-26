@@ -201,9 +201,12 @@
 	<bean id="demoProductSuggestionConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.demo.facades.product.data.DemoVariantProductData"/>
 		<property name="populators">
-			<ref bean="demoProductSuggestionPopulator"/>
+			<list>
+				<ref bean="demoProductSuggestionPopulator"/>
+			</list>
 		</property>
 	</bean>
+
 	<bean id="demoProductSuggestionPopulator" class="org.demo.facades.productSuggestion.populator.DemoProductSuggestionPopulator">
 	</bean>
 

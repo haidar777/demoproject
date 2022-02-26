@@ -17,7 +17,7 @@
 
 	.actions {
 		.btn {
-			margin-bottom: @grid-gutter-width/2;
+			//margin-bottom: @grid-gutter-width/2;
 		}
 	}
 
@@ -30,26 +30,82 @@
 	}
 }
 
-.addtocart-component,
-#add_to_cart_storepickup_form {
-	.qty-selector{
-		.input-group-btn,.btn{
-			width: floor((@padding-large-vertical * 2) + (@btn-font-size * @btn-line-height) + (@btn-border-width * 2));
-			margin: 0;
-			padding-left: 0;
-			padding-right: 0;
+.addtocart-component, #add_to_cart_storepickup_form {
+	> .qty-selector{
+
+		> .input-group-btn,.btn{
+		    width: floor((@padding-large-vertical * 2) + (@btn-font-size * @btn-line-height) + (@btn-border-width * 2));
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
+
+            > .btn{
+                width: floor((@padding-large-vertical * 2) + (@btn-font-size) + (@btn-border-width));
+                border-radius: 50%!important;
+                font-size:15px;
+                font-style:italic;
+                background-color:white;
+                color:#6086c2;
+
+            }
+            > .btn:hover{
+                width: floor((@padding-large-vertical * 2) + (@btn-font-size) + (@btn-border-width));
+                border-radius: 50%!important;
+                font-size:15px;
+                font-style:italic;
+                background-color:#6086c2;
+                color: white;
+
+
+            }
+
 		}
 
 		.form-control{
 			width: @input-height-base * 1.5625;
 			height: floor((@padding-large-vertical * 2) + (@btn-font-size * @btn-line-height) + (@btn-border-width * 2));
 			text-align: center;
-			font-size: 13px;
+			font-size: 20px;
 			font-weight: bold;
+			font-style:italic;
+			color:#6086c2;
 		}
 	}
 }
 
+#pdp-button{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+.pdp-button-cart{
+    margin-right: 15px;
+    height: 50px;
+    width: 200px;
+    color:#808185;
+    background-color:white;
+    border-color: #E7E9EB;
+    font-size:15px;
+    border-radius:5px;
+}
+.pdp-button-cart:hover{
+    color:white;
+    background-color:#7FC5F9;
+    border:none;
+}
+.pdp-button-checkout{
+    margin-left: 15px;
+    width: 200px;
+    font-size: 15px;
+    border-radius:5px;
+    color: white;
+    background-color:#6087C2;
+}
+.pdp-button-checkout:hover{
+    color: black;
+    background-color:#7FC5F9;
+    border:none;
+}
 @media (max-width: @screen-sm-max) {
 	.addtocart-component{
 		margin-top: @grid-gutter-width;
@@ -109,3 +165,4 @@
 		}
 	}
 }
+

@@ -8,7 +8,7 @@
 
 <spring:htmlEscape defaultHtmlEscape="true" />
 
-<c:url value="${url}" var="addToCartUrl"/>
+<c:url value="/cart/add/noPopup" var="addToCartUrl"/>
 <spring:url value="${product.url}/configuratorPage/{/configuratorType}" var="configureProductUrl" htmlEscape="false">
     <spring:param name="configuratorType"  value="${configuratorType}"/>
 </spring:url>
@@ -45,6 +45,8 @@
 	</c:choose>
 </c:if>
 </form:form>
+
+
 <form:form method="post" id="addToCartForm" class="add_to_cart_form" action="${addToCartUrl}">
 <c:if test="${product.purchasable}">
 	<input type="hidden" maxlength="3" size="1" id="qty" name="qty" class="qty js-qty-selector-input" value="1">
@@ -63,12 +65,18 @@
 			</button>
 		</c:when>
 		<c:otherwise>
-			<ycommerce:testId code="addToCartButton">
-				<button id="addToCartButton" type="${buttonType}" class="btn btn-primary btn-block js-add-to-cart js-enable-btn btn-icon glyphicon-shopping-cart" disabled="disabled">
-					<spring:theme code="basket.add.to.basket"/>
-				</button>
-			</ycommerce:testId>
-		</c:otherwise>
+		            <div id="pdp-button">
+                            <button id="addToCartButton" type="${buttonType}" class="js-add-to-cart js-enable-btn pdp-button-cart">
+                                   Add To Cart
+                            </button>
+
+                            <button onclick="window.location.href = '/demostorefront/demostore/en/cart';" class="pdp-button-checkout">
+                                   Buy Now
+                            </button>
+
+                    </div>
+        </c:otherwise>
+
 	</c:choose>
 </c:if>
 </form:form>

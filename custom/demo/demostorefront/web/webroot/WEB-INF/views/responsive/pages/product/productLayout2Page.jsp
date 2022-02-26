@@ -49,6 +49,7 @@
                                     <c:if test="${not empty checkProduct.size}">
                                        <div class="item-size">${fn:escapeXml(checkProduct.size)}</div>
                                      </c:if>
+                                     <div class="item-size">${fn:escapeXml(checkProduct.desc)}</div>
                                      <div class="item-price">
                                        <format:fromPrice priceData="${checkProduct.price}"/>
                                      </div>
@@ -67,5 +68,5 @@
         </button>
     </div>
 
-    <div id="quickViewTitle" class="quickView-header display-none"><spring:theme code="popup.quick.view.select"/></div>
+
 </template:demoPage>

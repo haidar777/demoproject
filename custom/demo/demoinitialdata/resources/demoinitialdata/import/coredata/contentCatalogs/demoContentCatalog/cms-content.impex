@@ -110,13 +110,13 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
                              ;LoginContentSlot       ;                                                                       ;                           ;wide
 
 
-INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true]                   ;position[unique=true]      ;pageTemplate(uid,$contentCV)[unique=true][default='LoginPageTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+INSERT_UPDATE ContentSlotForTemplate; $contentCV[unique = true]; uid[unique = true]         ; position[unique = true]; pageTemplate(uid, $contentCV)[unique = true][default = 'LoginPageTemplate']; contentSlot(uid, $contentCV)[unique = true]; allowOverwrite
 
 # Headers
-                                    ;                  ; LoginLogoSlot-LoginPage      ; LoginLogo                        ;                            ; LoginLogoSlot                       ; true
+                                    ;                          ; LoginLogoSlot-LoginPage    ; LoginLogo              ;                                                                            ; LoginLogoSlot                              ; true
 
 # Login Content
-                                    ;                  ;LoginContentSlot-LoginPage    ; LoginContentSlot                    ;                            ;LoginContentSlot                     ; true
+                                    ;                          ; LoginContentSlot-LoginPage ; LoginContentSlot       ;                                                                            ; LoginContentSlot                           ; true
 #;;RightContentSlot-LoginPage;RightContentSlot;;RightContentSlot;true
 
 

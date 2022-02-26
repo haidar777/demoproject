@@ -18,18 +18,21 @@
 <c:set var="qtyMinus" value="1" />
 
 <div class="addtocart-component">
-		<c:if test="${empty showAddToCart ? true : showAddToCart}">
 		<div class="qty-selector input-group js-qty-selector">
 			<span class="input-group-btn">
-				<button class="btn btn-default js-qty-selector-minus" type="button" <c:if test="${qtyMinus <= 1}"><c:out value="disabled='disabled'"/></c:if> ><span class="glyphicon glyphicon-minus" aria-hidden="true" ></span></button>
+			    <button class="btn pdp-button-min js-qty-selector-minus" type="button">
+                    <span class="glyphicon glyphicon-minus" aria-hidden="true" >
+			    </button>
 			</span>
-				<input type="text" maxlength="3" class="form-control js-qty-selector-input" size="1" value="${fn:escapeXml(qtyMinus)}"
+				<input type="text" maxlength="3" class="form-control pdp-number js-qty-selector-input" size="1" value="${fn:escapeXml(qtyMinus)}"
 					   data-max="${fn:escapeXml(maxQty)}" data-min="1" name="pdpAddtoCartInput"  id="pdpAddtoCartInput" />
 			<span class="input-group-btn">
-				<button class="btn btn-default js-qty-selector-plus" type="button"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+				<button class="btn pdp-button-plus js-qty-selector-plus" type="button">
+				    <span class="glyphicon glyphicon-plus" aria-hidden="true">
+				</button>
 			</span>
 		</div>
-		</c:if>
+
 		<c:if test="${product.stock.stockLevel gt 0}">
 			<c:set var="productStockLevelHtml">${fn:escapeXml(product.stock.stockLevel)}&nbsp;
 				<spring:theme code="product.variants.in.stock"/>
@@ -45,9 +48,6 @@
 				<spring:theme code="product.variants.available"/>
 			</c:set>
 		</c:if>
-		<div class="stock-wrapper clearfix">
-			${productStockLevelHtml}
-		</div>
 		 <div class="actions">
         <c:if test="${multiDimensionalProduct}" >
                 <c:url value="${product.url}/orderForm" var="productOrderFormUrl"/>
@@ -55,6 +55,7 @@
                     <spring:theme code="order.form" />
                 </a>
         </c:if>
+
         <action:actions element="div"  parentComponent="${component}"/>
     </div>
 </div>
