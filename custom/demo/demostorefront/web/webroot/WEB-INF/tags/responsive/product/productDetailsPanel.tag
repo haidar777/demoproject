@@ -5,9 +5,10 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <div class="container-product">
+
 <div class="row">
     <%-----Image Product-----%>
-	<div class="col-xs-10 col-xs-push-1 col-sm-6 col-sm-push-0 col-lg-4">
+	<div class="col-xs-10 col-xs-push-1 col-sm-6 col-md-5 col-sm-push-0 col-lg-4">
 		<product:productImagePanel galleryImages="${galleryImages}" />
 	</div>
 	<div class="clearfix hidden-sm hidden-md hidden-lg"></div>

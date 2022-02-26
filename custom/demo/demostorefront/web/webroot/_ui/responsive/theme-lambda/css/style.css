@@ -10671,8 +10671,12 @@ fieldset[disabled] .btn-primary.active {
   align-items: center;
   margin-bottom: 10px;
 }
-.container-product {
-  padding: 30px;
+@media (min-width: 1400px) {
+  .container-product {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+  }
 }
 .container-image {
   width: 300px;
