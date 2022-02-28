@@ -7,7 +7,6 @@ import org.demo.core.productSuggestion.service.DemoProductSuggestionService;
 import org.demo.facades.product.data.DemoVariantProductData;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,52 +15,35 @@ public class DemoProductSuggestionServiceImpl implements DemoProductSuggestionSe
     @Resource(name="demoProductSuggestionDao")
     private DemoProductSuggestionDao demoProductSuggestionDao;
 
-    @Resource(name="demoProductSuggestionConverter")
-    private Converter<DemoVariantProductModel, DemoVariantProductData> productConverter;
-
+    //EDIT
     @Override
-    public DemoVariantProductData getDemoProductSuggestionById(String name) {
+    public DemoVariantProductModel getDemoProductSuggestionById(String name){
         DemoVariantProductModel productModel = demoProductSuggestionDao.getDemoProductSuggestionById(name);
-        DemoVariantProductData productData = new DemoVariantProductData();
         if(productModel != null){
-            productData = productConverter.convert(productModel, productData);
-            return productData;
+            return productModel;
         }else{
             return null;
         }
     }
 
     @Override
-    public List<DemoVariantProductData> getDemoProductSuggestion() {
+    public List<DemoVariantProductModel> getDemoProductSuggestion(){
         List<DemoVariantProductModel> productModels = demoProductSuggestionDao.getDemoProductSuggestion();
-        List<DemoVariantProductData> productData = new ArrayList<DemoVariantProductData>();
         if(productModels != null){
-            for(DemoVariantProductModel productModel: productModels){
-                DemoVariantProductData tempProductData = new DemoVariantProductData();
-                tempProductData = productConverter.convert(productModel, tempProductData);
-                productData.add(tempProductData);
-            }
-            return productData;
+            return productModels;
         }else{
             return null;
         }
     }
 
     @Override
-    public List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode) {
-        List<DemoVariantProductModel> productModels = demoProductSuggestionDao.getDemoProductSuggestionByType(type, excludeCode);
-        List<DemoVariantProductData> productData = new ArrayList<DemoVariantProductData>();
-
+    public List<DemoVariantProductModel> getDemoProductSuggestionByType(String type, String excludeCode){
+        List<DemoVariantProductModel> productModels = demoProductSuggestionDao.getDemoProductSuggestionByType(type,
+                excludeCode);
         if(productModels != null){
-            for(DemoVariantProductModel productModel : productModels){
-                DemoVariantProductData tempProductData = new DemoVariantProductData();
-                tempProductData = productConverter.convert(productModel,tempProductData);
-                productData.add(tempProductData);
-            }
-            return productData;
+            return productModels;
         }else{
             return null;
         }
     }
-
 }

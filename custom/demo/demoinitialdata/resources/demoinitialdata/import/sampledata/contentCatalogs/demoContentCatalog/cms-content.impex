@@ -412,7 +412,6 @@ INSERT_UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique 
 
 INSERT_UPDATE ContentSlot; $contentCV[unique = true]; uid[unique = true]   ; cmsComponents(&componentRef)
                           ;                          ; AddToCartSlot       ; AddToCart
-                          ;                          ; CrossSellingSlot    ; CrossSelling
                           ;                          ; KeteranganSlot      ;
                           ;                          ; VariantSelectorSlot ; VariantSelector
                           ;                          ; BaseProductSlot     ; BaseProduct

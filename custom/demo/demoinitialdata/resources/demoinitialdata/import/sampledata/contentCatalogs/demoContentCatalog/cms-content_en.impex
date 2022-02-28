@@ -150,18 +150,7 @@ UPDATE SimpleBannerComponent;$contentCV[unique = true]; uid[unique = true]; $pic
 
 
 ##### Product Detail Page #####
-# Lightbox Banner for Mini Cart (banner is not localizable so we must create a separate banner per language)
-#INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpeg'];&imageRef;folder(qualifier)[default='images'];altText
-#                   ;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;$siteResource/images/banners/site/Elec_358x45_HomeDeliveryBanner_EN_01.gif;;Elec_358x45_HomeDeliveryBanner_EN_01.gif;;"Order before 6pm for next day delivery"
-#UPDATE SimpleBannerComponent;$contentCV[unique=true];uid[unique=true];$picture[lang=$lang]
-#                            ;;LightboxHomeDeliveryBannerComponent;Elec_358x45_HomeDeliveryBanner_EN_01.gif
-
-# CMS Mini Cart Component
-#UPDATE MiniCartComponent;$contentCV[unique=true];uid[unique=true];name;title[lang=$lang]
-#                        ;;MiniCart;Mini Cart;"YOUR SHOPPING CART"
-
 UPDATE ProductReferencesComponent; $contentCV[unique = true]; uid[unique = true]; title[lang = $lang]
-                                 ;                          ; CrossSelling      ; "You may also like..."
                                  ;                          ; BaseProduct       ; "Product Setipe lainnya..."
 
 ##### About Us Page #####

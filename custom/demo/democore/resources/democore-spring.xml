@@ -562,7 +562,11 @@
 	<bean id="demoProductSuggestionDao" class="org.demo.core.productSuggestion.dao.impl.DemoProductSuggestionDaoImpl" />
 
 	<!--	Demo Cronjob-->
-	<bean id="demoJob" class="org.demo.core.job.DemoProductCronjob" parent="abstractJobPerformable"></bean>
+	<bean id="demoJob" class="org.demo.core.job.DemoProductCronjob" parent="abstractJobPerformable">
+		<property name="modelService" ref="modelService"/>
+		<property name="flexibleSearchService" ref="flexibleSearchService"/>
+		<property name="sessionService" ref="sessionService"/>
+	</bean>
 
 	<!-- Demo Testimony -->
 	<alias name="demoTestimonyService" alias="demoTestimonyService"/>

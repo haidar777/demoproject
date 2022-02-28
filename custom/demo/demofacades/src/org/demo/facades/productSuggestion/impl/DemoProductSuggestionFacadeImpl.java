@@ -6,6 +6,7 @@ import org.demo.facades.product.data.DemoVariantProductData;
 import org.demo.facades.productSuggestion.DemoProductSuggestionFacade;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 import de.hybris.platform.servicelayer.dto.converter.Converter;
 
@@ -15,12 +16,14 @@ public class DemoProductSuggestionFacadeImpl implements DemoProductSuggestionFac
     private DemoProductSuggestionService demoProductSuggestionService;
 
     @Resource(name = "demoProductSuggestionConverter")
-    private Converter<DemoVariantProductModel, DemoVariantProductData> productPopulator;
+    private Converter<DemoVariantProductModel, DemoVariantProductData> productConverter;
 
     @Override
     public DemoVariantProductData getDemoProductSuggestionById(String name) {
-        DemoVariantProductData productData = demoProductSuggestionService.getDemoProductSuggestionById(name);
-        if(productData != null){
+        DemoVariantProductModel productModel = demoProductSuggestionService.getDemoProductSuggestionById(name);
+        DemoVariantProductData productData = new DemoVariantProductData();
+        if(productModel != null){
+            productData = productConverter.convert(productModel, productData);
             return productData;
         }else{
             return null;
@@ -29,29 +32,32 @@ public class DemoProductSuggestionFacadeImpl implements DemoProductSuggestionFac
 
     @Override
     public List<DemoVariantProductData> getDemoProductSuggestion() {
-        DemoVariantProductData productData= (DemoVariantProductData) demoProductSuggestionService.getDemoProductSuggestion();
-        if(productData != null){
-            return (List<DemoVariantProductData>) productData;
+        List<DemoVariantProductModel> productModels = demoProductSuggestionService.getDemoProductSuggestion();
+        List<DemoVariantProductData> productData = new ArrayList<DemoVariantProductData>();
+        if(productModels != null){
+            for(DemoVariantProductModel productModel : productModels){
+                DemoVariantProductData tempProductData = new DemoVariantProductData();
+                tempProductData = productConverter.convert(productModel, tempProductData);
+                productData.add(tempProductData);
+            }
+            return productData;
         }else{
             return null;
         }
     }
 
-//    @Override
-//    public List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode) {
-//        List<DemoVariantProductData> productData = demoProductSuggestionService.getDemoProductSuggestionByType(type, excludeCode);
-//        if(productData != null){
-//            return productData;
-//        }else{
-//            return null;
-//        }
-//
-//    }
 
     @Override
     public List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode) {
-        List<DemoVariantProductData> productData = demoProductSuggestionService.getDemoProductSuggestionByType(type, excludeCode);
-        if(productData != null){
+        List<DemoVariantProductModel> productModels = demoProductSuggestionService.getDemoProductSuggestionByType(type,
+                excludeCode);
+        List<DemoVariantProductData> productData = new ArrayList<DemoVariantProductData>();
+        if(productModels != null){
+            for(DemoVariantProductModel productModel: productModels){
+                DemoVariantProductData tempProductData = new DemoVariantProductData();
+                tempProductData = productConverter.convert(productModel, tempProductData);
+                productData.add(tempProductData);
+            }
             return productData;
         }else{
             return null;

@@ -74,7 +74,7 @@
 }
 
 #pdp-button{
-    width: 100%;
+    //width: 100%;
     display: flex;
     margin-top: 30px;
 }
@@ -87,6 +87,9 @@
     border-color: #E7E9EB;
     font-size:15px;
     border-radius:5px;
+    @media(max-width: @screen-sm){
+      margin-right: 5px;
+    }
 }
 .pdp-button-cart:hover{
     color:white;

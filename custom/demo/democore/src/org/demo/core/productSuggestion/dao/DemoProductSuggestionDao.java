@@ -10,5 +10,4 @@ public interface DemoProductSuggestionDao {
     DemoVariantProductModel getDemoProductSuggestionById(String name);
     List<DemoVariantProductModel> getDemoProductSuggestion();
     List<DemoVariantProductModel> getDemoProductSuggestionByType(String type, String excludeCode);
-
 }

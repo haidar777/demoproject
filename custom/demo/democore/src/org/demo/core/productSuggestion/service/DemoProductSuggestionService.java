@@ -1,13 +1,12 @@
 package org.demo.core.productSuggestion.service;
 
 
-import org.demo.facades.product.data.DemoVariantProductData;
+import org.demo.core.model.DemoVariantProductModel;
 
 import java.util.List;
 
 public interface DemoProductSuggestionService {
-    DemoVariantProductData getDemoProductSuggestionById(String name);
-    List<DemoVariantProductData> getDemoProductSuggestion();
-    List<DemoVariantProductData> getDemoProductSuggestionByType(String type, String excludeCode);
-
+    DemoVariantProductModel getDemoProductSuggestionById(String name);
+    List<DemoVariantProductModel> getDemoProductSuggestion();
+    List<DemoVariantProductModel> getDemoProductSuggestionByType(String type, String excludeCode);
 }

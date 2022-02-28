@@ -20,7 +20,6 @@ public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
     @Resource
     private FlexibleSearchService flexibleSearchService;
 
-
     @Override
     public DemoVariantProductModel getDemoProductSuggestionById(String name) {
        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_SUGGESTION);
@@ -48,17 +47,18 @@ public class DemoProductSuggestionDaoImpl implements DemoProductSuggestionDao {
 
     @Override
     public List<DemoVariantProductModel> getDemoProductSuggestionByType(String type, String excludeCode) {
-    final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_EXCLUDE_CODE);
-    final Map<String, Object> params = new HashMap<String, Object>();
-    params.put("type", type);
-    params.put("excludeCode", excludeCode);
-    flexibleSearchQuery.addQueryParameters(params);
-    final SearchResult<DemoVariantProductModel> result = flexibleSearchService.search(flexibleSearchQuery);
+        final FlexibleSearchQuery flexibleSearchQuery = new FlexibleSearchQuery(QUERY_PRODUCT_EXCLUDE_CODE);
+        final Map<String, Object> params = new HashMap<String, Object>();
+        params.put("type", type);
+        params.put("excludeCode", excludeCode);
+        flexibleSearchQuery.addQueryParameters(params);
+        final SearchResult<DemoVariantProductModel> result = flexibleSearchService.search(flexibleSearchQuery);
 
-    if(CollectionUtils.isNotEmpty(result.getResult())){
-        return result.getResult();
-    }else{
-        return null;
+        if(CollectionUtils.isNotEmpty(result.getResult())){
+            return result.getResult();
+        }else{
+            return null;
+        }
     }
-}
+
 }

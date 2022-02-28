@@ -413,9 +413,11 @@ public class ProductPageController extends AbstractPageController
 
 		final ProductData productData = productFacade.getProductForCodeAndOptions(productCode, options); //CHECK
 		final DemoVariantProductData singleProduct = demoProductSuggestionFacade.getDemoProductSuggestionById(productCode);
-		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(), productCode);
-		productData.setSize(singleProduct.getSize());
+		final List<DemoVariantProductData> productSuggestions = demoProductSuggestionFacade.getDemoProductSuggestionByType(singleProduct.getType(),
+				productCode);
 		final List<ProductData> checkProducts = new ArrayList<ProductData>();
+
+		productData.setSize(singleProduct.getSize());
 		for(DemoVariantProductData e : productSuggestions){
 			final ProductData tempProductData = productFacade.getProductForCodeAndOptions(e.getId(), options);
 			tempProductData.setSize(e.getSize());
@@ -426,7 +428,7 @@ public class ProductPageController extends AbstractPageController
 		model.addAttribute("checkProducts", checkProducts);
 		sortVariantOptionData(productData);
 		storeCmsPageInModel(model, getPageForProduct(productCode));
-		populateProductData(productData, model); //Memasukkan data dengan attribute product. ///CHECK
+		populateProductData(productData, model);
 
 		model.addAttribute(WebConstants.BREADCRUMBS_KEY, productBreadcrumbBuilder.getBreadcrumbs(productCode));
 

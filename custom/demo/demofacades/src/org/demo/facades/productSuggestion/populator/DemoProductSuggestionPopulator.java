@@ -27,5 +27,8 @@ public class DemoProductSuggestionPopulator implements Populator<DemoVariantProd
         if(productModel.getPicture() != null){
             productData.setPicture(productModel.getPicture());
         }
+        if(productModel.getType() != null){
+            productData.setType(productModel.getType());
+        }
     }
 }
